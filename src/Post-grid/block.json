@@ -37,7 +37,24 @@
 			"items": {
 				"type": "object"
 			}
+		},
+		"readMore": {
+			"type": "boolean",
+			"default": true
+		},
+		"showExcerpt": {
+			"type": "boolean",
+			"default": true
+		},
+		"showMeta": {
+			"type": "boolean",
+			"default": true
+		},
+		"showTitle": {
+			"type": "boolean",
+			"default": true
 		}
+
 	},
 	"textdomain": "postgrid",
 	"editorScript": "file:./index.js",

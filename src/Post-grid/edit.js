@@ -1,14 +1,23 @@
-import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
+import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { PanelBody, TabPanel, ToggleControl } from '@wordpress/components';
-import { cog, styles, tableOfContents, Icon } from '@wordpress/icons';
-import { RawHTML } from '@wordpress/element';
-import './editor.scss';
-import { __ } from '@wordpress/i18n';
-import { format, dateI18n, getSettings } from '@wordpress/date';
 import { useSelect } from '@wordpress/data';
+import { dateI18n, format, getSettings } from '@wordpress/date';
+import { RawHTML } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import { cog, Icon, styles, tableOfContents } from '@wordpress/icons';
+import './editor.scss';
 export default function Edit( { attributes, setAttributes } ) {
-	const { numberOfPosts, displayImage, order, orderBy, categories } =
-		attributes;
+	const {
+		numberOfPosts,
+		displayImage,
+		order,
+		orderBy,
+		categories,
+		readMore,
+		showTitle,
+		showExcerpt,
+		showMeta,
+	} = attributes;
 	const catIDs = categories?.map( ( cat ) => cat.id );
 	const posts = useSelect(
 		( select ) => {
@@ -26,6 +35,26 @@ export default function Edit( { attributes, setAttributes } ) {
 	const HandleDisplayFeatureImage = ( value ) => {
 		setAttributes( {
 			displayImage: value,
+		} );
+	};
+	const HandleReadMoreButton = ( value ) => {
+		setAttributes( {
+			readMore: value,
+		} );
+	};
+	const HandleTitleVisibility = ( value ) => {
+		setAttributes( {
+			showTitle: value,
+		} );
+	};
+	const HandleExcerptVisibility = ( value ) => {
+		setAttributes( {
+			showExcerpt: value,
+		} );
+	};
+	const HandleMetaVisibility = ( value ) => {
+		setAttributes( {
+			showMeta: value,
 		} );
 	};
 	return (
@@ -82,7 +111,7 @@ export default function Edit( { attributes, setAttributes } ) {
 											<ToggleControl
 												label={ __(
 													'Display Featured Image',
-													'latest-posts'
+													'postgrid'
 												) }
 												checked={ displayImage }
 												onChange={
@@ -94,13 +123,66 @@ export default function Edit( { attributes, setAttributes } ) {
 											title="Content"
 											initialOpen={ false }
 										>
-											<p>General settings content here</p>
+											<PanelBody
+												title="Title"
+												initialOpen={ true }
+											>
+												<ToggleControl
+													label={ __(
+														'Title Visibility',
+														'postgrid'
+													) }
+													checked={ showTitle }
+													onChange={
+														HandleTitleVisibility
+													}
+												/>
+											</PanelBody>
+											<PanelBody
+												title="Excerpt"
+												initialOpen={ false }
+											>
+												<ToggleControl
+													label={ __(
+														'Excerpt Visibility',
+														'postgrid'
+													) }
+													checked={ showExcerpt }
+													onChange={
+														HandleExcerptVisibility
+													}
+												/>
+											</PanelBody>
+											<PanelBody
+												title="Meta"
+												initialOpen={ false }
+											>
+												<ToggleControl
+													label={ __(
+														'Meta Visibility',
+														'postgrid'
+													) }
+													checked={ showMeta }
+													onChange={
+														HandleMetaVisibility
+													}
+												/>
+											</PanelBody>
 										</PanelBody>
 										<PanelBody
 											title="Action Button"
 											initialOpen={ false }
 										>
-											<p>General settings content here</p>
+											<ToggleControl
+												label={ __(
+													'Read More',
+													'postgrid'
+												) }
+												checked={ readMore }
+												onChange={
+													HandleReadMoreButton
+												}
+											/>
 										</PanelBody>
 										<PanelBody
 											title="Pagination"
@@ -196,38 +278,47 @@ export default function Edit( { attributes, setAttributes } ) {
 								) }
 						</div>
 
-						<div className="post-grid-title">
-							<h5>
+						{ showTitle && (
+							<div className="post-grid-title">
+								<h5>
+									<a href={ post?.link }>
+										{ post?.title?.rendered }
+									</a>
+								</h5>
+							</div>
+						) }
+
+						{ showMeta && (
+							<div className="post-grid-meta">
+								{ post?._embedded?.author?.[ 0 ] && (
+									<span>
+										By { post._embedded.author[ 0 ].name }
+									</span>
+								) }{ ' ' }
+								<time dateTime={ format( 'c', post?.date_gmt ) }>
+									{ dateI18n(
+										getSettings().formats.date,
+										post?.date_gmt
+									) }
+								</time>
+							</div>
+						) }
+
+						{ showExcerpt && (
+							<div className="post-grid-excerpt">
+								<p>
+									<RawHTML>{ post?.excerpt?.rendered }</RawHTML>
+								</p>
+							</div>
+						) }
+	
+						{ readMore && (
+							<div className="post-grid-btn">
 								<a href={ post?.link }>
-									{ post?.title?.rendered }
+									<span>Read More</span>
 								</a>
-							</h5>
-						</div>
-
-						<div className="post-grid-meta">
-							{ post?._embedded?.author?.[ 0 ] && (
-								<span>
-									By { post._embedded.author[ 0 ].name }
-								</span>
-							) }{ ' ' }
-							<time dateTime={ format( 'c', post?.date_gmt ) }>
-								{ dateI18n(
-									getSettings().formats.date,
-									post?.date_gmt
-								) }
-							</time>
-						</div>
-
-						<div className="post-grid-excerpt">
-							<p>
-								<RawHTML>{ post?.excerpt?.rendered }</RawHTML>
-							</p>
-						</div>
-						<div className="post-grid-btn">
-							<a href={ post?.link }>
-								<span>Read More</span>
-							</a>
-						</div>
+							</div>
+						) }
 					</div>
 				) ) }
 			</div>

@@ -1,1 +1,1 @@
-{"version":3,"file":"pagecrafter/index.css","mappings":";;;AAEA;EACC;AADD,C","sources":["webpack://pagecrafter/./src/pagecrafter/editor.scss"],"sourcesContent":["\n\n.wp-block-create-block-pagecrafter {\n\tborder: 1px dotted #f00;\n}\n"],"names":[],"sourceRoot":""}
+{"version":3,"file":"pagecrafter/index.css","mappings":";;;AAEA;EACC;AADD,C","sources":["webpack://pagecrafter/./src/pagecrafter/editor.scss"],"sourcesContent":["\r\n\r\n.wp-block-create-block-pagecrafter {\r\n\tborder: 1px dotted #f00;\r\n}\r\n"],"names":[],"sourceRoot":""}

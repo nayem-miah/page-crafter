@@ -63,6 +63,22 @@ return array(
 				'items' => array(
 					'type' => 'object'
 				)
+			),
+			'readMore' => array(
+				'type' => 'boolean',
+				'default' => true
+			),
+			'showExcerpt' => array(
+				'type' => 'boolean',
+				'default' => true
+			),
+			'showMeta' => array(
+				'type' => 'boolean',
+				'default' => true
+			),
+			'showTitle' => array(
+				'type' => 'boolean',
+				'default' => true
 			)
 		),
 		'textdomain' => 'postgrid',
