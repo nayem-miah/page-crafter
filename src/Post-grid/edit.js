@@ -1,11 +1,12 @@
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, TabPanel } from '@wordpress/components';
+import { PanelBody, TabPanel, ToggleControl } from '@wordpress/components';
 import { cog, styles, tableOfContents, Icon } from '@wordpress/icons';
 import { RawHTML } from '@wordpress/element';
 import './editor.scss';
+import { __ } from '@wordpress/i18n';
 import { format, dateI18n, getSettings } from '@wordpress/date';
 import { useSelect } from '@wordpress/data';
-export default function Edit( { attributes } ) {
+export default function Edit( { attributes, setAttributes } ) {
 	const { numberOfPosts, displayImage, order, orderBy, categories } =
 		attributes;
 	const catIDs = categories?.map( ( cat ) => cat.id );
@@ -21,6 +22,12 @@ export default function Edit( { attributes } ) {
 		},
 		[ numberOfPosts, order, orderBy, catIDs ]
 	);
+
+	const HandleDisplayFeatureImage = ( value ) => {
+		setAttributes( {
+			displayImage: value,
+		} );
+	};
 	return (
 		<div { ...useBlockProps() }>
 			<InspectorControls>
@@ -32,7 +39,7 @@ export default function Edit( { attributes } ) {
 							name: 'general',
 							title: (
 								<span>
-									<Icon icon={tableOfContents} /> General
+									<Icon icon={ tableOfContents } /> General
 								</span>
 							),
 							className: 'tab-general',
@@ -41,7 +48,7 @@ export default function Edit( { attributes } ) {
 							name: 'styles',
 							title: (
 								<span>
-									<Icon icon={styles}  /> Styles
+									<Icon icon={ styles } /> Styles
 								</span>
 							),
 							className: 'tab-styles',
@@ -50,7 +57,7 @@ export default function Edit( { attributes } ) {
 							name: 'advanced',
 							title: (
 								<span>
-									<Icon icon={cog} /> Advanced
+									<Icon icon={ cog } /> Advanced
 								</span>
 							),
 							className: 'tab-advanced',
@@ -65,7 +72,6 @@ export default function Edit( { attributes } ) {
 										<PanelBody
 											title="General"
 											initialOpen={ true }
-											
 										>
 											<p>General settings content here</p>
 										</PanelBody>
@@ -73,7 +79,16 @@ export default function Edit( { attributes } ) {
 											title="Image"
 											initialOpen={ false }
 										>
-											<p>General settings content here</p>
+											<ToggleControl
+												label={ __(
+													'Display Featured Image',
+													'latest-posts'
+												) }
+												checked={ displayImage }
+												onChange={
+													HandleDisplayFeatureImage
+												}
+											/>
 										</PanelBody>
 										<PanelBody
 											title="Content"
