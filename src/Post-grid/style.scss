@@ -1,0 +1,35 @@
+.wp-block-create-block-postgrid {
+
+
+	background-color: #ffffff;
+	color: #292929;
+	padding: 2px;
+
+	.post-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+	}
+
+
+}
+
+.pagecrafter-tab-panel .components-tab-panel__tabs {
+	margin-bottom: 10px;
+
+	.is-active {
+		background-color: #ffffff !important;
+		color: #008db4 !important;
+	}
+
+	.components-tab-panel__tabs-item {
+		background-color: #008db4;
+		color: #ffffff;
+	
+	}
+
+}
+
+.pagecrafter-tab-panel .components-button {
+	gap: 2px;
+}
