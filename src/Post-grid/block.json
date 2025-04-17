@@ -12,8 +12,8 @@
 		"html": false
 	},
 	"attributes": {
-		"columns":{
-			"type":"number",
+		"columns": {
+			"type": "number",
 			"default": 10
 		},
 		"numberOfPosts": {
@@ -53,8 +53,15 @@
 		"showTitle": {
 			"type": "boolean",
 			"default": true
+		},
+		"excerptMaxWords": {
+			"type": "number",
+			"default": 15
+		},
+		"readMoreAlignment": {
+			"type": "string",
+			"default": "left"
 		}
-
 	},
 	"textdomain": "postgrid",
 	"editorScript": "file:./index.js",

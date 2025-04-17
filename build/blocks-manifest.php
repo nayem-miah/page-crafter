@@ -79,6 +79,14 @@ return array(
 			'showTitle' => array(
 				'type' => 'boolean',
 				'default' => true
+			),
+			'excerptMaxWords' => array(
+				'type' => 'number',
+				'default' => 15
+			),
+			'readMoreAlignment' => array(
+				'type' => 'string',
+				'default' => 'left'
 			)
 		),
 		'textdomain' => 'postgrid',

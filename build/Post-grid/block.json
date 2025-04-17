@@ -53,6 +53,14 @@
     "showTitle": {
       "type": "boolean",
       "default": true
+    },
+    "excerptMaxWords": {
+      "type": "number",
+      "default": 15
+    },
+    "readMoreAlignment": {
+      "type": "string",
+      "default": "left"
     }
   },
   "textdomain": "postgrid",
