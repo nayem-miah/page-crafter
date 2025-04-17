@@ -8,8 +8,79 @@
 }
 .wp-block-create-block-postgrid .post-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.wp-block-create-block-postgrid .post-grid .grid-card {
+  background: #F5F5F5;
+  border-color: #dcdcde;
+  border-style: solid;
+  border-width: 0px 0px 0px 0px;
+  border-radius: 4px 4px 4px 4px;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1490196078);
+}
+.wp-block-create-block-postgrid .post-grid .grid-card .post-grid-thumnail img {
+  max-width: 100%;
+  margin: auto;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.wp-block-create-block-postgrid .post-grid .grid-card .content-body {
+  padding: 0px 12px 24px 12px;
+  margin: 0px 0px 0px 0px;
+}
+.wp-block-create-block-postgrid .post-grid .grid-card .content-body .post-grid-title h5 {
+  text-align: center;
+}
+.wp-block-create-block-postgrid .post-grid .grid-card .content-body .post-grid-title h5 a {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  text-transform: none;
+  text-decoration: none;
+  line-height: 24px;
+  color: #1A261F;
+  margin: 12px 0px 0px 0px;
+}
+.wp-block-create-block-postgrid .post-grid .grid-card .content-body .post-grid-meta {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: none;
+  text-decoration: none;
+  line-height: 20px;
+  color: #7B7878;
+  text-align: center;
+  margin: 10px 0px 0px 0px;
+}
+.wp-block-create-block-postgrid .post-grid .grid-card .content-body .post-grid-excerpt {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: none;
+  text-decoration: none;
+  line-height: 28px;
+  color: #1A261F;
+  margin: 20px 0px 0px 0px;
+  text-align: center;
+}
+.wp-block-create-block-postgrid .post-grid .grid-card .content-body .post-grid-btn a {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: none;
+  text-decoration: none;
+  line-height: 24px;
+  color: #FFFFFF;
+  box-shadow: none;
+  padding: 8px 16px 8px 16px;
+  margin: 20px 0px 0px 0px;
+  border-color: #DCDCDE;
+  border-style: solid;
+  border-width: 0px 0px 0px 0px;
+  border-radius: 4px 4px 4px 4px;
+  background: #0053F0;
 }
 
 .pagecrafter-tab-panel .components-tab-panel__tabs {

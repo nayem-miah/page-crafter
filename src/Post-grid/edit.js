@@ -1,11 +1,28 @@
-import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
-import { PanelBody, TabPanel, ToggleControl } from '@wordpress/components';
+import {
+	InspectorControls,
+	useBlockProps,
+} from '@wordpress/block-editor';
+import {
+	PanelBody,
+	TabPanel,
+	ToggleControl,
+	RangeControl,
+	Button,
+	ButtonGroup,
+} from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 import { dateI18n, format, getSettings } from '@wordpress/date';
 import { RawHTML } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import { cog, Icon, styles, tableOfContents } from '@wordpress/icons';
+import {
+	cog,
+	Icon,
+	styles,
+	tableOfContents,
+} from '@wordpress/icons';
+
 import './editor.scss';
+import truncateExcerpt from './utils/truncateWords';
 export default function Edit( { attributes, setAttributes } ) {
 	const {
 		numberOfPosts,
@@ -17,6 +34,8 @@ export default function Edit( { attributes, setAttributes } ) {
 		showTitle,
 		showExcerpt,
 		showMeta,
+		excerptMaxWords,
+		readMoreAlignment,
 	} = attributes;
 	const catIDs = categories?.map( ( cat ) => cat.id );
 	const posts = useSelect(
@@ -31,6 +50,9 @@ export default function Edit( { attributes, setAttributes } ) {
 		},
 		[ numberOfPosts, order, orderBy, catIDs ]
 	);
+
+
+	
 
 	const HandleDisplayFeatureImage = ( value ) => {
 		setAttributes( {
@@ -55,6 +77,18 @@ export default function Edit( { attributes, setAttributes } ) {
 	const HandleMetaVisibility = ( value ) => {
 		setAttributes( {
 			showMeta: value,
+		} );
+	};
+
+	const HandleNumberOfItems = ( value ) => {
+		setAttributes( {
+			numberOfPosts: value,
+		} );
+	};
+
+	const handleExcerptMaxWord = ( value ) => {
+		setAttributes( {
+			excerptMaxWords: value,
 		} );
 	};
 	return (
@@ -102,7 +136,85 @@ export default function Edit( { attributes, setAttributes } ) {
 											title="General"
 											initialOpen={ true }
 										>
-											<p>General settings content here</p>
+											<RangeControl
+												label={ __(
+													'Number of Posts',
+													'postgrid'
+												) }
+												min={ 1 }
+												max={ 10 }
+												onChange={ HandleNumberOfItems }
+												value={ numberOfPosts }
+											/>
+
+											<div
+												style={ { marginTop: '16px' } }
+											>
+												<strong>Order</strong>
+												<div
+													style={ {
+														display: 'flex',
+														justifyContent:
+															'center',
+														marginTop: '8px',
+													} }
+												>
+													<ButtonGroup>
+														<Button
+															isPressed={
+																attributes.order ===
+																'asc'
+															}
+															variant="secondary"
+															style={ {
+																backgroundColor:
+																	attributes.order ===
+																	'asc'
+																		? '#008db4'
+																		: '',
+																color:
+																	attributes.order ===
+																	'asc'
+																		? '#fff'
+																		: '',
+															} }
+															onClick={ () =>
+																setAttributes( {
+																	order: 'asc',
+																} )
+															}
+														>
+															Ascending ↑
+														</Button>
+														<Button
+															isPressed={
+																attributes.order ===
+																'desc'
+															}
+															variant="secondary"
+															style={ {
+																backgroundColor:
+																	attributes.order ===
+																	'desc'
+																		? '#008db4'
+																		: '',
+																color:
+																	attributes.order ===
+																	'desc'
+																		? '#fff'
+																		: '',
+															} }
+															onClick={ () =>
+																setAttributes( {
+																	order: 'desc',
+																} )
+															}
+														>
+															Descending ↓
+														</Button>
+													</ButtonGroup>
+												</div>
+											</div>
 										</PanelBody>
 										<PanelBody
 											title="Image"
@@ -125,7 +237,7 @@ export default function Edit( { attributes, setAttributes } ) {
 										>
 											<PanelBody
 												title="Title"
-												initialOpen={ true }
+												initialOpen={ false }
 											>
 												<ToggleControl
 													label={ __(
@@ -151,6 +263,18 @@ export default function Edit( { attributes, setAttributes } ) {
 													onChange={
 														HandleExcerptVisibility
 													}
+												/>
+												<RangeControl
+													label={ __(
+														'Max Number of Words',
+														'postgrid'
+													) }
+													min={ 5 }
+													max={ 50 }
+													onChange={
+														handleExcerptMaxWord
+													}
+													value={ excerptMaxWords }
 												/>
 											</PanelBody>
 											<PanelBody
@@ -183,6 +307,104 @@ export default function Edit( { attributes, setAttributes } ) {
 													HandleReadMoreButton
 												}
 											/>
+
+											<div
+												style={ { marginTop: '16px' } }
+											>
+												<strong>Alignment</strong>
+												<div
+													style={ {
+														display: 'flex',
+														justifyContent:
+															'center',
+														marginTop: '8px',
+													} }
+												>
+													<ButtonGroup>
+														<Button
+															isPressed={
+																readMoreAlignment ===
+																'left'
+															}
+															variant="secondary"
+															style={ {
+																backgroundColor:
+																	readMoreAlignment ===
+																	'left'
+																		? '#008db4'
+																		: '',
+																color:
+																	readMoreAlignment ===
+																	'left'
+																		? '#fff'
+																		: '',
+															} }
+															onClick={ () =>
+																setAttributes( {
+																	readMoreAlignment:
+																		'left',
+																} )
+															}
+														>
+															Left
+														</Button>
+														<Button
+															isPressed={
+																readMoreAlignment ===
+																'center'
+															}
+															variant="secondary"
+															style={ {
+																backgroundColor:
+																	readMoreAlignment ===
+																	'center'
+																		? '#008db4'
+																		: '',
+																color:
+																	readMoreAlignment ===
+																	'center'
+																		? '#fff'
+																		: '',
+															} }
+															onClick={ () =>
+																setAttributes( {
+																	readMoreAlignment:
+																		'center',
+																} )
+															}
+														>
+															Center
+														</Button>
+														<Button
+															isPressed={
+																readMoreAlignment ===
+																'right'
+															}
+															variant="secondary"
+															style={ {
+																backgroundColor:
+																	readMoreAlignment ===
+																	'right'
+																		? '#008db4'
+																		: '',
+																color:
+																	readMoreAlignment ===
+																	'right'
+																		? '#fff'
+																		: '',
+															} }
+															onClick={ () =>
+																setAttributes( {
+																	readMoreAlignment:
+																		'right',
+																} )
+															}
+														>
+															Right
+														</Button>
+													</ButtonGroup>
+												</div>
+											</div>
 										</PanelBody>
 										<PanelBody
 											title="Pagination"
@@ -252,9 +474,9 @@ export default function Edit( { attributes, setAttributes } ) {
 				{ /* </PanelBody> */ }
 			</InspectorControls>
 
-			<div className="post-grid">
+			<div className="post-grid" style={{}}>
 				{ posts?.map( ( post ) => (
-					<div key={ post?.id }>
+					<div key={ post?.id } className="grid-card">
 						<div className="post-grid-thumnail">
 							{ post?._embedded?.[ 'wp:featuredmedia' ]?.length >
 								0 &&
@@ -277,48 +499,65 @@ export default function Edit( { attributes, setAttributes } ) {
 									/>
 								) }
 						</div>
+						<div className="content-body">
+							{ showTitle && (
+								<div className="post-grid-title">
+									<h5>
+										<a href={ post?.link }>
+											<RawHTML>
+												{ post?.title?.rendered }
+											</RawHTML>
+										</a>
+									</h5>
+								</div>
+							) }
 
-						{ showTitle && (
-							<div className="post-grid-title">
-								<h5>
+							{ showMeta && (
+								<div className="post-grid-meta">
+									{ post?._embedded?.author?.[ 0 ] && (
+										<span>
+											By{ ' ' }
+											{ post._embedded.author[ 0 ].name }
+										</span>
+									) }{ ' ' }
+									<time
+										dateTime={ format(
+											'c',
+											post?.date_gmt
+										) }
+									>
+										{ dateI18n(
+											getSettings().formats.date,
+											post?.date_gmt
+										) }
+									</time>
+								</div>
+							) }
+
+							{ showExcerpt && (
+								<div className="post-grid-excerpt">
+									<p>
+										<RawHTML>
+											{ truncateExcerpt(
+												post?.excerpt?.rendered,
+												excerptMaxWords
+											) }
+										</RawHTML>
+									</p>
+								</div>
+							) }
+
+							{ readMore && (
+								<div
+									className="post-grid-btn"
+									style={ { textAlign: readMoreAlignment } }
+								>
 									<a href={ post?.link }>
-										{ post?.title?.rendered }
+										<span>Read More</span>
 									</a>
-								</h5>
-							</div>
-						) }
-
-						{ showMeta && (
-							<div className="post-grid-meta">
-								{ post?._embedded?.author?.[ 0 ] && (
-									<span>
-										By { post._embedded.author[ 0 ].name }
-									</span>
-								) }{ ' ' }
-								<time dateTime={ format( 'c', post?.date_gmt ) }>
-									{ dateI18n(
-										getSettings().formats.date,
-										post?.date_gmt
-									) }
-								</time>
-							</div>
-						) }
-
-						{ showExcerpt && (
-							<div className="post-grid-excerpt">
-								<p>
-									<RawHTML>{ post?.excerpt?.rendered }</RawHTML>
-								</p>
-							</div>
-						) }
-	
-						{ readMore && (
-							<div className="post-grid-btn">
-								<a href={ post?.link }>
-									<span>Read More</span>
-								</a>
-							</div>
-						) }
+								</div>
+							) }
+						</div>
 					</div>
 				) ) }
 			</div>
