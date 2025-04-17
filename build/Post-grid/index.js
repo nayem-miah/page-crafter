@@ -156,7 +156,7 @@ const tableOfContents = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODU
   \**********************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/postgrid","version":"0.1.0","title":"PostGrid","category":"Page-Crafter","icon":"edit-page","description":"A simple post grid","example":{},"supports":{"html":false},"attributes":{"columns":{"type":"number","default":10},"numberOfPosts":{"type":"number","default":6},"displayImage":{"type":"boolean","default":true},"order":{"type":"string","default":"desc"},"orderBy":{"type":"string","default":"date"},"categories":{"type":"array","items":{"type":"object"}},"readMore":{"type":"boolean","default":true},"showExcerpt":{"type":"boolean","default":true},"showMeta":{"type":"boolean","default":true},"showTitle":{"type":"boolean","default":true},"excerptMaxWords":{"type":"number","default":15},"readMoreAlignment":{"type":"string","default":"left"}},"textdomain":"postgrid","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/postgrid","version":"0.1.0","title":"PostGrid","category":"Page-Crafter","icon":"edit-page","description":"A simple post grid","example":{},"supports":{"html":false},"attributes":{"columns":{"type":"number","default":4},"columnGap":{"type":"number","default":20},"numberOfPosts":{"type":"number","default":6},"displayImage":{"type":"boolean","default":true},"order":{"type":"string","default":"desc"},"orderBy":{"type":"string","default":"date"},"categories":{"type":"array","items":{"type":"object"}},"readMore":{"type":"boolean","default":true},"showExcerpt":{"type":"boolean","default":true},"showMeta":{"type":"boolean","default":true},"showTitle":{"type":"boolean","default":true},"excerptMaxWords":{"type":"number","default":15},"readMoreAlignment":{"type":"string","default":"left"}},"textdomain":"postgrid","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
 
 /***/ }),
 
@@ -215,7 +215,9 @@ function Edit({
     showExcerpt,
     showMeta,
     excerptMaxWords,
-    readMoreAlignment
+    readMoreAlignment,
+    columns,
+    columnGap
   } = attributes;
   const catIDs = categories?.map(cat => cat.id);
   const posts = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_2__.useSelect)(select => {
@@ -262,6 +264,16 @@ function Edit({
       excerptMaxWords: value
     });
   };
+  const HandleComuns = value => {
+    setAttributes({
+      columns: value
+    });
+  };
+  const HandleColumnGap = value => {
+    setAttributes({
+      columnGap: value
+    });
+  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)(),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
@@ -301,6 +313,18 @@ function Edit({
                   title: "General",
                   initialOpen: true,
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+                    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Columns', 'postgrid'),
+                    min: 2,
+                    max: 6,
+                    onChange: HandleComuns,
+                    value: columns
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+                    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Gap Between Item', 'postgrid'),
+                    min: 0,
+                    max: 100,
+                    onChange: HandleColumnGap,
+                    value: columnGap
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
                     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Number of Posts', 'postgrid'),
                     min: 1,
                     max: 10,
@@ -509,7 +533,11 @@ function Edit({
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
       className: "post-grid",
-      style: {},
+      style: {
+        display: 'grid',
+        gap: `${columnGap}px`,
+        gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`
+      },
       children: posts?.map(post => {
         var _post$_embedded$wpFe;
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {

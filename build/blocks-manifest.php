@@ -40,7 +40,11 @@ return array(
 		'attributes' => array(
 			'columns' => array(
 				'type' => 'number',
-				'default' => 10
+				'default' => 4
+			),
+			'columnGap' => array(
+				'type' => 'number',
+				'default' => 20
 			),
 			'numberOfPosts' => array(
 				'type' => 'number',

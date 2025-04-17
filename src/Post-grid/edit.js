@@ -1,25 +1,17 @@
+import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import {
-	InspectorControls,
-	useBlockProps,
-} from '@wordpress/block-editor';
-import {
-	PanelBody,
-	TabPanel,
-	ToggleControl,
-	RangeControl,
 	Button,
 	ButtonGroup,
+	PanelBody,
+	RangeControl,
+	TabPanel,
+	ToggleControl,
 } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 import { dateI18n, format, getSettings } from '@wordpress/date';
 import { RawHTML } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import {
-	cog,
-	Icon,
-	styles,
-	tableOfContents,
-} from '@wordpress/icons';
+import { cog, Icon, styles, tableOfContents } from '@wordpress/icons';
 
 import './editor.scss';
 import truncateExcerpt from './utils/truncateWords';
@@ -36,6 +28,8 @@ export default function Edit( { attributes, setAttributes } ) {
 		showMeta,
 		excerptMaxWords,
 		readMoreAlignment,
+		columns,
+		columnGap
 	} = attributes;
 	const catIDs = categories?.map( ( cat ) => cat.id );
 	const posts = useSelect(
@@ -50,9 +44,6 @@ export default function Edit( { attributes, setAttributes } ) {
 		},
 		[ numberOfPosts, order, orderBy, catIDs ]
 	);
-
-
-	
 
 	const HandleDisplayFeatureImage = ( value ) => {
 		setAttributes( {
@@ -89,6 +80,16 @@ export default function Edit( { attributes, setAttributes } ) {
 	const handleExcerptMaxWord = ( value ) => {
 		setAttributes( {
 			excerptMaxWords: value,
+		} );
+	};
+	const HandleComuns = ( value ) => {
+		setAttributes( {
+			columns: value,
+		} );
+	};
+	const HandleColumnGap = ( value ) => {
+		setAttributes( {
+			columnGap: value,
 		} );
 	};
 	return (
@@ -136,6 +137,27 @@ export default function Edit( { attributes, setAttributes } ) {
 											title="General"
 											initialOpen={ true }
 										>
+											<RangeControl
+												label={ __(
+													'Columns',
+													'postgrid'
+												) }
+												min={ 2 }
+												max={ 6 }
+												onChange={ HandleComuns }
+												value={ columns }
+											/>
+
+											<RangeControl
+												label={ __(
+													'Gap Between Item',
+													'postgrid'
+												) }
+												min={ 0 }
+												max={ 100 }
+												onChange={ HandleColumnGap }
+												value={ columnGap }
+											/>
 											<RangeControl
 												label={ __(
 													'Number of Posts',
@@ -474,7 +496,14 @@ export default function Edit( { attributes, setAttributes } ) {
 				{ /* </PanelBody> */ }
 			</InspectorControls>
 
-			<div className="post-grid" style={{}}>
+			<div
+				className="post-grid"
+				style={ {
+					display: 'grid',
+					gap: `${ columnGap }px`,
+					gridTemplateColumns: `repeat(${ columns }, minmax(0, 1fr))`,
+				} }
+			>
 				{ posts?.map( ( post ) => (
 					<div key={ post?.id } className="grid-card">
 						<div className="post-grid-thumnail">
