@@ -474,7 +474,7 @@ export default function Edit( { attributes, setAttributes } ) {
 				{ /* </PanelBody> */ }
 			</InspectorControls>
 
-			<div className="post-grid">
+			<div className="post-grid" style={{}}>
 				{ posts?.map( ( post ) => (
 					<div key={ post?.id } className="grid-card">
 						<div className="post-grid-thumnail">
