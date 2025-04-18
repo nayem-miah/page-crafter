@@ -39,9 +39,12 @@ if(isset($attributes['categories'])){
 $posts = get_posts( $args );
 ?>
 <div <?php echo get_block_wrapper_attributes(); ?>>
-    <div class="post-grid" style="grid-template-columns: repeat(<?php echo esc_attr( $attributes['columns'] ); ?>, 1fr);">
+    <div class="post-grid" style="
+    grid-template-columns: repeat(<?php echo esc_attr( $attributes['columns'] ); ?>, 1fr);
+    gap: <?php echo esc_attr( $attributes['columnGap'] ); ?>px;
+">
         <?php foreach ( $posts as $post ) : setup_postdata( $post ); ?>
-        <div class="grid-card">
+        <div class=" grid-card">
             <?php if ( has_post_thumbnail( $post ) && $attributes['displayImage'] ) : ?>
             <div class="post-grid-thumnail">
                 <?php echo get_the_post_thumbnail( $post, 'large', [ 'alt' => get_the_title( $post ) ] ); ?>
