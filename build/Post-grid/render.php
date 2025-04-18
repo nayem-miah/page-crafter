@@ -54,8 +54,8 @@ $posts = get_posts( $args );
             <div class="content-body">
                 <?php if ( $attributes['showTitle']) : ?>
                 <div class="post-grid-title">
-                    <h5>
-                        <a href="<?php the_permalink( $post ); ?>">
+                    <h5 style="text-align:<?php echo esc_attr( $attributes['contentAlignment'] ); ?> ">
+                        <a href=" <?php the_permalink( $post ); ?>">
                             <?php echo get_the_title( $post ); ?>
                         </a>
                     </h5>
@@ -63,16 +63,18 @@ $posts = get_posts( $args );
                 <?php endif; ?>
 
                 <?php if ( $attributes['showMeta'] ) : ?>
-                <div class="post-grid-meta">
+                <div class="post-grid-meta"
+                    style="text-align:<?php echo esc_attr( $attributes['contentAlignment'] ); ?>">
                     <span>By <?php echo get_the_author_meta( 'display_name', $post->post_author ); ?></span>
-                    <time datetime="<?php echo esc_attr( get_the_date( 'c', $post ) ); ?>">
+                    <time datetime=" <?php echo esc_attr( get_the_date( 'c', $post ) ); ?>">
                         <?php echo get_the_date( '', $post ); ?>
                     </time>
                 </div>
                 <?php endif; ?>
 
                 <?php if ( $attributes['showExcerpt'] ) : ?>
-                <div class="post-grid-excerpt">
+                <div class="post-grid-excerpt"
+                    style="text-align:<?php echo esc_attr( $attributes['contentAlignment'] ); ?>">
                     <p>
                         <?php  echo truncate_excerpt(  get_the_excerpt( $post ), $attributes['excerptMaxWords'] ); ?>
 
@@ -81,7 +83,7 @@ $posts = get_posts( $args );
                 <?php endif; ?>
 
                 <?php if ( $attributes['readMore'] ) : ?>
-                <div class="post-grid-btn"
+                <div class=" post-grid-btn"
                     style="text-align: <?php echo esc_attr( $attributes['readMoreAlignment'] ); ?>;">
                     <a href="<?php the_permalink( $post ); ?>">
                         <span><?php esc_html_e( 'Read More', 'postgrid' ); ?></span>

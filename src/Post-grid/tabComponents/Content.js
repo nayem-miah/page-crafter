@@ -1,5 +1,6 @@
 import { __ } from '@wordpress/i18n';
 import { PanelBody, RangeControl, ToggleControl } from '@wordpress/components';
+import Alignmnet from './Alignmnet';
 
 export default function Content( {
 	setAttributes,
@@ -7,6 +8,7 @@ export default function Content( {
 	showMeta,
 	showTitle,
 	excerptMaxWords,
+	contentAlignment,
 } ) {
 	const HandleTitleVisibility = ( value ) => {
 		setAttributes( {
@@ -31,6 +33,12 @@ export default function Content( {
 	};
 	return (
 		<PanelBody title="Content" initialOpen={ false }>
+			<Alignmnet
+				setAttributes={ setAttributes }
+				alignProp={ contentAlignment }
+				fromWhere="content"
+            />
+            
 			<PanelBody title="Title" initialOpen={ false }>
 				<ToggleControl
 					label={ __( 'Title Visibility', 'postgrid' ) }

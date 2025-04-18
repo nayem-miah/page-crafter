@@ -91,6 +91,10 @@ return array(
 			'readMoreAlignment' => array(
 				'type' => 'string',
 				'default' => 'left'
+			),
+			'contentAlignment' => array(
+				'type' => 'string',
+				'default' => 'left'
 			)
 		),
 		'textdomain' => 'postgrid',

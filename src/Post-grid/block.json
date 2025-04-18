@@ -65,6 +65,10 @@
 		"readMoreAlignment": {
 			"type": "string",
 			"default": "left"
+		},
+		"contentAlignment":{
+			"type":"string",
+			"default":"left"
 		}
 	},
 	"textdomain": "postgrid",

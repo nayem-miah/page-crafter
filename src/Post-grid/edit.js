@@ -28,6 +28,7 @@ export default function Edit( { attributes, setAttributes } ) {
 		readMoreAlignment,
 		columns,
 		columnGap,
+		contentAlignment,
 	} = attributes;
 	const catIDs = categories?.map( ( cat ) => cat.id );
 	const posts = useSelect(
@@ -101,6 +102,9 @@ export default function Edit( { attributes, setAttributes } ) {
 											showTitle={ showTitle }
 											showMeta={ showMeta }
 											excerptMaxWords={ excerptMaxWords }
+											contentAlignment={
+												contentAlignment
+											}
 										/>
 										<ActionBtn
 											setAttributes={ setAttributes }
@@ -196,16 +200,19 @@ export default function Edit( { attributes, setAttributes } ) {
 								title={ post?.title?.rendered }
 								link={ post?.link }
 								showTitle={ showTitle }
+								contentAlignment={ contentAlignment }
 							/>
 							<Meta
 								showMeta={ showMeta }
 								author={ post?._embedded?.author }
 								date={ post?.date_gmt }
+								contentAlignment={ contentAlignment }
 							/>
 							<Excerpt
 								showExcerpt={ showExcerpt }
 								excerpt={ post?.excerpt?.rendered }
 								excerptMaxWords={ excerptMaxWords }
+								contentAlignment={ contentAlignment }
 							/>
 
 							<ReadButton
