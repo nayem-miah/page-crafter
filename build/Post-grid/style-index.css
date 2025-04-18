@@ -10,29 +10,27 @@
   display: grid;
   gap: 20px;
 }
-.wp-block-create-block-postgrid .post-grid .grid-card {
+.wp-block-create-block-postgrid .grid-card {
   background: #F5F5F5;
   border-color: #dcdcde;
   border-style: solid;
   border-width: 0px 0px 0px 0px;
   border-radius: 4px 4px 4px 4px;
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1490196078);
+  transition: background-color 0.3s ease-in-out;
+  /* Added transition */
 }
-.wp-block-create-block-postgrid .post-grid .grid-card .post-grid-thumnail img {
+.wp-block-create-block-postgrid .grid-card .post-grid-thumnail img {
   max-width: 100%;
   margin: auto;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.wp-block-create-block-postgrid .post-grid .grid-card .content-body {
-  padding: 0px 12px 24px 12px;
-  margin: 0px 0px 0px 0px;
-}
-.wp-block-create-block-postgrid .post-grid .grid-card .content-body .post-grid-title h5 {
+.wp-block-create-block-postgrid .grid-card .content-body .post-grid-title h5 {
   text-align: center;
 }
-.wp-block-create-block-postgrid .post-grid .grid-card .content-body .post-grid-title h5 a {
+.wp-block-create-block-postgrid .grid-card .content-body .post-grid-title h5 a {
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
@@ -42,7 +40,7 @@
   color: #1A261F;
   margin: 12px 0px 0px 0px;
 }
-.wp-block-create-block-postgrid .post-grid .grid-card .content-body .post-grid-meta {
+.wp-block-create-block-postgrid .grid-card .content-body .post-grid-meta {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -53,7 +51,7 @@
   text-align: center;
   margin: 10px 0px 0px 0px;
 }
-.wp-block-create-block-postgrid .post-grid .grid-card .content-body .post-grid-excerpt {
+.wp-block-create-block-postgrid .grid-card .content-body .post-grid-excerpt {
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -64,7 +62,7 @@
   margin: 20px 0px 0px 0px;
   text-align: center;
 }
-.wp-block-create-block-postgrid .post-grid .grid-card .content-body .post-grid-btn a {
+.wp-block-create-block-postgrid .grid-card .content-body .post-grid-btn a {
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -92,6 +90,11 @@
 .pagecrafter-tab-panel .components-tab-panel__tabs .components-tab-panel__tabs-item {
   background-color: #008db4;
   color: #ffffff;
+}
+
+.wp-block-create-block-postgrid .post-grid .grid-card:hover {
+  /* More specific hover rule */
+  background-color: var(--card-bg-hover);
 }
 
 /*# sourceMappingURL=style-index.css.map*/

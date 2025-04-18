@@ -9,10 +9,11 @@ import Title from './components/Title';
 import Meta from './components/Meta';
 import Excerpt from './components/Excerpt';
 import ReadButton from './components/ReadButton';
-import General from './tabComponents/General';
-import Image from './tabComponents/Image';
-import Content from './tabComponents/Content';
-import ActionBtn from './tabComponents/ActionBtn';
+import General from './generalTabComp/General';
+import Image from './generalTabComp/Image';
+import Content from './generalTabComp/Content';
+import ActionBtn from './generalTabComp/ActionBtn';
+import ContentStyle from './styleTabCom/ContentStyle';
 export default function Edit( { attributes, setAttributes } ) {
 	const {
 		numberOfPosts,
@@ -29,6 +30,11 @@ export default function Edit( { attributes, setAttributes } ) {
 		columns,
 		columnGap,
 		contentAlignment,
+		contentBackground,
+		contentBackgroundHover,
+		activeBackground,
+		contentPadding,
+		contentMargin,
 	} = attributes;
 	const catIDs = categories?.map( ( cat ) => cat.id );
 	const posts = useSelect(
@@ -124,12 +130,21 @@ export default function Edit( { attributes, setAttributes } ) {
 							case 'styles':
 								return (
 									<div>
-										<PanelBody
-											title="Content"
-											initialOpen={ true }
-										>
-											<p>General settings content here</p>
-										</PanelBody>
+										<ContentStyle
+											setAttributes={ setAttributes }
+											activeBackground={
+												activeBackground
+											}
+											contentBackground={
+												contentBackground
+											}
+											contentBackgroundHover={
+												contentBackgroundHover
+											}
+											contentPadding={ contentPadding }
+											contentMargin={ contentMargin }
+										/>
+
 										<PanelBody
 											title="Read More"
 											initialOpen={ false }
@@ -189,13 +204,34 @@ export default function Edit( { attributes, setAttributes } ) {
 				} }
 			>
 				{ posts?.map( ( post ) => (
-					<div key={ post?.id } className="grid-card">
+					<div
+						key={ post?.id }
+						className="grid-card"
+						style={ {
+							background: contentBackground,
+							'--card-bg-hover': contentBackgroundHover,
+						} }
+					>
 						<Thumnail
 							thumnail={ post?._embedded?.[ 'wp:featuredmedia' ] }
 							displayImage={ displayImage }
 						/>
 
-						<div className="content-body">
+						<div
+							className="content-body"
+							style={ {
+								padding: `${ contentPadding?.top || '0px' } ${
+									contentPadding?.right || '0px'
+								} ${ contentPadding?.bottom || '0px' } ${
+									contentPadding?.left || '0px'
+								}`,
+								margin: `${ contentMargin?.top || '0px' } ${
+									contentMargin?.right || '0px'
+								} ${ contentMargin?.bottom || '0px' } ${
+									contentMargin?.left || '0px'
+								}`,
+							} }
+						>
 							<Title
 								title={ post?.title?.rendered }
 								link={ post?.link }
