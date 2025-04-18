@@ -52,8 +52,8 @@ $posts = get_posts( $args );
             <?php endif; ?>
 
             <div class="content-body" style="
-    padding: <?php echo esc_attr( $attributes['contentPadding']['top'] ?? 0 ) . 'px ' . esc_attr( $attributes['contentPadding']['right'] ?? 0 ) . 'px ' . esc_attr( $attributes['contentPadding']['bottom'] ?? 0 ) . 'px ' . esc_attr( $attributes['contentPadding']['left'] ?? 0 ) . 'px'; ?>;
-    margin: <?php echo esc_attr( $attributes['contentMargin']['top'] ?? 0 ) . 'px ' . esc_attr( $attributes['contentMargin']['right'] ?? 0 ) . 'px ' . esc_attr( $attributes['contentMargin']['bottom'] ?? 0 ) . 'px ' . esc_attr( $attributes['contentMargin']['left'] ?? 0 ) . 'px'; ?>;
+    padding: <?php echo esc_attr( $attributes['contentPadding']['top'] ?? 0 ) . ' ' . esc_attr( $attributes['contentPadding']['right'] ?? 0 ) . ' ' . esc_attr( $attributes['contentPadding']['bottom'] ?? 0 ) . ' ' . esc_attr( $attributes['contentPadding']['left'] ?? 0 ) . ' '; ?>;
+    margin: <?php echo esc_attr( $attributes['contentMargin']['top'] ?? 0 ) . ' ' . esc_attr( $attributes['contentMargin']['right'] ?? 0 ) . ' ' . esc_attr( $attributes['contentMargin']['bottom'] ?? 0 ) . ' ' . esc_attr( $attributes['contentMargin']['left'] ?? 0 ) . ' '; ?>;
 ">
 
 
