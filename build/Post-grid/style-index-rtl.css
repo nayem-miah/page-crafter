@@ -9,7 +9,6 @@
 .wp-block-create-block-postgrid .post-grid {
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 .wp-block-create-block-postgrid .post-grid .grid-card {
   background: #F5F5F5;

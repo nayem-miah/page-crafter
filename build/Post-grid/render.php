@@ -39,7 +39,7 @@ if(isset($attributes['categories'])){
 $posts = get_posts( $args );
 ?>
 <div <?php echo get_block_wrapper_attributes(); ?>>
-    <div class="post-grid">
+    <div class="post-grid" style="grid-template-columns: repeat(<?php echo esc_attr( $attributes['columns'] ); ?>, 1fr);">
         <?php foreach ( $posts as $post ) : setup_postdata( $post ); ?>
         <div class="grid-card">
             <?php if ( has_post_thumbnail( $post ) && $attributes['displayImage'] ) : ?>
