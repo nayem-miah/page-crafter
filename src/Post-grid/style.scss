@@ -36,16 +36,16 @@
 				margin-right: var(--titleMarginRight);
 
 				a {
-					font-size: var(--titleFontSize);
+					font-size: 18px;
 					font-style: normal;
-					font-weight: var(--titleFontWeight);
+					font-weight: 600;
 					text-transform: none;
 					text-decoration: none;
 					line-height: 24px;
 					color: var(--titleColor);
 				}
 				a:hover {
-					color: var(--titleColorHover);
+					color: var(--titleHoverColor);
 				}
 			}
 

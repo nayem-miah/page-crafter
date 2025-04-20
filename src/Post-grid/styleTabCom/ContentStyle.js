@@ -8,7 +8,10 @@ export default function ContentStyle( {
 	contentBackground,
 	contentPadding,
 	contentMargin,
-	titleStyle,
+	titleMargin,
+	titleActiveColor,
+	titleHoverColor,
+	titleColor,
 } ) {
 	const currentContentBackgroundColor =
 		activeBackground === 'default'
@@ -16,9 +19,7 @@ export default function ContentStyle( {
 			: contentBackgroundHover;
 
 	const currentTitleColor =
-		titleStyle?.activeColor === 'default'
-			? titleStyle?.color
-			: titleStyle?.hoverColor;
+		titleActiveColor === 'default' ? titleColor : titleHoverColor;
 
 	const handleColorChange = ( color ) => {
 		if ( activeBackground === 'default' ) {
@@ -29,18 +30,12 @@ export default function ContentStyle( {
 	};
 
 	const handleTitleColorChange = ( color ) => {
-		setAttributes( {
-			titleStyle: {
-				...titleStyle,
-				color:
-					titleStyle?.activeColor === 'default'
-						? color
-						: titleStyle?.color,
-				hoverColor: color,
-			},
-		} );
+		if ( titleActiveColor === 'default' ) {
+			setAttributes( { titleColor: color } );
+		} else {
+			setAttributes( { titleHoverColor: color } );
+		}
 	};
-
 
 	return (
 		<PanelBody title="Content" initialOpen={ true }>
@@ -105,7 +100,7 @@ export default function ContentStyle( {
 			<PanelBody title="Title" initialOpen={ false }>
 				<strong>{ __( 'Color', 'postgrid' ) }</strong>
 				<GroupButton
-					active={ titleStyle?.activeColor }
+					active={ titleActiveColor }
 					setAttributes={ setAttributes }
 					from={ 'titleColor' }
 				/>
@@ -114,7 +109,6 @@ export default function ContentStyle( {
 						value={ currentTitleColor }
 						onChange={ handleTitleColorChange }
 						disableCustomColors={ false }
-						titleStyle={ titleStyle }
 					/>
 				</div>
 			</PanelBody>

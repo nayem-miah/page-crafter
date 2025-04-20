@@ -4,11 +4,10 @@ export default function Title( {
 	title,
 	link,
 	contentAlignment,
-	titleStyle,
+	titleColor,
+	titleHoverColor,
+	titleMargin,
 } ) {
-
-
-	
 	return (
 		<>
 			{ showTitle && (
@@ -16,20 +15,16 @@ export default function Title( {
 					<h5
 						style={ {
 							textAlign: contentAlignment,
-							'--titleMarginTop': titleStyle?.margin?.top,
-							'--titleMarginBottom': titleStyle?.margin?.bottom,
-							'--titleMarginLeft': titleStyle?.margin?.left,
-							'--titleMarginRight': titleStyle?.margin?.right,
+							'--titleMarginTop': titleMargin?.top,
+							'--titleMarginBottom': titleMargin.bottom,
+							'--titleMarginLeft': titleMargin?.left,
+							'--titleMarginRight': titleMargin?.right,
 						} }
 					>
 						<a
 							style={ {
-								'--titleColor': titleStyle?.color,
-								'--titleHoverColor': titleStyle?.hoverColor,
-								'--titleFontSize':
-									titleStyle?.typhography?.fontSize,
-								'--titleFontWeight':
-									titleStyle?.typhography?.fontWeight,
+								'--titleColor': titleColor,
+								'--titleHoverColor': titleHoverColor,
 							} }
 							href={ link }
 						>

@@ -156,7 +156,7 @@ const tableOfContents = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODU
   \**********************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/postgrid","version":"0.1.0","title":"PostGrid","category":"Page-Crafter","icon":"edit-page","description":"A simple post grid","example":{},"supports":{"html":false},"attributes":{"columns":{"type":"number","default":4},"columnGap":{"type":"number","default":20},"numberOfPosts":{"type":"number","default":6},"displayImage":{"type":"boolean","default":true},"order":{"type":"string","default":"desc"},"orderBy":{"type":"string","default":"date"},"categories":{"type":"array","items":{"type":"object"}},"readMore":{"type":"boolean","default":true},"showExcerpt":{"type":"boolean","default":true},"showMeta":{"type":"boolean","default":true},"showTitle":{"type":"boolean","default":true},"excerptMaxWords":{"type":"number","default":15},"readMoreAlignment":{"type":"string","default":"left"},"contentAlignment":{"type":"string","default":"left"},"contentBackground":{"type":"string","default":"#F5F5F5"},"contentBackgroundHover":{"type":"string","default":"#E0E0E0"},"activeBackground":{"type":"string","default":"default"},"contentPadding":{"type":"object","default":{"top":"0px","right":"12px","bottom":"24px","left":"12px"}},"contentMargin":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"titleStyle":{"type":"object","default":{"color":"#ff5722","activeColor":"default","hoverColor":"#000000","margin":{"top":"12px","right":"0px","bottom":"0px","left":"0px"},"typhography":{"fontFamily":"inherit","fontSize":"18px","fontWeight":"600"}}}},"textdomain":"postgrid","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/postgrid","version":"0.1.0","title":"PostGrid","category":"Page-Crafter","icon":"edit-page","description":"A simple post grid","example":{},"supports":{"html":false},"attributes":{"columns":{"type":"number","default":4},"columnGap":{"type":"number","default":20},"numberOfPosts":{"type":"number","default":6},"displayImage":{"type":"boolean","default":true},"order":{"type":"string","default":"desc"},"orderBy":{"type":"string","default":"date"},"categories":{"type":"array","items":{"type":"object"}},"readMore":{"type":"boolean","default":true},"showExcerpt":{"type":"boolean","default":true},"showMeta":{"type":"boolean","default":true},"showTitle":{"type":"boolean","default":true},"excerptMaxWords":{"type":"number","default":15},"readMoreAlignment":{"type":"string","default":"left"},"contentAlignment":{"type":"string","default":"left"},"contentBackground":{"type":"string","default":"#F5F5F5"},"contentBackgroundHover":{"type":"string","default":"#E0E0E0"},"activeBackground":{"type":"string","default":"default"},"contentPadding":{"type":"object","default":{"top":"0px","right":"12px","bottom":"24px","left":"12px"}},"contentMargin":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"titleColor":{"type":"string","default":"#ff5722"},"titleActiveColor":{"type":"string","default":"default"},"titleHoverColor":{"type":"string","default":"#000000"},"titleMargin":{"type":"object","default":{"top":"12px","right":"0px","bottom":"0px","left":"0px"}}},"textdomain":"postgrid","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
 
 /***/ }),
 
@@ -328,7 +328,9 @@ function Title({
   title,
   link,
   contentAlignment,
-  titleStyle
+  titleColor,
+  titleHoverColor,
+  titleMargin
 }) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
     children: showTitle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
@@ -336,17 +338,15 @@ function Title({
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h5", {
         style: {
           textAlign: contentAlignment,
-          '--titleMarginTop': titleStyle?.margin?.top,
-          '--titleMarginBottom': titleStyle?.margin?.bottom,
-          '--titleMarginLeft': titleStyle?.margin?.left,
-          '--titleMarginRight': titleStyle?.margin?.right
+          '--titleMarginTop': titleMargin?.top,
+          '--titleMarginBottom': titleMargin.bottom,
+          '--titleMarginLeft': titleMargin?.left,
+          '--titleMarginRight': titleMargin?.right
         },
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
           style: {
-            '--titleColor': titleStyle?.color,
-            '--titleHoverColor': titleStyle?.hoverColor,
-            '--titleFontSize': titleStyle?.typhography?.fontSize,
-            '--titleFontWeight': titleStyle?.typhography?.fontWeight
+            '--titleColor': titleColor,
+            '--titleHoverColor': titleHoverColor
           },
           href: link,
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.RawHTML, {
@@ -433,7 +433,10 @@ function Edit({
     activeBackground,
     contentPadding,
     contentMargin,
-    titleStyle
+    titleColor,
+    titleHoverColor,
+    titleMargin,
+    titleActiveColor
   } = attributes;
   const catIDs = categories?.map(cat => cat.id);
   const posts = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_2__.useSelect)(select => {
@@ -517,7 +520,10 @@ function Edit({
                   contentBackgroundHover: contentBackgroundHover,
                   contentPadding: contentPadding,
                   contentMargin: contentMargin,
-                  titleStyle: titleStyle
+                  titleColor: titleColor,
+                  titleHoverColor: titleHoverColor,
+                  titleActiveColor: titleActiveColor,
+                  titleMargin: titleMargin
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
                   title: "Read More",
                   initialOpen: false,
@@ -591,7 +597,9 @@ function Edit({
             link: post?.link,
             showTitle: showTitle,
             contentAlignment: contentAlignment,
-            titleStyle: titleStyle
+            titleColor: titleColor,
+            titleHoverColor: titleHoverColor,
+            titleMargin: titleMargin
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_Meta__WEBPACK_IMPORTED_MODULE_4__["default"], {
             showMeta: showMeta,
             author: post?._embedded?.author,
@@ -1040,10 +1048,13 @@ function ContentStyle({
   contentBackground,
   contentPadding,
   contentMargin,
-  titleStyle
+  titleMargin,
+  titleActiveColor,
+  titleHoverColor,
+  titleColor
 }) {
   const currentContentBackgroundColor = activeBackground === 'default' ? contentBackground : contentBackgroundHover;
-  const currentTitleColor = titleStyle?.activeColor === 'default' ? titleStyle?.color : titleStyle?.hoverColor;
+  const currentTitleColor = titleActiveColor === 'default' ? titleColor : titleHoverColor;
   const handleColorChange = color => {
     if (activeBackground === 'default') {
       setAttributes({
@@ -1056,13 +1067,15 @@ function ContentStyle({
     }
   };
   const handleTitleColorChange = color => {
-    setAttributes({
-      titleStyle: {
-        ...titleStyle,
-        color: titleStyle?.activeColor === 'default' ? color : titleStyle?.color,
-        hoverColor: color
-      }
-    });
+    if (titleActiveColor === 'default') {
+      setAttributes({
+        titleColor: color
+      });
+    } else {
+      setAttributes({
+        titleHoverColor: color
+      });
+    }
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
     title: "Content",
@@ -1159,7 +1172,7 @@ function ContentStyle({
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("strong", {
         children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Color', 'postgrid')
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_GroupButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        active: titleStyle?.activeColor,
+        active: titleActiveColor,
         setAttributes: setAttributes,
         from: 'titleColor'
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
@@ -1169,8 +1182,7 @@ function ContentStyle({
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
           value: currentTitleColor,
           onChange: handleTitleColorChange,
-          disableCustomColors: false,
-          titleStyle: titleStyle
+          disableCustomColors: false
         })
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
@@ -1210,16 +1222,12 @@ __webpack_require__.r(__webpack_exports__);
 function GroupButton({
   active,
   setAttributes,
-  from,
-  titleStyle
+  from
 }) {
   const handleDefault = () => {
     if (from === 'titleColor') {
       setAttributes({
-        titleStyle: {
-          ...titleStyle,
-          activeColor: 'default'
-        }
+        titleActiveColor: 'default'
       });
     } else if (from === 'contentBackground') {
       setAttributes({
@@ -1230,10 +1238,7 @@ function GroupButton({
   const handleHover = () => {
     if (from === 'titleColor') {
       setAttributes({
-        titleStyle: {
-          ...titleStyle,
-          activeColor: 'hover'
-        }
+        titleActiveColor: 'hover'
       });
     } else if (from === 'contentBackground') {
       setAttributes({

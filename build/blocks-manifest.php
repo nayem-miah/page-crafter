@@ -126,23 +126,25 @@ return array(
 					'left' => '0px'
 				)
 			),
-			'titleStyle' => array(
+			'titleColor' => array(
+				'type' => 'string',
+				'default' => '#ff5722'
+			),
+			'titleActiveColor' => array(
+				'type' => 'string',
+				'default' => 'default'
+			),
+			'titleHoverColor' => array(
+				'type' => 'string',
+				'default' => '#000000'
+			),
+			'titleMargin' => array(
 				'type' => 'object',
 				'default' => array(
-					'color' => '#ff5722',
-					'activeColor' => 'default',
-					'hoverColor' => '#000000',
-					'margin' => array(
-						'top' => '12px',
-						'right' => '0px',
-						'bottom' => '0px',
-						'left' => '0px'
-					),
-					'typhography' => array(
-						'fontFamily' => 'inherit',
-						'fontSize' => '18px',
-						'fontWeight' => '600'
-					)
+					'top' => '12px',
+					'right' => '0px',
+					'bottom' => '0px',
+					'left' => '0px'
 				)
 			)
 		),

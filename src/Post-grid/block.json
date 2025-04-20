@@ -99,27 +99,25 @@
 				"bottom": "0px",
 				"left": "0px"
 			}
-		},
-		"titleStyle": {
+		},"titleColor": {
+			"type": "string",
+			"default": "#ff5722"
+		},"titleActiveColor": {
+			"type": "string",
+			"default": "default"
+		},"titleHoverColor": {
+			"type": "string",
+			"default": "#000000"
+		}, "titleMargin": {
 			"type": "object",
 			"default": {
-				"color": "#ff5722",
-				"activeColor":"default",
-				"hoverColor": "#000000",
-
-				"margin": {
-					"top": "12px",
-					"right": "0px",
-					"bottom": "0px",
-					"left": "0px"
-				},
-				"typhography": {
-					"fontFamily": "inherit",
-					"fontSize": "18px",
-					"fontWeight": "600"
-				}
+				"top": "12px",
+				"right": "0px",
+				"bottom": "0px",
+				"left": "0px"
 			}
 		}
+
 	},
 	"textdomain": "postgrid",
 	"editorScript": "file:./index.js",

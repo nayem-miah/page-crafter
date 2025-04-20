@@ -35,7 +35,10 @@ export default function Edit( { attributes, setAttributes } ) {
 		activeBackground,
 		contentPadding,
 		contentMargin,
-		titleStyle,
+		titleColor,
+		titleHoverColor,
+		titleMargin,
+		titleActiveColor,
 	} = attributes;
 	const catIDs = categories?.map( ( cat ) => cat.id );
 	const posts = useSelect(
@@ -144,7 +147,10 @@ export default function Edit( { attributes, setAttributes } ) {
 											}
 											contentPadding={ contentPadding }
 											contentMargin={ contentMargin }
-											titleStyle={ titleStyle }
+											titleColor={ titleColor }
+											titleHoverColor={ titleHoverColor }
+											titleActiveColor={ titleActiveColor }
+											titleMargin={ titleMargin }
 										/>
 
 										<PanelBody
@@ -238,7 +244,10 @@ export default function Edit( { attributes, setAttributes } ) {
 								link={ post?.link }
 								showTitle={ showTitle }
 								contentAlignment={ contentAlignment }
-								titleStyle={ titleStyle }
+								titleColor={ titleColor }
+								titleHoverColor={ titleHoverColor }
+								titleMargin={ titleMargin }
+						
 							/>
 							<Meta
 								showMeta={ showMeta }

@@ -4,15 +4,11 @@ export default function GroupButton( {
 	active,
 	setAttributes,
 	from,
-	titleStyle,
 } ) {
 	const handleDefault = () => {
 		if ( from === 'titleColor' ) {
 			setAttributes( {
-				titleStyle: {
-					...titleStyle,
-					activeColor: 'default',
-				},
+				titleActiveColor: 'default',
 			} );
 		} else if ( from === 'contentBackground' ) {
 			setAttributes( {
@@ -24,10 +20,7 @@ export default function GroupButton( {
 	const handleHover = () => {
 		if ( from === 'titleColor' ) {
 			setAttributes( {
-				titleStyle: {
-					...titleStyle,
-					activeColor: 'hover',
-				},
+				titleActiveColor: 'hover',
 			} );
 		} else if ( from === 'contentBackground' ) {
 			setAttributes( {
