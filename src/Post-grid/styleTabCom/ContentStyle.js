@@ -16,6 +16,10 @@ export default function ContentStyle( {
 	metaHoverColor,
 	metaActiveColor,
 	metaMargin,
+	desMargin,
+	desColor,
+	desHoverColor,
+	desActiveColor,
 } ) {
 	const currentContentBackgroundColor =
 		activeBackground === 'default'
@@ -28,6 +32,8 @@ export default function ContentStyle( {
 	const currentMetaColor =
 		metaActiveColor === 'default' ? metaColor : metaHoverColor;
 
+	const currentDesColor =
+		desActiveColor === 'default' ? desColor : desHoverColor;
 	const handleColorChange = ( color ) => {
 		if ( activeBackground === 'default' ) {
 			setAttributes( { contentBackground: color } );
@@ -50,7 +56,13 @@ export default function ContentStyle( {
 			setAttributes( { metaHoverColor: color } );
 		}
 	};
-
+	const handleDesColorChange = ( color ) => {
+		if ( desActiveColor === 'default' ) {
+			setAttributes( { desColor: color } );
+		} else {
+			setAttributes( { desHoverColor: color } );
+		}
+	};
 
 	return (
 		<PanelBody title="Content" initialOpen={ true }>
@@ -175,7 +187,35 @@ export default function ContentStyle( {
 				/>
 			</PanelBody>
 			<PanelBody title="Description" initialOpen={ false }>
-				<h1>This is for description</h1>
+				<strong>{ __( 'Color', 'postgrid' ) }</strong>
+				<GroupButton
+					active={ desActiveColor }
+					setAttributes={ setAttributes }
+					from={ 'decColor' }
+				/>
+				<div style={ { marginTop: '16px' } }>
+					<ColorPalette
+						value={ currentDesColor }
+						onChange={ handleDesColorChange }
+						disableCustomColors={ false }
+					/>
+				</div>
+
+				<BoxControl
+					label={ __( 'Meta Margin', 'postgrid' ) }
+					units={ [
+						{ label: 'px', value: 'px' },
+						{ label: '%', value: '%' },
+						{ label: 'em', value: 'em' },
+						{ label: 'rem', value: 'rem' },
+						{ label: 'vw', value: 'vw' },
+						{ label: 'vh', value: 'vh' },
+					] }
+					values={ metaMargin }
+					onChange={ ( newPadding ) =>
+						setAttributes( { metaMargin: newPadding } )
+					}
+				/>
 			</PanelBody>
 		</PanelBody>
 	);

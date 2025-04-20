@@ -43,6 +43,11 @@ export default function Edit( { attributes, setAttributes } ) {
 		metaHoverColor,
 		metaActiveColor,
 		metaMargin,
+		desMargin,
+		desColor,
+		desHoverColor,
+		desActiveColor,
+
 	} = attributes;
 	const catIDs = categories?.map( ( cat ) => cat.id );
 	const posts = useSelect(
@@ -153,12 +158,19 @@ export default function Edit( { attributes, setAttributes } ) {
 											contentMargin={ contentMargin }
 											titleColor={ titleColor }
 											titleHoverColor={ titleHoverColor }
-											titleActiveColor={ titleActiveColor }
+											titleActiveColor={
+												titleActiveColor
+											}
 											titleMargin={ titleMargin }
 											metaColor={ metaColor }
 											metaHoverColor={ metaHoverColor }
 											metaActiveColor={ metaActiveColor }
 											metaMargin={ metaMargin }
+											desMargin={ desMargin }
+											desColor={ desColor }
+											desHoverColor={ desHoverColor }
+											desActiveColor={ desActiveColor }
+											
 										/>
 
 										<PanelBody
@@ -255,7 +267,6 @@ export default function Edit( { attributes, setAttributes } ) {
 								titleColor={ titleColor }
 								titleHoverColor={ titleHoverColor }
 								titleMargin={ titleMargin }
-						
 							/>
 							<Meta
 								showMeta={ showMeta }
@@ -271,6 +282,9 @@ export default function Edit( { attributes, setAttributes } ) {
 								excerpt={ post?.excerpt?.rendered }
 								excerptMaxWords={ excerptMaxWords }
 								contentAlignment={ contentAlignment }
+								desMargin={ desMargin }
+								desColor={ desColor }
+								desHoverColor={ desHoverColor }
 							/>
 
 							<ReadButton

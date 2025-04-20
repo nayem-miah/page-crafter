@@ -5,13 +5,25 @@ export default function Excerpt( {
 	excerptMaxWords,
 	showExcerpt,
 	contentAlignment,
+	desMargin,
+	desColor,
+	desHoverColor
+
 } ) {
 	return (
 		<>
 			{ showExcerpt && (
 				<div
 					className="post-grid-excerpt"
-					style={ { textAlign: contentAlignment } }
+					style={ {
+						'--excerptTextAlign': contentAlignment,
+						'--excerptColor': desColor,
+						'--excerptHoverColor': desHoverColor,
+						'--excerptMarginTop': desMargin?.top,
+						'--excerptMarginRight': desMargin?.right,
+						'--excerptMarginBottom': desMargin?.bottom,
+						'--excerptMarginLeft': desMargin?.left,
+					} }
 				>
 					<p>
 						<RawHTML>

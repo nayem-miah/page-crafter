@@ -1,4 +1,3 @@
-//
 .wp-block-create-block-postgrid {
 	background-color: #ffffff;
 	color: #292929;
@@ -14,11 +13,10 @@
 		background: var(--card-bg);
 		border-color: #dcdcde;
 		border-style: solid;
-		border-width: 0px 0px 0px 0px;
-		border-radius: 4px 4px 4px 4px;
+		border-width: 0px;
+		border-radius: 4px;
 		box-shadow: 0px 3px 6px 0px #00000026;
 		transition: background-color 0.3s ease-in-out;
-		/* Added transition */
 
 		.post-grid-thumnail img {
 			max-width: 100%;
@@ -37,9 +35,7 @@
 
 				a {
 					font-size: 18px;
-					font-style: normal;
 					font-weight: 600;
-					text-transform: none;
 					text-decoration: none;
 					line-height: 24px;
 					color: var(--titleColor);
@@ -51,59 +47,75 @@
 
 			.post-grid-meta {
 				font-size: 14px;
-				font-style: normal;
 				font-weight: 400;
-				text-transform: none;
-				text-decoration: none;
 				line-height: 20px;
-				color: #7b7878;
+				color: var(--metaColor);
 				text-align: var(--metaTextAlign);
 				margin-top: var(--metaMarginTop);
 				margin-right: var(--metaMarginRight);
 				margin-bottom: var(--metaMarginBottom);
 				margin-left: var(--metaMarginLeft);
-				color: var(--metaColor);
 			}
-
 			.post-grid-meta:hover {
 				color: var(--metaHoverColor);
 			}
 
 			.post-grid-excerpt {
 				font-size: 16px;
-				font-style: normal;
 				font-weight: 400;
-				text-transform: none;
-				text-decoration: none;
 				line-height: 28px;
-				color: #1a261f;
-				margin: 20px 0px 0px 0px;
-				text-align: center;
+				color: var(--excerptColor);
+				text-align: var(--excerptTextAlign);
+				margin-top: var(--excerptMarginTop);
+				margin-right: var(--excerptMarginRight);
+				margin-bottom: var(--excerptMarginBottom);
+				margin-left: var(--excerptMarginLeft);
+			}
+			.post-grid-excerpt:hover {
+				color: var(--excerptHoverColor);
 			}
 
 			.post-grid-btn a {
 				font-size: 16px;
-				font-style: normal;
-				font-weight: 400;
-				text-transform: none;
-				text-decoration: none;
-				line-height: 24px;
-				color: #ffffff;
-				box-shadow: none;
-				padding: 8px 16px 8px 16px;
-				margin: 20px 0px 0px 0px;
-				border-color: #dcdcde;
-				border-style: solid;
-				border-width: 0px 0px 0px 0px;
-				border-radius: 4px 4px 4px 4px;
+				padding: 8px 16px;
+				margin-top: 20px;
+				color: #fff;
 				background: #0053f0;
+				border-radius: 4px;
+				display: inline-block;
 			}
 		}
 	}
 
 	.grid-card:hover {
 		background-color: var(--card-bg-hover);
-		/* Added hover effect */
+	}
+
+	/* Responsive Styles */
+	@media (max-width: 1024px) {
+		.post-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (max-width: 575px) {
+		.post-grid {
+			grid-template-columns: repeat(1, 1fr);
+		}
+
+		.grid-card .content-body .post-grid-title h5 a {
+			font-size: 16px;
+		}
+
+		.grid-card .content-body .post-grid-meta,
+		.grid-card .content-body .post-grid-excerpt {
+			font-size: 14px;
+		}
+
+		.grid-card .content-body .post-grid-btn a {
+			font-size: 14px;
+			padding: 6px 12px;
+		}
 	}
 }
 
@@ -122,6 +134,5 @@
 }
 
 .wp-block-create-block-postgrid .post-grid .grid-card:hover {
-	/* More specific hover rule */
 	background-color: var(--card-bg-hover);
 }

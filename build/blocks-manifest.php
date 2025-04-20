@@ -167,6 +167,27 @@ return array(
 					'bottom' => '0px',
 					'left' => '0px'
 				)
+			),
+			'desColor' => array(
+				'type' => 'string',
+				'default' => '#ff5722'
+			),
+			'desActiveColor' => array(
+				'type' => 'string',
+				'default' => 'default'
+			),
+			'desHoverColor' => array(
+				'type' => 'string',
+				'default' => '#000000'
+			),
+			'desMargin' => array(
+				'type' => 'object',
+				'default' => array(
+					'top' => '0px',
+					'right' => '0px',
+					'bottom' => '0px',
+					'left' => '0px'
+				)
 			)
 		),
 		'textdomain' => 'postgrid',
