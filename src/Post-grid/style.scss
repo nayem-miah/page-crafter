@@ -1,105 +1,102 @@
-// 
+//
 .wp-block-create-block-postgrid {
-
 	background-color: #ffffff;
 	color: #292929;
 	padding: 2px;
 
 	.post-grid {
 		display: grid;
-		gap: 20px;
-		// grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: var(--column-gap);
+		grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+	}
 
-		.grid-card {
+	.grid-card {
+		background: var(--card-bg);
+		border-color: #dcdcde;
+		border-style: solid;
+		border-width: 0px 0px 0px 0px;
+		border-radius: 4px 4px 4px 4px;
+		box-shadow: 0px 3px 6px 0px #00000026;
+		transition: background-color 0.3s ease-in-out;
+		/* Added transition */
 
-			background: #F5F5F5;
-			border-color: #dcdcde;
-			border-style: solid;
-			border-width: 0px 0px 0px 0px;
-			border-radius: 4px 4px 4px 4px;
-			box-shadow: 0px 3px 6px 0px #00000026;
+		.post-grid-thumnail img {
+			max-width: 100%;
+			margin: auto;
+			height: 100%;
+			object-fit: cover;
+		}
 
-			.post-grid-thumnail img {
-				max-width: 100%;
-				margin: auto;
-				height: 100%;
-				object-fit: cover;
+		.content-body {
+			.post-grid-title h5 {
+				text-align: center;
+				margin-top: var(--titleMarginTop);
+				margin-bottom: var(--titleMarginBottom);
+				margin-left: var(--titleMarginLeft);
+				margin-right: var(--titleMarginRight);
 
-			}
-
-			.content-body {
-				padding: 0px 12px 24px 12px;
-				margin: 0px 0px 0px 0px;
-
-				.post-grid-title h5 {
-					text-align: center;
-
-					a {
-						font-size: 18px;
-						font-style: normal;
-						font-weight: 600;
-						text-transform: none;
-						text-decoration: none;
-						line-height: 24px;
-						color: #1A261F;
-						margin: 12px 0px 0px 0px;
-					}
-
-
-
-				}
-
-				.post-grid-meta {
-
-					font-size: 14px;
+				a {
+					font-size: var(--titleFontSize);
 					font-style: normal;
-					font-weight: 400;
-					text-transform: none;
-					text-decoration: none;
-					line-height: 20px;
-					color: #7B7878;
-					text-align: center;
-					margin: 10px 0px 0px 0px;
-
-				}
-
-				.post-grid-excerpt {
-					font-size: 16px;
-					font-style: normal;
-					font-weight: 400;
-					text-transform: none;
-					text-decoration: none;
-					line-height: 28px;
-					color: #1A261F;
-					margin: 20px 0px 0px 0px;
-					text-align: center;
-
-				}
-
-				.post-grid-btn a {
-					font-size: 16px;
-					font-style: normal;
-					font-weight: 400;
+					font-weight: var(--titleFontWeight);
 					text-transform: none;
 					text-decoration: none;
 					line-height: 24px;
-					color: #FFFFFF;
-					box-shadow: none;
-					padding: 8px 16px 8px 16px;
-					margin: 20px 0px 0px 0px;
-					border-color: #DCDCDE;
-					border-style: solid;
-					border-width: 0px 0px 0px 0px;
-					border-radius: 4px 4px 4px 4px;
-					background: #0053F0;
+					color: var(--titleColor);
+				}
+				a:hover {
+					color: var(--titleColorHover);
 				}
 			}
 
+			.post-grid-meta {
+				font-size: 14px;
+				font-style: normal;
+				font-weight: 400;
+				text-transform: none;
+				text-decoration: none;
+				line-height: 20px;
+				color: #7b7878;
+				text-align: center;
+				margin: 10px 0px 0px 0px;
+			}
 
+			.post-grid-excerpt {
+				font-size: 16px;
+				font-style: normal;
+				font-weight: 400;
+				text-transform: none;
+				text-decoration: none;
+				line-height: 28px;
+				color: #1a261f;
+				margin: 20px 0px 0px 0px;
+				text-align: center;
+			}
+
+			.post-grid-btn a {
+				font-size: 16px;
+				font-style: normal;
+				font-weight: 400;
+				text-transform: none;
+				text-decoration: none;
+				line-height: 24px;
+				color: #ffffff;
+				box-shadow: none;
+				padding: 8px 16px 8px 16px;
+				margin: 20px 0px 0px 0px;
+				border-color: #dcdcde;
+				border-style: solid;
+				border-width: 0px 0px 0px 0px;
+				border-radius: 4px 4px 4px 4px;
+				background: #0053f0;
+			}
 		}
 	}
 
-
+	.grid-card:hover {
+		background-color: var(--card-bg-hover);
+		/* Added hover effect */
+	}
 }
 
 .pagecrafter-tab-panel .components-tab-panel__tabs {
@@ -113,7 +110,10 @@
 	.components-tab-panel__tabs-item {
 		background-color: #008db4;
 		color: #ffffff;
-
 	}
+}
 
+.wp-block-create-block-postgrid .post-grid .grid-card:hover {
+	/* More specific hover rule */
+	background-color: var(--card-bg-hover);
 }

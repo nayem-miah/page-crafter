@@ -65,6 +65,60 @@
 		"readMoreAlignment": {
 			"type": "string",
 			"default": "left"
+		},
+		"contentAlignment": {
+			"type": "string",
+			"default": "left"
+		},
+		"contentBackground": {
+			"type": "string",
+			"default": "#F5F5F5"
+		},
+		"contentBackgroundHover": {
+			"type": "string",
+			"default": "#E0E0E0"
+		},
+		"activeBackground": {
+			"type": "string",
+			"default": "default"
+		},
+		"contentPadding": {
+			"type": "object",
+			"default": {
+				"top": "0px",
+				"right": "12px",
+				"bottom": "24px",
+				"left": "12px"
+			}
+		},
+		"contentMargin": {
+			"type": "object",
+			"default": {
+				"top": "0px",
+				"right": "0px",
+				"bottom": "0px",
+				"left": "0px"
+			}
+		},
+		"titleStyle": {
+			"type": "object",
+			"default": {
+				"color": "#ff5722",
+				"activeColor":"default",
+				"hoverColor": "#000000",
+
+				"margin": {
+					"top": "12px",
+					"right": "0px",
+					"bottom": "0px",
+					"left": "0px"
+				},
+				"typhography": {
+					"fontFamily": "inherit",
+					"fontSize": "18px",
+					"fontWeight": "600"
+				}
+			}
 		}
 	},
 	"textdomain": "postgrid",

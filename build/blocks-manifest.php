@@ -91,6 +91,59 @@ return array(
 			'readMoreAlignment' => array(
 				'type' => 'string',
 				'default' => 'left'
+			),
+			'contentAlignment' => array(
+				'type' => 'string',
+				'default' => 'left'
+			),
+			'contentBackground' => array(
+				'type' => 'string',
+				'default' => '#F5F5F5'
+			),
+			'contentBackgroundHover' => array(
+				'type' => 'string',
+				'default' => '#E0E0E0'
+			),
+			'activeBackground' => array(
+				'type' => 'string',
+				'default' => 'default'
+			),
+			'contentPadding' => array(
+				'type' => 'object',
+				'default' => array(
+					'top' => '0px',
+					'right' => '12px',
+					'bottom' => '24px',
+					'left' => '12px'
+				)
+			),
+			'contentMargin' => array(
+				'type' => 'object',
+				'default' => array(
+					'top' => '0px',
+					'right' => '0px',
+					'bottom' => '0px',
+					'left' => '0px'
+				)
+			),
+			'titleStyle' => array(
+				'type' => 'object',
+				'default' => array(
+					'color' => '#ff5722',
+					'activeColor' => 'default',
+					'hoverColor' => '#000000',
+					'margin' => array(
+						'top' => '12px',
+						'right' => '0px',
+						'bottom' => '0px',
+						'left' => '0px'
+					),
+					'typhography' => array(
+						'fontFamily' => 'inherit',
+						'fontSize' => '18px',
+						'fontWeight' => '600'
+					)
+				)
 			)
 		),
 		'textdomain' => 'postgrid',
