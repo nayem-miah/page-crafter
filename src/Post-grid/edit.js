@@ -39,6 +39,10 @@ export default function Edit( { attributes, setAttributes } ) {
 		titleHoverColor,
 		titleMargin,
 		titleActiveColor,
+		metaColor,
+		metaHoverColor,
+		metaActiveColor,
+		metaMargin,
 	} = attributes;
 	const catIDs = categories?.map( ( cat ) => cat.id );
 	const posts = useSelect(
@@ -151,6 +155,10 @@ export default function Edit( { attributes, setAttributes } ) {
 											titleHoverColor={ titleHoverColor }
 											titleActiveColor={ titleActiveColor }
 											titleMargin={ titleMargin }
+											metaColor={ metaColor }
+											metaHoverColor={ metaHoverColor }
+											metaActiveColor={ metaActiveColor }
+											metaMargin={ metaMargin }
 										/>
 
 										<PanelBody
@@ -254,6 +262,9 @@ export default function Edit( { attributes, setAttributes } ) {
 								author={ post?._embedded?.author }
 								date={ post?.date_gmt }
 								contentAlignment={ contentAlignment }
+								metaColor={ metaColor }
+								metaHoverColor={ metaHoverColor }
+								metaMargin={ metaMargin }
 							/>
 							<Excerpt
 								showExcerpt={ showExcerpt }

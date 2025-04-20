@@ -146,6 +146,27 @@ return array(
 					'bottom' => '0px',
 					'left' => '0px'
 				)
+			),
+			'metaColor' => array(
+				'type' => 'string',
+				'default' => '#ff5722'
+			),
+			'metaActiveColor' => array(
+				'type' => 'string',
+				'default' => 'default'
+			),
+			'metaHoverColor' => array(
+				'type' => 'string',
+				'default' => '#000000'
+			),
+			'metaMargin' => array(
+				'type' => 'object',
+				'default' => array(
+					'top' => '0px',
+					'right' => '0px',
+					'bottom' => '0px',
+					'left' => '0px'
+				)
 			)
 		),
 		'textdomain' => 'postgrid',

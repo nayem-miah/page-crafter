@@ -99,16 +99,20 @@
 				"bottom": "0px",
 				"left": "0px"
 			}
-		},"titleColor": {
+		},
+		"titleColor": {
 			"type": "string",
 			"default": "#ff5722"
-		},"titleActiveColor": {
+		},
+		"titleActiveColor": {
 			"type": "string",
 			"default": "default"
-		},"titleHoverColor": {
+		},
+		"titleHoverColor": {
 			"type": "string",
 			"default": "#000000"
-		}, "titleMargin": {
+		},
+		"titleMargin": {
 			"type": "object",
 			"default": {
 				"top": "12px",
@@ -116,8 +120,28 @@
 				"bottom": "0px",
 				"left": "0px"
 			}
+		},
+		"metaColor": {
+			"type": "string",
+			"default": "#ff5722"
+		},
+		"metaActiveColor": {
+			"type": "string",
+			"default": "default"
+		},
+		"metaHoverColor": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"metaMargin": {
+			"type": "object",
+			"default": {
+				"top": "0px",
+				"right": "0px",
+				"bottom": "0px",
+				"left": "0px"
+			}
 		}
-
 	},
 	"textdomain": "postgrid",
 	"editorScript": "file:./index.js",

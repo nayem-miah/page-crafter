@@ -14,6 +14,10 @@ export default function GroupButton( {
 			setAttributes( {
 				activeBackground: 'default',
 			} );
+		}else if ( from === 'metaColor' ) {
+			setAttributes( {
+				metaActiveColor: 'default',
+			} );
 		}
 	};
 
@@ -25,6 +29,10 @@ export default function GroupButton( {
 		} else if ( from === 'contentBackground' ) {
 			setAttributes( {
 				activeBackground: 'hover',
+			} );
+		}else if ( from === 'metaColor' ) {
+			setAttributes( {
+				metaActiveColor: 'hover',
 			} );
 		}
 	};

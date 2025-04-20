@@ -12,6 +12,10 @@ export default function ContentStyle( {
 	titleActiveColor,
 	titleHoverColor,
 	titleColor,
+	metaColor,
+	metaHoverColor,
+	metaActiveColor,
+	metaMargin,
 } ) {
 	const currentContentBackgroundColor =
 		activeBackground === 'default'
@@ -20,6 +24,9 @@ export default function ContentStyle( {
 
 	const currentTitleColor =
 		titleActiveColor === 'default' ? titleColor : titleHoverColor;
+
+	const currentMetaColor =
+		metaActiveColor === 'default' ? metaColor : metaHoverColor;
 
 	const handleColorChange = ( color ) => {
 		if ( activeBackground === 'default' ) {
@@ -36,6 +43,14 @@ export default function ContentStyle( {
 			setAttributes( { titleHoverColor: color } );
 		}
 	};
+	const handleMetaColorChange = ( color ) => {
+		if ( metaActiveColor === 'default' ) {
+			setAttributes( { metaColor: color } );
+		} else {
+			setAttributes( { metaHoverColor: color } );
+		}
+	};
+
 
 	return (
 		<PanelBody title="Content" initialOpen={ true }>
@@ -111,9 +126,53 @@ export default function ContentStyle( {
 						disableCustomColors={ false }
 					/>
 				</div>
+
+				<BoxControl
+					label={ __( 'Title Margin', 'postgrid' ) }
+					units={ [
+						{ label: 'px', value: 'px' },
+						{ label: '%', value: '%' },
+						{ label: 'em', value: 'em' },
+						{ label: 'rem', value: 'rem' },
+						{ label: 'vw', value: 'vw' },
+						{ label: 'vh', value: 'vh' },
+					] }
+					values={ titleMargin }
+					onChange={ ( newPadding ) =>
+						setAttributes( { titleMargin: newPadding } )
+					}
+				/>
 			</PanelBody>
 			<PanelBody title="Meta" initialOpen={ false }>
-				<h1>This is for Meta</h1>
+				<strong>{ __( 'Color', 'postgrid' ) }</strong>
+				<GroupButton
+					active={ metaActiveColor }
+					setAttributes={ setAttributes }
+					from={ 'metaColor' }
+				/>
+				<div style={ { marginTop: '16px' } }>
+					<ColorPalette
+						value={ currentMetaColor }
+						onChange={ handleMetaColorChange }
+						disableCustomColors={ false }
+					/>
+				</div>
+
+				<BoxControl
+					label={ __( 'Meta Margin', 'postgrid' ) }
+					units={ [
+						{ label: 'px', value: 'px' },
+						{ label: '%', value: '%' },
+						{ label: 'em', value: 'em' },
+						{ label: 'rem', value: 'rem' },
+						{ label: 'vw', value: 'vw' },
+						{ label: 'vh', value: 'vh' },
+					] }
+					values={ metaMargin }
+					onChange={ ( newPadding ) =>
+						setAttributes( { metaMargin: newPadding } )
+					}
+				/>
 			</PanelBody>
 			<PanelBody title="Description" initialOpen={ false }>
 				<h1>This is for description</h1>

@@ -57,8 +57,16 @@
 				text-decoration: none;
 				line-height: 20px;
 				color: #7b7878;
-				text-align: center;
-				margin: 10px 0px 0px 0px;
+				text-align: var(--metaTextAlign);
+				margin-top: var(--metaMarginTop);
+				margin-right: var(--metaMarginRight);
+				margin-bottom: var(--metaMarginBottom);
+				margin-left: var(--metaMarginLeft);
+				color: var(--metaColor);
+			}
+
+			.post-grid-meta:hover {
+				color: var(--metaHoverColor);
 			}
 
 			.post-grid-excerpt {

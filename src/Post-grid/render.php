@@ -41,8 +41,8 @@ $posts = get_posts($args);
 
 <div <?php echo get_block_wrapper_attributes(); ?>>
     <div class="post-grid" style="
-        grid-template-columns: repeat(<?php echo esc_attr($attributes['columns']); ?>, 1fr);
         gap: <?php echo esc_attr($attributes['columnGap']); ?>px;
+        --columns: <?php echo esc_attr($attributes['columns']); ?>
     ">
         <?php foreach ($posts as $post):
             setup_postdata($post); ?>
@@ -62,8 +62,11 @@ $posts = get_posts($args);
                     ">
                     <?php if ($attributes['showTitle']): ?>
                         <div class="post-grid-title">
-                            <h5 style="text-align: <?php echo esc_attr($attributes['contentAlignment']); ?>;">
-                                <a href="<?php the_permalink($post); ?>">
+                            <h5
+                                style="text-align: <?php echo esc_attr($attributes['contentAlignment']); ?>; --titleHoverColor: <?php echo esc_attr($attributes['titleHoverColor']); ?>;">
+                                <a href="<?php the_permalink($post); ?>"
+                                    style="
+                                    --titleColor: <?php echo esc_attr($attributes['titleColor']); ?>;--titleHoverColor: <?php echo esc_attr($attributes['titleHoverColor']); ?>;">
                                     <?php echo get_the_title($post); ?>
                                 </a>
                             </h5>
@@ -71,14 +74,23 @@ $posts = get_posts($args);
                     <?php endif; ?>
 
                     <?php if ($attributes['showMeta']): ?>
-                        <div class="post-grid-meta"
-                            style="text-align: <?php echo esc_attr($attributes['contentAlignment']); ?>;">
+                        <div class="post-grid-meta" style="--metaTextAlign: <?php echo esc_attr($attributes['contentAlignment']); ?>;
+                               --metaHoverColor: <?php echo esc_attr($attributes['metaHoverColor']); ?>;
+                               --metaColor: <?php echo esc_attr($attributes['metaColor']); ?>;
+                               --metaMarginTop: <?php echo esc_attr($attributes['metaMargin']['top']); ?>;
+                               --metaMarginBottom: <?php echo esc_attr($attributes['metaMargin']['bottom']); ?>;
+                               --metaMarginLeft: <?php echo esc_attr($attributes['metaMargin']['left']); ?>;
+                               --metaMarginRight: <?php echo esc_attr($attributes['metaMargin']['right']); ?>;">
+
                             <span>By <?php echo get_the_author_meta('display_name', $post->post_author); ?></span>
                             <time datetime="<?php echo esc_attr(get_the_date('c', $post)); ?>">
                                 <?php echo get_the_date('', $post); ?>
                             </time>
                         </div>
                     <?php endif; ?>
+
+
+
 
                     <?php if ($attributes['showExcerpt']): ?>
                         <div class="post-grid-excerpt"
