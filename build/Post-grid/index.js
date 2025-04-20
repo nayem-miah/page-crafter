@@ -1334,7 +1334,7 @@ function ContentStyle({
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_GroupButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
         active: desActiveColor,
         setAttributes: setAttributes,
-        from: 'decColor'
+        from: 'desColor'
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         style: {
           marginTop: '16px'
@@ -1365,9 +1365,9 @@ function ContentStyle({
           label: 'vh',
           value: 'vh'
         }],
-        values: metaMargin,
+        values: desMargin,
         onChange: newPadding => setAttributes({
-          metaMargin: newPadding
+          desMargin: newPadding
         })
       })]
     })]
@@ -1410,6 +1410,10 @@ function GroupButton({
       setAttributes({
         metaActiveColor: 'default'
       });
+    } else if (from === 'desColor') {
+      setAttributes({
+        desActiveColor: 'default'
+      });
     }
   };
   const handleHover = () => {
@@ -1424,6 +1428,10 @@ function GroupButton({
     } else if (from === 'metaColor') {
       setAttributes({
         metaActiveColor: 'hover'
+      });
+    } else if (from === 'desColor') {
+      setAttributes({
+        desActiveColor: 'hover'
       });
     }
   };

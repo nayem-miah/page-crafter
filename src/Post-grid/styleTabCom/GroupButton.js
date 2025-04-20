@@ -1,10 +1,6 @@
 import { Button, ButtonGroup } from '@wordpress/components';
 
-export default function GroupButton( {
-	active,
-	setAttributes,
-	from,
-} ) {
+export default function GroupButton( { active, setAttributes, from } ) {
 	const handleDefault = () => {
 		if ( from === 'titleColor' ) {
 			setAttributes( {
@@ -14,9 +10,13 @@ export default function GroupButton( {
 			setAttributes( {
 				activeBackground: 'default',
 			} );
-		}else if ( from === 'metaColor' ) {
+		} else if ( from === 'metaColor' ) {
 			setAttributes( {
 				metaActiveColor: 'default',
+			} );
+		} else if ( from === 'desColor' ) {
+			setAttributes( {
+				desActiveColor: 'default',
 			} );
 		}
 	};
@@ -30,9 +30,13 @@ export default function GroupButton( {
 			setAttributes( {
 				activeBackground: 'hover',
 			} );
-		}else if ( from === 'metaColor' ) {
+		} else if ( from === 'metaColor' ) {
 			setAttributes( {
 				metaActiveColor: 'hover',
+			} );
+		} else if ( from === 'desColor' ) {
+			setAttributes( {
+				desActiveColor: 'hover',
 			} );
 		}
 	};

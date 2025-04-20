@@ -191,7 +191,7 @@ export default function ContentStyle( {
 				<GroupButton
 					active={ desActiveColor }
 					setAttributes={ setAttributes }
-					from={ 'decColor' }
+					from={ 'desColor' }
 				/>
 				<div style={ { marginTop: '16px' } }>
 					<ColorPalette
@@ -211,9 +211,9 @@ export default function ContentStyle( {
 						{ label: 'vw', value: 'vw' },
 						{ label: 'vh', value: 'vh' },
 					] }
-					values={ metaMargin }
+					values={ desMargin }
 					onChange={ ( newPadding ) =>
-						setAttributes( { metaMargin: newPadding } )
+						setAttributes( { desMargin: newPadding } )
 					}
 				/>
 			</PanelBody>
