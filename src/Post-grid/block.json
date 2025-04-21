@@ -14,7 +14,7 @@
 	"attributes": {
 		"columns": {
 			"type": "number",
-			"default": 4
+			"default": 3
 		},
 		"columnGap": {
 			"type": "number",
@@ -92,6 +92,70 @@
 			}
 		},
 		"contentMargin": {
+			"type": "object",
+			"default": {
+				"top": "0px",
+				"right": "0px",
+				"bottom": "0px",
+				"left": "0px"
+			}
+		},
+		"titleColor": {
+			"type": "string",
+			"default": "#1a202c "
+		},
+		"titleActiveColor": {
+			"type": "string",
+			"default": "default"
+		},
+		"titleHoverColor": {
+			"type": "string",
+			"default": "#2b6cb0 "
+		},
+		"titleMargin": {
+			"type": "object",
+			"default": {
+				"top": "12px",
+				"right": "0px",
+				"bottom": "0px",
+				"left": "0px"
+			}
+		},
+		"metaColor": {
+			"type": "string",
+			"default": "#718096"
+		},
+		"metaActiveColor": {
+			"type": "string",
+			"default": "default"
+		},
+		"metaHoverColor": {
+			"type": "string",
+			"default": "#4a5568 "
+		},
+		"metaMargin": {
+			"type": "object",
+			"default": {
+				"top": "0px",
+				"right": "0px",
+				"bottom": "0px",
+				"left": "0px"
+			}
+		},
+
+		"desColor": {
+			"type": "string",
+			"default": "#4a5568 "
+		},
+		"desActiveColor": {
+			"type": "string",
+			"default": "default"
+		},
+		"desHoverColor": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"desMargin": {
 			"type": "object",
 			"default": {
 				"top": "0px",

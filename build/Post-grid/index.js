@@ -156,7 +156,7 @@ const tableOfContents = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODU
   \**********************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/postgrid","version":"0.1.0","title":"PostGrid","category":"Page-Crafter","icon":"edit-page","description":"A simple post grid","example":{},"supports":{"html":false},"attributes":{"columns":{"type":"number","default":4},"columnGap":{"type":"number","default":20},"numberOfPosts":{"type":"number","default":6},"displayImage":{"type":"boolean","default":true},"order":{"type":"string","default":"desc"},"orderBy":{"type":"string","default":"date"},"categories":{"type":"array","items":{"type":"object"}},"readMore":{"type":"boolean","default":true},"showExcerpt":{"type":"boolean","default":true},"showMeta":{"type":"boolean","default":true},"showTitle":{"type":"boolean","default":true},"excerptMaxWords":{"type":"number","default":15},"readMoreAlignment":{"type":"string","default":"left"},"contentAlignment":{"type":"string","default":"left"},"contentBackground":{"type":"string","default":"#F5F5F5"},"contentBackgroundHover":{"type":"string","default":"#E0E0E0"},"activeBackground":{"type":"string","default":"default"},"contentPadding":{"type":"object","default":{"top":"0px","right":"12px","bottom":"24px","left":"12px"}},"contentMargin":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}},"textdomain":"postgrid","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/postgrid","version":"0.1.0","title":"PostGrid","category":"Page-Crafter","icon":"edit-page","description":"A simple post grid","example":{},"supports":{"html":false},"attributes":{"columns":{"type":"number","default":3},"columnGap":{"type":"number","default":20},"numberOfPosts":{"type":"number","default":6},"displayImage":{"type":"boolean","default":true},"order":{"type":"string","default":"desc"},"orderBy":{"type":"string","default":"date"},"categories":{"type":"array","items":{"type":"object"}},"readMore":{"type":"boolean","default":true},"showExcerpt":{"type":"boolean","default":true},"showMeta":{"type":"boolean","default":true},"showTitle":{"type":"boolean","default":true},"excerptMaxWords":{"type":"number","default":15},"readMoreAlignment":{"type":"string","default":"left"},"contentAlignment":{"type":"string","default":"left"},"contentBackground":{"type":"string","default":"#F5F5F5"},"contentBackgroundHover":{"type":"string","default":"#E0E0E0"},"activeBackground":{"type":"string","default":"default"},"contentPadding":{"type":"object","default":{"top":"0px","right":"12px","bottom":"24px","left":"12px"}},"contentMargin":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"titleColor":{"type":"string","default":"#1a202c "},"titleActiveColor":{"type":"string","default":"default"},"titleHoverColor":{"type":"string","default":"#2b6cb0 "},"titleMargin":{"type":"object","default":{"top":"12px","right":"0px","bottom":"0px","left":"0px"}},"metaColor":{"type":"string","default":"#718096"},"metaActiveColor":{"type":"string","default":"default"},"metaHoverColor":{"type":"string","default":"#4a5568 "},"metaMargin":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"desColor":{"type":"string","default":"#4a5568 "},"desActiveColor":{"type":"string","default":"default"},"desHoverColor":{"type":"string","default":"#000000"},"desMargin":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}},"textdomain":"postgrid","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
 
 /***/ }),
 
@@ -182,13 +182,22 @@ function Excerpt({
   excerpt,
   excerptMaxWords,
   showExcerpt,
-  contentAlignment
+  contentAlignment,
+  desMargin,
+  desColor,
+  desHoverColor
 }) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
     children: showExcerpt && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "post-grid-excerpt",
       style: {
-        textAlign: contentAlignment
+        '--excerptTextAlign': contentAlignment,
+        '--excerptColor': desColor,
+        '--excerptHoverColor': desHoverColor,
+        '--excerptMarginTop': desMargin?.top,
+        '--excerptMarginRight': desMargin?.right,
+        '--excerptMarginBottom': desMargin?.bottom,
+        '--excerptMarginLeft': desMargin?.left
       },
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.RawHTML, {
@@ -221,13 +230,22 @@ function Meta({
   showMeta,
   author,
   date,
-  contentAlignment
+  contentAlignment,
+  metaMargin,
+  metaHoverColor,
+  metaColor
 }) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
     children: showMeta && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "post-grid-meta",
       style: {
-        textAlign: contentAlignment
+        '--metaTextAlign': contentAlignment,
+        '--metaMarginTop': metaMargin?.top,
+        '--metaMarginRight': metaMargin?.right,
+        '--metaMarginBottom': metaMargin?.bottom,
+        '--metaMarginLeft': metaMargin?.left,
+        '--metaColor': metaColor,
+        '--metaHoverColor': metaHoverColor
       },
       children: [author?.[0] && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
         children: ["By ", author[0].name]
@@ -327,16 +345,27 @@ function Title({
   showTitle,
   title,
   link,
-  contentAlignment
+  contentAlignment,
+  titleColor,
+  titleHoverColor,
+  titleMargin
 }) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
     children: showTitle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "post-grid-title",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h5", {
         style: {
-          textAlign: contentAlignment
+          textAlign: contentAlignment,
+          '--titleMarginTop': titleMargin?.top,
+          '--titleMarginBottom': titleMargin.bottom,
+          '--titleMarginLeft': titleMargin?.left,
+          '--titleMarginRight': titleMargin?.right
         },
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+          style: {
+            '--titleColor': titleColor,
+            '--titleHoverColor': titleHoverColor
+          },
           href: link,
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.RawHTML, {
             children: title
@@ -369,16 +398,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/table-of-contents.js");
 /* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/styles.js");
 /* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/cog.js");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/Post-grid/editor.scss");
-/* harmony import */ var _components_Thumnail__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Thumnail */ "./src/Post-grid/components/Thumnail.js");
-/* harmony import */ var _components_Title__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Title */ "./src/Post-grid/components/Title.js");
-/* harmony import */ var _components_Meta__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Meta */ "./src/Post-grid/components/Meta.js");
-/* harmony import */ var _components_Excerpt__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/Excerpt */ "./src/Post-grid/components/Excerpt.js");
-/* harmony import */ var _components_ReadButton__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/ReadButton */ "./src/Post-grid/components/ReadButton.js");
-/* harmony import */ var _generalTabComp_General__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./generalTabComp/General */ "./src/Post-grid/generalTabComp/General.js");
-/* harmony import */ var _generalTabComp_Image__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./generalTabComp/Image */ "./src/Post-grid/generalTabComp/Image.js");
-/* harmony import */ var _generalTabComp_Content__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./generalTabComp/Content */ "./src/Post-grid/generalTabComp/Content.js");
-/* harmony import */ var _generalTabComp_ActionBtn__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./generalTabComp/ActionBtn */ "./src/Post-grid/generalTabComp/ActionBtn.js");
+/* harmony import */ var _components_Excerpt__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Excerpt */ "./src/Post-grid/components/Excerpt.js");
+/* harmony import */ var _components_Meta__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Meta */ "./src/Post-grid/components/Meta.js");
+/* harmony import */ var _components_ReadButton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/ReadButton */ "./src/Post-grid/components/ReadButton.js");
+/* harmony import */ var _components_Thumnail__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Thumnail */ "./src/Post-grid/components/Thumnail.js");
+/* harmony import */ var _components_Title__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/Title */ "./src/Post-grid/components/Title.js");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./editor.scss */ "./src/Post-grid/editor.scss");
+/* harmony import */ var _generalTabComp_ActionBtn__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./generalTabComp/ActionBtn */ "./src/Post-grid/generalTabComp/ActionBtn.js");
+/* harmony import */ var _generalTabComp_Content__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./generalTabComp/Content */ "./src/Post-grid/generalTabComp/Content.js");
+/* harmony import */ var _generalTabComp_General__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./generalTabComp/General */ "./src/Post-grid/generalTabComp/General.js");
+/* harmony import */ var _generalTabComp_Image__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./generalTabComp/Image */ "./src/Post-grid/generalTabComp/Image.js");
 /* harmony import */ var _styleTabCom_ContentStyle__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./styleTabCom/ContentStyle */ "./src/Post-grid/styleTabCom/ContentStyle.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__);
@@ -421,7 +450,19 @@ function Edit({
     contentBackgroundHover,
     activeBackground,
     contentPadding,
-    contentMargin
+    contentMargin,
+    titleColor,
+    titleHoverColor,
+    titleMargin,
+    titleActiveColor,
+    metaColor,
+    metaHoverColor,
+    metaActiveColor,
+    metaMargin,
+    desMargin,
+    desColor,
+    desHoverColor,
+    desActiveColor
   } = attributes;
   const catIDs = categories?.map(cat => cat.id);
   const posts = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_2__.useSelect)(select => {
@@ -468,23 +509,23 @@ function Edit({
           switch (tab.name) {
             case 'general':
               return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_generalTabComp_General__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_generalTabComp_General__WEBPACK_IMPORTED_MODULE_11__["default"], {
                   order: attributes?.order,
                   setAttributes: setAttributes,
                   columnGap: columnGap,
                   columns: columns,
                   numberOfPosts: numberOfPosts
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_generalTabComp_Image__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_generalTabComp_Image__WEBPACK_IMPORTED_MODULE_12__["default"], {
                   setAttributes: setAttributes,
                   displayImage: displayImage
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_generalTabComp_Content__WEBPACK_IMPORTED_MODULE_11__["default"], {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_generalTabComp_Content__WEBPACK_IMPORTED_MODULE_10__["default"], {
                   setAttributes: setAttributes,
                   showExcerpt: showExcerpt,
                   showTitle: showTitle,
                   showMeta: showMeta,
                   excerptMaxWords: excerptMaxWords,
                   contentAlignment: contentAlignment
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_generalTabComp_ActionBtn__WEBPACK_IMPORTED_MODULE_12__["default"], {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_generalTabComp_ActionBtn__WEBPACK_IMPORTED_MODULE_9__["default"], {
                   setAttributes: setAttributes,
                   readMore: readMore,
                   readMoreAlignment: readMoreAlignment
@@ -504,7 +545,19 @@ function Edit({
                   contentBackground: contentBackground,
                   contentBackgroundHover: contentBackgroundHover,
                   contentPadding: contentPadding,
-                  contentMargin: contentMargin
+                  contentMargin: contentMargin,
+                  titleColor: titleColor,
+                  titleHoverColor: titleHoverColor,
+                  titleActiveColor: titleActiveColor,
+                  titleMargin: titleMargin,
+                  metaColor: metaColor,
+                  metaHoverColor: metaHoverColor,
+                  metaActiveColor: metaActiveColor,
+                  metaMargin: metaMargin,
+                  desMargin: desMargin,
+                  desColor: desColor,
+                  desHoverColor: desHoverColor,
+                  desActiveColor: desActiveColor
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
                   title: "Read More",
                   initialOpen: false,
@@ -555,17 +608,16 @@ function Edit({
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("div", {
       className: "post-grid",
       style: {
-        display: 'grid',
-        gap: `${columnGap}px`,
-        gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`
+        '--columns': columns,
+        '--column-gap': `${columnGap}px`
       },
       children: posts?.map(post => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
         className: "grid-card",
         style: {
-          background: contentBackground,
+          '--card-bg': contentBackground,
           '--card-bg-hover': contentBackgroundHover
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_Thumnail__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_Thumnail__WEBPACK_IMPORTED_MODULE_6__["default"], {
           thumnail: post?._embedded?.['wp:featuredmedia'],
           displayImage: displayImage
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
@@ -574,22 +626,31 @@ function Edit({
             padding: `${contentPadding?.top || '0px'} ${contentPadding?.right || '0px'} ${contentPadding?.bottom || '0px'} ${contentPadding?.left || '0px'}`,
             margin: `${contentMargin?.top || '0px'} ${contentMargin?.right || '0px'} ${contentMargin?.bottom || '0px'} ${contentMargin?.left || '0px'}`
           },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_Title__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_Title__WEBPACK_IMPORTED_MODULE_7__["default"], {
             title: post?.title?.rendered,
             link: post?.link,
             showTitle: showTitle,
-            contentAlignment: contentAlignment
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_Meta__WEBPACK_IMPORTED_MODULE_6__["default"], {
+            contentAlignment: contentAlignment,
+            titleColor: titleColor,
+            titleHoverColor: titleHoverColor,
+            titleMargin: titleMargin
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_Meta__WEBPACK_IMPORTED_MODULE_4__["default"], {
             showMeta: showMeta,
             author: post?._embedded?.author,
             date: post?.date_gmt,
-            contentAlignment: contentAlignment
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_Excerpt__WEBPACK_IMPORTED_MODULE_7__["default"], {
+            contentAlignment: contentAlignment,
+            metaColor: metaColor,
+            metaHoverColor: metaHoverColor,
+            metaMargin: metaMargin
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_Excerpt__WEBPACK_IMPORTED_MODULE_3__["default"], {
             showExcerpt: showExcerpt,
             excerpt: post?.excerpt?.rendered,
             excerptMaxWords: excerptMaxWords,
-            contentAlignment: contentAlignment
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_ReadButton__WEBPACK_IMPORTED_MODULE_8__["default"], {
+            contentAlignment: contentAlignment,
+            desMargin: desMargin,
+            desColor: desColor,
+            desHoverColor: desHoverColor
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_ReadButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
             readMore: readMore,
             link: post?.link,
             readMoreAlignment: readMoreAlignment
@@ -1009,12 +1070,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ ContentStyle)
 /* harmony export */ });
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _GroupButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./GroupButton */ "./src/Post-grid/styleTabCom/GroupButton.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
@@ -1024,9 +1087,24 @@ function ContentStyle({
   contentBackgroundHover,
   contentBackground,
   contentPadding,
-  contentMargin
+  contentMargin,
+  titleMargin,
+  titleActiveColor,
+  titleHoverColor,
+  titleColor,
+  metaColor,
+  metaHoverColor,
+  metaActiveColor,
+  metaMargin,
+  desMargin,
+  desColor,
+  desHoverColor,
+  desActiveColor
 }) {
-  const currentColor = activeBackground === 'default' ? contentBackground : contentBackgroundHover;
+  const currentContentBackgroundColor = activeBackground === 'default' ? contentBackground : contentBackgroundHover;
+  const currentTitleColor = titleActiveColor === 'default' ? titleColor : titleHoverColor;
+  const currentMetaColor = metaActiveColor === 'default' ? metaColor : metaHoverColor;
+  const currentDesColor = desActiveColor === 'default' ? desColor : desHoverColor;
   const handleColorChange = color => {
     if (activeBackground === 'default') {
       setAttributes({
@@ -1038,66 +1116,75 @@ function ContentStyle({
       });
     }
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+  const handleTitleColorChange = color => {
+    if (titleActiveColor === 'default') {
+      setAttributes({
+        titleColor: color
+      });
+    } else {
+      setAttributes({
+        titleHoverColor: color
+      });
+    }
+  };
+  const handleMetaColorChange = color => {
+    if (metaActiveColor === 'default') {
+      setAttributes({
+        metaColor: color
+      });
+    } else {
+      setAttributes({
+        metaHoverColor: color
+      });
+    }
+  };
+  const handleDesColorChange = color => {
+    if (desActiveColor === 'default') {
+      setAttributes({
+        desColor: color
+      });
+    } else {
+      setAttributes({
+        desHoverColor: color
+      });
+    }
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
     title: "Content",
     initialOpen: true,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       style: {
         marginTop: '16px',
         marginBottom: '16px'
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
-        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background', 'postgrid')
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("strong", {
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Background', 'postgrid')
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         style: {
           display: 'flex',
           justifyContent: 'center',
           marginTop: '8px'
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ButtonGroup, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-            isPressed: activeBackground === 'default',
-            variant: "secondary",
-            style: {
-              minWidth: '100px',
-              padding: '8px 12px',
-              backgroundColor: activeBackground === 'default' ? '#008db4' : '',
-              color: activeBackground === 'default' ? '#fff' : ''
-            },
-            onClick: () => setAttributes({
-              activeBackground: 'default'
-            }),
-            children: "Default"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-            isPressed: activeBackground === 'hover',
-            variant: "secondary",
-            style: {
-              minWidth: '100px',
-              padding: '8px 12px',
-              backgroundColor: activeBackground === 'hover' ? '#008db4' : '',
-              color: activeBackground === 'hover' ? '#fff' : ''
-            },
-            onClick: () => setAttributes({
-              activeBackground: 'hover'
-            }),
-            children: "Hover"
-          })]
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_GroupButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          active: activeBackground,
+          setAttributes: setAttributes,
+          from: 'contentBackground'
         })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       style: {
         marginTop: '16px'
       },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
-        value: currentColor,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
+        value: currentContentBackgroundColor,
         onChange: handleColorChange,
         disableCustomColors: false
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
       title: "Padding",
       initialOpen: false,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.BoxControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Padding', 'postgrid'),
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.BoxControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Content Padding', 'postgrid'),
         units: [{
           label: 'px',
           value: 'px'
@@ -1122,11 +1209,11 @@ function ContentStyle({
           contentPadding: newPadding
         })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
       title: "Margin",
       initialOpen: false,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.BoxControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Content Margin', 'postgrid'),
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.BoxControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Content Margin', 'postgrid'),
         units: [{
           label: 'px',
           value: 'px'
@@ -1151,6 +1238,226 @@ function ContentStyle({
           contentMargin: newMargin
         })
       })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+      title: "Title",
+      initialOpen: false,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("strong", {
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Color', 'postgrid')
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_GroupButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        active: titleActiveColor,
+        setAttributes: setAttributes,
+        from: 'titleColor'
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        style: {
+          marginTop: '16px'
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
+          value: currentTitleColor,
+          onChange: handleTitleColorChange,
+          disableCustomColors: false
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.BoxControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Title Margin', 'postgrid'),
+        units: [{
+          label: 'px',
+          value: 'px'
+        }, {
+          label: '%',
+          value: '%'
+        }, {
+          label: 'em',
+          value: 'em'
+        }, {
+          label: 'rem',
+          value: 'rem'
+        }, {
+          label: 'vw',
+          value: 'vw'
+        }, {
+          label: 'vh',
+          value: 'vh'
+        }],
+        values: titleMargin,
+        onChange: newPadding => setAttributes({
+          titleMargin: newPadding
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+      title: "Meta",
+      initialOpen: false,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("strong", {
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Color', 'postgrid')
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_GroupButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        active: metaActiveColor,
+        setAttributes: setAttributes,
+        from: 'metaColor'
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        style: {
+          marginTop: '16px'
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
+          value: currentMetaColor,
+          onChange: handleMetaColorChange,
+          disableCustomColors: false
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.BoxControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Meta Margin', 'postgrid'),
+        units: [{
+          label: 'px',
+          value: 'px'
+        }, {
+          label: '%',
+          value: '%'
+        }, {
+          label: 'em',
+          value: 'em'
+        }, {
+          label: 'rem',
+          value: 'rem'
+        }, {
+          label: 'vw',
+          value: 'vw'
+        }, {
+          label: 'vh',
+          value: 'vh'
+        }],
+        values: metaMargin,
+        onChange: newPadding => setAttributes({
+          metaMargin: newPadding
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+      title: "Description",
+      initialOpen: false,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("strong", {
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Color', 'postgrid')
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_GroupButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        active: desActiveColor,
+        setAttributes: setAttributes,
+        from: 'desColor'
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        style: {
+          marginTop: '16px'
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
+          value: currentDesColor,
+          onChange: handleDesColorChange,
+          disableCustomColors: false
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.BoxControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Meta Margin', 'postgrid'),
+        units: [{
+          label: 'px',
+          value: 'px'
+        }, {
+          label: '%',
+          value: '%'
+        }, {
+          label: 'em',
+          value: 'em'
+        }, {
+          label: 'rem',
+          value: 'rem'
+        }, {
+          label: 'vw',
+          value: 'vw'
+        }, {
+          label: 'vh',
+          value: 'vh'
+        }],
+        values: desMargin,
+        onChange: newPadding => setAttributes({
+          desMargin: newPadding
+        })
+      })]
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./src/Post-grid/styleTabCom/GroupButton.js":
+/*!**************************************************!*\
+  !*** ./src/Post-grid/styleTabCom/GroupButton.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ GroupButton)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function GroupButton({
+  active,
+  setAttributes,
+  from
+}) {
+  const handleDefault = () => {
+    if (from === 'titleColor') {
+      setAttributes({
+        titleActiveColor: 'default'
+      });
+    } else if (from === 'contentBackground') {
+      setAttributes({
+        activeBackground: 'default'
+      });
+    } else if (from === 'metaColor') {
+      setAttributes({
+        metaActiveColor: 'default'
+      });
+    } else if (from === 'desColor') {
+      setAttributes({
+        desActiveColor: 'default'
+      });
+    }
+  };
+  const handleHover = () => {
+    if (from === 'titleColor') {
+      setAttributes({
+        titleActiveColor: 'hover'
+      });
+    } else if (from === 'contentBackground') {
+      setAttributes({
+        activeBackground: 'hover'
+      });
+    } else if (from === 'metaColor') {
+      setAttributes({
+        metaActiveColor: 'hover'
+      });
+    } else if (from === 'desColor') {
+      setAttributes({
+        desActiveColor: 'hover'
+      });
+    }
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ButtonGroup, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
+      isPressed: active === 'default',
+      variant: "secondary",
+      style: {
+        minWidth: '100px',
+        padding: '8px 12px',
+        backgroundColor: active === 'default' ? '#008db4' : '',
+        color: active === 'default' ? '#fff' : ''
+      },
+      onClick: handleDefault,
+      children: "Default"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
+      isPressed: active === 'hover',
+      variant: "secondary",
+      style: {
+        minWidth: '100px',
+        padding: '8px 12px',
+        backgroundColor: active === 'hover' ? '#008db4' : '',
+        color: active === 'hover' ? '#fff' : ''
+      },
+      onClick: handleHover,
+      children: "Hover"
     })]
   });
 }

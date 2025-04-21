@@ -3,16 +3,16 @@ import { PanelBody, TabPanel } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 import { cog, Icon, styles, tableOfContents } from '@wordpress/icons';
 
-import './editor.scss';
+import Excerpt from './components/Excerpt';
+import Meta from './components/Meta';
+import ReadButton from './components/ReadButton';
 import Thumnail from './components/Thumnail';
 import Title from './components/Title';
-import Meta from './components/Meta';
-import Excerpt from './components/Excerpt';
-import ReadButton from './components/ReadButton';
+import './editor.scss';
+import ActionBtn from './generalTabComp/ActionBtn';
+import Content from './generalTabComp/Content';
 import General from './generalTabComp/General';
 import Image from './generalTabComp/Image';
-import Content from './generalTabComp/Content';
-import ActionBtn from './generalTabComp/ActionBtn';
 import ContentStyle from './styleTabCom/ContentStyle';
 export default function Edit( { attributes, setAttributes } ) {
 	const {
@@ -35,6 +35,19 @@ export default function Edit( { attributes, setAttributes } ) {
 		activeBackground,
 		contentPadding,
 		contentMargin,
+		titleColor,
+		titleHoverColor,
+		titleMargin,
+		titleActiveColor,
+		metaColor,
+		metaHoverColor,
+		metaActiveColor,
+		metaMargin,
+		desMargin,
+		desColor,
+		desHoverColor,
+		desActiveColor,
+
 	} = attributes;
 	const catIDs = categories?.map( ( cat ) => cat.id );
 	const posts = useSelect(
@@ -143,6 +156,21 @@ export default function Edit( { attributes, setAttributes } ) {
 											}
 											contentPadding={ contentPadding }
 											contentMargin={ contentMargin }
+											titleColor={ titleColor }
+											titleHoverColor={ titleHoverColor }
+											titleActiveColor={
+												titleActiveColor
+											}
+											titleMargin={ titleMargin }
+											metaColor={ metaColor }
+											metaHoverColor={ metaHoverColor }
+											metaActiveColor={ metaActiveColor }
+											metaMargin={ metaMargin }
+											desMargin={ desMargin }
+											desColor={ desColor }
+											desHoverColor={ desHoverColor }
+											desActiveColor={ desActiveColor }
+											
 										/>
 
 										<PanelBody
@@ -198,9 +226,8 @@ export default function Edit( { attributes, setAttributes } ) {
 			<div
 				className="post-grid"
 				style={ {
-					display: 'grid',
-					gap: `${ columnGap }px`,
-					gridTemplateColumns: `repeat(${ columns }, minmax(0, 1fr))`,
+					'--columns': columns,
+					'--column-gap': `${ columnGap }px`,
 				} }
 			>
 				{ posts?.map( ( post ) => (
@@ -208,7 +235,7 @@ export default function Edit( { attributes, setAttributes } ) {
 						key={ post?.id }
 						className="grid-card"
 						style={ {
-							background: contentBackground,
+							'--card-bg': contentBackground,
 							'--card-bg-hover': contentBackgroundHover,
 						} }
 					>
@@ -237,18 +264,27 @@ export default function Edit( { attributes, setAttributes } ) {
 								link={ post?.link }
 								showTitle={ showTitle }
 								contentAlignment={ contentAlignment }
+								titleColor={ titleColor }
+								titleHoverColor={ titleHoverColor }
+								titleMargin={ titleMargin }
 							/>
 							<Meta
 								showMeta={ showMeta }
 								author={ post?._embedded?.author }
 								date={ post?.date_gmt }
 								contentAlignment={ contentAlignment }
+								metaColor={ metaColor }
+								metaHoverColor={ metaHoverColor }
+								metaMargin={ metaMargin }
 							/>
 							<Excerpt
 								showExcerpt={ showExcerpt }
 								excerpt={ post?.excerpt?.rendered }
 								excerptMaxWords={ excerptMaxWords }
 								contentAlignment={ contentAlignment }
+								desMargin={ desMargin }
+								desColor={ desColor }
+								desHoverColor={ desHoverColor }
 							/>
 
 							<ReadButton

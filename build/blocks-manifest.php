@@ -40,7 +40,7 @@ return array(
 		'attributes' => array(
 			'columns' => array(
 				'type' => 'number',
-				'default' => 4
+				'default' => 3
 			),
 			'columnGap' => array(
 				'type' => 'number',
@@ -118,6 +118,69 @@ return array(
 				)
 			),
 			'contentMargin' => array(
+				'type' => 'object',
+				'default' => array(
+					'top' => '0px',
+					'right' => '0px',
+					'bottom' => '0px',
+					'left' => '0px'
+				)
+			),
+			'titleColor' => array(
+				'type' => 'string',
+				'default' => '#1a202c '
+			),
+			'titleActiveColor' => array(
+				'type' => 'string',
+				'default' => 'default'
+			),
+			'titleHoverColor' => array(
+				'type' => 'string',
+				'default' => '#2b6cb0 '
+			),
+			'titleMargin' => array(
+				'type' => 'object',
+				'default' => array(
+					'top' => '12px',
+					'right' => '0px',
+					'bottom' => '0px',
+					'left' => '0px'
+				)
+			),
+			'metaColor' => array(
+				'type' => 'string',
+				'default' => '#718096'
+			),
+			'metaActiveColor' => array(
+				'type' => 'string',
+				'default' => 'default'
+			),
+			'metaHoverColor' => array(
+				'type' => 'string',
+				'default' => '#4a5568 '
+			),
+			'metaMargin' => array(
+				'type' => 'object',
+				'default' => array(
+					'top' => '0px',
+					'right' => '0px',
+					'bottom' => '0px',
+					'left' => '0px'
+				)
+			),
+			'desColor' => array(
+				'type' => 'string',
+				'default' => '#4a5568 '
+			),
+			'desActiveColor' => array(
+				'type' => 'string',
+				'default' => 'default'
+			),
+			'desHoverColor' => array(
+				'type' => 'string',
+				'default' => '#000000'
+			),
+			'desMargin' => array(
 				'type' => 'object',
 				'default' => array(
 					'top' => '0px',

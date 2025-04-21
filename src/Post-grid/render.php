@@ -56,6 +56,9 @@ $posts = get_posts( $args );
     margin: <?php echo esc_attr( $attributes['contentMargin']['top'] ?? 0 ) . ' ' . esc_attr( $attributes['contentMargin']['right'] ?? 0 ) . ' ' . esc_attr( $attributes['contentMargin']['bottom'] ?? 0 ) . ' ' . esc_attr( $attributes['contentMargin']['left'] ?? 0 ) . ' '; ?>;
 ">
 
+
+
+
                 <?php if ( $attributes['showTitle'] ) : ?>
                 <div class="post-grid-title">
                     <h5 style="text-align: <?php echo esc_attr( $attributes['contentAlignment'] ); ?>;">
