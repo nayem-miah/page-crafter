@@ -67,7 +67,11 @@ export default function ContentStyle( {
 	};
 
 	return (
-		<PanelBody title="Content" opened={ openPanel === 'content' } onToggle={ () => togglePanel( 'content' ) }>
+		<PanelBody
+			title="Content"
+			opened={ openPanel === 'content' }
+			onToggle={ () => togglePanel( 'content' ) }
+		>
 			<div style={ { marginTop: '16px', marginBottom: '16px' } }>
 				<strong>{ __( 'Background', 'postgrid' ) }</strong>
 				<div

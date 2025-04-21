@@ -1,5 +1,5 @@
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
-import { PanelBody, TabPanel } from '@wordpress/components';
+import { TabPanel } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 import { cog, Icon, styles, tableOfContents } from '@wordpress/icons';
 import Excerpt from './components/Excerpt';
@@ -8,6 +8,7 @@ import ReadButton from './components/ReadButton';
 import Thumnail from './components/Thumnail';
 import Title from './components/Title';
 import './editor.scss';
+import AdvanceTab from './tabs/AdvanceTab';
 import GeneralTab from './tabs/GeneralTab';
 import StyleTab from './tabs/StyleTab';
 export default function Edit( { attributes, setAttributes } ) {
@@ -45,6 +46,7 @@ export default function Edit( { attributes, setAttributes } ) {
 		readMoreColor,
 		readMorePadding,
 		readMoreMargin,
+		additionalClass,
 	} = attributes;
 	const catIDs = categories?.map( ( cat ) => cat.id );
 	const posts = useSelect(
@@ -61,7 +63,7 @@ export default function Edit( { attributes, setAttributes } ) {
 	);
 
 	return (
-		<div { ...useBlockProps() }>
+		<div { ...useBlockProps( { className: additionalClass } ) }>
 			<InspectorControls>
 				<TabPanel
 					className="pagecrafter-tab-panel"
@@ -114,20 +116,10 @@ export default function Edit( { attributes, setAttributes } ) {
 								);
 							case 'advanced':
 								return (
-									<div>
-										<PanelBody
-											title="Visibility Option"
-											initialOpen={ true }
-										>
-											<p>General settings content here</p>
-										</PanelBody>
-										<PanelBody
-											title="Advanced"
-											initialOpen={ false }
-										>
-											<p>General settings content here</p>
-										</PanelBody>
-									</div>
+									<AdvanceTab
+										additionalClass={ additionalClass }
+										setAttributes={ setAttributes }
+									/>
 								);
 							default:
 								return null;

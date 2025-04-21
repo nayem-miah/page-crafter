@@ -133,4 +133,8 @@
   background-color: var(--card-bg-hover);
 }
 
+.block-editor-block-inspector__advanced {
+  display: none;
+}
+
 /*# sourceMappingURL=style-index.css.map*/

@@ -156,7 +156,7 @@ const tableOfContents = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODU
   \**********************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/postgrid","version":"0.1.0","title":"PostGrid","category":"Page-Crafter","icon":"edit-page","description":"A simple post grid","example":{},"supports":{"html":false},"attributes":{"additionalClass":{"type":"string","default":""},"columns":{"type":"number","default":3},"columnGap":{"type":"number","default":20},"numberOfPosts":{"type":"number","default":6},"displayImage":{"type":"boolean","default":true},"order":{"type":"string","default":"desc"},"orderBy":{"type":"string","default":"date"},"categories":{"type":"array","items":{"type":"object"}},"readMore":{"type":"boolean","default":true},"showExcerpt":{"type":"boolean","default":true},"showMeta":{"type":"boolean","default":true},"showTitle":{"type":"boolean","default":true},"excerptMaxWords":{"type":"number","default":10},"readMoreAlignment":{"type":"string","default":"left"},"contentAlignment":{"type":"string","default":"left"},"contentBackground":{"type":"string","default":"#F5F5F5"},"contentBackgroundHover":{"type":"string","default":"#E0E0E0"},"activeBackground":{"type":"string","default":"default"},"contentPadding":{"type":"object","default":{"top":"0px","right":"12px","bottom":"24px","left":"12px"}},"contentMargin":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"titleColor":{"type":"string","default":"#1a202c "},"titleActiveColor":{"type":"string","default":"default"},"titleHoverColor":{"type":"string","default":"#2b6cb0 "},"titleMargin":{"type":"object","default":{"top":"12px","right":"0px","bottom":"0px","left":"0px"}},"metaColor":{"type":"string","default":"#718096"},"metaActiveColor":{"type":"string","default":"default"},"metaHoverColor":{"type":"string","default":"#4a5568 "},"metaMargin":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"desColor":{"type":"string","default":"#4a5568 "},"desActiveColor":{"type":"string","default":"default"},"desHoverColor":{"type":"string","default":"#000000"},"desMargin":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"readMoreBackground":{"type":"string","default":"#10b981"},"readMoreBackgroundHover":{"type":"string","default":"#059669"},"readMoreBackgroundActive":{"type":"string","default":"default"},"readMoreColor":{"type":"string","default":"#ffffff"},"readMoreColorHover":{"type":"string","default":"#f0fdf4"},"readMoreColorActive":{"type":"string","default":"default"},"readMoreMargin":{"type":"object","default":{"top":"20px","right":"0px","bottom":"0px","left":"0px"}},"readMorePadding":{"type":"object","default":{"top":"8px","right":"16px","bottom":"8px","left":"16px"}}},"textdomain":"postgrid","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/postgrid","version":"0.1.0","title":"PostGrid","category":"Page-Crafter","icon":"edit-page","description":"A simple post grid","example":{},"supports":{"html":false},"attributes":{"additionalClass":{"type":"string","default":"nayem"},"columns":{"type":"number","default":3},"columnGap":{"type":"number","default":20},"numberOfPosts":{"type":"number","default":6},"displayImage":{"type":"boolean","default":true},"order":{"type":"string","default":"desc"},"orderBy":{"type":"string","default":"date"},"categories":{"type":"array","items":{"type":"object"}},"readMore":{"type":"boolean","default":true},"showExcerpt":{"type":"boolean","default":true},"showMeta":{"type":"boolean","default":true},"showTitle":{"type":"boolean","default":true},"excerptMaxWords":{"type":"number","default":10},"readMoreAlignment":{"type":"string","default":"left"},"contentAlignment":{"type":"string","default":"left"},"contentBackground":{"type":"string","default":"#F5F5F5"},"contentBackgroundHover":{"type":"string","default":"#E0E0E0"},"activeBackground":{"type":"string","default":"default"},"contentPadding":{"type":"object","default":{"top":"0px","right":"12px","bottom":"24px","left":"12px"}},"contentMargin":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"titleColor":{"type":"string","default":"#1a202c "},"titleActiveColor":{"type":"string","default":"default"},"titleHoverColor":{"type":"string","default":"#2b6cb0 "},"titleMargin":{"type":"object","default":{"top":"12px","right":"0px","bottom":"0px","left":"0px"}},"metaColor":{"type":"string","default":"#718096"},"metaActiveColor":{"type":"string","default":"default"},"metaHoverColor":{"type":"string","default":"#4a5568 "},"metaMargin":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"desColor":{"type":"string","default":"#4a5568 "},"desActiveColor":{"type":"string","default":"default"},"desHoverColor":{"type":"string","default":"#000000"},"desMargin":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"readMoreBackground":{"type":"string","default":"#10b981"},"readMoreBackgroundHover":{"type":"string","default":"#059669"},"readMoreBackgroundActive":{"type":"string","default":"default"},"readMoreColor":{"type":"string","default":"#ffffff"},"readMoreColorHover":{"type":"string","default":"#f0fdf4"},"readMoreColorActive":{"type":"string","default":"default"},"readMoreMargin":{"type":"object","default":{"top":"20px","right":"0px","bottom":"0px","left":"0px"}},"readMorePadding":{"type":"object","default":{"top":"8px","right":"16px","bottom":"8px","left":"16px"}}},"textdomain":"postgrid","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
 
 /***/ }),
 
@@ -414,20 +414,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/icon/index.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/table-of-contents.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/styles.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/cog.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/icon/index.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/table-of-contents.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/styles.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/cog.js");
 /* harmony import */ var _components_Excerpt__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Excerpt */ "./src/Post-grid/components/Excerpt.js");
 /* harmony import */ var _components_Meta__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Meta */ "./src/Post-grid/components/Meta.js");
 /* harmony import */ var _components_ReadButton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/ReadButton */ "./src/Post-grid/components/ReadButton.js");
 /* harmony import */ var _components_Thumnail__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Thumnail */ "./src/Post-grid/components/Thumnail.js");
 /* harmony import */ var _components_Title__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/Title */ "./src/Post-grid/components/Title.js");
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./editor.scss */ "./src/Post-grid/editor.scss");
-/* harmony import */ var _tabs_GeneralTab__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./tabs/GeneralTab */ "./src/Post-grid/tabs/GeneralTab.js");
-/* harmony import */ var _tabs_StyleTab__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./tabs/StyleTab */ "./src/Post-grid/tabs/StyleTab.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _tabs_AdvanceTab__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./tabs/AdvanceTab */ "./src/Post-grid/tabs/AdvanceTab.js");
+/* harmony import */ var _tabs_GeneralTab__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./tabs/GeneralTab */ "./src/Post-grid/tabs/GeneralTab.js");
+/* harmony import */ var _tabs_StyleTab__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./tabs/StyleTab */ "./src/Post-grid/tabs/StyleTab.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__);
+
 
 
 
@@ -478,7 +480,8 @@ function Edit({
     readMoreColorHover,
     readMoreColor,
     readMorePadding,
-    readMoreMargin
+    readMoreMargin,
+    additionalClass
   } = attributes;
   const catIDs = categories?.map(cat => cat.id);
   const posts = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_2__.useSelect)(select => {
@@ -490,33 +493,35 @@ function Edit({
       categories: catIDs
     });
   }, [numberOfPosts, order, orderBy, catIDs]);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
-    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)(),
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TabPanel, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
+      className: additionalClass
+    }),
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TabPanel, {
         className: "pagecrafter-tab-panel",
         activeClass: "is-active",
         tabs: [{
           name: 'general',
-          title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("span", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_icons__WEBPACK_IMPORTED_MODULE_12__["default"], {
-              icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_13__["default"]
+          title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("span", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_wordpress_icons__WEBPACK_IMPORTED_MODULE_13__["default"], {
+              icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__["default"]
             }), " General"]
           }),
           className: 'tab-general'
         }, {
           name: 'styles',
-          title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("span", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_icons__WEBPACK_IMPORTED_MODULE_12__["default"], {
-              icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__["default"]
+          title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("span", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_wordpress_icons__WEBPACK_IMPORTED_MODULE_13__["default"], {
+              icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_15__["default"]
             }), " Styles"]
           }),
           className: 'tab-styles'
         }, {
           name: 'advanced',
-          title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("span", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_icons__WEBPACK_IMPORTED_MODULE_12__["default"], {
-              icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_15__["default"]
+          title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("span", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_wordpress_icons__WEBPACK_IMPORTED_MODULE_13__["default"], {
+              icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_16__["default"]
             }), " Advanced"]
           }),
           className: 'tab-advanced'
@@ -524,58 +529,47 @@ function Edit({
         children: tab => {
           switch (tab.name) {
             case 'general':
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_tabs_GeneralTab__WEBPACK_IMPORTED_MODULE_9__["default"], {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_tabs_GeneralTab__WEBPACK_IMPORTED_MODULE_10__["default"], {
                 attributes: attributes,
                 setAttributes: setAttributes
               });
             case 'styles':
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_tabs_StyleTab__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_tabs_StyleTab__WEBPACK_IMPORTED_MODULE_11__["default"], {
                 attributes: attributes,
                 setAttributes: setAttributes
               });
             case 'advanced':
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-                  title: "Visibility Option",
-                  initialOpen: true,
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
-                    children: "General settings content here"
-                  })
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-                  title: "Advanced",
-                  initialOpen: false,
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
-                    children: "General settings content here"
-                  })
-                })]
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_tabs_AdvanceTab__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                additionalClass: additionalClass,
+                setAttributes: setAttributes
               });
             default:
               return null;
           }
         }
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
       className: "post-grid",
       style: {
         '--columns': columns,
         '--column-gap': `${columnGap}px`
       },
-      children: posts?.map(post => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
+      children: posts?.map(post => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
         className: "grid-card",
         style: {
           '--card-bg': contentBackground,
           '--card-bg-hover': contentBackgroundHover
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_Thumnail__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_Thumnail__WEBPACK_IMPORTED_MODULE_6__["default"], {
           thumnail: post?._embedded?.['wp:featuredmedia'],
           displayImage: displayImage
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
           className: "content-body",
           style: {
             padding: `${contentPadding?.top || '0px'} ${contentPadding?.right || '0px'} ${contentPadding?.bottom || '0px'} ${contentPadding?.left || '0px'}`,
             margin: `${contentMargin?.top || '0px'} ${contentMargin?.right || '0px'} ${contentMargin?.bottom || '0px'} ${contentMargin?.left || '0px'}`
           },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_Title__WEBPACK_IMPORTED_MODULE_7__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_Title__WEBPACK_IMPORTED_MODULE_7__["default"], {
             title: post?.title?.rendered,
             link: post?.link,
             showTitle: showTitle,
@@ -583,7 +577,7 @@ function Edit({
             titleColor: titleColor,
             titleHoverColor: titleHoverColor,
             titleMargin: titleMargin
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_Meta__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_Meta__WEBPACK_IMPORTED_MODULE_4__["default"], {
             showMeta: showMeta,
             author: post?._embedded?.author,
             date: post?.date_gmt,
@@ -591,7 +585,7 @@ function Edit({
             metaColor: metaColor,
             metaHoverColor: metaHoverColor,
             metaMargin: metaMargin
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_Excerpt__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_Excerpt__WEBPACK_IMPORTED_MODULE_3__["default"], {
             showExcerpt: showExcerpt,
             excerpt: post?.excerpt?.rendered,
             excerptMaxWords: excerptMaxWords,
@@ -599,7 +593,7 @@ function Edit({
             desMargin: desMargin,
             desColor: desColor,
             desHoverColor: desHoverColor
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_ReadButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_ReadButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
             readMore: readMore,
             link: post?.link,
             readMoreAlignment: readMoreAlignment,
@@ -1628,6 +1622,50 @@ function ReadMoreStyle({
 
 /***/ }),
 
+/***/ "./src/Post-grid/tabs/AdvanceTab.js":
+/*!******************************************!*\
+  !*** ./src/Post-grid/tabs/AdvanceTab.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ AdvanceTab)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function AdvanceTab({
+  additionalClass,
+  setAttributes
+}) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+      title: "Visibility Option",
+      initialOpen: true,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+        children: "General settings content here"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+      title: "Advanced",
+      initialOpen: false,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.TextControl, {
+        label: "Custom Class",
+        value: additionalClass || '',
+        onChange: value => setAttributes({
+          additionalClass: value
+        }),
+        placeholder: "e.g. my-custom-class"
+      })
+    })]
+  });
+}
+
+/***/ }),
+
 /***/ "./src/Post-grid/tabs/GeneralTab.js":
 /*!******************************************!*\
   !*** ./src/Post-grid/tabs/GeneralTab.js ***!
@@ -1773,7 +1811,7 @@ function StyleTab({
     readMoreMargin,
     readMorePadding
   } = attributes;
-  const [openPanel, setOpenPanel] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)('general'); // default open panel
+  const [openPanel, setOpenPanel] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)('general');
   const togglePanel = panelKey => {
     setOpenPanel(openPanel === panelKey ? null : panelKey);
   };

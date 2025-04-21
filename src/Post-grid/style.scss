@@ -97,7 +97,7 @@
 
 			.post-grid-btn a:hover {
 				background: var(--readMoreBackgroundHover);
-				color: var(--readMoreColorHover)
+				color: var(--readMoreColorHover);
 			}
 		}
 	}
@@ -150,4 +150,8 @@
 
 .wp-block-create-block-postgrid .post-grid .grid-card:hover {
 	background-color: var(--card-bg-hover);
+}
+
+.block-editor-block-inspector__advanced {
+	display: none;
 }

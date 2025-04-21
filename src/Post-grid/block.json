@@ -14,7 +14,7 @@
 	"attributes": {
 		"additionalClass": {
 			"type": "string",
-			"default": ""
+			"default": "nayem"
 		},
 		"columns": {
 			"type": "number",

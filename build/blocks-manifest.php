@@ -40,7 +40,7 @@ return array(
 		'attributes' => array(
 			'additionalClass' => array(
 				'type' => 'string',
-				'default' => ''
+				'default' => 'nayem'
 			),
 			'columns' => array(
 				'type' => 'number',
