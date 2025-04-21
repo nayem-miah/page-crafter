@@ -36,7 +36,7 @@ export default function Content( {
 	return (
 		<PanelBody
 			title="Content"
-			initialOpen={ openPanel === 'content' }
+			opened={ openPanel === 'content' }
 			onToggle={ () => togglePanel( 'content' ) }
 		>
 			<Alignmnet

@@ -34,7 +34,7 @@ export default function General( {
 	return (
 		<PanelBody
 			title="General"
-			initialOpen={ openPanel === 'general' }
+			opened={ openPanel === 'general' }
 			onToggle={ () => togglePanel( 'general' ) }
 		>
 			<RangeControl

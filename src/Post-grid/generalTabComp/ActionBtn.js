@@ -19,8 +19,8 @@ export default function ActionBtn( {
 	return (
 		<PanelBody
 			title="Action Button"
-			initialOpen={ openPanel === 'actionBtn' }
-			onToggle={ () => togglePanel( 'actionBtn' ) }			
+			opened={ openPanel === 'actionBtn' }
+			onToggle={ () => togglePanel( 'actionBtn' ) }
 		>
 			<ToggleControl
 				label={ __( 'Read More', 'postgrid' ) }

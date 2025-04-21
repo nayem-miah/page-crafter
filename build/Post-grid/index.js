@@ -665,7 +665,7 @@ function ActionBtn({
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
     title: "Action Button",
-    initialOpen: openPanel === 'actionBtn',
+    opened: openPanel === 'actionBtn',
     onToggle: () => togglePanel('actionBtn'),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Read More', 'postgrid'),
@@ -793,7 +793,7 @@ function Content({
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
     title: "Content",
-    initialOpen: openPanel === 'content',
+    opened: openPanel === 'content',
     onToggle: () => togglePanel('content'),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Alignmnet__WEBPACK_IMPORTED_MODULE_2__["default"], {
       setAttributes: setAttributes,
@@ -880,7 +880,7 @@ function General({
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
     title: "General",
-    initialOpen: openPanel === 'general',
+    opened: openPanel === 'general',
     onToggle: () => togglePanel('general'),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Columns', 'postgrid'),
@@ -976,7 +976,7 @@ function Image({
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
     title: "Image",
-    initialOpen: openPanel === 'image',
+    opened: openPanel === 'image',
     onToggle: () => togglePanel('image'),
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Display Featured Image', 'postgrid'),
@@ -1704,7 +1704,7 @@ function GeneralTab({
       openPanel: openPanel
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
       title: "Pagination",
-      initialOpen: openPanel === 'pagination',
+      opened: openPanel === 'pagination',
       onToggle: () => togglePanel('pagination'),
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
         children: "General settings content here"

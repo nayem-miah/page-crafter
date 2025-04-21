@@ -63,7 +63,7 @@ export default function GeneralTab( { attributes, setAttributes } ) {
 			/>
 			<PanelBody
 				title="Pagination"
-				initialOpen={ openPanel === 'pagination' }
+				opened={ openPanel === 'pagination' }
 				onToggle={ () => togglePanel( 'pagination' ) }
 			>
 				<p>General settings content here</p>

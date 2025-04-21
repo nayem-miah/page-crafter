@@ -14,7 +14,7 @@ export default function Image( {
 	return (
 		<PanelBody
 			title="Image"
-			initialOpen={ openPanel === 'image' }
+			opened={ openPanel === 'image' }
 			onToggle={ () => togglePanel( 'image' ) }
 		>
 			<ToggleControl
