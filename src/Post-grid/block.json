@@ -12,6 +12,10 @@
 		"html": false
 	},
 	"attributes": {
+		"additionalClass": {
+			"type": "string",
+			"default": ""
+		},
 		"columns": {
 			"type": "number",
 			"default": 3

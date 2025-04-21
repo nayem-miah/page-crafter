@@ -1,4 +1,5 @@
 import { PanelBody } from '@wordpress/components';
+import { useState } from '@wordpress/element';
 import ContentStyle from '../styleTabCom/ContentStyle';
 import ReadMoreStyle from '../styleTabCom/ReadMoreStyle';
 
@@ -30,6 +31,11 @@ export default function StyleTab( { attributes, setAttributes } ) {
 		readMoreMargin,
 		readMorePadding,
 	} = attributes;
+
+	const [ openPanel, setOpenPanel ] = useState( 'general' ); // default open panel
+	const togglePanel = ( panelKey ) => {
+		setOpenPanel( openPanel === panelKey ? null : panelKey );
+	};
 	return (
 		<div>
 			<ContentStyle
@@ -51,20 +57,28 @@ export default function StyleTab( { attributes, setAttributes } ) {
 				desColor={ desColor }
 				desHoverColor={ desHoverColor }
 				desActiveColor={ desActiveColor }
+				openPanel={ openPanel }
+				togglePanel={ togglePanel }
 			/>
 
 			<ReadMoreStyle
 				readMoreBackground={ readMoreBackground }
 				readMoreBackgroundHover={ readMoreBackgroundHover }
-                readMoreBackgroundActive={readMoreBackgroundActive}
-				setAttributes={setAttributes}
+				readMoreBackgroundActive={ readMoreBackgroundActive }
+				setAttributes={ setAttributes }
 				readMoreMargin={ readMoreMargin }
-				readMorePadding={readMorePadding}	
-				readMoreColor={readMoreColor}
-				readMoreColorActive={readMoreColorActive}
-				readMoreColorHover={readMoreColorHover}
+				readMorePadding={ readMorePadding }
+				readMoreColor={ readMoreColor }
+				readMoreColorActive={ readMoreColorActive }
+				readMoreColorHover={ readMoreColorHover }
+				openPanel={ openPanel }
+				togglePanel={ togglePanel }
 			/>
-			<PanelBody title="Pagination" initialOpen={ false }>
+			<PanelBody
+				title="Pagination"
+				opened={ openPanel === 'pagination' }
+				onToggle={ () => togglePanel( 'pagination' ) }
+			>
 				<p>General settings content here</p>
 			</PanelBody>
 		</div>

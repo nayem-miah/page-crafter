@@ -20,6 +20,8 @@ export default function ContentStyle( {
 	desColor,
 	desHoverColor,
 	desActiveColor,
+	togglePanel,
+	openPanel,
 } ) {
 	const currentContentBackgroundColor =
 		activeBackground === 'default'
@@ -65,7 +67,7 @@ export default function ContentStyle( {
 	};
 
 	return (
-		<PanelBody title="Content" initialOpen={ true }>
+		<PanelBody title="Content" opened={ openPanel === 'content' } onToggle={ () => togglePanel( 'content' ) }>
 			<div style={ { marginTop: '16px', marginBottom: '16px' } }>
 				<strong>{ __( 'Background', 'postgrid' ) }</strong>
 				<div

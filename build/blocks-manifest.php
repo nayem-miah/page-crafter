@@ -38,6 +38,10 @@ return array(
 			'html' => false
 		),
 		'attributes' => array(
+			'additionalClass' => array(
+				'type' => 'string',
+				'default' => ''
+			),
 			'columns' => array(
 				'type' => 'number',
 				'default' => 3

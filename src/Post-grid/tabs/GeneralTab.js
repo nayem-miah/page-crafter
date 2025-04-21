@@ -1,9 +1,9 @@
 import { PanelBody } from '@wordpress/components';
+import { useState } from '@wordpress/element';
 import ActionBtn from '../generalTabComp/ActionBtn';
 import Content from '../generalTabComp/Content';
-import Image from '../generalTabComp/Image';
 import General from '../generalTabComp/General';
-import { useState } from '@wordpress/element';
+import Image from '../generalTabComp/Image';
 export default function GeneralTab( { attributes, setAttributes } ) {
 	const {
 		numberOfPosts,
@@ -22,9 +22,7 @@ export default function GeneralTab( { attributes, setAttributes } ) {
 	const [ openPanel, setOpenPanel ] = useState( 'general' ); // default open panel
 
 	const togglePanel = ( panelKey ) => {
-		if ( openPanel !== panelKey ) {
-			setOpenPanel( panelKey );
-		}
+		setOpenPanel( openPanel === panelKey ? null : panelKey );
 	};
 
 	return (

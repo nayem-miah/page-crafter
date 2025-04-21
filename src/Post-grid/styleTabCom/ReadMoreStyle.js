@@ -11,6 +11,8 @@ export default function ReadMoreStyle( {
 	readMoreColor,
 	readMoreColorHover,
 	readMoreColorActive,
+	togglePanel,
+	openPanel,
 } ) {
 	const currentReadMoreBackgroundColor =
 		readMoreBackgroundActive === 'default'
@@ -35,7 +37,11 @@ export default function ReadMoreStyle( {
 	};
 
 	return (
-		<PanelBody title="Read More" initialOpen={ false }>
+		<PanelBody
+			title="Read More"
+			opened={ openPanel === 'readMore' }
+			onToggle={ () => togglePanel( 'readMore' ) }
+		>
 			<div style={ { marginTop: '16px', marginBottom: '16px' } }>
 				<strong>{ __( 'Background', 'postgrid' ) }</strong>
 				<div
