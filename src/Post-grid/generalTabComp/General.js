@@ -12,6 +12,8 @@ export default function General( {
 	columns,
 	columnGap,
 	numberOfPosts,
+	togglePanel,
+	openPanel,
 } ) {
 	const HandleNumberOfItems = ( value ) => {
 		setAttributes( {
@@ -30,7 +32,11 @@ export default function General( {
 		} );
 	};
 	return (
-		<PanelBody title="General" initialOpen={ true }>
+		<PanelBody
+			title="General"
+			opened={ openPanel === 'general' }
+			onToggle={ () => togglePanel( 'general' ) }
+		>
 			<RangeControl
 				label={ __( 'Columns', 'postgrid' ) }
 				min={ 2 }

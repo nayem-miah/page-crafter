@@ -19,20 +19,19 @@ if (!function_exists('truncate_excerpt')) {
         }
 
         $truncated = array_slice($words, 0, $word_limit);
-
         return implode(' ', $truncated) . '...';
     }
 }
 
 // Set up the query arguments
 $args = array(
-    'posts_per_page' => $attributes['numberOfPosts'],
-    'post_status' => 'publish',
-    'order' => $attributes['order'],
-    'orderby' => $attributes['orderBy'],
+    'posts_per_page' => $attributes['numberOfPosts'] ?? 5,
+    'post_status'    => 'publish',
+    'order'          => $attributes['order'] ?? 'desc',
+    'orderby'        => $attributes['orderBy'] ?? 'date',
 );
 
-if (isset($attributes['categories'])) {
+if (!empty($attributes['categories'])) {
     $args['category__in'] = array_column($attributes['categories'], 'id');
 }
 
@@ -41,77 +40,93 @@ $posts = get_posts($args);
 
 <div <?php echo get_block_wrapper_attributes(); ?>>
     <div class="post-grid" style="
-        gap: <?php echo esc_attr($attributes['columnGap']); ?>px;
-        --columns: <?php echo esc_attr($attributes['columns']); ?>
+        gap: <?php echo esc_attr($attributes['columnGap'] ?? 20); ?>px;
+        --columns: <?php echo esc_attr($attributes['columns'] ?? 3); ?>;
     ">
-        <?php foreach ($posts as $post):
-            setup_postdata($post); ?>
+        <?php foreach ($posts as $post) : setup_postdata($post); ?>
             <div class="grid-card" style="
-                    --card-bg: <?php echo esc_attr($attributes['contentBackground']); ?>;
-                    --card-bg-hover: <?php echo esc_attr($attributes['contentBackgroundHover']); ?>;
-                ">
-                <?php if (has_post_thumbnail($post) && $attributes['displayImage']): ?>
+                --card-bg: <?php echo esc_attr($attributes['contentBackground'] ?? '#fff'); ?>;
+                --card-bg-hover: <?php echo esc_attr($attributes['contentBackgroundHover'] ?? '#f5f5f5'); ?>;
+            ">
+                <?php if (has_post_thumbnail($post) && !empty($attributes['displayImage'])) : ?>
                     <div class="post-grid-thumbnail">
                         <?php echo get_the_post_thumbnail($post, 'large', array('alt' => get_the_title($post))); ?>
                     </div>
                 <?php endif; ?>
 
                 <div class="content-body" style="
-                        padding: <?php echo esc_attr($attributes['contentPadding']['top'] ?? 0) . ' ' . esc_attr($attributes['contentPadding']['right'] ?? 0) . ' ' . esc_attr($attributes['contentPadding']['bottom'] ?? 0) . ' ' . esc_attr($attributes['contentPadding']['left'] ?? 0); ?>;
-                        margin: <?php echo esc_attr($attributes['contentMargin']['top'] ?? 0) . ' ' . esc_attr($attributes['contentMargin']['right'] ?? 0) . ' ' . esc_attr($attributes['contentMargin']['bottom'] ?? 0) . ' ' . esc_attr($attributes['contentMargin']['left'] ?? 0); ?>;
-                    ">
-                    <?php if ($attributes['showTitle']): ?>
+                     padding: <?php echo esc_attr($attributes['contentPadding']['top'] ?? 0) . ' ' .
+                                    esc_attr($attributes['contentPadding']['right'] ?? 0) . ' ' .
+                                    esc_attr($attributes['contentPadding']['bottom'] ?? 0) . ' ' .
+                                    esc_attr($attributes['contentPadding']['left'] ?? 0); ?>;
+                     margin: <?php echo esc_attr($attributes['contentMargin']['top'] ?? 0) . ' ' .
+                                    esc_attr($attributes['contentMargin']['right'] ?? 0) . ' ' .
+                                    esc_attr($attributes['contentMargin']['bottom'] ?? 0) . ' ' .
+                                    esc_attr($attributes['contentMargin']['left'] ?? 0); ?>;
+                ">
+                    <?php if (!empty($attributes['showTitle'])) : ?>
                         <div class="post-grid-title">
-                            <h5
-                                style="text-align: <?php echo esc_attr($attributes['contentAlignment']); ?>; --titleHoverColor: <?php echo esc_attr($attributes['titleHoverColor']); ?>;">
-                                <a href="<?php the_permalink($post); ?>"
-                                    style="
-                                    --titleColor: <?php echo esc_attr($attributes['titleColor']); ?>;--titleHoverColor: <?php echo esc_attr($attributes['titleHoverColor']); ?>;">
-                                    <?php echo get_the_title($post); ?>
+                            <h5 style="text-align: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;">
+                                <a href="<?php the_permalink($post); ?>" style="
+                            --titleColor: <?php echo esc_attr($attributes['titleColor'] ?? '#000'); ?>;
+                            --titleHoverColor: <?php echo esc_attr($attributes['titleHoverColor'] ?? '#555'); ?>;
+                        ">
+                                    <?php echo esc_html(get_the_title($post)); ?>
                                 </a>
                             </h5>
                         </div>
                     <?php endif; ?>
 
-                    <?php if ($attributes['showMeta']): ?>
-                        <div class="post-grid-meta" style="--metaTextAlign: <?php echo esc_attr($attributes['contentAlignment']); ?>;
-                               --metaHoverColor: <?php echo esc_attr($attributes['metaHoverColor']); ?>;
-                               --metaColor: <?php echo esc_attr($attributes['metaColor']); ?>;
-                               --metaMarginTop: <?php echo esc_attr($attributes['metaMargin']['top']); ?>;
-                               --metaMarginBottom: <?php echo esc_attr($attributes['metaMargin']['bottom']); ?>;
-                               --metaMarginLeft: <?php echo esc_attr($attributes['metaMargin']['left']); ?>;
-                               --metaMarginRight: <?php echo esc_attr($attributes['metaMargin']['right']); ?>;">
-
-                            <span>By <?php echo get_the_author_meta('display_name', $post->post_author); ?></span>
+                    <?php if (!empty($attributes['showMeta'])) : ?>
+                        <div class="post-grid-meta" style="
+                    --metaTextAlign: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;
+                    --metaHoverColor: <?php echo esc_attr($attributes['metaHoverColor'] ?? '#999'); ?>;
+                    --metaColor: <?php echo esc_attr($attributes['metaColor'] ?? '#777'); ?>;
+                    --metaMarginTop: <?php echo esc_attr($attributes['metaMargin']['top'] ?? '10px'); ?>;
+                    --metaMarginBottom: <?php echo esc_attr($attributes['metaMargin']['bottom'] ?? '10px'); ?>;
+                    --metaMarginLeft: <?php echo esc_attr($attributes['metaMargin']['left'] ?? '0'); ?>;
+                    --metaMarginRight: <?php echo esc_attr($attributes['metaMargin']['right'] ?? '0'); ?>;
+                ">
+                            <span>By <?php echo esc_html(get_the_author_meta('display_name', $post->post_author)); ?></span>
                             <time datetime="<?php echo esc_attr(get_the_date('c', $post)); ?>">
-                                <?php echo get_the_date('', $post); ?>
+                                <?php echo esc_html(get_the_date('', $post)); ?>
                             </time>
                         </div>
                     <?php endif; ?>
 
-
-
-
-                    <?php if ($attributes['showExcerpt']): ?>
+                    <?php if (!empty($attributes['showExcerpt'])) : ?>
                         <div class="post-grid-excerpt"
-                            style="text-align: <?php echo esc_attr($attributes['contentAlignment']); ?>;">
-                            <p>
-                                <?php echo truncate_excerpt(get_the_excerpt($post), $attributes['excerptMaxWords']); ?>
+                            style="text-align: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;">
+                            <p><?php echo esc_html(truncate_excerpt(get_the_excerpt($post), $attributes['excerptMaxWords'] ?? 30)); ?>
                             </p>
                         </div>
                     <?php endif; ?>
 
-                    <?php if ($attributes['readMore']): ?>
+                    <?php if (!empty($attributes['readMore'])) : ?>
                         <div class="post-grid-btn"
-                            style="text-align: <?php echo esc_attr($attributes['readMoreAlignment']); ?>;">
-                            <a href="<?php the_permalink($post); ?>">
+                            style="text-align: <?php echo esc_attr($attributes['readMoreAlignment'] ?? 'left'); ?>;">
+                            <a href="<?php the_permalink($post); ?>" class="read-more-link" style="
+                --readMoreColor: <?php echo esc_attr($attributes['readMoreColor'] ?? '#fff'); ?>; 
+                --readMoreBackground: <?php echo esc_attr($attributes['readMoreBackground'] ?? '#0073aa'); ?>;
+                --readMoreColorHover: <?php echo esc_attr($attributes['readMoreColorHover'] ?? '#fff'); ?>;
+                --readMoreBackgroundHover: <?php echo esc_attr($attributes['readMoreBackgroundHover'] ?? '#005177'); ?>;
+                --readMorePaddingTop: <?php echo esc_attr($attributes['readMorePadding']['top'] ?? '0px'); ?>;
+                --readMorePaddingRight: <?php echo esc_attr($attributes['readMorePadding']['right'] ?? '0px'); ?>;
+                --readMorePaddingBottom: <?php echo esc_attr($attributes['readMorePadding']['bottom'] ?? '0px'); ?>;
+                --readMorePaddingLeft: <?php echo esc_attr($attributes['readMorePadding']['left'] ?? '0px'); ?>;
+                --readMoreMarginTop: <?php echo esc_attr($attributes['readMoreMargin']['top'] ?? '0px'); ?>;
+                --readMoreMarginRight: <?php echo esc_attr($attributes['readMoreMargin']['right'] ?? '0px'); ?>;
+                --readMoreMarginBottom: <?php echo esc_attr($attributes['readMoreMargin']['bottom'] ?? '0px'); ?>;
+                --readMoreMarginLeft: <?php echo esc_attr($attributes['readMoreMargin']['left'] ?? '0px'); ?>;
+           ">
                                 <span><?php esc_html_e('Read More', 'postgrid'); ?></span>
                             </a>
                         </div>
                     <?php endif; ?>
-                </div>
-            </div>
+
+                </div> <!-- /.content-body -->
+            </div> <!-- /.grid-card -->
         <?php endforeach;
         wp_reset_postdata(); ?>
-    </div>
-</div>
+    </div> <!-- /.post-grid -->
+</div> <!-- /.wp-block -->

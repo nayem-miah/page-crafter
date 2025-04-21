@@ -40,6 +40,7 @@
 					line-height: 24px;
 					color: var(--titleColor);
 				}
+
 				a:hover {
 					color: var(--titleHoverColor);
 				}
@@ -56,6 +57,7 @@
 				margin-bottom: var(--metaMarginBottom);
 				margin-left: var(--metaMarginLeft);
 			}
+
 			.post-grid-meta:hover {
 				color: var(--metaHoverColor);
 			}
@@ -71,18 +73,31 @@
 				margin-bottom: var(--excerptMarginBottom);
 				margin-left: var(--excerptMarginLeft);
 			}
+
 			.post-grid-excerpt:hover {
 				color: var(--excerptHoverColor);
 			}
 
 			.post-grid-btn a {
 				font-size: 16px;
-				padding: 8px 16px;
-				margin-top: 20px;
-				color: #fff;
-				background: #0053f0;
+
+				padding-top: var(--readMorePaddingTop);
+				padding-right: var(--readMorePaddingRight);
+				padding-bottom: var(--readMorePaddingBottom);
+				padding-left: var(--readMorePaddingLeft);
+				margin-top: var(--readMoreMarginTop);
+				margin-right: var(--readMoreMarginRight);
+				margin-bottom: var(--readMoreMarginBottom);
+				margin-left: var(--readMoreMarginLeft);
+				color: var(--readMoreColor);
+				background: var(--readMoreBackground);
 				border-radius: 4px;
 				display: inline-block;
+			}
+
+			.post-grid-btn a:hover {
+				background: var(--readMoreBackgroundHover);
+				color: var(--readMoreColorHover)
 			}
 		}
 	}

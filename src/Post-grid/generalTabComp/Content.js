@@ -9,6 +9,8 @@ export default function Content( {
 	showTitle,
 	excerptMaxWords,
 	contentAlignment,
+	togglePanel,
+	openPanel,
 } ) {
 	const HandleTitleVisibility = ( value ) => {
 		setAttributes( {
@@ -32,13 +34,17 @@ export default function Content( {
 		} );
 	};
 	return (
-		<PanelBody title="Content" initialOpen={ false }>
+		<PanelBody
+			title="Content"
+			opened={ openPanel === 'content' }
+			onToggle={ () => togglePanel( 'content' ) }
+		>
 			<Alignmnet
 				setAttributes={ setAttributes }
 				alignProp={ contentAlignment }
 				fromWhere="content"
-            />
-            
+			/>
+
 			<PanelBody title="Title" initialOpen={ false }>
 				<ToggleControl
 					label={ __( 'Title Visibility', 'postgrid' ) }

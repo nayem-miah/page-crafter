@@ -40,7 +40,7 @@ return array(
 		'attributes' => array(
 			'columns' => array(
 				'type' => 'number',
-				'default' => 4
+				'default' => 3
 			),
 			'columnGap' => array(
 				'type' => 'number',
@@ -86,7 +86,7 @@ return array(
 			),
 			'excerptMaxWords' => array(
 				'type' => 'number',
-				'default' => 15
+				'default' => 10
 			),
 			'readMoreAlignment' => array(
 				'type' => 'string',
@@ -128,7 +128,7 @@ return array(
 			),
 			'titleColor' => array(
 				'type' => 'string',
-				'default' => '#ff5722'
+				'default' => '#1a202c '
 			),
 			'titleActiveColor' => array(
 				'type' => 'string',
@@ -136,7 +136,7 @@ return array(
 			),
 			'titleHoverColor' => array(
 				'type' => 'string',
-				'default' => '#000000'
+				'default' => '#2b6cb0 '
 			),
 			'titleMargin' => array(
 				'type' => 'object',
@@ -149,7 +149,7 @@ return array(
 			),
 			'metaColor' => array(
 				'type' => 'string',
-				'default' => '#ff5722'
+				'default' => '#718096'
 			),
 			'metaActiveColor' => array(
 				'type' => 'string',
@@ -157,7 +157,7 @@ return array(
 			),
 			'metaHoverColor' => array(
 				'type' => 'string',
-				'default' => '#000000'
+				'default' => '#4a5568 '
 			),
 			'metaMargin' => array(
 				'type' => 'object',
@@ -170,7 +170,7 @@ return array(
 			),
 			'desColor' => array(
 				'type' => 'string',
-				'default' => '#ff5722'
+				'default' => '#4a5568 '
 			),
 			'desActiveColor' => array(
 				'type' => 'string',
@@ -187,6 +187,48 @@ return array(
 					'right' => '0px',
 					'bottom' => '0px',
 					'left' => '0px'
+				)
+			),
+			'readMoreBackground' => array(
+				'type' => 'string',
+				'default' => '#10b981'
+			),
+			'readMoreBackgroundHover' => array(
+				'type' => 'string',
+				'default' => '#059669'
+			),
+			'readMoreBackgroundActive' => array(
+				'type' => 'string',
+				'default' => 'default'
+			),
+			'readMoreColor' => array(
+				'type' => 'string',
+				'default' => '#ffffff'
+			),
+			'readMoreColorHover' => array(
+				'type' => 'string',
+				'default' => '#f0fdf4'
+			),
+			'readMoreColorActive' => array(
+				'type' => 'string',
+				'default' => 'default'
+			),
+			'readMoreMargin' => array(
+				'type' => 'object',
+				'default' => array(
+					'top' => '20px',
+					'right' => '0px',
+					'bottom' => '0px',
+					'left' => '0px'
+				)
+			),
+			'readMorePadding' => array(
+				'type' => 'object',
+				'default' => array(
+					'top' => '8px',
+					'right' => '16px',
+					'bottom' => '8px',
+					'left' => '16px'
 				)
 			)
 		),

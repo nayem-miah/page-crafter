@@ -75,12 +75,22 @@
 }
 .wp-block-create-block-postgrid .grid-card .content-body .post-grid-btn a {
   font-size: 16px;
-  padding: 8px 16px;
-  margin-top: 20px;
-  color: #fff;
-  background: #0053f0;
+  padding-top: var(--readMorePaddingTop);
+  padding-right: var(--readMorePaddingRight);
+  padding-bottom: var(--readMorePaddingBottom);
+  padding-left: var(--readMorePaddingLeft);
+  margin-top: var(--readMoreMarginTop);
+  margin-right: var(--readMoreMarginRight);
+  margin-bottom: var(--readMoreMarginBottom);
+  margin-left: var(--readMoreMarginLeft);
+  color: var(--readMoreColor);
+  background: var(--readMoreBackground);
   border-radius: 4px;
   display: inline-block;
+}
+.wp-block-create-block-postgrid .grid-card .content-body .post-grid-btn a:hover {
+  background: var(--readMoreBackgroundHover);
+  color: var(--readMoreColorHover);
 }
 .wp-block-create-block-postgrid .grid-card:hover {
   background-color: var(--card-bg-hover);
