@@ -2,18 +2,14 @@ import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { PanelBody, TabPanel } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 import { cog, Icon, styles, tableOfContents } from '@wordpress/icons';
-
 import Excerpt from './components/Excerpt';
 import Meta from './components/Meta';
 import ReadButton from './components/ReadButton';
 import Thumnail from './components/Thumnail';
 import Title from './components/Title';
 import './editor.scss';
-import ActionBtn from './generalTabComp/ActionBtn';
-import Content from './generalTabComp/Content';
-import General from './generalTabComp/General';
-import Image from './generalTabComp/Image';
-import ContentStyle from './styleTabCom/ContentStyle';
+import GeneralTab from './tabs/GeneralTab';
+import StyleTab from './tabs/StyleTab';
 export default function Edit( { attributes, setAttributes } ) {
 	const {
 		numberOfPosts,
@@ -32,22 +28,23 @@ export default function Edit( { attributes, setAttributes } ) {
 		contentAlignment,
 		contentBackground,
 		contentBackgroundHover,
-		activeBackground,
 		contentPadding,
 		contentMargin,
 		titleColor,
 		titleHoverColor,
 		titleMargin,
-		titleActiveColor,
 		metaColor,
 		metaHoverColor,
-		metaActiveColor,
 		metaMargin,
 		desMargin,
 		desColor,
 		desHoverColor,
-		desActiveColor,
-
+		readMoreBackground,
+		readMoreBackgroundHover,
+		readMoreColorHover,
+		readMoreColor,
+		readMorePadding,
+		readMoreMargin,
 	} = attributes;
 	const catIDs = categories?.map( ( cat ) => cat.id );
 	const posts = useSelect(
@@ -103,107 +100,17 @@ export default function Edit( { attributes, setAttributes } ) {
 						switch ( tab.name ) {
 							case 'general':
 								return (
-									<div>
-										<General
-											order={ attributes?.order }
-											setAttributes={ setAttributes }
-											columnGap={ columnGap }
-											columns={ columns }
-											numberOfPosts={ numberOfPosts }
-										/>
-										<Image
-											setAttributes={ setAttributes }
-											displayImage={ displayImage }
-										/>
-										<Content
-											setAttributes={ setAttributes }
-											showExcerpt={ showExcerpt }
-											showTitle={ showTitle }
-											showMeta={ showMeta }
-											excerptMaxWords={ excerptMaxWords }
-											contentAlignment={
-												contentAlignment
-											}
-										/>
-										<ActionBtn
-											setAttributes={ setAttributes }
-											readMore={ readMore }
-											readMoreAlignment={
-												readMoreAlignment
-											}
-										/>
-										<PanelBody
-											title="Pagination"
-											initialOpen={ false }
-										>
-											<p>General settings content here</p>
-										</PanelBody>
-									</div>
+									<GeneralTab
+										attributes={ attributes }
+										setAttributes={ setAttributes }
+									/>
 								);
 							case 'styles':
 								return (
-									<div>
-										<ContentStyle
-											setAttributes={ setAttributes }
-											activeBackground={
-												activeBackground
-											}
-											contentBackground={
-												contentBackground
-											}
-											contentBackgroundHover={
-												contentBackgroundHover
-											}
-											contentPadding={ contentPadding }
-											contentMargin={ contentMargin }
-											titleColor={ titleColor }
-											titleHoverColor={ titleHoverColor }
-											titleActiveColor={
-												titleActiveColor
-											}
-											titleMargin={ titleMargin }
-											metaColor={ metaColor }
-											metaHoverColor={ metaHoverColor }
-											metaActiveColor={ metaActiveColor }
-											metaMargin={ metaMargin }
-											desMargin={ desMargin }
-											desColor={ desColor }
-											desHoverColor={ desHoverColor }
-											desActiveColor={ desActiveColor }
-											
-										/>
-
-										<PanelBody
-											title="Read More"
-											initialOpen={ false }
-										>
-											<p>General settings content here</p>
-										</PanelBody>
-										<PanelBody
-											title="Pagination"
-											initialOpen={ false }
-										>
-											<p>General settings content here</p>
-										</PanelBody>
-										<PanelBody
-											title="Border"
-											initialOpen={ false }
-										>
-											<p>General settings content here</p>
-										</PanelBody>
-										<PanelBody
-											title="Box Shadow"
-											initialOpen={ false }
-										>
-											<p>General settings content here</p>
-										</PanelBody>
-										<PanelBody
-											title="Spacing"
-											initialOpen={ false }
-										>
-											<p>General settings content here</p>
-										</PanelBody>
-									</div>
+									<StyleTab
+										attributes={ attributes }
+										setAttributes={ setAttributes }
+									/>
 								);
 							case 'advanced':
 								return (
@@ -291,6 +198,14 @@ export default function Edit( { attributes, setAttributes } ) {
 								readMore={ readMore }
 								link={ post?.link }
 								readMoreAlignment={ readMoreAlignment }
+								readMoreBackground={ readMoreBackground }
+								readMoreBackgroundHover={
+									readMoreBackgroundHover
+								}
+								readMoreColor={ readMoreColor }
+								readMoreColorHover={ readMoreColorHover }
+								readMorePadding={ readMorePadding }
+								readMoreMargin={ readMoreMargin }
 							/>
 						</div>
 					</div>

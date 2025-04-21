@@ -188,6 +188,48 @@ return array(
 					'bottom' => '0px',
 					'left' => '0px'
 				)
+			),
+			'readMoreBackground' => array(
+				'type' => 'string',
+				'default' => '#10b981'
+			),
+			'readMoreBackgroundHover' => array(
+				'type' => 'string',
+				'default' => '#059669'
+			),
+			'readMoreBackgroundActive' => array(
+				'type' => 'string',
+				'default' => 'default'
+			),
+			'readMoreColor' => array(
+				'type' => 'string',
+				'default' => '#ffffff'
+			),
+			'readMoreColorHover' => array(
+				'type' => 'string',
+				'default' => '#f0fdf4'
+			),
+			'readMoreColorActive' => array(
+				'type' => 'string',
+				'default' => 'default'
+			),
+			'readMoreMargin' => array(
+				'type' => 'object',
+				'default' => array(
+					'top' => '20px',
+					'right' => '0px',
+					'bottom' => '0px',
+					'left' => '0px'
+				)
+			),
+			'readMorePadding' => array(
+				'type' => 'object',
+				'default' => array(
+					'top' => '8px',
+					'right' => '16px',
+					'bottom' => '8px',
+					'left' => '16px'
+				)
 			)
 		),
 		'textdomain' => 'postgrid',

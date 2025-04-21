@@ -18,6 +18,14 @@ export default function GroupButton( { active, setAttributes, from } ) {
 			setAttributes( {
 				desActiveColor: 'default',
 			} );
+		} else if ( from === 'readMoreBack' ) {
+			setAttributes( {
+				readMoreBackgroundActive: 'default',
+			} );
+		}else if ( from === 'readMoreColor' ) {
+			setAttributes( {
+				readMoreColorActive: 'default',
+			} );
 		}
 	};
 
@@ -38,7 +46,15 @@ export default function GroupButton( { active, setAttributes, from } ) {
 			setAttributes( {
 				desActiveColor: 'hover',
 			} );
-		}
+		} else if ( from === 'readMoreBack' ) {
+			setAttributes( {
+				readMoreBackgroundActive: 'hover',
+			} );
+		}else if ( from === 'readMoreColor' ) {
+			setAttributes( {
+				readMoreColorActive: 'hover',
+			} );
+		}	
 	};
 
 	return (

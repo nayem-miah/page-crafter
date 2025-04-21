@@ -162,6 +162,48 @@
         "bottom": "0px",
         "left": "0px"
       }
+    },
+    "readMoreBackground": {
+      "type": "string",
+      "default": "#10b981"
+    },
+    "readMoreBackgroundHover": {
+      "type": "string",
+      "default": "#059669"
+    },
+    "readMoreBackgroundActive": {
+      "type": "string",
+      "default": "default"
+    },
+    "readMoreColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "readMoreColorHover": {
+      "type": "string",
+      "default": "#f0fdf4"
+    },
+    "readMoreColorActive": {
+      "type": "string",
+      "default": "default"
+    },
+    "readMoreMargin": {
+      "type": "object",
+      "default": {
+        "top": "20px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
+    },
+    "readMorePadding": {
+      "type": "object",
+      "default": {
+        "top": "8px",
+        "right": "16px",
+        "bottom": "8px",
+        "left": "16px"
+      }
     }
   },
   "textdomain": "postgrid",
