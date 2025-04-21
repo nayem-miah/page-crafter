@@ -1,13 +1,22 @@
 import { __ } from '@wordpress/i18n';
 import { PanelBody, ToggleControl } from '@wordpress/components';
-export default function Image( { displayImage, setAttributes } ) {
+export default function Image( {
+	displayImage,
+	setAttributes,
+	togglePanel,
+	openPanel,
+} ) {
 	const HandleDisplayFeatureImage = ( value ) => {
 		setAttributes( {
 			displayImage: value,
 		} );
 	};
 	return (
-		<PanelBody title="Image" initialOpen={ false }>
+		<PanelBody
+			title="Image"
+			initialOpen={ openPanel === 'image' }
+			onToggle={ () => togglePanel( 'image' ) }
+		>
 			<ToggleControl
 				label={ __( 'Display Featured Image', 'postgrid' ) }
 				checked={ displayImage }

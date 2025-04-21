@@ -534,14 +534,20 @@ function Edit({
                 setAttributes: setAttributes
               });
             case 'advanced':
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
                   title: "Visibility Option",
                   initialOpen: true,
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
                     children: "General settings content here"
                   })
-                })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+                  title: "Advanced",
+                  initialOpen: false,
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("p", {
+                    children: "General settings content here"
+                  })
+                })]
               });
             default:
               return null;
@@ -648,7 +654,9 @@ __webpack_require__.r(__webpack_exports__);
 function ActionBtn({
   setAttributes,
   readMore,
-  readMoreAlignment
+  readMoreAlignment,
+  togglePanel,
+  openPanel
 }) {
   const handleReadMoreButton = value => {
     setAttributes({
@@ -657,7 +665,8 @@ function ActionBtn({
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
     title: "Action Button",
-    initialOpen: false,
+    initialOpen: openPanel === 'actionBtn',
+    onToggle: () => togglePanel('actionBtn'),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Read More', 'postgrid'),
       checked: readMore,
@@ -758,7 +767,9 @@ function Content({
   showMeta,
   showTitle,
   excerptMaxWords,
-  contentAlignment
+  contentAlignment,
+  togglePanel,
+  openPanel
 }) {
   const HandleTitleVisibility = value => {
     setAttributes({
@@ -782,7 +793,8 @@ function Content({
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
     title: "Content",
-    initialOpen: false,
+    initialOpen: openPanel === 'content',
+    onToggle: () => togglePanel('content'),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Alignmnet__WEBPACK_IMPORTED_MODULE_2__["default"], {
       setAttributes: setAttributes,
       alignProp: contentAlignment,
@@ -847,7 +859,9 @@ function General({
   setAttributes,
   columns,
   columnGap,
-  numberOfPosts
+  numberOfPosts,
+  togglePanel,
+  openPanel
 }) {
   const HandleNumberOfItems = value => {
     setAttributes({
@@ -866,7 +880,8 @@ function General({
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
     title: "General",
-    initialOpen: true,
+    initialOpen: openPanel === 'general',
+    onToggle: () => togglePanel('general'),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Columns', 'postgrid'),
       min: 2,
@@ -950,7 +965,9 @@ __webpack_require__.r(__webpack_exports__);
 
 function Image({
   displayImage,
-  setAttributes
+  setAttributes,
+  togglePanel,
+  openPanel
 }) {
   const HandleDisplayFeatureImage = value => {
     setAttributes({
@@ -959,7 +976,8 @@ function Image({
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
     title: "Image",
-    initialOpen: false,
+    initialOpen: openPanel === 'image',
+    onToggle: () => togglePanel('image'),
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Display Featured Image', 'postgrid'),
       checked: displayImage,
@@ -1620,8 +1638,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _generalTabComp_Content__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../generalTabComp/Content */ "./src/Post-grid/generalTabComp/Content.js");
 /* harmony import */ var _generalTabComp_Image__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../generalTabComp/Image */ "./src/Post-grid/generalTabComp/Image.js");
 /* harmony import */ var _generalTabComp_General__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../generalTabComp/General */ "./src/Post-grid/generalTabComp/General.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
+
 
 
 
@@ -1645,31 +1666,47 @@ function GeneralTab({
     columnGap,
     contentAlignment
   } = attributes;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_generalTabComp_General__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  const [openPanel, setOpenPanel] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_5__.useState)('general'); // default open panel
+
+  const togglePanel = panelKey => {
+    if (openPanel !== panelKey) {
+      setOpenPanel(panelKey);
+    }
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_generalTabComp_General__WEBPACK_IMPORTED_MODULE_4__["default"], {
       order: attributes?.order,
       setAttributes: setAttributes,
       columnGap: columnGap,
       columns: columns,
-      numberOfPosts: numberOfPosts
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_generalTabComp_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      numberOfPosts: numberOfPosts,
+      togglePanel: togglePanel,
+      openPanel: openPanel
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_generalTabComp_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
       setAttributes: setAttributes,
-      displayImage: displayImage
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_generalTabComp_Content__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      displayImage: displayImage,
+      togglePanel: togglePanel,
+      openPanel: openPanel
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_generalTabComp_Content__WEBPACK_IMPORTED_MODULE_2__["default"], {
       setAttributes: setAttributes,
       showExcerpt: showExcerpt,
       showTitle: showTitle,
       showMeta: showMeta,
       excerptMaxWords: excerptMaxWords,
-      contentAlignment: contentAlignment
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_generalTabComp_ActionBtn__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      contentAlignment: contentAlignment,
+      togglePanel: togglePanel,
+      openPanel: openPanel
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_generalTabComp_ActionBtn__WEBPACK_IMPORTED_MODULE_1__["default"], {
       setAttributes: setAttributes,
       readMore: readMore,
-      readMoreAlignment: readMoreAlignment
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+      readMoreAlignment: readMoreAlignment,
+      togglePanel: togglePanel,
+      openPanel: openPanel
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
       title: "Pagination",
-      initialOpen: false,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+      initialOpen: openPanel === 'pagination',
+      onToggle: () => togglePanel('pagination'),
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
         children: "General settings content here"
       })
     })]

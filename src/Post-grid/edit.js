@@ -121,6 +121,12 @@ export default function Edit( { attributes, setAttributes } ) {
 										>
 											<p>General settings content here</p>
 										</PanelBody>
+										<PanelBody
+											title="Advanced"
+											initialOpen={ false }
+										>
+											<p>General settings content here</p>
+										</PanelBody>
 									</div>
 								);
 							default:
