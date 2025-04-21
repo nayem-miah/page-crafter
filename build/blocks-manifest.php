@@ -86,7 +86,7 @@ return array(
 			),
 			'excerptMaxWords' => array(
 				'type' => 'number',
-				'default' => 15
+				'default' => 10
 			),
 			'readMoreAlignment' => array(
 				'type' => 'string',
