@@ -40,7 +40,7 @@ return array(
 		'attributes' => array(
 			'additionalClass' => array(
 				'type' => 'string',
-				'default' => 'nayem'
+				'default' => ''
 			),
 			'columns' => array(
 				'type' => 'number',
@@ -234,6 +234,10 @@ return array(
 					'bottom' => '8px',
 					'left' => '16px'
 				)
+			),
+			'useAjaxPagination' => array(
+				'type' => 'boolean',
+				'default' => false
 			)
 		),
 		'textdomain' => 'postgrid',

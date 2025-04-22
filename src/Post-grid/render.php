@@ -26,9 +26,9 @@ if (!function_exists('truncate_excerpt')) {
 // Set up the query arguments
 $args = array(
     'posts_per_page' => $attributes['numberOfPosts'] ?? 5,
-    'post_status'    => 'publish',
-    'order'          => $attributes['order'] ?? 'desc',
-    'orderby'        => $attributes['orderBy'] ?? 'date',
+    'post_status' => 'publish',
+    'order' => $attributes['order'] ?? 'desc',
+    'orderby' => $attributes['orderBy'] ?? 'date',
 );
 
 if (!empty($attributes['categories'])) {
@@ -43,12 +43,13 @@ $posts = get_posts($args);
         gap: <?php echo esc_attr($attributes['columnGap'] ?? 20); ?>px;
         --columns: <?php echo esc_attr($attributes['columns'] ?? 3); ?>;
     ">
-        <?php foreach ($posts as $post) : setup_postdata($post); ?>
+        <?php foreach ($posts as $post):
+            setup_postdata($post); ?>
             <div class="grid-card" style="
                 --card-bg: <?php echo esc_attr($attributes['contentBackground'] ?? '#fff'); ?>;
                 --card-bg-hover: <?php echo esc_attr($attributes['contentBackgroundHover'] ?? '#f5f5f5'); ?>;
             ">
-                <?php if (has_post_thumbnail($post) && !empty($attributes['displayImage'])) : ?>
+                <?php if (has_post_thumbnail($post) && !empty($attributes['displayImage'])): ?>
                     <div class="post-grid-thumbnail">
                         <?php echo get_the_post_thumbnail($post, 'large', array('alt' => get_the_title($post))); ?>
                     </div>
@@ -56,15 +57,15 @@ $posts = get_posts($args);
 
                 <div class="content-body" style="
                      padding: <?php echo esc_attr($attributes['contentPadding']['top'] ?? 0) . ' ' .
-                                    esc_attr($attributes['contentPadding']['right'] ?? 0) . ' ' .
-                                    esc_attr($attributes['contentPadding']['bottom'] ?? 0) . ' ' .
-                                    esc_attr($attributes['contentPadding']['left'] ?? 0); ?>;
+                         esc_attr($attributes['contentPadding']['right'] ?? 0) . ' ' .
+                         esc_attr($attributes['contentPadding']['bottom'] ?? 0) . ' ' .
+                         esc_attr($attributes['contentPadding']['left'] ?? 0); ?>;
                      margin: <?php echo esc_attr($attributes['contentMargin']['top'] ?? 0) . ' ' .
-                                    esc_attr($attributes['contentMargin']['right'] ?? 0) . ' ' .
-                                    esc_attr($attributes['contentMargin']['bottom'] ?? 0) . ' ' .
-                                    esc_attr($attributes['contentMargin']['left'] ?? 0); ?>;
+                         esc_attr($attributes['contentMargin']['right'] ?? 0) . ' ' .
+                         esc_attr($attributes['contentMargin']['bottom'] ?? 0) . ' ' .
+                         esc_attr($attributes['contentMargin']['left'] ?? 0); ?>;
                 ">
-                    <?php if (!empty($attributes['showTitle'])) : ?>
+                    <?php if (!empty($attributes['showTitle'])): ?>
                         <div class="post-grid-title">
                             <h5 style="text-align: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;">
                                 <a href="<?php the_permalink($post); ?>" style="
@@ -77,7 +78,7 @@ $posts = get_posts($args);
                         </div>
                     <?php endif; ?>
 
-                    <?php if (!empty($attributes['showMeta'])) : ?>
+                    <?php if (!empty($attributes['showMeta'])): ?>
                         <div class="post-grid-meta" style="
                     --metaTextAlign: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;
                     --metaHoverColor: <?php echo esc_attr($attributes['metaHoverColor'] ?? '#999'); ?>;
@@ -94,7 +95,7 @@ $posts = get_posts($args);
                         </div>
                     <?php endif; ?>
 
-                    <?php if (!empty($attributes['showExcerpt'])) : ?>
+                    <?php if (!empty($attributes['showExcerpt'])): ?>
                         <div class="post-grid-excerpt"
                             style="text-align: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;">
                             <p><?php echo esc_html(truncate_excerpt(get_the_excerpt($post), $attributes['excerptMaxWords'] ?? 30)); ?>
@@ -102,7 +103,7 @@ $posts = get_posts($args);
                         </div>
                     <?php endif; ?>
 
-                    <?php if (!empty($attributes['readMore'])) : ?>
+                    <?php if (!empty($attributes['readMore'])): ?>
                         <div class="post-grid-btn"
                             style="text-align: <?php echo esc_attr($attributes['readMoreAlignment'] ?? 'left'); ?>;">
                             <a href="<?php the_permalink($post); ?>" class="read-more-link" style="

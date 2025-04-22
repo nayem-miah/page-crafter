@@ -28,6 +28,7 @@ export default function ReadMoreStyle( {
 			setAttributes( { readMoreBackgroundHover: color } );
 		}
 	};
+	
 	const handleReadMoreColorChange = ( color ) => {
 		if ( readMoreColorActive === 'default' ) {
 			setAttributes( { readMoreColor: color } );

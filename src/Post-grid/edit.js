@@ -47,6 +47,7 @@ export default function Edit( { attributes, setAttributes } ) {
 		readMorePadding,
 		readMoreMargin,
 		additionalClass,
+		useAjaxPagination,
 	} = attributes;
 	const catIDs = categories?.map( ( cat ) => cat.id );
 	const posts = useSelect(
@@ -119,6 +120,7 @@ export default function Edit( { attributes, setAttributes } ) {
 									<AdvanceTab
 										additionalClass={ additionalClass }
 										setAttributes={ setAttributes }
+										useAjaxPagination={ useAjaxPagination }
 									/>
 								);
 							default:

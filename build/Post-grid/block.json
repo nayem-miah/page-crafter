@@ -14,7 +14,7 @@
   "attributes": {
     "additionalClass": {
       "type": "string",
-      "default": "nayem"
+      "default": ""
     },
     "columns": {
       "type": "number",
@@ -208,6 +208,10 @@
         "bottom": "8px",
         "left": "16px"
       }
+    },
+    "useAjaxPagination": {
+      "type": "boolean",
+      "default": false
     }
   },
   "textdomain": "postgrid",
