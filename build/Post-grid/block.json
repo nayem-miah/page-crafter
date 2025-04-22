@@ -209,6 +209,14 @@
         "left": "16px"
       }
     },
+    "currentPage": {
+      "type": "number",
+      "default": 1
+    },
+    "totalPages": {
+      "type": "number",
+      "default": 1
+    },
     "useAjaxPagination": {
       "type": "boolean",
       "default": false

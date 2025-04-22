@@ -1,16 +1,240 @@
-import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
+// import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
+// import { TabPanel } from '@wordpress/components';
+// import { useSelect } from '@wordpress/data';
+// import { cog, Icon, styles, tableOfContents } from '@wordpress/icons';
+// import Excerpt from './components/Excerpt';
+// import Meta from './components/Meta';
+// import ReadButton from './components/ReadButton';
+// import Thumnail from './components/Thumnail';
+// import Title from './components/Title';
+// import './editor.scss';
+// import AdvanceTab from './tabs/AdvanceTab';
+// import GeneralTab from './tabs/GeneralTab';
+// import StyleTab from './tabs/StyleTab';
+// export default function Edit( { attributes, setAttributes } ) {
+// 	const {
+// 		numberOfPosts,
+// 		displayImage,
+// 		order,
+// 		orderBy,
+// 		categories,
+// 		readMore,
+// 		showTitle,
+// 		showExcerpt,
+// 		showMeta,
+// 		excerptMaxWords,
+// 		readMoreAlignment,
+// 		columns,
+// 		columnGap,
+// 		contentAlignment,
+// 		contentBackground,
+// 		contentBackgroundHover,
+// 		contentPadding,
+// 		contentMargin,
+// 		titleColor,
+// 		titleHoverColor,
+// 		titleMargin,
+// 		metaColor,
+// 		metaHoverColor,
+// 		metaMargin,
+// 		desMargin,
+// 		desColor,
+// 		desHoverColor,
+// 		readMoreBackground,
+// 		readMoreBackgroundHover,
+// 		readMoreColorHover,
+// 		readMoreColor,
+// 		readMorePadding,
+// 		readMoreMargin,
+// 		additionalClass,
+// 		useAjaxPagination,
+// 	} = attributes;
+// 	const catIDs = categories?.map( ( cat ) => cat.id );
+// 	const posts = useSelect(
+// 		( select ) => {
+// 			return select( 'core' ).getEntityRecords( 'postType', 'post', {
+// 				per_page: numberOfPosts,
+// 				_embed: true,
+// 				order,
+// 				orderby: orderBy,
+// 				categories: catIDs,
+// 			} );
+// 		},
+// 		[ numberOfPosts, order, orderBy, catIDs ]
+// 	);
+
+// 	return (
+// 		<div { ...useBlockProps( { className: additionalClass } ) }>
+// 			<InspectorControls>
+// 				<TabPanel
+// 					className="pagecrafter-tab-panel"
+// 					activeClass="is-active"
+// 					tabs={ [
+// 						{
+// 							name: 'general',
+// 							title: (
+// 								<span>
+// 									<Icon icon={ tableOfContents } /> General
+// 								</span>
+// 							),
+// 							className: 'tab-general',
+// 						},
+// 						{
+// 							name: 'styles',
+// 							title: (
+// 								<span>
+// 									<Icon icon={ styles } /> Styles
+// 								</span>
+// 							),
+// 							className: 'tab-styles',
+// 						},
+// 						{
+// 							name: 'advanced',
+// 							title: (
+// 								<span>
+// 									<Icon icon={ cog } /> Advanced
+// 								</span>
+// 							),
+// 							className: 'tab-advanced',
+// 						},
+// 					] }
+// 				>
+// 					{ ( tab ) => {
+// 						switch ( tab.name ) {
+// 							case 'general':
+// 								return (
+// 									<GeneralTab
+// 										attributes={ attributes }
+// 										setAttributes={ setAttributes }
+// 									/>
+// 								);
+// 							case 'styles':
+// 								return (
+// 									<StyleTab
+// 										attributes={ attributes }
+// 										setAttributes={ setAttributes }
+// 									/>
+// 								);
+// 							case 'advanced':
+// 								return (
+// 									<AdvanceTab
+// 										additionalClass={ additionalClass }
+// 										setAttributes={ setAttributes }
+// 										useAjaxPagination={ useAjaxPagination }
+// 									/>
+// 								);
+// 							default:
+// 								return null;
+// 						}
+// 					} }
+// 				</TabPanel>
+// 			</InspectorControls>
+
+// 			<div
+// 				className="post-grid"
+// 				style={ {
+// 					'--columns': columns,
+// 					'--column-gap': `${ columnGap }px`,
+// 				} }
+// 			>
+// 				{ posts?.map( ( post ) => (
+// 					<div
+// 						key={ post?.id }
+// 						className="grid-card"
+// 						style={ {
+// 							'--card-bg': contentBackground,
+// 							'--card-bg-hover': contentBackgroundHover,
+// 						} }
+// 					>
+// 						<Thumnail
+// 							thumnail={ post?._embedded?.[ 'wp:featuredmedia' ] }
+// 							displayImage={ displayImage }
+// 						/>
+
+// 						<div
+// 							className="content-body"
+// 							style={ {
+// 								padding: `${ contentPadding?.top || '0px' } ${
+// 									contentPadding?.right || '0px'
+// 								} ${ contentPadding?.bottom || '0px' } ${
+// 									contentPadding?.left || '0px'
+// 								}`,
+// 								margin: `${ contentMargin?.top || '0px' } ${
+// 									contentMargin?.right || '0px'
+// 								} ${ contentMargin?.bottom || '0px' } ${
+// 									contentMargin?.left || '0px'
+// 								}`,
+// 							} }
+// 						>
+// 							<Title
+// 								title={ post?.title?.rendered }
+// 								link={ post?.link }
+// 								showTitle={ showTitle }
+// 								contentAlignment={ contentAlignment }
+// 								titleColor={ titleColor }
+// 								titleHoverColor={ titleHoverColor }
+// 								titleMargin={ titleMargin }
+// 							/>
+// 							<Meta
+// 								showMeta={ showMeta }
+// 								author={ post?._embedded?.author }
+// 								date={ post?.date_gmt }
+// 								contentAlignment={ contentAlignment }
+// 								metaColor={ metaColor }
+// 								metaHoverColor={ metaHoverColor }
+// 								metaMargin={ metaMargin }
+// 							/>
+// 							<Excerpt
+// 								showExcerpt={ showExcerpt }
+// 								excerpt={ post?.excerpt?.rendered }
+// 								excerptMaxWords={ excerptMaxWords }
+// 								contentAlignment={ contentAlignment }
+// 								desMargin={ desMargin }
+// 								desColor={ desColor }
+// 								desHoverColor={ desHoverColor }
+// 							/>
+
+// 							<ReadButton
+// 								readMore={ readMore }
+// 								link={ post?.link }
+// 								readMoreAlignment={ readMoreAlignment }
+// 								readMoreBackground={ readMoreBackground }
+// 								readMoreBackgroundHover={
+// 									readMoreBackgroundHover
+// 								}
+// 								readMoreColor={ readMoreColor }
+// 								readMoreColorHover={ readMoreColorHover }
+// 								readMorePadding={ readMorePadding }
+// 								readMoreMargin={ readMoreMargin }
+// 							/>
+// 						</div>
+// 					</div>
+// 				) ) }
+// 			</div>
+// 		</div>
+// 	);
+// }
+
+
+
+import { useEffect, useState } from '@wordpress/element';
+import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
 import { TabPanel } from '@wordpress/components';
-import { useSelect } from '@wordpress/data';
+import apiFetch from '@wordpress/api-fetch';
 import { cog, Icon, styles, tableOfContents } from '@wordpress/icons';
-import Excerpt from './components/Excerpt';
-import Meta from './components/Meta';
-import ReadButton from './components/ReadButton';
-import Thumnail from './components/Thumnail';
-import Title from './components/Title';
-import './editor.scss';
-import AdvanceTab from './tabs/AdvanceTab';
+
 import GeneralTab from './tabs/GeneralTab';
 import StyleTab from './tabs/StyleTab';
+import AdvanceTab from './tabs/AdvanceTab';
+
+import Thumnail from './components/Thumnail';
+import Title from './components/Title';
+import Meta from './components/Meta';
+import Excerpt from './components/Excerpt';
+import ReadButton from './components/ReadButton';
+
+import './editor.scss';
+
 export default function Edit( { attributes, setAttributes } ) {
 	const {
 		numberOfPosts,
@@ -48,20 +272,75 @@ export default function Edit( { attributes, setAttributes } ) {
 		readMoreMargin,
 		additionalClass,
 		useAjaxPagination,
+		currentPage,
+		totalPages,
 	} = attributes;
-	const catIDs = categories?.map( ( cat ) => cat.id );
-	const posts = useSelect(
-		( select ) => {
-			return select( 'core' ).getEntityRecords( 'postType', 'post', {
-				per_page: numberOfPosts,
-				_embed: true,
-				order,
-				orderby: orderBy,
-				categories: catIDs,
-			} );
-		},
-		[ numberOfPosts, order, orderBy, catIDs ]
-	);
+
+	const [ posts, setPosts ] = useState( [] );
+	const catIDs = categories?.map( ( cat ) => cat.id ) || [];
+
+	useEffect( () => {
+		const fetchPosts = async () => {
+			try {
+				const queryParams = new URLSearchParams( {
+					per_page: numberOfPosts,
+					page: currentPage,
+					order,
+					orderby: orderBy,
+					_embed: true,
+				} );
+				if ( catIDs.length ) {
+					queryParams.append( 'categories', catIDs.join( ',' ) );
+				}
+
+				const response = await apiFetch( {
+					path: `/wp/v2/posts?${ queryParams.toString() }`,
+					parse: false,
+				} );
+
+				const postsData = await response.json();
+				const totalPagesHeader =
+					response.headers.get( 'X-WP-TotalPages' );
+
+				setPosts( postsData );
+				setAttributes( {
+					totalPages: parseInt( totalPagesHeader ) || 1,
+				} );
+			} catch ( error ) {
+				console.error( 'Failed to fetch posts:', error );
+				setPosts( [] );
+			}
+		};
+
+		fetchPosts();
+	}, [
+		numberOfPosts,
+		currentPage,
+		order,
+		orderBy,
+		JSON.stringify( catIDs ),
+	] );
+
+	// Reset to page 1 when filters change
+	useEffect( () => {
+		setAttributes( { currentPage: 1 } );
+	}, [ numberOfPosts, order, orderBy, JSON.stringify( catIDs ) ] );
+
+	const paginationButtons = () => {
+		const buttons = [];
+		for ( let i = 1; i <= totalPages; i++ ) {
+			buttons.push(
+				<button
+					key={ i }
+					className={ i === currentPage ? 'active' : '' }
+					onClick={ () => setAttributes( { currentPage: i } ) }
+				>
+					{ i }
+				</button>
+			);
+		}
+		return buttons;
+	};
 
 	return (
 		<div { ...useBlockProps( { className: additionalClass } ) }>
@@ -77,7 +356,6 @@ export default function Edit( { attributes, setAttributes } ) {
 									<Icon icon={ tableOfContents } /> General
 								</span>
 							),
-							className: 'tab-general',
 						},
 						{
 							name: 'styles',
@@ -86,7 +364,6 @@ export default function Edit( { attributes, setAttributes } ) {
 									<Icon icon={ styles } /> Styles
 								</span>
 							),
-							className: 'tab-styles',
 						},
 						{
 							name: 'advanced',
@@ -95,7 +372,6 @@ export default function Edit( { attributes, setAttributes } ) {
 									<Icon icon={ cog } /> Advanced
 								</span>
 							),
-							className: 'tab-advanced',
 						},
 					] }
 				>
@@ -137,9 +413,9 @@ export default function Edit( { attributes, setAttributes } ) {
 					'--column-gap': `${ columnGap }px`,
 				} }
 			>
-				{ posts?.map( ( post ) => (
+				{ posts.map( ( post ) => (
 					<div
-						key={ post?.id }
+						key={ post.id }
 						className="grid-card"
 						style={ {
 							'--card-bg': contentBackground,
@@ -147,28 +423,27 @@ export default function Edit( { attributes, setAttributes } ) {
 						} }
 					>
 						<Thumnail
-							thumnail={ post?._embedded?.[ 'wp:featuredmedia' ] }
+							thumnail={ post._embedded?.[ 'wp:featuredmedia' ] }
 							displayImage={ displayImage }
 						/>
-
 						<div
 							className="content-body"
 							style={ {
-								padding: `${ contentPadding?.top || '0px' } ${
-									contentPadding?.right || '0px'
-								} ${ contentPadding?.bottom || '0px' } ${
-									contentPadding?.left || '0px'
-								}`,
-								margin: `${ contentMargin?.top || '0px' } ${
-									contentMargin?.right || '0px'
-								} ${ contentMargin?.bottom || '0px' } ${
-									contentMargin?.left || '0px'
-								}`,
+								padding: `${ contentPadding?.top || 0 }px ${
+									contentPadding?.right || 0
+								}px ${ contentPadding?.bottom || 0 }px ${
+									contentPadding?.left || 0
+								}px`,
+								margin: `${ contentMargin?.top || 0 }px ${
+									contentMargin?.right || 0
+								}px ${ contentMargin?.bottom || 0 }px ${
+									contentMargin?.left || 0
+								}px`,
 							} }
 						>
 							<Title
-								title={ post?.title?.rendered }
-								link={ post?.link }
+								title={ post.title?.rendered }
+								link={ post.link }
 								showTitle={ showTitle }
 								contentAlignment={ contentAlignment }
 								titleColor={ titleColor }
@@ -177,8 +452,8 @@ export default function Edit( { attributes, setAttributes } ) {
 							/>
 							<Meta
 								showMeta={ showMeta }
-								author={ post?._embedded?.author }
-								date={ post?.date_gmt }
+								author={ post._embedded?.author }
+								date={ post.date_gmt }
 								contentAlignment={ contentAlignment }
 								metaColor={ metaColor }
 								metaHoverColor={ metaHoverColor }
@@ -186,17 +461,16 @@ export default function Edit( { attributes, setAttributes } ) {
 							/>
 							<Excerpt
 								showExcerpt={ showExcerpt }
-								excerpt={ post?.excerpt?.rendered }
+								excerpt={ post.excerpt?.rendered }
 								excerptMaxWords={ excerptMaxWords }
 								contentAlignment={ contentAlignment }
 								desMargin={ desMargin }
 								desColor={ desColor }
 								desHoverColor={ desHoverColor }
 							/>
-
 							<ReadButton
 								readMore={ readMore }
-								link={ post?.link }
+								link={ post.link }
 								readMoreAlignment={ readMoreAlignment }
 								readMoreBackground={ readMoreBackground }
 								readMoreBackgroundHover={
@@ -211,6 +485,35 @@ export default function Edit( { attributes, setAttributes } ) {
 					</div>
 				) ) }
 			</div>
+
+			{ useAjaxPagination && totalPages > 1 && (
+				<div className="ajax-pagination">
+					<button
+						onClick={ () =>
+							setAttributes( {
+								currentPage: Math.max( 1, currentPage - 1 ),
+							} )
+						}
+						disabled={ currentPage === 1 }
+					>
+						Prev
+					</button>
+					{ paginationButtons() }
+					<button
+						onClick={ () =>
+							setAttributes( {
+								currentPage: Math.min(
+									totalPages,
+									currentPage + 1
+								),
+							} )
+						}
+						disabled={ currentPage === totalPages }
+					>
+						Next
+					</button>
+				</div>
+			) }
 		</div>
 	);
 }

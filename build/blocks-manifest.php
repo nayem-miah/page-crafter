@@ -235,6 +235,14 @@ return array(
 					'left' => '16px'
 				)
 			),
+			'currentPage' => array(
+				'type' => 'number',
+				'default' => 1
+			),
+			'totalPages' => array(
+				'type' => 'number',
+				'default' => 1
+			),
 			'useAjaxPagination' => array(
 				'type' => 'boolean',
 				'default' => false
