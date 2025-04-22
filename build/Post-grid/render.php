@@ -137,12 +137,35 @@ $pagination = ceil(wp_count_posts()->publish / $attributes['numberOfPosts']);
         </button>
 
         <?php for ($i = 1; $i <= $pagination; $i++): ?>
-        <button class="<?php echo ($i === 1) ? 'active' : ''; ?>" data-page="<?php echo $i; ?>">
+        <button onclick="paginate(<?php echo $i;?>)" class="<?php echo ($i === 1) ? 'active' : ''; ?>"
+            data-page="<?php echo $i; ?>">
             <?php echo $i; ?>
         </button>
         <?php endfor; ?>
 
         <button> Next </button>
     </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+    function paginate(page) {
+        // AJAX request to fetch posts for the specified page
+        $.ajax({
+            url: '<?php echo admin_url('admin-ajax.php'); ?>',
+            type: 'POST',
+            data: {
+                action: 'load_posts_by_ajax',
+                page: page,
+                posts_per_page: <?php echo $attributes['numberOfPosts'] ?? 5; ?>,
+            },
+            success: function(response) {
+                $('.post-grid').html(response);
+                $('.ajax-pagination button').removeClass('active');
+                $('.ajax-pagination button[data-page="' + page + '"]').addClass('active');
+            }
+        });
+    }
+    </script>
 
 </div> <!-- /.wp-block -->
