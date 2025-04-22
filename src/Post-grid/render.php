@@ -33,6 +33,8 @@ if (!empty($attributes['categories'])) {
 }
 
 $posts = get_posts($args);
+
+$pagination = ceil(wp_count_posts()->publish / $attributes['numberOfPosts']);   
 ?>
 
 <div <?php echo get_block_wrapper_attributes(); ?>>
@@ -128,5 +130,19 @@ $posts = get_posts($args);
         <?php endforeach;
         wp_reset_postdata(); ?>
     </div> <!-- /.post-grid -->
+
+    <div class="ajax-pagination">
+        <button>
+            Prev
+        </button>
+
+        <?php for ($i = 1; $i <= $pagination; $i++): ?>
+        <button class="<?php echo ($i === 1) ? 'active' : ''; ?>" data-page="<?php echo $i; ?>">
+            <?php echo $i; ?>
+        </button>
+        <?php endfor; ?>
+
+        <button> Next </button>
+    </div>
 
 </div> <!-- /.wp-block -->

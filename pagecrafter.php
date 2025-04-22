@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name:       PageCrafter
  * Description:       Example block scaffolded with Create Block tool.
@@ -13,43 +14,44 @@
  * @package CreateBlock
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (! defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
 
 
 
-
-function pagecrafter_block_categories( $categories, $post ) {
-    return array_merge(
-        $categories,
-        array(
-            array(
-                'slug' => 'Page-Crafter',
-                'title' => __( 'Page Crafter', 'pagecrafter' ),
-            ),
-        )
-    );
+function pagecrafter_block_categories($categories, $post)
+{
+	return array_merge(
+		$categories,
+		array(
+			array(
+				'slug' => 'Page-Crafter',
+				'title' => __('Page Crafter', 'pagecrafter'),
+			),
+		)
+	);
 }
-add_filter( 'block_categories_all', 'pagecrafter_block_categories', 10, 2 );
+add_filter('block_categories_all', 'pagecrafter_block_categories', 10, 2);
 // this code is to set category Page_Crafter
 
 
 
 
-function create_block_pagecrafter_block_init() {
+function create_block_pagecrafter_block_init()
+{
 
-	if ( function_exists( 'wp_register_block_types_from_metadata_collection' ) ) {
-		wp_register_block_types_from_metadata_collection( __DIR__ . '/build', __DIR__ . '/build/blocks-manifest.php' );
+	if (function_exists('wp_register_block_types_from_metadata_collection')) {
+		wp_register_block_types_from_metadata_collection(__DIR__ . '/build', __DIR__ . '/build/blocks-manifest.php');
 		return;
 	}
 
-	if ( function_exists( 'wp_register_block_metadata_collection' ) ) {
-		wp_register_block_metadata_collection( __DIR__ . '/build', __DIR__ . '/build/blocks-manifest.php' );
+	if (function_exists('wp_register_block_metadata_collection')) {
+		wp_register_block_metadata_collection(__DIR__ . '/build', __DIR__ . '/build/blocks-manifest.php');
 	}
 	$manifest_data = require __DIR__ . '/build/blocks-manifest.php';
-	foreach ( array_keys( $manifest_data ) as $block_type ) {
-		register_block_type( __DIR__ . "/build/{$block_type}" );
+	foreach (array_keys($manifest_data) as $block_type) {
+		register_block_type(__DIR__ . "/build/{$block_type}");
 	}
 }
-add_action( 'init', 'create_block_pagecrafter_block_init' );
+add_action('init', 'create_block_pagecrafter_block_init');
