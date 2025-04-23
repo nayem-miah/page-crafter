@@ -32,7 +32,7 @@ export default function StyleTab( { attributes, setAttributes } ) {
 		readMorePadding,
 	} = attributes;
 
-	const [ openPanel, setOpenPanel ] = useState( 'general' ); 
+	const [ openPanel, setOpenPanel ] = useState( 'general' );
 	const togglePanel = ( panelKey ) => {
 		setOpenPanel( openPanel === panelKey ? null : panelKey );
 	};

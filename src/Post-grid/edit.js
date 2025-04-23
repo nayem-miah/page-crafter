@@ -14,7 +14,6 @@ import Title from './components/Title';
 import Meta from './components/Meta';
 import Excerpt from './components/Excerpt';
 import ReadButton from './components/ReadButton';
-
 import './editor.scss';
 
 export default function Edit( { attributes, setAttributes } ) {

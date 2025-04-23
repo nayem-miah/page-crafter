@@ -95,6 +95,42 @@
 .wp-block-create-block-postgrid .grid-card:hover {
   background-color: var(--card-bg-hover);
 }
+.wp-block-create-block-postgrid .pagecrafter-tab-panel .components-tab-panel__tabs {
+  margin-bottom: 10px;
+}
+.wp-block-create-block-postgrid .pagecrafter-tab-panel .components-tab-panel__tabs .is-active {
+  background-color: #ffffff !important;
+  color: #008db4 !important;
+}
+.wp-block-create-block-postgrid .pagecrafter-tab-panel .components-tab-panel__tabs .components-tab-panel__tabs-item {
+  background-color: #008db4;
+  color: #ffffff;
+}
+.wp-block-create-block-postgrid .wp-block-create-block-postgrid .post-grid .grid-card:hover {
+  background-color: var(--card-bg-hover);
+}
+.wp-block-create-block-postgrid .block-editor-block-inspector__advanced {
+  display: none;
+}
+.wp-block-create-block-postgrid .ajax-pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+.wp-block-create-block-postgrid .ajax-pagination button {
+  margin: 0 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  background: #f1f1f1;
+  border: 1px solid #ccc;
+}
+.wp-block-create-block-postgrid .ajax-pagination button.active {
+  background: #007cba;
+  color: white;
+}
+.wp-block-create-block-postgrid .ajax-pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
 @media (max-width: 1024px) {
   .wp-block-create-block-postgrid .post-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -115,44 +151,4 @@
     font-size: 14px;
     padding: 6px 12px;
   }
-}
-
-.pagecrafter-tab-panel .components-tab-panel__tabs {
-  margin-bottom: 10px;
-}
-.pagecrafter-tab-panel .components-tab-panel__tabs .is-active {
-  background-color: #ffffff !important;
-  color: #008db4 !important;
-}
-.pagecrafter-tab-panel .components-tab-panel__tabs .components-tab-panel__tabs-item {
-  background-color: #008db4;
-  color: #ffffff;
-}
-
-.wp-block-create-block-postgrid .post-grid .grid-card:hover {
-  background-color: var(--card-bg-hover);
-}
-
-.block-editor-block-inspector__advanced {
-  display: none;
-}
-
-.ajax-pagination {
-  margin-top: 20px;
-  text-align: center;
-}
-.ajax-pagination button {
-  margin: 0 4px;
-  padding: 6px 12px;
-  cursor: pointer;
-  background: #f1f1f1;
-  border: 1px solid #ccc;
-}
-.ajax-pagination button.active {
-  background: #007cba;
-  color: white;
-}
-.ajax-pagination button:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
 }

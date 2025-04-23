@@ -1,0 +1,55 @@
+.wp-block-create-block-infobox {
+
+	.info-box {
+		background: #ffffff;
+		border-width: 1px 1px 1px 1px;
+		border-color: #757575;
+		border-radius: 0px 0px 0px 0px;
+		box-shadow: none;
+		padding: 20px 20px 20px 20px;
+		margin: 0px 0px 0px 0px;
+		border-style: solid;
+
+		.info-box__title {
+			line-height: 1.2;
+			margin: 0px 0px 0px 0px;
+			text-align: center;
+
+			.text {
+				color: #131212;
+				font-size: 18px;
+				font-weight: 700;
+				margin: 0px;
+				padding: 0px;
+			}
+		}
+
+		.info-box__content {
+			color: #050505;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 1.5;
+			margin: 0px 0px 0px 0px;
+			text-align: center;
+
+		}
+
+		.info-box__icon {
+			font-size: 30px;
+			color: #1A261F;
+			padding: 0px 0px 0px 0px;
+			margin: 0px 0px 0px 0px;
+			background: transparent;
+			text-align: center;
+			display: block;
+
+			.dashicons {
+				font-size: 40px;
+
+			}
+		}
+	}
+
+
+
+}

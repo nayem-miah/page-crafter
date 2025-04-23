@@ -1,6 +1,46 @@
 <?php
 // This file is generated. Do not modify it manually.
 return array(
+	'Info-box' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'create-block/infobox',
+		'version' => '0.1.0',
+		'title' => 'infobox',
+		'category' => 'Page-Crafter',
+		'icon' => 'edit-page',
+		'description' => 'A simple info box block.',
+		'keywords' => array(
+			'info',
+			'box',
+			'pagecrafter'
+		),
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'attributes' => array(
+			'icon' => array(
+				'type' => 'string',
+				'default' => 'fas fa-info-circle'
+			),
+			'title' => array(
+				'type' => 'string',
+				'default' => 'Title Here'
+			),
+			'content' => array(
+				'type' => 'string',
+				'default' => 'Lorem ipsum dolor sit amet consectetur. Sem leo dictumst ac imperdiet arcu duis tempor non adipiscing.'
+			)
+		),
+		'textdomain' => 'infobox',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'viewScript' => 'file:./view.js'
+	),
 	'pagecrafter' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
