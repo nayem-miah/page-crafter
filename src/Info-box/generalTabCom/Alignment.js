@@ -27,6 +27,9 @@ export default function Alignmnet( {
 								backgroundColor:
 									alignProp === align ? '#008db4' : '',
 								color: alignProp === align ? '#fff' : '',
+								padding: '2px 14px',
+								fontSize: '13px',
+								minWidth: '70px',
 							} }
 							onClick={ () =>
 								fromWhere === 'content'

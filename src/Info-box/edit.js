@@ -1,4 +1,8 @@
-import { useBlockProps, RichText, InspectorControls } from '@wordpress/block-editor';
+import {
+	useBlockProps,
+	RichText,
+	InspectorControls,
+} from '@wordpress/block-editor';
 import { cog, Icon, styles, tableOfContents } from '@wordpress/icons';
 import './editor.scss';
 import { __ } from '@wordpress/i18n';
@@ -7,8 +11,20 @@ import GeneralTab from './tab/GeneralTab';
 import StyleTab from './tab/StyleTab';
 import AdvanceTab from './tab/AdvanceTab';
 export default function Edit( { attributes, setAttributes } ) {
-	const { title, icon, content, contentAlign, showTitle, showContent } =
-		attributes;
+	const {
+		title,
+		icon,
+		content,
+		contentAlign,
+		showTitle,
+		showContent,
+		titleTag,
+		readMore,
+		readMoreIcon,
+		readMoreAlign,
+		readMoreType,
+		readMoreIconShow,
+	} = attributes;
 	return (
 		<div { ...useBlockProps() }>
 			<InspectorControls>
@@ -47,11 +63,8 @@ export default function Edit( { attributes, setAttributes } ) {
 							case 'general':
 								return (
 									<GeneralTab
-										attributes={ attributes }
 										setAttributes={ setAttributes }
-										showTitle={ showTitle }
-										showContent={ showContent }
-										contentAlign={ contentAlign }
+										attributes={ attributes }
 									/>
 								);
 							case 'styles':
@@ -77,33 +90,65 @@ export default function Edit( { attributes, setAttributes } ) {
 				<div className="info-box__icon">
 					<span className={ icon }></span>
 				</div>
-				<div
-					className="info-box__title"
-					style={ { '--contentAlign': contentAlign } }
-				>
-					<RichText
-						className="text"
-						placeholder={ __( 'Title..', 'infobox' ) }
-						tagName="h3"
-						onChange={ ( texts ) =>
-							setAttributes( { title: texts } )
-						}
-						value={ title }
-					/>
-				</div>
-				<div
-					className="info-box__content"
-					style={ { '--contentAlign': contentAlign } }
-				>
-					<RichText
-						placeholder={ __( 'Content..', 'infobox' ) }
-						tagName="p"
-						onChange={ ( texts ) =>
-							setAttributes( { content: texts } )
-						}
-						value={ content }
-					/>
-				</div>
+				{ showTitle && (
+					<div
+						className="info-box__title"
+						style={ { '--contentAlign': contentAlign } }
+					>
+						<RichText
+							className="text"
+							placeholder={ __( 'Title..', 'infobox' ) }
+							tagName={ titleTag }
+							onChange={ ( texts ) =>
+								setAttributes( { title: texts } )
+							}
+							value={ title }
+						/>
+					</div>
+				) }
+
+				{ showContent && (
+					<div
+						className="info-box__content"
+						style={ { '--contentAlign': contentAlign } }
+					>
+						<RichText
+							placeholder={ __( 'Content..', 'infobox' ) }
+							tagName="p"
+							onChange={ ( texts ) =>
+								setAttributes( { content: texts } )
+							}
+							value={ content }
+						/>
+					</div>
+				) }
+
+				{ readMoreType !== 'None' && (
+					<div
+						className="info-box__read-more"
+						style={ {
+							'--readMoreAlign': readMoreAlign,
+						} }
+					>
+						<div
+							className={ `info-box__read-more-content ${
+								readMoreType === 'Button' ? 'hasButton' : ''
+							}` }
+						>
+							<RichText
+								placeholder={ __( 'Read More..', 'infobox' ) }
+								tagName="p"
+								onChange={ ( texts ) =>
+									setAttributes( { readMore: texts } )
+								}
+								value={ readMore }
+							/>
+							{ readMoreIconShow && (
+								<span className={ readMoreIcon }></span>
+							) }
+						</div>
+					</div>
+				) }
 			</div>
 		</div>
 	);

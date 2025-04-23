@@ -29,6 +29,30 @@
       "type": "string",
       "default": "Lorem ipsum dolor sit amet consectetur. Sem leo dictumst ac imperdiet arcu duis tempor non adipiscing."
     },
+    "readMoreAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "readMore": {
+      "type": "string",
+      "default": "Read More"
+    },
+    "readMoreType": {
+      "type": "string",
+      "default": "Button"
+    },
+    "readMoreLink": {
+      "type": "string",
+      "default": "#"
+    },
+    "readMoreIcon": {
+      "type": "string",
+      "default": "fas fa-arrow-right"
+    },
+    "readMoreIconShow": {
+      "type": "boolean",
+      "default": true
+    },
     "showContent": {
       "type": "boolean",
       "default": true
@@ -40,6 +64,10 @@
     "contentAlign": {
       "type": "string",
       "default": "center"
+    },
+    "titleTag": {
+      "type": "string",
+      "default": "h3"
     }
   },
   "textdomain": "infobox",

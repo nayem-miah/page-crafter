@@ -43,5 +43,25 @@
 .wp-block-create-block-infobox .info-box .info-box__icon .dashicons {
   font-size: 40px;
 }
+.wp-block-create-block-infobox .info-box .info-box__read-more {
+  display: flex;
+  align-items: center;
+  justify-content: var(--readMoreAlign);
+}
+.wp-block-create-block-infobox .info-box .info-box__read-more .info-box__read-more-content {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+.wp-block-create-block-infobox .info-box .info-box__read-more .info-box__read-more-content.hasButton {
+  background: #dcdcde;
+  padding: 6px 14px;
+  border-radius: 4px;
+}
+.wp-block-create-block-infobox .info-box .info-box__read-more .info-box__read-more-content p {
+  margin: 0;
+  font-size: 15px;
+}
 
 /*# sourceMappingURL=style-index.css.map*/

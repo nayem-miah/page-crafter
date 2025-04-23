@@ -34,6 +34,30 @@ return array(
 				'type' => 'string',
 				'default' => 'Lorem ipsum dolor sit amet consectetur. Sem leo dictumst ac imperdiet arcu duis tempor non adipiscing.'
 			),
+			'readMoreAlign' => array(
+				'type' => 'string',
+				'default' => 'center'
+			),
+			'readMore' => array(
+				'type' => 'string',
+				'default' => 'Read More'
+			),
+			'readMoreType' => array(
+				'type' => 'string',
+				'default' => 'Button'
+			),
+			'readMoreLink' => array(
+				'type' => 'string',
+				'default' => '#'
+			),
+			'readMoreIcon' => array(
+				'type' => 'string',
+				'default' => 'fas fa-arrow-right'
+			),
+			'readMoreIconShow' => array(
+				'type' => 'boolean',
+				'default' => true
+			),
 			'showContent' => array(
 				'type' => 'boolean',
 				'default' => true
@@ -45,6 +69,10 @@ return array(
 			'contentAlign' => array(
 				'type' => 'string',
 				'default' => 'center'
+			),
+			'titleTag' => array(
+				'type' => 'string',
+				'default' => 'h3'
 			)
 		),
 		'textdomain' => 'infobox',
