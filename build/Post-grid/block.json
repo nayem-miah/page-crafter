@@ -220,10 +220,25 @@
     "useAjaxPagination": {
       "type": "boolean",
       "default": false
+    },
+    "pagination_number": {
+      "type": "integer",
+      "default": 3
+    },
+    "pagination_type": {
+      "type": "string",
+      "selector": ".pagination-type",
+      "default": "nm"
+    },
+    "load_more_btn_txt": {
+      "type": "string",
+      "selector": "load-more-string",
+      "default": "Load More"
     }
   },
   "textdomain": "postgrid",
   "editorScript": "file:./index.js",
+  "script": "file:./frontend.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
   "render": "file:./render.php",

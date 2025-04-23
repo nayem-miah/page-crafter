@@ -34,7 +34,7 @@ if (!empty($attributes['categories'])) {
 
 $posts = get_posts($args);
 
-$pagination = ceil(wp_count_posts()->publish / $attributes['numberOfPosts']);   
+$pagination = ceil(wp_count_posts()->publish / $attributes['numberOfPosts']);
 ?>
 
 <div <?php echo get_block_wrapper_attributes(); ?>>
@@ -44,41 +44,41 @@ $pagination = ceil(wp_count_posts()->publish / $attributes['numberOfPosts']);
     ">
         <?php foreach ($posts as $post):
             setup_postdata($post); ?>
-        <div class="grid-card" style="
+            <div class="grid-card" style="
                 --card-bg: <?php echo esc_attr($attributes['contentBackground'] ?? '#fff'); ?>;
                 --card-bg-hover: <?php echo esc_attr($attributes['contentBackgroundHover'] ?? '#f5f5f5'); ?>;
             ">
-            <?php if (has_post_thumbnail($post) && !empty($attributes['displayImage'])): ?>
-            <div class="post-grid-thumbnail">
-                <?php echo get_the_post_thumbnail($post, 'large', array('alt' => get_the_title($post))); ?>
-            </div>
-            <?php endif; ?>
+                <?php if (has_post_thumbnail($post) && !empty($attributes['displayImage'])): ?>
+                    <div class="post-grid-thumbnail">
+                        <?php echo get_the_post_thumbnail($post, 'large', array('alt' => get_the_title($post))); ?>
+                    </div>
+                <?php endif; ?>
 
-            <div class="content-body" style="
+                <div class="content-body" style="
                      padding: <?php echo esc_attr($attributes['contentPadding']['top'] ?? 0) . ' ' .
-                                    esc_attr($attributes['contentPadding']['right'] ?? 0) . ' ' .
-                                    esc_attr($attributes['contentPadding']['bottom'] ?? 0) . ' ' .
-                                    esc_attr($attributes['contentPadding']['left'] ?? 0); ?>;
+                         esc_attr($attributes['contentPadding']['right'] ?? 0) . ' ' .
+                         esc_attr($attributes['contentPadding']['bottom'] ?? 0) . ' ' .
+                         esc_attr($attributes['contentPadding']['left'] ?? 0); ?>;
                      margin: <?php echo esc_attr($attributes['contentMargin']['top'] ?? 0) . ' ' .
-                                    esc_attr($attributes['contentMargin']['right'] ?? 0) . ' ' .
-                                    esc_attr($attributes['contentMargin']['bottom'] ?? 0) . ' ' .
-                                    esc_attr($attributes['contentMargin']['left'] ?? 0); ?>;
+                         esc_attr($attributes['contentMargin']['right'] ?? 0) . ' ' .
+                         esc_attr($attributes['contentMargin']['bottom'] ?? 0) . ' ' .
+                         esc_attr($attributes['contentMargin']['left'] ?? 0); ?>;
                 ">
-                <?php if (!empty($attributes['showTitle'])): ?>
-                <div class="post-grid-title">
-                    <h5 style="text-align: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;">
-                        <a href="<?php the_permalink($post); ?>" style="
+                    <?php if (!empty($attributes['showTitle'])): ?>
+                        <div class="post-grid-title">
+                            <h5 style="text-align: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;">
+                                <a href="<?php the_permalink($post); ?>" style="
                             --titleColor: <?php echo esc_attr($attributes['titleColor'] ?? '#000'); ?>;
                             --titleHoverColor: <?php echo esc_attr($attributes['titleHoverColor'] ?? '#555'); ?>;
                         ">
-                            <?php echo esc_html(get_the_title($post)); ?>
-                        </a>
-                    </h5>
-                </div>
-                <?php endif; ?>
+                                    <?php echo esc_html(get_the_title($post)); ?>
+                                </a>
+                            </h5>
+                        </div>
+                    <?php endif; ?>
 
-                <?php if (!empty($attributes['showMeta'])): ?>
-                <div class="post-grid-meta" style="
+                    <?php if (!empty($attributes['showMeta'])): ?>
+                        <div class="post-grid-meta" style="
                     --metaTextAlign: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;
                     --metaHoverColor: <?php echo esc_attr($attributes['metaHoverColor'] ?? '#999'); ?>;
                     --metaColor: <?php echo esc_attr($attributes['metaColor'] ?? '#777'); ?>;
@@ -87,25 +87,25 @@ $pagination = ceil(wp_count_posts()->publish / $attributes['numberOfPosts']);
                     --metaMarginLeft: <?php echo esc_attr($attributes['metaMargin']['left'] ?? '0'); ?>;
                     --metaMarginRight: <?php echo esc_attr($attributes['metaMargin']['right'] ?? '0'); ?>;
                 ">
-                    <span>By <?php echo esc_html(get_the_author_meta('display_name', $post->post_author)); ?></span>
-                    <time datetime="<?php echo esc_attr(get_the_date('c', $post)); ?>">
-                        <?php echo esc_html(get_the_date('', $post)); ?>
-                    </time>
-                </div>
-                <?php endif; ?>
+                            <span>By <?php echo esc_html(get_the_author_meta('display_name', $post->post_author)); ?></span>
+                            <time datetime="<?php echo esc_attr(get_the_date('c', $post)); ?>">
+                                <?php echo esc_html(get_the_date('', $post)); ?>
+                            </time>
+                        </div>
+                    <?php endif; ?>
 
-                <?php if (!empty($attributes['showExcerpt'])): ?>
-                <div class="post-grid-excerpt"
-                    style="text-align: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;">
-                    <p><?php echo esc_html(truncate_excerpt(get_the_excerpt($post), $attributes['excerptMaxWords'] ?? 30)); ?>
-                    </p>
-                </div>
-                <?php endif; ?>
+                    <?php if (!empty($attributes['showExcerpt'])): ?>
+                        <div class="post-grid-excerpt"
+                            style="text-align: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;">
+                            <p><?php echo esc_html(truncate_excerpt(get_the_excerpt($post), $attributes['excerptMaxWords'] ?? 30)); ?>
+                            </p>
+                        </div>
+                    <?php endif; ?>
 
-                <?php if (!empty($attributes['readMore'])): ?>
-                <div class="post-grid-btn"
-                    style="text-align: <?php echo esc_attr($attributes['readMoreAlignment'] ?? 'left'); ?>;">
-                    <a href="<?php the_permalink($post); ?>" class="read-more-link" style="
+                    <?php if (!empty($attributes['readMore'])): ?>
+                        <div class="post-grid-btn"
+                            style="text-align: <?php echo esc_attr($attributes['readMoreAlignment'] ?? 'left'); ?>;">
+                            <a href="<?php the_permalink($post); ?>" class="read-more-link" style="
                 --readMoreColor: <?php echo esc_attr($attributes['readMoreColor'] ?? '#fff'); ?>; 
                 --readMoreBackground: <?php echo esc_attr($attributes['readMoreBackground'] ?? '#0073aa'); ?>;
                 --readMoreColorHover: <?php echo esc_attr($attributes['readMoreColorHover'] ?? '#fff'); ?>;
@@ -119,14 +119,14 @@ $pagination = ceil(wp_count_posts()->publish / $attributes['numberOfPosts']);
                 --readMoreMarginBottom: <?php echo esc_attr($attributes['readMoreMargin']['bottom'] ?? '0px'); ?>;
                 --readMoreMarginLeft: <?php echo esc_attr($attributes['readMoreMargin']['left'] ?? '0px'); ?>;
            ">
-                        <span><?php esc_html_e('Read More', 'postgrid'); ?></span>
-                    </a>
-                </div>
-                <?php endif; ?>
+                                <span><?php esc_html_e('Read More', 'postgrid'); ?></span>
+                            </a>
+                        </div>
+                    <?php endif; ?>
 
-            </div> <!-- /.content-body -->
+                </div> <!-- /.content-body -->
 
-        </div> <!-- /.grid-card -->
+            </div> <!-- /.grid-card -->
         <?php endforeach;
         wp_reset_postdata(); ?>
     </div> <!-- /.post-grid -->
@@ -137,10 +137,10 @@ $pagination = ceil(wp_count_posts()->publish / $attributes['numberOfPosts']);
         </button>
 
         <?php for ($i = 1; $i <= $pagination; $i++): ?>
-        <button onclick="paginate(<?php echo $i;?>)" class="<?php echo ($i === 1) ? 'active' : ''; ?>"
-            data-page="<?php echo $i; ?>">
-            <?php echo $i; ?>
-        </button>
+            <a href="javascript:void(0)" onclick="paginate(<?php echo $i; ?>)"
+                class="<?php echo ($i === 1) ? 'active' : ''; ?>" data-page="<?php echo $i; ?>">
+                <?php echo $i; ?>
+            </a>
         <?php endfor; ?>
 
         <button> Next </button>
@@ -149,23 +149,28 @@ $pagination = ceil(wp_count_posts()->publish / $attributes['numberOfPosts']);
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script>
-    function paginate(page) {
-        // AJAX request to fetch posts for the specified page
-        $.ajax({
-            url: '<?php echo admin_url('admin-ajax.php'); ?>',
-            type: 'POST',
-            data: {
-                action: 'load_posts_by_ajax',
-                page: page,
-                posts_per_page: <?php echo $attributes['numberOfPosts'] ?? 5; ?>,
-            },
-            success: function(response) {
-                $('.post-grid').html(response);
-                $('.ajax-pagination button').removeClass('active');
-                $('.ajax-pagination button[data-page="' + page + '"]').addClass('active');
-            }
-        });
-    }
+        function paginate(page) {
+            // AJAX request to fetch posts for the specified page
+            jQuery.ajax({
+                url: PageCrafterAjax.ajax_url,
+                type: "POST",
+                data: {
+                    action: "load_more_posts",
+                    page: currentPage,
+                    posts_per_page: postsPerPage,
+                    categories: categories,
+                    nonce: PageCrafterAjax.nonce, // ✅ Add nonce
+                },
+                success: function (response) {
+                    jQuery(".post-grid").html(response);
+                    updatePaginationButtons();
+                },
+                error: function (xhr) {
+                    console.log("AJAX failed", xhr);
+                }
+            });
+
+        }
     </script>
 
 </div> <!-- /.wp-block -->

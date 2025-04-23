@@ -246,10 +246,25 @@ return array(
 			'useAjaxPagination' => array(
 				'type' => 'boolean',
 				'default' => false
+			),
+			'pagination_number' => array(
+				'type' => 'integer',
+				'default' => 3
+			),
+			'pagination_type' => array(
+				'type' => 'string',
+				'selector' => '.pagination-type',
+				'default' => 'nm'
+			),
+			'load_more_btn_txt' => array(
+				'type' => 'string',
+				'selector' => 'load-more-string',
+				'default' => 'Load More'
 			)
 		),
 		'textdomain' => 'postgrid',
 		'editorScript' => 'file:./index.js',
+		'script' => 'file:./frontend.js',
 		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css',
 		'render' => 'file:./render.php',

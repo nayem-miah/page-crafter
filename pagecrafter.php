@@ -55,3 +55,16 @@ function create_block_pagecrafter_block_init()
 	}
 }
 add_action('init', 'create_block_pagecrafter_block_init');
+
+
+
+
+// /**
+//  * This function for enqueuing script, styles for block.
+//  */
+// function nls_book_block_assets_enqueue()
+// {
+//     wp_enqueue_script('nls_block_front_script', plugin_dir_url(__FILE__) . 'src/Post-grid/jq.js', array('jquery'), '1.0.0', true);
+//     wp_localize_script('nls_block_front_script', 'frontend_ajax', array('ajax_url' => admin_url('admin-ajax.php')));
+// }
+// add_action('enqueue_block_assets', 'nls_book_block_assets_enqueue');
