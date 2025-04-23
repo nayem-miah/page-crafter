@@ -7,7 +7,8 @@ import GeneralTab from './tab/GeneralTab';
 import StyleTab from './tab/StyleTab';
 import AdvanceTab from './tab/AdvanceTab';
 export default function Edit( { attributes, setAttributes } ) {
-	const { title, icon, content } = attributes;
+	const { title, icon, content, contentAlign, showTitle, showContent } =
+		attributes;
 	return (
 		<div { ...useBlockProps() }>
 			<InspectorControls>
@@ -48,6 +49,9 @@ export default function Edit( { attributes, setAttributes } ) {
 									<GeneralTab
 										attributes={ attributes }
 										setAttributes={ setAttributes }
+										showTitle={ showTitle }
+										showContent={ showContent }
+										contentAlign={ contentAlign }
 									/>
 								);
 							case 'styles':
@@ -60,9 +64,7 @@ export default function Edit( { attributes, setAttributes } ) {
 							case 'advanced':
 								return (
 									<AdvanceTab
-										
 										setAttributes={ setAttributes }
-										
 									/>
 								);
 							default:
@@ -75,7 +77,10 @@ export default function Edit( { attributes, setAttributes } ) {
 				<div className="info-box__icon">
 					<span className={ icon }></span>
 				</div>
-				<div className="info-box__title">
+				<div
+					className="info-box__title"
+					style={ { '--contentAlign': contentAlign } }
+				>
 					<RichText
 						className="text"
 						placeholder={ __( 'Title..', 'infobox' ) }
@@ -86,7 +91,10 @@ export default function Edit( { attributes, setAttributes } ) {
 						value={ title }
 					/>
 				</div>
-				<div className="info-box__content">
+				<div
+					className="info-box__content"
+					style={ { '--contentAlign': contentAlign } }
+				>
 					<RichText
 						placeholder={ __( 'Content..', 'infobox' ) }
 						tagName="p"

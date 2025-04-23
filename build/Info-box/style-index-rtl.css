@@ -14,7 +14,7 @@
 .wp-block-create-block-infobox .info-box .info-box__title {
   line-height: 1.2;
   margin: 0px 0px 0px 0px;
-  text-align: center;
+  text-align: var(--contentAlign);
 }
 .wp-block-create-block-infobox .info-box .info-box__title .text {
   color: #131212;
@@ -29,7 +29,7 @@
   font-weight: 400;
   line-height: 1.5;
   margin: 0px 0px 0px 0px;
-  text-align: center;
+  text-align: var(--contentAlign);
 }
 .wp-block-create-block-infobox .info-box .info-box__icon {
   font-size: 30px;

@@ -33,6 +33,18 @@ return array(
 			'content' => array(
 				'type' => 'string',
 				'default' => 'Lorem ipsum dolor sit amet consectetur. Sem leo dictumst ac imperdiet arcu duis tempor non adipiscing.'
+			),
+			'showContent' => array(
+				'type' => 'boolean',
+				'default' => true
+			),
+			'showTitle' => array(
+				'type' => 'boolean',
+				'default' => true
+			),
+			'contentAlign' => array(
+				'type' => 'string',
+				'default' => 'center'
 			)
 		),
 		'textdomain' => 'infobox',

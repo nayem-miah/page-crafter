@@ -1,6 +1,7 @@
 import { PanelBody } from '@wordpress/components';
 import { useState } from '@wordpress/element';
-export default function GeneralTab() {
+import Alignmnet from '../generalTabCom/Alignment';
+export default function GeneralTab( { showContent, showTitle, contentAlign, setAttributes } ) {
 	const [ openPanel, setOpenPanel ] = useState( 'general' ); // default open panel
 
 	const togglePanel = ( panelKey ) => {
@@ -10,11 +11,15 @@ export default function GeneralTab() {
 	return (
 		<div>
 			<PanelBody
-				title="Pagination"
+				title="Content"
 				opened={ openPanel === 'pagination' }
 				onToggle={ () => togglePanel( 'pagination' ) }
 			>
-				<p>General settings content here</p>
+				<Alignmnet
+					fromWhere="content"
+					setAttributes={ setAttributes }
+					alignProp={ contentAlign }
+				/>
 			</PanelBody>
 		</div>
 	);

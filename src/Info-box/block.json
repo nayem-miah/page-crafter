@@ -28,6 +28,18 @@
 		"content": {
 			"type": "string",
 			"default": "Lorem ipsum dolor sit amet consectetur. Sem leo dictumst ac imperdiet arcu duis tempor non adipiscing."
+		},
+		"showContent": {
+			"type": "boolean",
+			"default": true
+		},
+		"showTitle": {
+			"type": "boolean",
+			"default": true
+		},
+		"contentAlign": {
+			"type": "string",
+			"default": "center"
 		}
 	},
 	"textdomain": "infobox",
