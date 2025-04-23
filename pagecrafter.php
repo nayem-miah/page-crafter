@@ -14,7 +14,7 @@
  * @package CreateBlock
  */
 
-if (! defined('ABSPATH')) {
+if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
 
@@ -59,12 +59,46 @@ add_action('init', 'create_block_pagecrafter_block_init');
 
 
 
-/**
- * This function for enqueuing script, styles for block.
- */
-function nls_book_block_assets_enqueue()
+// /**
+//  * This function for enqueuing script, styles for block.
+//  */
+// function nls_book_block_assets_enqueue()
+// {
+//     wp_enqueue_script('nls_block_front_script', plugin_dir_url(__FILE__) . 'src/Post-grid/jq.js', array('jquery'), '1.0.0', true);
+//     wp_localize_script('nls_block_front_script', 'frontend_ajax', array('ajax_url' => admin_url('admin-ajax.php')));
+// }
+// add_action('enqueue_block_assets', 'nls_book_block_assets_enqueue');
+
+
+
+add_action('wp_ajax_nopriv_pg_ajax_posts', 'pg_ajax_posts_callback');
+add_action('wp_ajax_pg_ajax_posts', 'pg_ajax_posts_callback');
+
+function pg_ajax_posts_callback()
 {
-    wp_enqueue_script('nls_block_front_script', plugin_dir_url(__FILE__) . 'src/Post-grid/jq.js', array('jquery'), '1.0.0', true);
-    wp_localize_script('nls_block_front_script', 'frontend_ajax', array('ajax_url' => admin_url('admin-ajax.php')));
+	// You can validate nonce here if needed
+	$attributes = json_decode(stripslashes($_POST['attributes']), true);
+	try {
+		include plugin_dir_path(__FILE__) . 'src/Post-grid/render.php';
+	} catch (Throwable $e) {
+		error_log($e->getMessage());
+		wp_send_json_error(['error' => $e->getMessage()]);
+	}
+
+
+	wp_die();
 }
-add_action('enqueue_block_assets', 'nls_book_block_assets_enqueue');
+
+
+function pg_enqueue_assets()
+{
+	wp_enqueue_script('pg-pagination-js', plugin_dir_url(__FILE__) . 'pagination.js', [], null, true);
+	wp_localize_script('pg-pagination-js', 'pg_ajax_object', [
+		'ajax_url' => admin_url('admin-ajax.php'),
+	]);
+
+
+	// Also pass attributes for AJAX reuse
+	wp_add_inline_script('pg-pagination-js', 'window.pgBlockAttributes = {};'); // Replace with actual block attributes if needed
+}
+add_action('wp_enqueue_scripts', 'pg_enqueue_assets');
