@@ -39,7 +39,6 @@ $pagination = $posts_per_page > 0 ? ceil($total_posts / $posts_per_page) : 1;
 // Encode data for frontend AJAX calls
 $encoded_query = esc_attr(wp_json_encode($args));
 $encoded_attr  = esc_attr(wp_json_encode($attributes));
-
 ?>
 
 <div <?php echo get_block_wrapper_attributes(); ?>

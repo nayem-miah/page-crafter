@@ -99,16 +99,34 @@ function handle_styble_pagination()
 	$query_args = array_merge($query, ['paged' => $paged]);
 
 	$posts = get_posts($query_args);
-
+	$attributes = $attrs; // or maybe sanitize as needed
 	ob_start();
 	foreach ($posts as $post) {
 		setup_postdata($post);
 		?>
 		<div class="grid-card">
+			<?php if (has_post_thumbnail($post)): ?>
+				<div class="post-thumb">
+					<?php echo get_the_post_thumbnail($post, 'medium'); ?>
+				</div>
+			<?php endif; ?>
+
 			<h2><?php echo esc_html(get_the_title($post)); ?></h2>
+
+			<div class="post-meta">
+				<span class="date"><?php echo get_the_date('', $post); ?></span>
+				<span class="author"><?php echo get_the_author_meta('display_name', $post->post_author); ?></span>
+			</div>
+
+			<div class="post-excerpt">
+				<?php echo wp_trim_words(get_the_excerpt($post), 20); ?>
+			</div>
+
+			<a href="<?php echo esc_url(get_permalink($post)); ?>" class="read-more">Read More</a>
 		</div>
 		<?php
 	}
+
 	wp_reset_postdata();
 
 	$html = ob_get_clean();
