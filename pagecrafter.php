@@ -59,9 +59,17 @@ add_action('init', 'create_block_pagecrafter_block_init');
 
 function pg_enqueue_assets()
 {
-	wp_enqueue_script('pg-pagination-js', plugin_dir_url(__FILE__) . 'pagination.js', [], null, true);
-	wp_localize_script('pg-pagination-js', 'pg_ajax_object', [
+	wp_enqueue_script(
+		'pg-pagination',
+		plugin_dir_url(__FILE__) . 'pagination.js',
+		['jquery'],
+		'1.0',
+		true
+	);
+
+	wp_localize_script('pg-pagination', 'pg_ajax_object', [
 		'ajax_url' => admin_url('admin-ajax.php'),
+		'nonce' => wp_create_nonce('pg_nonce'), // ✅ must match 'pg_nonce' in wp_verify_nonce
 	]);
 
 
@@ -69,3 +77,41 @@ function pg_enqueue_assets()
 	wp_add_inline_script('pg-pagination-js', 'window.pgBlockAttributes = {};'); // Replace with actual block attributes if needed
 }
 add_action('wp_enqueue_scripts', 'pg_enqueue_assets');
+
+
+
+
+
+add_action('wp_ajax_styble_pagination', 'handle_styble_pagination');
+add_action('wp_ajax_nopriv_styble_pagination', 'handle_styble_pagination');
+
+function handle_styble_pagination()
+{
+	// Optional: verify nonce
+	if (!isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'pg_nonce')) {
+		wp_send_json_error('Invalid nonce');
+	}
+
+	$paged = intval($_POST['paged']) ?: 1;
+	$query = $_POST['data_query'] ?? [];
+	$attrs = $_POST['data_attr'] ?? [];
+
+	$query_args = array_merge($query, ['paged' => $paged]);
+
+	$posts = get_posts($query_args);
+
+	ob_start();
+	foreach ($posts as $post) {
+		setup_postdata($post);
+		?>
+		<div class="grid-card">
+			<h2><?php echo esc_html(get_the_title($post)); ?></h2>
+		</div>
+		<?php
+	}
+	wp_reset_postdata();
+
+	$html = ob_get_clean();
+
+	wp_send_json_success($html);
+}
