@@ -18,8 +18,6 @@ if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
 
-
-
 function pagecrafter_block_categories($categories, $post)
 {
 	return array_merge(
@@ -57,37 +55,6 @@ function create_block_pagecrafter_block_init()
 add_action('init', 'create_block_pagecrafter_block_init');
 
 
-
-
-// /**
-//  * This function for enqueuing script, styles for block.
-//  */
-// function nls_book_block_assets_enqueue()
-// {
-//     wp_enqueue_script('nls_block_front_script', plugin_dir_url(__FILE__) . 'src/Post-grid/jq.js', array('jquery'), '1.0.0', true);
-//     wp_localize_script('nls_block_front_script', 'frontend_ajax', array('ajax_url' => admin_url('admin-ajax.php')));
-// }
-// add_action('enqueue_block_assets', 'nls_book_block_assets_enqueue');
-
-
-
-add_action('wp_ajax_nopriv_pg_ajax_posts', 'pg_ajax_posts_callback');
-add_action('wp_ajax_pg_ajax_posts', 'pg_ajax_posts_callback');
-
-function pg_ajax_posts_callback()
-{
-	// You can validate nonce here if needed
-	$attributes = json_decode(stripslashes($_POST['attributes']), true);
-	try {
-		include plugin_dir_path(__FILE__) . 'src/Post-grid/render.php';
-	} catch (Throwable $e) {
-		error_log($e->getMessage());
-		wp_send_json_error(['error' => $e->getMessage()]);
-	}
-
-
-	wp_die();
-}
 
 
 function pg_enqueue_assets()

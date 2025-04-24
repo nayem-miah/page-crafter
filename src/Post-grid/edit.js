@@ -92,7 +92,6 @@ export default function Edit( { attributes, setAttributes } ) {
 				setPosts( [] );
 			}
 		};
-
 		fetchPosts();
 	}, [
 		numberOfPosts,

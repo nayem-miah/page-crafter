@@ -1,32 +1,58 @@
-document.addEventListener( 'DOMContentLoaded', function () {
-	const pagination = document.querySelector( '.pagination' );
+( function ( $ ) {
+	document.addEventListener( 'DOMContentLoaded', () => {
+		$( document ).on( 'click', '.pagination a.pg-page', function ( e ) {
+			e.preventDefault();
+			alert( 'Pagination script loaded!' );
+			let pagedNum = parseInt( $( this ).data( 'page' ) );
+			if ( ! pagedNum ) return;
 
-	if ( ! pagination ) return;
+			let $block = $( this ).closest( '[data-query]' );
+			if ( ! $block.length ) {
+				console.error( 'Block wrapper not found!' );
+				return;
+			}
 
-	pagination.addEventListener( 'click', function ( e ) {
-		if ( ! e.target.classList.contains( 'pg-page' ) ) return;
+			let data_query = $block.attr( 'data-query' );
+			let data_attr = $block.attr( 'data-attributes' );
 
-		e.preventDefault();
+			try {
+				data_query = JSON.parse( data_query );
+				data_attr = JSON.parse( data_attr );
+			} catch ( error ) {
+				console.error( 'Invalid JSON in data attributes' );
+				return;
+			}
 
-		const page = e.target.getAttribute( 'data-page' );
-		const attributes = window.pgBlockAttributes || {}; // Make sure this exists in your localize
-		console.log( 'attributes..................', attributes );
-		fetch( pg_ajax_object.ajax_url, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/x-www-form-urlencoded',
-			},
-			body: new URLSearchParams( {
-				action: 'pg_ajax_posts',
-				attributes: JSON.stringify( attributes ),
-				page,
-			} ),
-		} )
-			.then( ( res ) => res.text() )
-			.then( ( html ) => {
-		
-				document.querySelector( '.post-grid' ).innerHTML = html;
-			} )
-			.catch( ( err ) => console.error( 'Pagination error:', err ) );
+			$.ajax( {
+				url: stybleLocalize.ajaxUrl,
+				type: 'POST',
+				data: {
+					action: 'styble_pagination',
+					paged: pagedNum,
+					data_query,
+					data_attr,
+					nonce: stybleLocalize.nonce,
+				},
+				success: ( response ) => {
+					if ( response.success && response.data ) {
+						$block.find( '.post-grid' ).html( response.data );
+						$( 'html' ).animate(
+							{
+								scrollTop: $block.offset().top - 60,
+							},
+							100
+						);
+					} else {
+						console.error(
+							'AJAX success but data invalid',
+							response
+						);
+					}
+				},
+				error: ( xhr ) => {
+					console.error( 'AJAX error:', xhr );
+				},
+			} );
+		} );
 	} );
-} );
+} )( jQuery );
