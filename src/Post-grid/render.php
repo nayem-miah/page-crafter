@@ -173,7 +173,6 @@ $encoded_attr  = esc_attr(wp_json_encode($attributes));
 
 
 
-</div> <!-- /.post-grid -->
 
 
 </div> <!-- /.wp-block -->
