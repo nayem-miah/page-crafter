@@ -134,16 +134,17 @@ $encoded_attr  = esc_attr(wp_json_encode($attributes));
         wp_reset_postdata(); ?>
     </div> <!-- /.post-grid -->
 
-    <?php if ( $pagination > 1 ) : ?>
+    <?php if ($pagination > $paged): ?>
     <div class="pagination ajax-pagination">
+
         <!-- Prev Button -->
-        <button class="pg-prev" <?php echo $paged <= 1 ? '' : ''; ?> data-page="<?php echo max( 1, $paged - 1 ); ?>">
+        <button class="pg-prev" <?php echo $paged <= 1 ? 'disabled' : ''; ?>
+            data-page="<?php echo max( 1, $paged - 1 ); ?>">
             Prev
         </button>
 
-        <!-- Page Numbers -->
         <?php for ( $i = 1; $i <= $pagination; $i++ ) : ?>
-        <button class="pg-page <?php echo $i == $paged ? 'active' : ''; ?>" data-page="<?php echo $i; ?>">
+        <button class="pg-page <?php echo $i === $paged ? 'active' : ''; ?>" data-page="<?php echo $i; ?>">
             <?php echo $i; ?>
         </button>
         <?php endfor; ?>
@@ -153,7 +154,7 @@ $encoded_attr  = esc_attr(wp_json_encode($attributes));
             data-page="<?php echo min( $pagination, $paged + 1 ); ?>">
             Next
         </button>
+
     </div>
     <?php endif; ?>
-
 </div> <!-- /.wp-block -->

@@ -104,8 +104,8 @@ if (!function_exists('truncate_excerpt')) {
 
 //-------------------------------------------pagination handler this function will run when paginate----------------------------------
 
-add_action('wp_ajax_styble_pagination', 'handle_pagination');
-add_action('wp_ajax_nopriv_styble_pagination', 'handle_pagination');
+add_action('wp_ajax_pagination', 'handle_pagination');
+add_action('wp_ajax_nopriv_pagination', 'handle_pagination'); // For non-logged-in users
 
 function handle_pagination()
 {
@@ -122,15 +122,22 @@ function handle_pagination()
 
 	$posts = get_posts($query_args);
 	$attributes = $attrs; // or maybe sanitize as needed
+	
+
+	
 	ob_start();
+
+
+
 	foreach ($posts as $post) {
 		setup_postdata($post);
 		?>
+
 <div class="grid-card" style="
 				--card-bg: <?php echo esc_attr($attributes['contentBackground'] ?? '#fff'); ?>;
 				--card-bg-hover: <?php echo esc_attr($attributes['contentBackgroundHover'] ?? '#f5f5f5'); ?>;
 			">
-    <?php if (has_post_thumbnail($post) && !empty($attributes['displayImage'])): ?>
+    <?php if (has_post_thumbnail($post)&& $attributes['displayImage'] !== false && $attributes['displayImage'] !== 'false'): ?>
     <div class="post-grid-thumbnail">
         <?php echo get_the_post_thumbnail($post, 'medium'); ?>
     </div>
@@ -147,8 +154,7 @@ function handle_pagination()
 					 	esc_attr($attributes['contentMargin']['left'] ?? 0); ?>;
 							">
 
-
-        <?php if (!empty($attributes['showTitle'])): ?>
+        <?php if ($attributes['showTitle'] !==false && $attributes['showTitle'] !== 'false'): ?>
         <div class="post-grid-title">
             <h5 style="text-align: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;">
                 <a href="<?php the_permalink($post); ?>" style="
@@ -162,7 +168,7 @@ function handle_pagination()
         <?php endif; ?>
 
 
-        <?php if (!empty($attributes['showMeta'])): ?>
+        <?php if ($attributes['showMeta'] !== false && $attributes['showMeta'] !== 'false'): ?>
         <div class="post-grid-meta" style="
 											--metaTextAlign: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;
 											--metaHoverColor: <?php echo esc_attr($attributes['metaHoverColor'] ?? '#999'); ?>;
@@ -179,14 +185,14 @@ function handle_pagination()
         </div>
         <?php endif; ?>
 
-        <?php if (!empty($attributes['showExcerpt'])): ?>
+        <?php if ($attributes['showExcerpt'] !== false && $attributes['showExcerpt'] !== 'false'): ?>
         <div class="post-grid-excerpt"
             style="text-align: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;">
             <p><?php echo esc_html(truncate_excerpt(get_the_excerpt($post), $attributes['excerptMaxWords'] ?? 30)); ?>
             </p>
         </div>
         <?php endif; ?>
-        <?php if (!empty($attributes['readMore'])): ?>
+        <?php if ($attributes['readMore'] !== false && $attributes['readMore'] !== 'false'): ?>
         <div class="post-grid-btn"
             style="text-align: <?php echo esc_attr($attributes['readMoreAlignment'] ?? 'left'); ?>;">
             <a href="<?php the_permalink($post); ?>" class="read-more-link" style="
@@ -211,7 +217,6 @@ function handle_pagination()
 </div>
 <?php
 	}
-
 	wp_reset_postdata();
 
 	$html = ob_get_clean();
