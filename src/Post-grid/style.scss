@@ -5,7 +5,6 @@
 
 	.post-grid {
 
-
 		.post-grid-wrapper {
 			display: grid;
 			gap: var(--column-gap);
@@ -114,7 +113,6 @@
 	}
 
 
-
 	.pagecrafter-tab-panel .components-tab-panel__tabs {
 		margin-bottom: 10px;
 
@@ -138,6 +136,40 @@
 	}
 
 
+
+
+	/* Responsive Styles */
+	@media (max-width: 1024px) {
+		.post-grid {
+			.post-grid-wrapper {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+	}
+
+	@media (max-width: 575px) {
+		.post-grid {
+			.post-grid-wrapper {
+				grid-template-columns: repeat(1, 1fr);
+			}
+		}
+
+		.grid-card .content-body .post-grid-title h5 a {
+			font-size: 16px;
+		}
+
+		.grid-card .content-body .post-grid-meta,
+		.grid-card .content-body .post-grid-excerpt {
+			font-size: 14px;
+		}
+
+		.grid-card .content-body .post-grid-btn a {
+			font-size: 14px;
+			padding: 6px 12px;
+		}
+	}
+
+
 	.ajax-pagination {
 		margin-top: 20px;
 		text-align: center;
@@ -158,33 +190,6 @@
 				cursor: not-allowed;
 				opacity: 0.5;
 			}
-		}
-	}
-
-	/* Responsive Styles */
-	@media (max-width: 1024px) {
-		.post-grid {
-			grid-template-columns: repeat(2, 1fr);
-		}
-	}
-
-	@media (max-width: 575px) {
-		.post-grid {
-			grid-template-columns: repeat(1, 1fr);
-		}
-
-		.grid-card .content-body .post-grid-title h5 a {
-			font-size: 16px;
-		}
-
-		.grid-card .content-body .post-grid-meta,
-		.grid-card .content-body .post-grid-excerpt {
-			font-size: 14px;
-		}
-
-		.grid-card .content-body .post-grid-btn a {
-			font-size: 14px;
-			padding: 6px 12px;
 		}
 	}
 }

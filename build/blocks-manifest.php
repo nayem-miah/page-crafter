@@ -325,7 +325,7 @@ return array(
 			),
 			'useAjaxPagination' => array(
 				'type' => 'boolean',
-				'default' => false
+				'default' => true
 			),
 			'pagination_number' => array(
 				'type' => 'integer',

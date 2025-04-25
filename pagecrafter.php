@@ -223,7 +223,7 @@ function handle_pagination() {
 
 </div>
 
-<?php if ($pagination > $paged): ?>
+<?php if ($pagination > 1): ?>
 <div class="pagination ajax-pagination">
 
     <!-- Prev Button -->

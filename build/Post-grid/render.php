@@ -141,7 +141,7 @@ $encoded_attr  = esc_attr(wp_json_encode($attributes));
 
 
 
-        <?php if ($pagination > $paged): ?>
+        <?php if ($pagination > $paged && !empty($attributes['useAjaxPagination'])): ?>
         <div class="pagination ajax-pagination">
 
             <!-- Prev Button -->

@@ -219,7 +219,7 @@
 		},
 		"useAjaxPagination": {
 			"type": "boolean",
-			"default": false
+			"default": true
 		},
 
 		"pagination_number": {

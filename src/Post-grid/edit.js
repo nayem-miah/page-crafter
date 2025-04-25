@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from '@wordpress/element';
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
 import { TabPanel } from '@wordpress/components';
@@ -186,115 +185,118 @@ export default function Edit( { attributes, setAttributes } ) {
 				</TabPanel>
 			</InspectorControls>
 
-			<div
-				className="post-grid"
-				style={ {
-					'--columns': columns,
-					'--column-gap': `${ columnGap }px`,
-				} }
-			>
-				{ posts.map( ( post ) => (
-					<div
-						key={ post.id }
-						className="grid-card"
-						style={ {
-							'--card-bg': contentBackground,
-							'--card-bg-hover': contentBackgroundHover,
-						} }
-					>
-						<Thumnail
-							thumnail={ post._embedded?.[ 'wp:featuredmedia' ] }
-							displayImage={ displayImage }
-						/>
+			<div className="post-grid">
+				<div
+					className="post-grid-wrapper"
+					style={ {
+						'--columns': columns,
+						'--column-gap': `${ columnGap }px`,
+					} }
+				>
+					{ posts.map( ( post ) => (
 						<div
-							className="content-body"
+							key={ post.id }
+							className="grid-card"
 							style={ {
-								padding: `${ contentPadding?.top || '0px' } ${
-									contentPadding?.right || '0px'
-								} ${ contentPadding?.bottom || '0px' } ${
-									contentPadding?.left || '0px'
-								}`,
-								margin: `${ contentMargin?.top || '0px' } ${
-									contentMargin?.right || '0px'
-								} ${ contentMargin?.bottom || '0px' } ${
-									contentMargin?.left || '0px'
-								}`,
+								'--card-bg': contentBackground,
+								'--card-bg-hover': contentBackgroundHover,
 							} }
-
 						>
-							<Title
-								title={ post.title?.rendered }
-								link={ post.link }
-								showTitle={ showTitle }
-								contentAlignment={ contentAlignment }
-								titleColor={ titleColor }
-								titleHoverColor={ titleHoverColor }
-								titleMargin={ titleMargin }
-							/>
-							<Meta
-								showMeta={ showMeta }
-								author={ post._embedded?.author }
-								date={ post.date_gmt }
-								contentAlignment={ contentAlignment }
-								metaColor={ metaColor }
-								metaHoverColor={ metaHoverColor }
-								metaMargin={ metaMargin }
-							/>
-							<Excerpt
-								showExcerpt={ showExcerpt }
-								excerpt={ post.excerpt?.rendered }
-								excerptMaxWords={ excerptMaxWords }
-								contentAlignment={ contentAlignment }
-								desMargin={ desMargin }
-								desColor={ desColor }
-								desHoverColor={ desHoverColor }
-							/>
-							<ReadButton
-								readMore={ readMore }
-								link={ post.link }
-								readMoreAlignment={ readMoreAlignment }
-								readMoreBackground={ readMoreBackground }
-								readMoreBackgroundHover={
-									readMoreBackgroundHover
+							<Thumnail
+								thumnail={
+									post._embedded?.[ 'wp:featuredmedia' ]
 								}
-								readMoreColor={ readMoreColor }
-								readMoreColorHover={ readMoreColorHover }
-								readMorePadding={ readMorePadding }
-								readMoreMargin={ readMoreMargin }
+								displayImage={ displayImage }
 							/>
+							<div
+								className="content-body"
+								style={ {
+									padding: `${
+										contentPadding?.top || '0px'
+									} ${ contentPadding?.right || '0px' } ${
+										contentPadding?.bottom || '0px'
+									} ${ contentPadding?.left || '0px' }`,
+									margin: `${ contentMargin?.top || '0px' } ${
+										contentMargin?.right || '0px'
+									} ${ contentMargin?.bottom || '0px' } ${
+										contentMargin?.left || '0px'
+									}`,
+								} }
+							>
+								<Title
+									title={ post.title?.rendered }
+									link={ post.link }
+									showTitle={ showTitle }
+									contentAlignment={ contentAlignment }
+									titleColor={ titleColor }
+									titleHoverColor={ titleHoverColor }
+									titleMargin={ titleMargin }
+								/>
+								<Meta
+									showMeta={ showMeta }
+									author={ post._embedded?.author }
+									date={ post.date_gmt }
+									contentAlignment={ contentAlignment }
+									metaColor={ metaColor }
+									metaHoverColor={ metaHoverColor }
+									metaMargin={ metaMargin }
+								/>
+								<Excerpt
+									showExcerpt={ showExcerpt }
+									excerpt={ post.excerpt?.rendered }
+									excerptMaxWords={ excerptMaxWords }
+									contentAlignment={ contentAlignment }
+									desMargin={ desMargin }
+									desColor={ desColor }
+									desHoverColor={ desHoverColor }
+								/>
+								<ReadButton
+									readMore={ readMore }
+									link={ post.link }
+									readMoreAlignment={ readMoreAlignment }
+									readMoreBackground={ readMoreBackground }
+									readMoreBackgroundHover={
+										readMoreBackgroundHover
+									}
+									readMoreColor={ readMoreColor }
+									readMoreColorHover={ readMoreColorHover }
+									readMorePadding={ readMorePadding }
+									readMoreMargin={ readMoreMargin }
+								/>
+							</div>
 						</div>
-					</div>
-				) ) }
-			</div>
-
-			{ useAjaxPagination && totalPages > 1 && (
-				<div className="ajax-pagination">
-					<button
-						onClick={ () =>
-							setAttributes( {
-								currentPage: Math.max( 1, currentPage - 1 ),
-							} )
-						}
-						disabled={ currentPage === 1 }
-					>
-						Prev
-					</button>
-					{ paginationButtons() }
-					<button
-						onClick={ () =>
-							setAttributes( {
-								currentPage: Math.min(
-									totalPages,
-									currentPage + 1
-								),
-							} )
-						}
-						disabled={ currentPage === totalPages }
-					>
-						Next
-					</button>
+					) ) }
 				</div>
-			) }
+
+				{ useAjaxPagination && totalPages > 1 && (
+					<div className="ajax-pagination">
+						<button
+							onClick={ () =>
+								setAttributes( {
+									currentPage: Math.max( 1, currentPage - 1 ),
+								} )
+							}
+							disabled={ currentPage === 1 }
+						>
+							Prev
+						</button>
+						{ paginationButtons() }
+						<button
+							onClick={ () =>
+								setAttributes( {
+									currentPage: Math.min(
+										totalPages,
+										currentPage + 1
+									),
+								} )
+							}
+							disabled={ currentPage === totalPages }
+						>
+							Next
+						</button>
+					</div>
+				) }
+			</div>
 		</div>
 	);
 }
