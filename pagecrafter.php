@@ -222,10 +222,6 @@ function handle_pagination()
 
 
 
-
-
-
-
 <?php
 	}
 
