@@ -56,6 +56,8 @@ add_action('init', 'create_block_pagecrafter_block_init');
 
 
 
+//--------------------------------------------enqueue script for pagination----------------------------------
+
 function pg_enqueue_assets()
 {
 	wp_enqueue_script(
@@ -80,6 +82,7 @@ add_action('wp_enqueue_scripts', 'pg_enqueue_assets');
 
 
 
+//-------------------------------------------- trancate content function 30 words----------------------------------`
 if (!function_exists('truncate_excerpt')) {
 	function truncate_excerpt($excerpt, $word_limit = 30)
 	{
@@ -99,6 +102,7 @@ if (!function_exists('truncate_excerpt')) {
 
 
 
+//-------------------------------------------pagination handler this function will run when paginate----------------------------------
 
 add_action('wp_ajax_styble_pagination', 'handle_pagination');
 add_action('wp_ajax_nopriv_styble_pagination', 'handle_pagination');
@@ -122,17 +126,17 @@ function handle_pagination()
 	foreach ($posts as $post) {
 		setup_postdata($post);
 		?>
-		<div class="grid-card" style="
+<div class="grid-card" style="
 				--card-bg: <?php echo esc_attr($attributes['contentBackground'] ?? '#fff'); ?>;
 				--card-bg-hover: <?php echo esc_attr($attributes['contentBackgroundHover'] ?? '#f5f5f5'); ?>;
 			">
-			<?php if (has_post_thumbnail($post) && !empty($attributes['displayImage'])): ?>
-				<div class="post-grid-thumbnail">
-					<?php echo get_the_post_thumbnail($post, 'medium'); ?>
-				</div>
-			<?php endif; ?>
+    <?php if (has_post_thumbnail($post) && !empty($attributes['displayImage'])): ?>
+    <div class="post-grid-thumbnail">
+        <?php echo get_the_post_thumbnail($post, 'medium'); ?>
+    </div>
+    <?php endif; ?>
 
-			<div class="content-body" style="
+    <div class="content-body" style="
 					 padding: <?php echo esc_attr($attributes['contentPadding']['top'] ?? 0) . ' ' .
 					 	esc_attr($attributes['contentPadding']['right'] ?? 0) . ' ' .
 					 	esc_attr($attributes['contentPadding']['bottom'] ?? 0) . ' ' .
@@ -144,22 +148,22 @@ function handle_pagination()
 							">
 
 
-				<?php if (!empty($attributes['showTitle'])): ?>
-					<div class="post-grid-title">
-						<h5 style="text-align: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;">
-							<a href="<?php the_permalink($post); ?>" style="
+        <?php if (!empty($attributes['showTitle'])): ?>
+        <div class="post-grid-title">
+            <h5 style="text-align: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;">
+                <a href="<?php the_permalink($post); ?>" style="
 									--titleColor: <?php echo esc_attr($attributes['titleColor'] ?? '#000'); ?>;
 									--titleHoverColor: <?php echo esc_attr($attributes['titleHoverColor'] ?? '#555'); ?>;
 								">
-								<?php echo esc_html(get_the_title($post)); ?>
-							</a>
-						</h5>
-					</div>
-				<?php endif; ?>
+                    <?php echo esc_html(get_the_title($post)); ?>
+                </a>
+            </h5>
+        </div>
+        <?php endif; ?>
 
 
-				<?php if (!empty($attributes['showMeta'])): ?>
-					<div class="post-grid-meta" style="
+        <?php if (!empty($attributes['showMeta'])): ?>
+        <div class="post-grid-meta" style="
 											--metaTextAlign: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;
 											--metaHoverColor: <?php echo esc_attr($attributes['metaHoverColor'] ?? '#999'); ?>;
 											--metaColor: <?php echo esc_attr($attributes['metaColor'] ?? '#777'); ?>;
@@ -168,24 +172,24 @@ function handle_pagination()
 											--metaMarginLeft: <?php echo esc_attr($attributes['metaMargin']['left'] ?? '0'); ?>;
 											--metaMarginRight: <?php echo esc_attr($attributes['metaMargin']['right'] ?? '0'); ?>;
 										">
-						<span>By <?php echo esc_html(get_the_author_meta('display_name', $post->post_author)); ?></span>
-						<time datetime="<?php echo esc_attr(get_the_date('c', $post)); ?>">
-							<?php echo esc_html(get_the_date('', $post)); ?>
-						</time>
-					</div>
-				<?php endif; ?>
+            <span>By <?php echo esc_html(get_the_author_meta('display_name', $post->post_author)); ?></span>
+            <time datetime="<?php echo esc_attr(get_the_date('c', $post)); ?>">
+                <?php echo esc_html(get_the_date('', $post)); ?>
+            </time>
+        </div>
+        <?php endif; ?>
 
-				<?php if (!empty($attributes['showExcerpt'])): ?>
-					<div class="post-grid-excerpt"
-						style="text-align: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;">
-						<p><?php echo esc_html(truncate_excerpt(get_the_excerpt($post), $attributes['excerptMaxWords'] ?? 30)); ?>
-						</p>
-					</div>
-				<?php endif; ?>
-				<?php if (!empty($attributes['readMore'])): ?>
-					<div class="post-grid-btn"
-						style="text-align: <?php echo esc_attr($attributes['readMoreAlignment'] ?? 'left'); ?>;">
-						<a href="<?php the_permalink($post); ?>" class="read-more-link" style="
+        <?php if (!empty($attributes['showExcerpt'])): ?>
+        <div class="post-grid-excerpt"
+            style="text-align: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;">
+            <p><?php echo esc_html(truncate_excerpt(get_the_excerpt($post), $attributes['excerptMaxWords'] ?? 30)); ?>
+            </p>
+        </div>
+        <?php endif; ?>
+        <?php if (!empty($attributes['readMore'])): ?>
+        <div class="post-grid-btn"
+            style="text-align: <?php echo esc_attr($attributes['readMoreAlignment'] ?? 'left'); ?>;">
+            <a href="<?php the_permalink($post); ?>" class="read-more-link" style="
 								--readMoreColor: <?php echo esc_attr($attributes['readMoreColor'] ?? '#fff'); ?>;
 								--readMoreBackground: <?php echo esc_attr($attributes['readMoreBackground'] ?? '#0073aa'); ?>;
 								--readMoreColorHover: <?php echo esc_attr($attributes['readMoreColorHover'] ?? '#fff'); ?>;
@@ -199,13 +203,13 @@ function handle_pagination()
 								--readMoreMarginBottom: <?php echo esc_attr($attributes['readMoreMargin']['bottom'] ?? '0px'); ?>;
 								--readMoreMarginLeft: <?php echo esc_attr($attributes['readMoreMargin']['left'] ?? '0px'); ?>;
 							">
-							<span><?php esc_html_e('Read More', 'postgrid'); ?></span>
-						</a>
-					</div>
-				<?php endif; ?>
-			</div>
-		</div>
-		<?php
+                <span><?php esc_html_e('Read More', 'postgrid'); ?></span>
+            </a>
+        </div>
+        <?php endif; ?>
+    </div>
+</div>
+<?php
 	}
 
 	wp_reset_postdata();
