@@ -4,12 +4,19 @@
 	padding: 2px;
 
 	.post-grid {
-		display: grid;
-		gap: var(--column-gap);
-		grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+
+
+		.post-grid-wrapper {
+			display: grid;
+			gap: var(--column-gap);
+			grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+		}
 	}
 
 	.grid-card {
+
+
+
 		background: var(--card-bg);
 		border-color: #dcdcde;
 		border-style: solid;
