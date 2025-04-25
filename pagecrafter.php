@@ -124,9 +124,12 @@ function handle_pagination()
 	$attributes = $attrs; // or maybe sanitize as needed
 	
 
+	$posts_per_page = !empty($attributes['numberOfPosts']) ? intval($attributes['numberOfPosts']) : 5;
+
+	$total_posts = wp_count_posts()->publish;
+    $pagination = $posts_per_page > 0 ? ceil($total_posts / $posts_per_page) : 1;
 	
 	ob_start();
-
 
 
 	foreach ($posts as $post) {
@@ -134,9 +137,9 @@ function handle_pagination()
 		?>
 
 <div class="grid-card" style="
-				--card-bg: <?php echo esc_attr($attributes['contentBackground'] ?? '#fff'); ?>;
-				--card-bg-hover: <?php echo esc_attr($attributes['contentBackgroundHover'] ?? '#f5f5f5'); ?>;
-			">
+							--card-bg: <?php echo esc_attr($attributes['contentBackground'] ?? '#fff'); ?>;
+							--card-bg-hover: <?php echo esc_attr($attributes['contentBackgroundHover'] ?? '#f5f5f5'); ?>;
+						">
     <?php if (has_post_thumbnail($post)&& $attributes['displayImage'] !== false && $attributes['displayImage'] !== 'false'): ?>
     <div class="post-grid-thumbnail">
         <?php echo get_the_post_thumbnail($post, 'medium'); ?>
@@ -144,23 +147,23 @@ function handle_pagination()
     <?php endif; ?>
 
     <div class="content-body" style="
-					 padding: <?php echo esc_attr($attributes['contentPadding']['top'] ?? 0) . ' ' .
-					 	esc_attr($attributes['contentPadding']['right'] ?? 0) . ' ' .
-					 	esc_attr($attributes['contentPadding']['bottom'] ?? 0) . ' ' .
-					 	esc_attr($attributes['contentPadding']['left'] ?? 0); ?>;
-					 margin: <?php echo esc_attr($attributes['contentMargin']['top'] ?? 0) . ' ' .
-					 	esc_attr($attributes['contentMargin']['right'] ?? 0) . ' ' .
-					 	esc_attr($attributes['contentMargin']['bottom'] ?? 0) . ' ' .
-					 	esc_attr($attributes['contentMargin']['left'] ?? 0); ?>;
-							">
+								padding: <?php echo esc_attr($attributes['contentPadding']['top'] ?? 0) . ' ' .
+									esc_attr($attributes['contentPadding']['right'] ?? 0) . ' ' .
+									esc_attr($attributes['contentPadding']['bottom'] ?? 0) . ' ' .
+									esc_attr($attributes['contentPadding']['left'] ?? 0); ?>;
+								margin: <?php echo esc_attr($attributes['contentMargin']['top'] ?? 0) . ' ' .
+									esc_attr($attributes['contentMargin']['right'] ?? 0) . ' ' .
+									esc_attr($attributes['contentMargin']['bottom'] ?? 0) . ' ' .
+									esc_attr($attributes['contentMargin']['left'] ?? 0); ?>;
+										">
 
         <?php if ($attributes['showTitle'] !==false && $attributes['showTitle'] !== 'false'): ?>
         <div class="post-grid-title">
             <h5 style="text-align: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;">
                 <a href="<?php the_permalink($post); ?>" style="
-									--titleColor: <?php echo esc_attr($attributes['titleColor'] ?? '#000'); ?>;
-									--titleHoverColor: <?php echo esc_attr($attributes['titleHoverColor'] ?? '#555'); ?>;
-								">
+												--titleColor: <?php echo esc_attr($attributes['titleColor'] ?? '#000'); ?>;
+												--titleHoverColor: <?php echo esc_attr($attributes['titleHoverColor'] ?? '#555'); ?>;
+											">
                     <?php echo esc_html(get_the_title($post)); ?>
                 </a>
             </h5>
@@ -170,14 +173,14 @@ function handle_pagination()
 
         <?php if ($attributes['showMeta'] !== false && $attributes['showMeta'] !== 'false'): ?>
         <div class="post-grid-meta" style="
-											--metaTextAlign: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;
-											--metaHoverColor: <?php echo esc_attr($attributes['metaHoverColor'] ?? '#999'); ?>;
-											--metaColor: <?php echo esc_attr($attributes['metaColor'] ?? '#777'); ?>;
-											--metaMarginTop: <?php echo esc_attr($attributes['metaMargin']['top'] ?? '10px'); ?>;
-											--metaMarginBottom: <?php echo esc_attr($attributes['metaMargin']['bottom'] ?? '10px'); ?>;
-											--metaMarginLeft: <?php echo esc_attr($attributes['metaMargin']['left'] ?? '0'); ?>;
-											--metaMarginRight: <?php echo esc_attr($attributes['metaMargin']['right'] ?? '0'); ?>;
-										">
+														--metaTextAlign: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;
+														--metaHoverColor: <?php echo esc_attr($attributes['metaHoverColor'] ?? '#999'); ?>;
+														--metaColor: <?php echo esc_attr($attributes['metaColor'] ?? '#777'); ?>;
+														--metaMarginTop: <?php echo esc_attr($attributes['metaMargin']['top'] ?? '10px'); ?>;
+														--metaMarginBottom: <?php echo esc_attr($attributes['metaMargin']['bottom'] ?? '10px'); ?>;
+														--metaMarginLeft: <?php echo esc_attr($attributes['metaMargin']['left'] ?? '0'); ?>;
+														--metaMarginRight: <?php echo esc_attr($attributes['metaMargin']['right'] ?? '0'); ?>;
+													">
             <span>By <?php echo esc_html(get_the_author_meta('display_name', $post->post_author)); ?></span>
             <time datetime="<?php echo esc_attr(get_the_date('c', $post)); ?>">
                 <?php echo esc_html(get_the_date('', $post)); ?>
@@ -196,30 +199,42 @@ function handle_pagination()
         <div class="post-grid-btn"
             style="text-align: <?php echo esc_attr($attributes['readMoreAlignment'] ?? 'left'); ?>;">
             <a href="<?php the_permalink($post); ?>" class="read-more-link" style="
-								--readMoreColor: <?php echo esc_attr($attributes['readMoreColor'] ?? '#fff'); ?>;
-								--readMoreBackground: <?php echo esc_attr($attributes['readMoreBackground'] ?? '#0073aa'); ?>;
-								--readMoreColorHover: <?php echo esc_attr($attributes['readMoreColorHover'] ?? '#fff'); ?>;
-								--readMoreBackgroundHover: <?php echo esc_attr($attributes['readMoreBackgroundHover'] ?? '#005177'); ?>;
-								--readMorePaddingTop: <?php echo esc_attr($attributes['readMorePadding']['top'] ?? '0px'); ?>;
-								--readMorePaddingRight: <?php echo esc_attr($attributes['readMorePadding']['right'] ?? '0px'); ?>;
-								--readMorePaddingBottom: <?php echo esc_attr($attributes['readMorePadding']['bottom'] ?? '0px'); ?>;
-								--readMorePaddingLeft: <?php echo esc_attr($attributes['readMorePadding']['left'] ?? '0px'); ?>;
-								--readMoreMarginTop: <?php echo esc_attr($attributes['readMoreMargin']['top'] ?? '0px'); ?>;
-								--readMoreMarginRight: <?php echo esc_attr($attributes['readMoreMargin']['right'] ?? '0px'); ?>;
-								--readMoreMarginBottom: <?php echo esc_attr($attributes['readMoreMargin']['bottom'] ?? '0px'); ?>;
-								--readMoreMarginLeft: <?php echo esc_attr($attributes['readMoreMargin']['left'] ?? '0px'); ?>;
-							">
+											--readMoreColor: <?php echo esc_attr($attributes['readMoreColor'] ?? '#fff'); ?>;
+											--readMoreBackground: <?php echo esc_attr($attributes['readMoreBackground'] ?? '#0073aa'); ?>;
+											--readMoreColorHover: <?php echo esc_attr($attributes['readMoreColorHover'] ?? '#fff'); ?>;
+											--readMoreBackgroundHover: <?php echo esc_attr($attributes['readMoreBackgroundHover'] ?? '#005177'); ?>;
+											--readMorePaddingTop: <?php echo esc_attr($attributes['readMorePadding']['top'] ?? '0px'); ?>;
+											--readMorePaddingRight: <?php echo esc_attr($attributes['readMorePadding']['right'] ?? '0px'); ?>;
+											--readMorePaddingBottom: <?php echo esc_attr($attributes['readMorePadding']['bottom'] ?? '0px'); ?>;
+											--readMorePaddingLeft: <?php echo esc_attr($attributes['readMorePadding']['left'] ?? '0px'); ?>;
+											--readMoreMarginTop: <?php echo esc_attr($attributes['readMoreMargin']['top'] ?? '0px'); ?>;
+											--readMoreMarginRight: <?php echo esc_attr($attributes['readMoreMargin']['right'] ?? '0px'); ?>;
+											--readMoreMarginBottom: <?php echo esc_attr($attributes['readMoreMargin']['bottom'] ?? '0px'); ?>;
+											--readMoreMarginLeft: <?php echo esc_attr($attributes['readMoreMargin']['left'] ?? '0px'); ?>;
+										">
                 <span><?php esc_html_e('Read More', 'postgrid'); ?></span>
             </a>
         </div>
         <?php endif; ?>
     </div>
 </div>
+
+
+
+
+
+
+
+
 <?php
 	}
-	wp_reset_postdata();
 
-	$html = ob_get_clean();
 
-	wp_send_json_success($html);
+
+
+wp_reset_postdata();
+
+$html = ob_get_clean();
+
+wp_send_json_success($html);
 }
