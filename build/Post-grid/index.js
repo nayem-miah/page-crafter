@@ -1750,17 +1750,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ GeneralTab)
 /* harmony export */ });
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _generalTabComp_ActionBtn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../generalTabComp/ActionBtn */ "./src/Post-grid/generalTabComp/ActionBtn.js");
-/* harmony import */ var _generalTabComp_Content__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../generalTabComp/Content */ "./src/Post-grid/generalTabComp/Content.js");
-/* harmony import */ var _generalTabComp_General__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../generalTabComp/General */ "./src/Post-grid/generalTabComp/General.js");
-/* harmony import */ var _generalTabComp_Image__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../generalTabComp/Image */ "./src/Post-grid/generalTabComp/Image.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
-
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _generalTabComp_ActionBtn__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../generalTabComp/ActionBtn */ "./src/Post-grid/generalTabComp/ActionBtn.js");
+/* harmony import */ var _generalTabComp_Content__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../generalTabComp/Content */ "./src/Post-grid/generalTabComp/Content.js");
+/* harmony import */ var _generalTabComp_General__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../generalTabComp/General */ "./src/Post-grid/generalTabComp/General.js");
+/* harmony import */ var _generalTabComp_Image__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../generalTabComp/Image */ "./src/Post-grid/generalTabComp/Image.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
 
 
 
@@ -1784,13 +1781,13 @@ function GeneralTab({
     columnGap,
     contentAlignment
   } = attributes;
-  const [openPanel, setOpenPanel] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)('general'); // default open panel
+  const [openPanel, setOpenPanel] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)('general'); // default open panel
 
   const togglePanel = panelKey => {
     setOpenPanel(openPanel === panelKey ? null : panelKey);
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_generalTabComp_General__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_generalTabComp_General__WEBPACK_IMPORTED_MODULE_3__["default"], {
       order: attributes?.order,
       setAttributes: setAttributes,
       columnGap: columnGap,
@@ -1798,12 +1795,12 @@ function GeneralTab({
       numberOfPosts: numberOfPosts,
       togglePanel: togglePanel,
       openPanel: openPanel
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_generalTabComp_Image__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_generalTabComp_Image__WEBPACK_IMPORTED_MODULE_4__["default"], {
       setAttributes: setAttributes,
       displayImage: displayImage,
       togglePanel: togglePanel,
       openPanel: openPanel
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_generalTabComp_Content__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_generalTabComp_Content__WEBPACK_IMPORTED_MODULE_2__["default"], {
       setAttributes: setAttributes,
       showExcerpt: showExcerpt,
       showTitle: showTitle,
@@ -1812,19 +1809,12 @@ function GeneralTab({
       contentAlignment: contentAlignment,
       togglePanel: togglePanel,
       openPanel: openPanel
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_generalTabComp_ActionBtn__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_generalTabComp_ActionBtn__WEBPACK_IMPORTED_MODULE_1__["default"], {
       setAttributes: setAttributes,
       readMore: readMore,
       readMoreAlignment: readMoreAlignment,
       togglePanel: togglePanel,
       openPanel: openPanel
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
-      title: "Pagination",
-      opened: openPanel === 'pagination',
-      onToggle: () => togglePanel('pagination'),
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
-        children: "General settings content here"
-      })
     })]
   });
 }
@@ -1841,15 +1831,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ StyleTab)
 /* harmony export */ });
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _styleTabCom_ContentStyle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styleTabCom/ContentStyle */ "./src/Post-grid/styleTabCom/ContentStyle.js");
-/* harmony import */ var _styleTabCom_ReadMoreStyle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styleTabCom/ReadMoreStyle */ "./src/Post-grid/styleTabCom/ReadMoreStyle.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
-
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _styleTabCom_ContentStyle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styleTabCom/ContentStyle */ "./src/Post-grid/styleTabCom/ContentStyle.js");
+/* harmony import */ var _styleTabCom_ReadMoreStyle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styleTabCom/ReadMoreStyle */ "./src/Post-grid/styleTabCom/ReadMoreStyle.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
@@ -1885,12 +1872,12 @@ function StyleTab({
     readMoreMargin,
     readMorePadding
   } = attributes;
-  const [openPanel, setOpenPanel] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)('general');
+  const [openPanel, setOpenPanel] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)('general');
   const togglePanel = panelKey => {
     setOpenPanel(openPanel === panelKey ? null : panelKey);
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_styleTabCom_ContentStyle__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_styleTabCom_ContentStyle__WEBPACK_IMPORTED_MODULE_1__["default"], {
       setAttributes: setAttributes,
       activeBackground: activeBackground,
       contentBackground: contentBackground,
@@ -1911,7 +1898,7 @@ function StyleTab({
       desActiveColor: desActiveColor,
       openPanel: openPanel,
       togglePanel: togglePanel
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_styleTabCom_ReadMoreStyle__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_styleTabCom_ReadMoreStyle__WEBPACK_IMPORTED_MODULE_2__["default"], {
       readMoreBackground: readMoreBackground,
       readMoreBackgroundHover: readMoreBackgroundHover,
       readMoreBackgroundActive: readMoreBackgroundActive,
@@ -1923,13 +1910,6 @@ function StyleTab({
       readMoreColorHover: readMoreColorHover,
       openPanel: openPanel,
       togglePanel: togglePanel
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
-      title: "Pagination",
-      opened: openPanel === 'pagination',
-      onToggle: () => togglePanel('pagination'),
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-        children: "General settings content here"
-      })
     })]
   });
 }

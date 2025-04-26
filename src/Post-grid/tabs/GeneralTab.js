@@ -1,4 +1,3 @@
-import { PanelBody } from '@wordpress/components';
 import { useState } from '@wordpress/element';
 import ActionBtn from '../generalTabComp/ActionBtn';
 import Content from '../generalTabComp/Content';
@@ -59,13 +58,6 @@ export default function GeneralTab( { attributes, setAttributes } ) {
 				togglePanel={ togglePanel }
 				openPanel={ openPanel }
 			/>
-			<PanelBody
-				title="Pagination"
-				opened={ openPanel === 'pagination' }
-				onToggle={ () => togglePanel( 'pagination' ) }
-			>
-				<p>General settings content here</p>
-			</PanelBody>
 		</div>
 	);
 }

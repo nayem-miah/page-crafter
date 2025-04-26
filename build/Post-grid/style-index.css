@@ -153,4 +153,8 @@
   opacity: 0.5;
 }
 
+.block-editor-block-inspector__advanced {
+  display: none;
+}
+
 /*# sourceMappingURL=style-index.css.map*/

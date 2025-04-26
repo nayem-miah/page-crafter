@@ -1,4 +1,3 @@
-import { PanelBody } from '@wordpress/components';
 import { useState } from '@wordpress/element';
 import ContentStyle from '../styleTabCom/ContentStyle';
 import ReadMoreStyle from '../styleTabCom/ReadMoreStyle';
@@ -74,13 +73,6 @@ export default function StyleTab( { attributes, setAttributes } ) {
 				openPanel={ openPanel }
 				togglePanel={ togglePanel }
 			/>
-			<PanelBody
-				title="Pagination"
-				opened={ openPanel === 'pagination' }
-				onToggle={ () => togglePanel( 'pagination' ) }
-			>
-				<p>General settings content here</p>
-			</PanelBody>
 		</div>
 	);
 }
