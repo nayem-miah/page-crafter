@@ -340,6 +340,18 @@ return array(
 				'type' => 'string',
 				'selector' => 'load-more-string',
 				'default' => 'Load More'
+			),
+			'desktopHide' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'tabHide' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'MobileHide' => array(
+				'type' => 'boolean',
+				'default' => false
 			)
 		),
 		'textdomain' => 'postgrid',

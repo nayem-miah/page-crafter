@@ -235,6 +235,18 @@
 			"type": "string",
 			"selector": "load-more-string",
 			"default": "Load More"
+		},
+		"desktopHide": {
+			"type": "boolean",
+			"default": false
+		},
+		"tabHide": {
+			"type": "boolean",
+			"default": false
+		},
+		"MobileHide": {
+			"type": "boolean",
+			"default": false
 		}
 	},
 	"textdomain": "postgrid",

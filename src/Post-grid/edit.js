@@ -1,18 +1,18 @@
-import { useEffect, useState } from '@wordpress/element';
-import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
-import { TabPanel } from '@wordpress/components';
 import apiFetch from '@wordpress/api-fetch';
+import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
+import { TabPanel } from '@wordpress/components';
+import { useEffect, useState } from '@wordpress/element';
 import { cog, Icon, styles, tableOfContents } from '@wordpress/icons';
 
+import AdvanceTab from './tabs/AdvanceTab';
 import GeneralTab from './tabs/GeneralTab';
 import StyleTab from './tabs/StyleTab';
-import AdvanceTab from './tabs/AdvanceTab';
 
+import Excerpt from './components/Excerpt';
+import Meta from './components/Meta';
+import ReadButton from './components/ReadButton';
 import Thumnail from './components/Thumnail';
 import Title from './components/Title';
-import Meta from './components/Meta';
-import Excerpt from './components/Excerpt';
-import ReadButton from './components/ReadButton';
 import './editor.scss';
 
 export default function Edit( { attributes, setAttributes } ) {
@@ -54,6 +54,9 @@ export default function Edit( { attributes, setAttributes } ) {
 		useAjaxPagination,
 		currentPage,
 		totalPages,
+		MobileHide,
+		tabHide,
+		desktopHide,
 	} = attributes;
 
 	const [ posts, setPosts ] = useState( [] );
@@ -176,6 +179,9 @@ export default function Edit( { attributes, setAttributes } ) {
 										additionalClass={ additionalClass }
 										setAttributes={ setAttributes }
 										useAjaxPagination={ useAjaxPagination }
+										MobileHide={ MobileHide }
+										tabHide={ tabHide }
+										desktopHide={ desktopHide }
 									/>
 								);
 							default:
@@ -185,7 +191,11 @@ export default function Edit( { attributes, setAttributes } ) {
 				</TabPanel>
 			</InspectorControls>
 
-			<div className="post-grid">
+			<div
+				className={ `post-grid ${ desktopHide && 'desktopHide' }  ${
+					tabHide && 'tabHide'
+				} ${ MobileHide && 'MobileHide' }` }
+			>
 				<div
 					className="post-grid-wrapper"
 					style={ {

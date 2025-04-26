@@ -118,6 +118,9 @@
   }
 }
 @media (max-width: 575px) {
+  .wp-block-create-block-postgrid .MobileHide {
+    display: none;
+  }
   .wp-block-create-block-postgrid .post-grid .post-grid-wrapper {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -155,6 +158,16 @@
 
 .block-editor-block-inspector__advanced {
   display: none;
+}
+
+.desktopHide {
+  display: none;
+}
+
+@media only screen and (max-width: 780px) {
+  .tabHide {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style-index.css.map*/
