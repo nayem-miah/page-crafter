@@ -1456,6 +1456,10 @@ function GroupButton({
       setAttributes({
         readMoreColorActive: 'default'
       });
+    } else if (from === 'infoTitleColor') {
+      setAttributes({
+        activeColor: 'default'
+      });
     }
   };
   const handleHover = () => {
@@ -1482,6 +1486,10 @@ function GroupButton({
     } else if (from === 'readMoreColor') {
       setAttributes({
         readMoreColorActive: 'hover'
+      });
+    } else if (from === 'infoTitleColor') {
+      setAttributes({
+        activeColor: 'hover'
       });
     }
   };

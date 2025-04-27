@@ -1,19 +1,57 @@
-import { PanelBody } from '@wordpress/components';
+import { ColorPalette, PanelBody } from '@wordpress/components';
 import { useState } from '@wordpress/element';
+import GroupButton from '../../Post-grid/styleTabCom/GroupButton';
 
-export default function StyleTab() {
+import { __ } from '@wordpress/i18n';
+export default function StyleTab( { attributes, setAttributes } ) {
+	const { titleMargin, titleHoverColor, titleColor, activeColor } =
+		attributes;
 	const [ openPanel, setOpenPanel ] = useState( 'general' );
 	const togglePanel = ( panelKey ) => {
 		setOpenPanel( openPanel === panelKey ? null : panelKey );
 	};
+
+	const currentTitleColor =
+		activeColor === 'default' ? titleColor : titleHoverColor;
+
+	const handleTitleColorChange = ( color ) => {
+		if ( activeColor === 'default' ) {
+			setAttributes( { titleColor: color } );
+		} else {
+			setAttributes( { titleHoverColor: color } );
+		}
+	};
 	return (
 		<div>
 			<PanelBody
-				title="Pagination"
-				opened={ openPanel === 'pagination' }
-				onToggle={ () => togglePanel( 'pagination' ) }
+				title="Title"
+				opened={ openPanel === 'title' }
+				onToggle={ () => togglePanel( 'title' ) }
 			>
-				<p>General settings content here</p>
+				<div style={ { marginTop: '16px', marginBottom: '16px' } }>
+					<strong>{ __( 'Color', 'postinfo' ) }</strong>
+					<div
+						style={ {
+							display: 'flex',
+							justifyContent: 'center',
+							marginTop: '8px',
+						} }
+					>
+						<GroupButton
+							active={ activeColor }
+							setAttributes={ setAttributes }
+							from="infoTitleColor"
+						/>
+					</div>
+				</div>
+
+				<div style={ { marginTop: '16px' } }>
+					<ColorPalette
+						value={ currentTitleColor }
+						onChange={ handleTitleColorChange }
+						disableCustomColors={ false }
+					/>
+				</div>
 			</PanelBody>
 		</div>
 	);

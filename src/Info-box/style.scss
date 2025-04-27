@@ -1,5 +1,4 @@
 .wp-block-create-block-infobox {
-
 	.info-box {
 		background: #ffffff;
 		border-width: 1px 1px 1px 1px;
@@ -16,11 +15,14 @@
 			text-align: var(--contentAlign);
 
 			.text {
-				color: #131212;
 				font-size: 18px;
 				font-weight: 700;
 				margin: 0px;
 				padding: 0px;
+				color: var(--titleColor);
+				&:hover {
+					color: var(--titleHoverColor);
+				}
 			}
 		}
 
@@ -31,12 +33,11 @@
 			line-height: 1.5;
 			margin: 0px 0px 0px 0px;
 			text-align: var(--contentAlign);
-
 		}
 
 		.info-box__icon {
 			font-size: 30px;
-			color: #1A261F;
+			color: #1a261f;
 			padding: 0px 0px 0px 0px;
 			margin: 0px 0px 0px 0px;
 			background: transparent;
@@ -45,7 +46,6 @@
 
 			.dashicons {
 				font-size: 40px;
-
 			}
 		}
 
@@ -55,7 +55,6 @@
 			justify-content: var(--readMoreAlign);
 
 			.info-box__read-more-content {
-
 				display: flex;
 				align-items: center;
 				gap: 4px;
@@ -65,7 +64,6 @@
 					background: #dcdcde;
 					padding: 6px 14px;
 					border-radius: 4px;
-					
 				}
 
 				p {
@@ -75,7 +73,4 @@
 			}
 		}
 	}
-
-
-
 }

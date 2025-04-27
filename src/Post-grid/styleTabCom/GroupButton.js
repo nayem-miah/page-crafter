@@ -22,9 +22,14 @@ export default function GroupButton( { active, setAttributes, from } ) {
 			setAttributes( {
 				readMoreBackgroundActive: 'default',
 			} );
-		}else if ( from === 'readMoreColor' ) {
+		} else if ( from === 'readMoreColor' ) {
 			setAttributes( {
 				readMoreColorActive: 'default',
+			} );
+		} else if ( from === 'infoTitleColor' ) {
+	
+			setAttributes( {
+				activeColor: 'default',
 			} );
 		}
 	};
@@ -50,11 +55,16 @@ export default function GroupButton( { active, setAttributes, from } ) {
 			setAttributes( {
 				readMoreBackgroundActive: 'hover',
 			} );
-		}else if ( from === 'readMoreColor' ) {
+		} else if ( from === 'readMoreColor' ) {
 			setAttributes( {
 				readMoreColorActive: 'hover',
 			} );
-		}	
+		} else if ( from === 'infoTitleColor' ) {
+	
+			setAttributes( {
+				activeColor: 'hover',
+			} );
+		}
 	};
 
 	return (

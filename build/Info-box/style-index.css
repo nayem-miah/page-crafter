@@ -17,11 +17,14 @@
   text-align: var(--contentAlign);
 }
 .wp-block-create-block-infobox .info-box .info-box__title .text {
-  color: #131212;
   font-size: 18px;
   font-weight: 700;
   margin: 0px;
   padding: 0px;
+  color: var(--titleColor);
+}
+.wp-block-create-block-infobox .info-box .info-box__title .text:hover {
+  color: var(--titleHoverColor);
 }
 .wp-block-create-block-infobox .info-box .info-box__content {
   color: #050505;
@@ -33,7 +36,7 @@
 }
 .wp-block-create-block-infobox .info-box .info-box__icon {
   font-size: 30px;
-  color: #1A261F;
+  color: #1a261f;
   padding: 0px 0px 0px 0px;
   margin: 0px 0px 0px 0px;
   background: transparent;

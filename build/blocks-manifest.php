@@ -73,6 +73,27 @@ return array(
 			'titleTag' => array(
 				'type' => 'string',
 				'default' => 'h3'
+			),
+			'titleColor' => array(
+				'type' => 'string',
+				'default' => '#000000'
+			),
+			'titleHoverColor' => array(
+				'type' => 'string',
+				'default' => '#000000'
+			),
+			'activeColor' => array(
+				'type' => 'string',
+				'default' => 'default'
+			),
+			'titleMargin' => array(
+				'type' => 'object',
+				'default' => array(
+					'top' => 0,
+					'right' => 0,
+					'bottom' => 0,
+					'left' => 0
+				)
 			)
 		),
 		'textdomain' => 'infobox',

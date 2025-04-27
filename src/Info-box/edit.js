@@ -1,15 +1,15 @@
 import {
-	useBlockProps,
-	RichText,
 	InspectorControls,
+	RichText,
+	useBlockProps,
 } from '@wordpress/block-editor';
+import { TabPanel } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 import { cog, Icon, styles, tableOfContents } from '@wordpress/icons';
 import './editor.scss';
-import { __ } from '@wordpress/i18n';
-import { TabPanel } from '@wordpress/components';
+import AdvanceTab from './tab/AdvanceTab';
 import GeneralTab from './tab/GeneralTab';
 import StyleTab from './tab/StyleTab';
-import AdvanceTab from './tab/AdvanceTab';
 export default function Edit( { attributes, setAttributes } ) {
 	const {
 		title,
@@ -24,6 +24,8 @@ export default function Edit( { attributes, setAttributes } ) {
 		readMoreAlign,
 		readMoreType,
 		readMoreIconShow,
+		titleHoverColor,
+		titleColor,
 	} = attributes;
 	return (
 		<div { ...useBlockProps() }>
@@ -97,6 +99,10 @@ export default function Edit( { attributes, setAttributes } ) {
 					>
 						<RichText
 							className="text"
+							style={ {
+								'--titleColor': titleColor,
+								'--titleHoverColor': titleHoverColor,
+							} }
 							placeholder={ __( 'Title..', 'infobox' ) }
 							tagName={ titleTag }
 							onChange={ ( texts ) =>
