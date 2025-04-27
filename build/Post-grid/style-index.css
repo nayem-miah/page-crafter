@@ -12,6 +12,86 @@
   gap: var(--column-gap);
   grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
 }
+.wp-block-create-block-postgrid .post-grid .post-grid-wrapper .grid-card {
+  background: var(--card-bg);
+  border-color: #dcdcde;
+  border-style: solid;
+  border-width: 0px;
+  border-radius: 4px;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1490196078);
+  transition: background-color 0.3s ease-in-out;
+}
+.wp-block-create-block-postgrid .post-grid .post-grid-wrapper .grid-card .post-grid-thumnail img {
+  max-width: 100%;
+  margin: auto;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.wp-block-create-block-postgrid .post-grid .post-grid-wrapper .grid-card .content-body .post-grid-title h5 {
+  text-align: center;
+  margin-top: var(--titleMarginTop);
+  margin-bottom: var(--titleMarginBottom);
+  margin-left: var(--titleMarginLeft);
+  margin-right: var(--titleMarginRight);
+}
+.wp-block-create-block-postgrid .post-grid .post-grid-wrapper .grid-card .content-body .post-grid-title h5 a {
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  line-height: 24px;
+  color: var(--titleColor);
+}
+.wp-block-create-block-postgrid .post-grid .post-grid-wrapper .grid-card .content-body .post-grid-title h5 a:hover {
+  color: var(--titleHoverColor);
+}
+.wp-block-create-block-postgrid .post-grid .post-grid-wrapper .grid-card .content-body .post-grid-meta {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--metaColor);
+  text-align: var(--metaTextAlign);
+  margin-top: var(--metaMarginTop);
+  margin-right: var(--metaMarginRight);
+  margin-bottom: var(--metaMarginBottom);
+  margin-left: var(--metaMarginLeft);
+}
+.wp-block-create-block-postgrid .post-grid .post-grid-wrapper .grid-card .content-body .post-grid-meta:hover {
+  color: var(--metaHoverColor);
+}
+.wp-block-create-block-postgrid .post-grid .post-grid-wrapper .grid-card .content-body .post-grid-excerpt {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--excerptColor);
+  text-align: var(--excerptTextAlign);
+  margin-top: var(--excerptMarginTop);
+  margin-right: var(--excerptMarginRight);
+  margin-bottom: var(--excerptMarginBottom);
+  margin-left: var(--excerptMarginLeft);
+}
+.wp-block-create-block-postgrid .post-grid .post-grid-wrapper .grid-card .content-body .post-grid-excerpt:hover {
+  color: var(--excerptHoverColor);
+}
+.wp-block-create-block-postgrid .post-grid .post-grid-wrapper .grid-card .content-body .post-grid-btn a {
+  font-size: 16px;
+  padding-top: var(--readMorePaddingTop);
+  padding-right: var(--readMorePaddingRight);
+  padding-bottom: var(--readMorePaddingBottom);
+  padding-left: var(--readMorePaddingLeft);
+  margin-top: var(--readMoreMarginTop);
+  margin-right: var(--readMoreMarginRight);
+  margin-bottom: var(--readMoreMarginBottom);
+  margin-left: var(--readMoreMarginLeft);
+  color: var(--readMoreColor);
+  background: var(--readMoreBackground);
+  border-radius: 4px;
+  display: inline-block;
+}
+.wp-block-create-block-postgrid .post-grid .post-grid-wrapper .grid-card .content-body .post-grid-btn a:hover {
+  background: var(--readMoreBackgroundHover);
+  color: var(--readMoreColorHover);
+}
 .wp-block-create-block-postgrid .grid-card {
   background: var(--card-bg);
   border-color: #dcdcde;

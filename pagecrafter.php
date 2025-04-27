@@ -141,7 +141,7 @@ function handle_pagination() {
 								--card-bg-hover: <?php echo esc_attr($attributes['contentBackgroundHover'] ?? '#f5f5f5'); ?>;
 							">
         <?php if (has_post_thumbnail($post) && $attributes['displayImage'] !== false && $attributes['displayImage'] !== 'false'): ?>
-        <div class="post-grid-thumbnail">
+        <div class="post-grid-thumnail">
             <?php echo get_the_post_thumbnail($post, 'medium'); ?>
         </div>
         <?php endif; ?>

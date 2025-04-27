@@ -61,7 +61,7 @@ $encoded_attr = esc_attr(wp_json_encode($attributes));
                 --card-bg-hover: <?php echo esc_attr($attributes['contentBackgroundHover'] ?? '#f5f5f5'); ?>;
             ">
                     <?php if (has_post_thumbnail($post) && !empty($attributes['displayImage'])): ?>
-                        <div class="post-grid-thumbnail">
+                        <div class="post-grid-thumnail">
                             <?php echo get_the_post_thumbnail($post, 'large', array('alt' => get_the_title($post))); ?>
                         </div>
                     <?php endif; ?>
