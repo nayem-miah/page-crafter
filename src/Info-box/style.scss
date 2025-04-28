@@ -80,7 +80,10 @@
 
 				&.hasButton {
 					background: var(--readMoreBackground);
-					padding: 6px 14px;
+					padding-top: var(--callToActionPaddingTop);
+					padding-right: var(--callToActionPaddingRight);
+					padding-bottom: var(--callToActionPaddingBottom);
+					padding-left: var(--callToActionPaddingLeft);
 					border-radius: 4px;
 					color: var(--readMoreColor);
 

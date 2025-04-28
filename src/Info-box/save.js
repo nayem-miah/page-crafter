@@ -24,6 +24,7 @@ export default function save( { attributes } ) {
 		callActionColor,
 		callActionHoverBack,
 		callActionHoverColor,
+		callActionPadding,
 	} = attributes;
 
 	return (
@@ -107,6 +108,23 @@ export default function save( { attributes } ) {
 								'--readMoreHoverColor': callActionHoverColor,
 								'--readMoreBackground': callActionBack,
 								'--readMoreHoverBack': callActionHoverBack,
+
+								'--callToActionPaddingTop':
+									callActionPadding.top
+										? callActionPadding.top
+										: '0px',
+								'--callToActionPaddingRight':
+									callActionPadding.right
+										? callActionPadding.right
+										: '0px',
+								'--callToActionPaddingBottom':
+									callActionPadding.bottom
+										? callActionPadding.bottom
+										: '0px',
+								'--callToActionPaddingLeft':
+									callActionPadding.left
+										? callActionPadding.left
+										: '0px',
 							} }
 						>
 							<RichText.Content tagName="p" value={ readMore } />

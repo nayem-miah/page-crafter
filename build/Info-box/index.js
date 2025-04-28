@@ -221,7 +221,8 @@ function Edit({
     callActionBack,
     callActionColor,
     callActionHoverBack,
-    callActionHoverColor
+    callActionHoverColor,
+    callActionPadding
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)(),
@@ -333,7 +334,11 @@ function Edit({
             '--readMoreColor': callActionColor,
             '--readMoreHoverColor': callActionHoverColor,
             '--readMoreBackground': callActionBack,
-            '--readMoreHoverBack': callActionHoverBack
+            '--readMoreHoverBack': callActionHoverBack,
+            '--callToActionPaddingTop': callActionPadding.top ? callActionPadding.top : '0px',
+            '--callToActionPaddingRight': callActionPadding.right ? callActionPadding.right : '0px',
+            '--callToActionPaddingBottom': callActionPadding.bottom ? callActionPadding.bottom : '0px',
+            '--callToActionPaddingLeft': callActionPadding.left ? callActionPadding.left : '0px'
           },
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
             placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Read More..', 'infobox'),
@@ -569,7 +574,8 @@ function save({
     callActionBack,
     callActionColor,
     callActionHoverBack,
-    callActionHoverColor
+    callActionHoverColor,
+    callActionPadding
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save(),
@@ -626,7 +632,11 @@ function save({
             '--readMoreColor': callActionColor,
             '--readMoreHoverColor': callActionHoverColor,
             '--readMoreBackground': callActionBack,
-            '--readMoreHoverBack': callActionHoverBack
+            '--readMoreHoverBack': callActionHoverBack,
+            '--callToActionPaddingTop': callActionPadding.top ? callActionPadding.top : '0px',
+            '--callToActionPaddingRight': callActionPadding.right ? callActionPadding.right : '0px',
+            '--callToActionPaddingBottom': callActionPadding.bottom ? callActionPadding.bottom : '0px',
+            '--callToActionPaddingLeft': callActionPadding.left ? callActionPadding.left : '0px'
           },
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
             tagName: "p",
@@ -840,7 +850,8 @@ function StyleTab({
     callActionHoverBack,
     callActionHoverColor,
     activeCallActionBack,
-    activeCallActionColor
+    activeCallActionColor,
+    callActionPadding
   } = attributes;
   const [openPanel, setOpenPanel] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)('general');
   const togglePanel = panelKey => {
@@ -1070,6 +1081,31 @@ function StyleTab({
           value: currentCallActionBackColor,
           onChange: handleCallActionBack,
           disableCustomColors: false
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.BoxControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Padding', 'postInfo'),
+        units: [{
+          label: 'px',
+          value: 'px'
+        }, {
+          label: '%',
+          value: '%'
+        }, {
+          label: 'em',
+          value: 'em'
+        }, {
+          label: 'rem',
+          value: 'rem'
+        }, {
+          label: 'vw',
+          value: 'vw'
+        }, {
+          label: 'vh',
+          value: 'vh'
+        }],
+        values: callActionPadding,
+        onChange: newMargin => setAttributes({
+          callActionPadding: newMargin
         })
       })]
     })]

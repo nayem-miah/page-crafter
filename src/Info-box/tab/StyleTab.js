@@ -19,6 +19,7 @@ export default function StyleTab( { attributes, setAttributes } ) {
 		callActionHoverColor,
 		activeCallActionBack,
 		activeCallActionColor,
+		callActionPadding,
 	} = attributes;
 	const [ openPanel, setOpenPanel ] = useState( 'general' );
 	const togglePanel = ( panelKey ) => {
@@ -222,6 +223,22 @@ export default function StyleTab( { attributes, setAttributes } ) {
 						disableCustomColors={ false }
 					/>
 				</div>
+
+				<BoxControl
+					label={ __( 'Padding', 'postInfo' ) }
+					units={ [
+						{ label: 'px', value: 'px' },
+						{ label: '%', value: '%' },
+						{ label: 'em', value: 'em' },
+						{ label: 'rem', value: 'rem' },
+						{ label: 'vw', value: 'vw' },
+						{ label: 'vh', value: 'vh' },
+					] }
+					values={ callActionPadding }
+					onChange={ ( newMargin ) =>
+						setAttributes( { callActionPadding: newMargin } )
+					}
+				/>
 			</PanelBody>
 		</div>
 	);
