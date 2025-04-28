@@ -1460,6 +1460,18 @@ function GroupButton({
       setAttributes({
         activeColor: 'default'
       });
+    } else if (from === 'infoContentColor') {
+      setAttributes({
+        activeContentColor: 'default'
+      });
+    } else if (from === 'infoCallActionColor') {
+      setAttributes({
+        activeCallActionColor: 'default'
+      });
+    } else if (from === 'infoCallActionBackColor') {
+      setAttributes({
+        activeCallActionBack: 'default'
+      });
     }
   };
   const handleHover = () => {
@@ -1490,6 +1502,18 @@ function GroupButton({
     } else if (from === 'infoTitleColor') {
       setAttributes({
         activeColor: 'hover'
+      });
+    } else if (from === 'infoContentColor') {
+      setAttributes({
+        activeContentColor: 'hover'
+      });
+    } else if (from === 'infoCallActionColor') {
+      setAttributes({
+        activeCallActionColor: 'hover'
+      });
+    } else if (from === 'infoCallActionBackColor') {
+      setAttributes({
+        activeCallActionBack: 'hover'
       });
     }
   };

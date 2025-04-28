@@ -14,6 +14,16 @@ export default function save( { attributes } ) {
 		readMoreIconShow,
 		readMoreIcon,
 		readMore,
+		titleHoverColor,
+		titleColor,
+		titleMargin,
+		ContentMargin,
+		ContentHoverColor,
+		ContentColor,
+		callActionBack,
+		callActionColor,
+		callActionHoverBack,
+		callActionHoverColor,
 	} = attributes;
 
 	return (
@@ -31,6 +41,22 @@ export default function save( { attributes } ) {
 							className="text"
 							tagName={ titleTag }
 							value={ title }
+							style={ {
+								'--titleColor': titleColor,
+								'--titleHoverColor': titleHoverColor,
+								'--titleMarginTop': titleMargin.top
+									? titleMargin.top + 'px'
+									: '0px',
+								'--titleMarginRight': titleMargin.right
+									? titleMargin.right + 'px'
+									: '0px',
+								'--titleMarginBottom': titleMargin.bottom
+									? titleMargin.bottom + 'px'
+									: '0px',
+								'--titleMarginLeft': titleMargin.left
+									? titleMargin.left + 'px'
+									: '0px',
+							} }
 						/>
 					</div>
 				) }
@@ -40,7 +66,28 @@ export default function save( { attributes } ) {
 						className="info-box__content"
 						style={ { '--contentAlign': contentAlign } }
 					>
-						<RichText.Content tagName="p" value={ content } />
+						<RichText.Content
+							tagName="p"
+							value={ content }
+							style={ {
+								'--ContentColor': ContentColor,
+								'--ContentHoverColor': ContentHoverColor,
+								'--ContentMarginTop': ContentMargin.top
+									? ContentMargin.top
+									: '0px',
+								'--ContentMarginRight': ContentMargin.right
+									? ContentMargin.right
+									: '0px',
+
+								'--ContentMarginBottom': ContentMargin.bottom
+									? ContentMargin.bottom
+									: '0px',
+
+								'--ContentMarginLeft': ContentMargin.left
+									? ContentMargin.left
+									: '0px',
+							} }
+						/>
 					</div>
 				) }
 
@@ -55,6 +102,12 @@ export default function save( { attributes } ) {
 							className={ `info-box__read-more-content ${
 								readMoreType === 'Button' ? 'hasButton' : ''
 							}` }
+							style={ {
+								'--readMoreColor': callActionColor,
+								'--readMoreHoverColor': callActionHoverColor,
+								'--readMoreBackground': callActionBack,
+								'--readMoreHoverBack': callActionHoverBack,
+							} }
 						>
 							<RichText.Content tagName="p" value={ readMore } />
 							{ readMoreIconShow && (

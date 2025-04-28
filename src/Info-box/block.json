@@ -89,6 +89,60 @@
 				"bottom": "0px",
 				"left": "0px"
 			}
+		},
+		"ContentColor": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"ContentHoverColor": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"activeContentColor": {
+			"type": "string",
+			"default": "default"
+		},
+		"ContentMargin": {
+			"type": "object",
+			"default": {
+				"top": "0px",
+				"right": "0px",
+				"bottom": "0px",
+				"left": "0px"
+			}
+		},
+		"callActionColor": {
+			"type": "string",
+			"default": "#FFFFFF"
+		},
+		"callActionHoverColor": {
+			"type": "string",
+			"default": "#F0FDF4"
+		},
+		"activeCallActionColor": {
+			"type": "string",
+			"default": "default"
+		},
+		"callActionBack": {
+			"type": "string",
+			"default": "#10B981"
+		},
+		"callActionHoverBack": {
+			"type": "string",
+			"default": "#059669"
+		},
+		"activeCallActionBack": {
+			"type": "string",
+			"default": "default"
+		},
+		"callActionPadding": {
+			"type": "object",
+			"default": {
+				"top": "0px",
+				"right": "0px",
+				"bottom": "0px",
+				"left": "0px"
+			}
 		}
 	},
 	"textdomain": "infobox",

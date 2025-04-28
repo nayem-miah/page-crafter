@@ -27,6 +27,13 @@ export default function Edit( { attributes, setAttributes } ) {
 		titleHoverColor,
 		titleColor,
 		titleMargin,
+		ContentMargin,
+		ContentHoverColor,
+		ContentColor,
+		callActionBack,
+		callActionColor,
+		callActionHoverBack,
+		callActionHoverColor,
 	} = attributes;
 	return (
 		<div { ...useBlockProps() }>
@@ -132,6 +139,24 @@ export default function Edit( { attributes, setAttributes } ) {
 						style={ { '--contentAlign': contentAlign } }
 					>
 						<RichText
+							style={ {
+								'--ContentColor': ContentColor,
+								'--ContentHoverColor': ContentHoverColor,
+								'--ContentMarginTop': ContentMargin.top
+									? ContentMargin.top
+									: '0px',
+								'--ContentMarginRight': ContentMargin.right
+									? ContentMargin.right
+									: '0px',
+
+								'--ContentMarginBottom': ContentMargin.bottom
+									? ContentMargin.bottom
+									: '0px',
+
+								'--ContentMarginLeft': ContentMargin.left
+									? ContentMargin.left
+									: '0px',
+							} }
 							placeholder={ __( 'Content..', 'infobox' ) }
 							tagName="p"
 							onChange={ ( texts ) =>
@@ -153,6 +178,12 @@ export default function Edit( { attributes, setAttributes } ) {
 							className={ `info-box__read-more-content ${
 								readMoreType === 'Button' ? 'hasButton' : ''
 							}` }
+							style={ {
+								'--readMoreColor': callActionColor,
+								'--readMoreHoverColor': callActionHoverColor,
+								'--readMoreBackground': callActionBack,
+								'--readMoreHoverBack': callActionHoverBack,
+							} }
 						>
 							<RichText
 								placeholder={ __( 'Read More..', 'infobox' ) }

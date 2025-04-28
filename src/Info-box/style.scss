@@ -37,6 +37,20 @@
 			line-height: 1.5;
 			margin: 0px 0px 0px 0px;
 			text-align: var(--contentAlign);
+
+			p {
+				margin-top: var(--ContentMarginTop);
+				margin-right: var(--ContentMarginRight);
+				margin-bottom: var(--ContentMarginBottom);
+				margin-left: var(--ContentMarginLeft);
+				color: var(--ContentColor);
+
+				&:hover {
+					color: var(--ContentHoverColor);
+				}
+			}
+
+
 		}
 
 		.info-box__icon {
@@ -65,9 +79,16 @@
 				cursor: pointer;
 
 				&.hasButton {
-					background: #dcdcde;
+					background: var(--readMoreBackground);
 					padding: 6px 14px;
 					border-radius: 4px;
+					color: var(--readMoreColor);
+
+					&:hover {
+						background: var(--readMoreHoverBack);
+						color: var(--readMoreHoverColor);
+
+					}
 				}
 
 				p {

@@ -94,6 +94,60 @@ return array(
 					'bottom' => '0px',
 					'left' => '0px'
 				)
+			),
+			'ContentColor' => array(
+				'type' => 'string',
+				'default' => '#000000'
+			),
+			'ContentHoverColor' => array(
+				'type' => 'string',
+				'default' => '#000000'
+			),
+			'activeContentColor' => array(
+				'type' => 'string',
+				'default' => 'default'
+			),
+			'ContentMargin' => array(
+				'type' => 'object',
+				'default' => array(
+					'top' => '0px',
+					'right' => '0px',
+					'bottom' => '0px',
+					'left' => '0px'
+				)
+			),
+			'callActionColor' => array(
+				'type' => 'string',
+				'default' => '#FFFFFF'
+			),
+			'callActionHoverColor' => array(
+				'type' => 'string',
+				'default' => '#F0FDF4'
+			),
+			'activeCallActionColor' => array(
+				'type' => 'string',
+				'default' => 'default'
+			),
+			'callActionBack' => array(
+				'type' => 'string',
+				'default' => '#10B981'
+			),
+			'callActionHoverBack' => array(
+				'type' => 'string',
+				'default' => '#059669'
+			),
+			'activeCallActionBack' => array(
+				'type' => 'string',
+				'default' => 'default'
+			),
+			'callActionPadding' => array(
+				'type' => 'object',
+				'default' => array(
+					'top' => '0px',
+					'right' => '0px',
+					'bottom' => '0px',
+					'left' => '0px'
+				)
 			)
 		),
 		'textdomain' => 'infobox',
