@@ -46,7 +46,9 @@ export default function save( { attributes } ) {
 	return (
 		<div { ...useBlockProps.save( { className: additionalClass } ) }>
 			<div
-				className="info-box"
+				className={ `info-box ${ desktopHide && 'desktopHide' }  ${
+					tabHide && 'tabHide'
+				} ${ MobileHide && 'MobileHide' }` }
 				style={ {
 					'--BorderWidth': `${ BorderWidth.top } ${ BorderWidth.right } ${ BorderWidth.bottom } ${ BorderWidth.left }`,
 					'--BorderRadius': `${ BorderRadius.top } ${ BorderRadius.right } ${ BorderRadius.bottom } ${ BorderRadius.left }`,

@@ -117,7 +117,9 @@ export default function Edit( { attributes, setAttributes } ) {
 				</TabPanel>
 			</InspectorControls>
 			<div
-				className="info-box"
+				className={ `info-box ${ desktopHide && 'desktopHide' }  ${
+					tabHide && 'tabHide'
+				} ${ MobileHide && 'MobileHide' }` }
 				style={ {
 					'--BorderWidth': `${ BorderWidth.top } ${ BorderWidth.right } ${ BorderWidth.bottom } ${ BorderWidth.left }`,
 					'--BorderRadius': `${ BorderRadius.top } ${ BorderRadius.right } ${ BorderRadius.bottom } ${ BorderRadius.left }`,

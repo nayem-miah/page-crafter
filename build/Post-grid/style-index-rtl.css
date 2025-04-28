@@ -198,9 +198,6 @@
   }
 }
 @media (max-width: 575px) {
-  .wp-block-create-block-postgrid .MobileHide {
-    display: none;
-  }
   .wp-block-create-block-postgrid .post-grid .post-grid-wrapper {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -240,12 +237,32 @@
   display: none;
 }
 
-.desktopHide {
-  display: none;
-}
-
-@media only screen and (max-width: 780px) {
+@media (max-width: 767px) {
+  .desktopHide,
   .tabHide {
+    display: block;
+  }
+  .MobileHide {
+    display: none;
+  }
+}
+/* Tablet - 768px to 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .desktopHide,
+  .MobileHide {
+    display: block;
+  }
+  .tabHide {
+    display: none;
+  }
+}
+/* Desktop - 1025px and up */
+@media (min-width: 1025px) {
+  .MobileHide,
+  .tabHide {
+    display: block;
+  }
+  .desktopHide {
     display: none;
   }
 }
