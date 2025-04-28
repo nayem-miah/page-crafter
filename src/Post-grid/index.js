@@ -8,7 +8,7 @@ registerBlockType( metadata.name, {
 	icon: {
 		src: 'grid-view',
 		background: '#FFFFFF',
-		foreground: '#ff6900',
+		foreground: '#10B981',
 	},
 	edit: Edit,
 } );

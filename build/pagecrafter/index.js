@@ -76,7 +76,7 @@ __webpack_require__.r(__webpack_exports__);
   icon: {
     src: 'edit-page',
     background: '#FFFFFF',
-    foreground: '#ff6900'
+    foreground: '#10B981'
   },
   edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
   save: _save__WEBPACK_IMPORTED_MODULE_3__["default"]

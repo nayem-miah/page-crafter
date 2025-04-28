@@ -1072,7 +1072,7 @@ __webpack_require__.r(__webpack_exports__);
   icon: {
     src: 'grid-view',
     background: '#FFFFFF',
-    foreground: '#ff6900'
+    foreground: '#10B981'
   },
   edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"]
 });

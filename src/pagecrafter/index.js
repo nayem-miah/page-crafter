@@ -11,7 +11,7 @@ registerBlockType( metadata.name, {
 	icon: {
 		src: 'edit-page',
 		background: '#FFFFFF',
-		foreground: '#ff6900',
+		foreground: '#10B981',
 	},
 	edit: Edit,
 	save,

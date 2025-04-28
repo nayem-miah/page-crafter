@@ -11,7 +11,7 @@ registerBlockType( metadata.name, {
 	icon: {
 		src: 'info-outline',
 		background: '#FFFFFF',
-		foreground: '#ff6900',
+		foreground: '#10B981',
 	},
 	edit: Edit,
 	save,
