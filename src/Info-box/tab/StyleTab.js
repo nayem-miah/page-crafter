@@ -32,6 +32,12 @@ export default function StyleTab( { attributes, setAttributes } ) {
 		callActionBorderWidth,
 		callActionborderHoverColor,
 		ActiveCallActionborderColor,
+		BorderType,
+		BorderWidth,
+		borderHoverColor,
+		BorderRadius,
+		ActiveBorderColor,
+		borderColor,
 	} = attributes;
 	const [ openPanel, setOpenPanel ] = useState( 'general' );
 	const togglePanel = ( panelKey ) => {
@@ -58,6 +64,9 @@ export default function StyleTab( { attributes, setAttributes } ) {
 			? callActionborderColor
 			: callActionborderHoverColor;
 
+	const currentBorderColor =
+		ActiveBorderColor === 'default' ? borderColor : borderHoverColor;
+
 	const handleTitleColorChange = ( color ) => {
 		if ( activeColor === 'default' ) {
 			setAttributes( { titleColor: color } );
@@ -78,6 +87,14 @@ export default function StyleTab( { attributes, setAttributes } ) {
 			setAttributes( { callActionColor: color } );
 		} else {
 			setAttributes( { callActionHoverColor: color } );
+		}
+	};
+
+	const handleBorderColor = ( color ) => {
+		if ( ActiveBorderColor === 'default' ) {
+			setAttributes( { borderColor: color } );
+		} else {
+			setAttributes( { borderHoverColor: color } );
 		}
 	};
 
@@ -351,6 +368,91 @@ export default function StyleTab( { attributes, setAttributes } ) {
 						}
 					/>
 				</PanelBody>
+			</PanelBody>
+
+			<PanelBody title="Border" initialOpen={ false }>
+				<div style={ { marginTop: '16px', marginBottom: '16px' } }>
+					<strong>{ __( 'Border Type', 'postinfo' ) }</strong>
+
+					<SelectControl
+						value={ BorderType }
+						options={ [
+							{ label: 'None', value: 'none' },
+							{ label: 'Solid', value: 'solid' },
+							{ label: 'Dotted', value: 'dotted' },
+							{ label: 'Dashed', value: 'dashed' },
+							{ label: 'Groove', value: 'groove' },
+							{ label: 'Inset', value: 'inset' },
+							{ label: 'Outset', value: 'outset' },
+							{ label: 'Ridge', value: 'ridge' },
+						] }
+						onChange={ ( value ) => {
+							setAttributes( { BorderType: value } );
+						} }
+						__next40pxDefaultSize
+						__nextHasNoMarginBottom
+					/>
+				</div>
+
+				<BoxControl
+					label={ __( 'Border Width', 'postgrid' ) }
+					units={ [
+						{ label: 'px', value: 'px' },
+						{ label: '%', value: '%' },
+						{ label: 'em', value: 'em' },
+						{ label: 'rem', value: 'rem' },
+						{ label: 'vw', value: 'vw' },
+						{ label: 'vh', value: 'vh' },
+					] }
+					values={ BorderWidth }
+					onChange={ ( newMargin ) =>
+						setAttributes( {
+							BorderWidth: newMargin,
+						} )
+					}
+				/>
+				<div style={ { marginTop: '16px', marginBottom: '16px' } }>
+					<strong>{ __( 'Border Color', 'postinfo' ) }</strong>
+					<div
+						style={ {
+							display: 'flex',
+							justifyContent: 'center',
+							marginTop: '8px',
+						} }
+					>
+						<GroupButton
+							active={ ActiveBorderColor }
+							setAttributes={ setAttributes }
+							from="infoBorderColor"
+						/>
+					</div>
+				</div>
+
+				<div style={ { marginTop: '16px' } }>
+					<ColorPalette
+						value={ currentBorderColor }
+						onChange={ handleBorderColor }
+						disableCustomColors={ false }
+					/>
+				</div>
+
+				<BoxControl
+					label={ __( 'Border Radius', 'postgrid' ) }
+					units={ [
+						{ label: 'px', value: 'px' },
+						{ label: '%', value: '%' },
+						{ label: 'em', value: 'em' },
+						{ label: 'rem', value: 'rem' },
+						{ label: 'vw', value: 'vw' },
+						{ label: 'vh', value: 'vh' },
+					] }
+					values={ BorderRadius }
+					onChange={ ( newBorderRadius ) =>
+						setAttributes( {
+							BorderRadius: newBorderRadius,
+						} )
+					}
+				/>
 			</PanelBody>
 		</div>
 	);

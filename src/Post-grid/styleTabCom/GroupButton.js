@@ -46,6 +46,10 @@ export default function GroupButton( { active, setAttributes, from } ) {
 			setAttributes( {
 				ActiveCallActionborderColor: 'default',
 			} );
+		} else if ( from === 'infoBorderColor' ) {
+			setAttributes( {
+				ActiveBorderColor: 'default',
+			} );
 		}
 	};
 
@@ -93,6 +97,10 @@ export default function GroupButton( { active, setAttributes, from } ) {
 		} else if ( from === 'infoCallActionBorderColor' ) {
 			setAttributes( {
 				ActiveCallActionborderColor: 'hover',
+			} );
+		} else if ( from === 'infoBorderColor' ) {
+			setAttributes( {
+				ActiveBorderColor: 'hover',
 			} );
 		}
 	};

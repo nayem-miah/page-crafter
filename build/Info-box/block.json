@@ -121,9 +121,9 @@
     "ContentMargin": {
       "type": "object",
       "default": {
-        "top": "0px",
+        "top": "10px",
         "right": "0px",
-        "bottom": "0px",
+        "bottom": "10px",
         "left": "0px"
       }
     },
@@ -154,10 +154,10 @@
     "callActionPadding": {
       "type": "object",
       "default": {
-        "top": "0px",
-        "right": "0px",
-        "bottom": "0px",
-        "left": "0px"
+        "top": "8px",
+        "right": "20px",
+        "bottom": "8px",
+        "left": "20px"
       }
     },
     "callActionBorderType": {
@@ -186,6 +186,40 @@
       "default": "default"
     },
     "callActionBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "2",
+        "right": "2",
+        "bottom": "2",
+        "left": "2"
+      }
+    },
+    "BorderType": {
+      "type": "string",
+      "default": "solid"
+    },
+    "BorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "0",
+        "right": "0",
+        "bottom": "0",
+        "left": "0"
+      }
+    },
+    "borderColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "borderHoverColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "ActiveBorderColor": {
+      "type": "string",
+      "default": "default"
+    },
+    "BorderRadius": {
       "type": "object",
       "default": {
         "top": "2",

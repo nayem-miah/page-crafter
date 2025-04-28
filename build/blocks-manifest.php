@@ -126,9 +126,9 @@ return array(
 			'ContentMargin' => array(
 				'type' => 'object',
 				'default' => array(
-					'top' => '0px',
+					'top' => '10px',
 					'right' => '0px',
-					'bottom' => '0px',
+					'bottom' => '10px',
 					'left' => '0px'
 				)
 			),
@@ -159,10 +159,10 @@ return array(
 			'callActionPadding' => array(
 				'type' => 'object',
 				'default' => array(
-					'top' => '0px',
-					'right' => '0px',
-					'bottom' => '0px',
-					'left' => '0px'
+					'top' => '8px',
+					'right' => '20px',
+					'bottom' => '8px',
+					'left' => '20px'
 				)
 			),
 			'callActionBorderType' => array(
@@ -191,6 +191,40 @@ return array(
 				'default' => 'default'
 			),
 			'callActionBorderRadius' => array(
+				'type' => 'object',
+				'default' => array(
+					'top' => '2',
+					'right' => '2',
+					'bottom' => '2',
+					'left' => '2'
+				)
+			),
+			'BorderType' => array(
+				'type' => 'string',
+				'default' => 'solid'
+			),
+			'BorderWidth' => array(
+				'type' => 'object',
+				'default' => array(
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0'
+				)
+			),
+			'borderColor' => array(
+				'type' => 'string',
+				'default' => '#000000'
+			),
+			'borderHoverColor' => array(
+				'type' => 'string',
+				'default' => '#000000'
+			),
+			'ActiveBorderColor' => array(
+				'type' => 'string',
+				'default' => 'default'
+			),
+			'BorderRadius' => array(
 				'type' => 'object',
 				'default' => array(
 					'top' => '2',
