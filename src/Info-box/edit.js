@@ -44,6 +44,11 @@ export default function Edit( { attributes, setAttributes } ) {
 		callActionborderColor,
 		callActionBorderWidth,
 		callActionborderHoverColor,
+		BorderRadius,
+		borderHoverColor,
+		borderColor,
+		BorderWidth,
+		BorderType,
 	} = attributes;
 
 	return (
@@ -111,7 +116,16 @@ export default function Edit( { attributes, setAttributes } ) {
 					} }
 				</TabPanel>
 			</InspectorControls>
-			<div className="info-box">
+			<div
+				className="info-box"
+				style={ {
+					'--BorderWidth': `${ BorderWidth.top } ${ BorderWidth.right } ${ BorderWidth.bottom } ${ BorderWidth.left }`,
+					'--BorderRadius': `${ BorderRadius.top }px ${ BorderRadius.right }px ${ BorderRadius.bottom }px ${ BorderRadius.left }px`,
+					'--BorderType': BorderType,
+					'--borderColor': borderColor,
+					'--borderHoverColor': borderHoverColor,
+				} }
+			>
 				<div className="info-box__icon">
 					<span className={ icon }></span>
 				</div>

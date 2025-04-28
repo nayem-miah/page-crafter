@@ -7,11 +7,7 @@
 	"category": "Page-Crafter",
 	"icon": "edit-page",
 	"description": "A simple info box block.",
-	"keywords": [
-		"info",
-		"box",
-		"pagecrafter"
-	],
+	"keywords": [ "info", "box", "pagecrafter" ],
 	"example": {},
 	"supports": {
 		"html": false
@@ -222,10 +218,10 @@
 		"BorderRadius": {
 			"type": "object",
 			"default": {
-				"top": "2",
-				"right": "2",
-				"bottom": "2",
-				"left": "2"
+				"top": "2px",
+				"right": "2px",
+				"bottom": "2px",
+				"left": "2px"
 			}
 		}
 	},

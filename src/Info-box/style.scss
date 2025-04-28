@@ -1,13 +1,14 @@
 .wp-block-create-block-infobox {
 	.info-box {
 		background: #ffffff;
-		border-width: 1px 1px 1px 1px;
-		border-color: #757575;
-		border-radius: 0px 0px 0px 0px;
+		border-width: var(--BorderWidth);
+		border-color: var(--borderColor);
+		border-radius: var(--BorderRadius);
+		border-style: var(--BorderType);
 		box-shadow: none;
 		padding: 20px 20px 20px 20px;
 		margin: 0px 0px 0px 0px;
-		border-style: solid;
+	
 
 		.info-box__title {
 			line-height: 1.2;
@@ -49,8 +50,6 @@
 					color: var(--ContentHoverColor);
 				}
 			}
-
-
 		}
 
 		.info-box__icon {
@@ -91,13 +90,11 @@
 					border-width: var(--callBorderWidth);
 					border-radius: var(--callBorderRadius);
 
-
 					&:hover {
 						background: var(--readMoreHoverBack);
 						color: var(--readMoreHoverColor);
 						transition: all 0.3s ease-in-out;
-						border-color: var(--callBorderHoverColor); ;
-
+						border-color: var(--callBorderHoverColor);
 					}
 				}
 
