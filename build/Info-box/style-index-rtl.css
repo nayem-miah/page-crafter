@@ -11,6 +11,9 @@
   padding: 20px 20px 20px 20px;
   margin: 0px 0px 0px 0px;
 }
+.wp-block-create-block-infobox .info-box:hover {
+  border-color: var(--borderHoverColor);
+}
 .wp-block-create-block-infobox .info-box .info-box__title {
   line-height: 1.2;
   margin: 0px 0px 0px 0px;

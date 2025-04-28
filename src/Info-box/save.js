@@ -36,11 +36,25 @@ export default function save( { attributes } ) {
 		callActionborderColor,
 		callActionBorderWidth,
 		callActionborderHoverColor,
+		BorderRadius,
+		borderHoverColor,
+		borderColor,
+		BorderWidth,
+		BorderType,
 	} = attributes;
 
 	return (
 		<div { ...useBlockProps.save( { className: additionalClass } ) }>
-			<div className="info-box">
+			<div
+				className="info-box"
+				style={ {
+					'--BorderWidth': `${ BorderWidth.top } ${ BorderWidth.right } ${ BorderWidth.bottom } ${ BorderWidth.left }`,
+					'--BorderRadius': `${ BorderRadius.top } ${ BorderRadius.right } ${ BorderRadius.bottom } ${ BorderRadius.left }`,
+					'--BorderType': BorderType,
+					'--borderColor': borderColor,
+					'--borderHoverColor': borderHoverColor,
+				} }
+			>
 				<div className="info-box__icon">
 					<span className={ icon }></span>
 				</div>

@@ -206,10 +206,10 @@ return array(
 			'BorderWidth' => array(
 				'type' => 'object',
 				'default' => array(
-					'top' => '0',
-					'right' => '0',
-					'bottom' => '0',
-					'left' => '0'
+					'top' => '1px',
+					'right' => '1px',
+					'bottom' => '1px',
+					'left' => '1px'
 				)
 			),
 			'borderColor' => array(
@@ -227,10 +227,10 @@ return array(
 			'BorderRadius' => array(
 				'type' => 'object',
 				'default' => array(
-					'top' => '2px',
-					'right' => '2px',
-					'bottom' => '2px',
-					'left' => '2px'
+					'top' => '5px',
+					'right' => '5px',
+					'bottom' => '5px',
+					'left' => '5px'
 				)
 			)
 		),

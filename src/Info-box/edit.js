@@ -120,7 +120,7 @@ export default function Edit( { attributes, setAttributes } ) {
 				className="info-box"
 				style={ {
 					'--BorderWidth': `${ BorderWidth.top } ${ BorderWidth.right } ${ BorderWidth.bottom } ${ BorderWidth.left }`,
-					'--BorderRadius': `${ BorderRadius.top }px ${ BorderRadius.right }px ${ BorderRadius.bottom }px ${ BorderRadius.left }px`,
+					'--BorderRadius': `${ BorderRadius.top } ${ BorderRadius.right } ${ BorderRadius.bottom } ${ BorderRadius.left }`,
 					'--BorderType': BorderType,
 					'--borderColor': borderColor,
 					'--borderHoverColor': borderHoverColor,
