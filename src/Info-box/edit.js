@@ -39,7 +39,13 @@ export default function Edit( { attributes, setAttributes } ) {
 		MobileHide,
 		tabHide,
 		additionalClass,
+		callActionBorderType,
+		callActionBorderRadius,
+		callActionborderColor,
+		callActionBorderWidth,
+		callActionborderHoverColor,
 	} = attributes;
+
 	return (
 		<div { ...useBlockProps( { className: additionalClass } ) }>
 			<InspectorControls>
@@ -209,6 +215,13 @@ export default function Edit( { attributes, setAttributes } ) {
 									callActionPadding.left
 										? callActionPadding.left
 										: '0px',
+
+								'--callBorderType': callActionBorderType,
+								'--callBorderColor': callActionborderColor,
+								'--callBorderHoverColor':
+									callActionborderHoverColor,
+								'--callBorderWidth': `${ callActionBorderWidth.top } ${ callActionBorderWidth.right } ${ callActionBorderWidth.bottom } ${ callActionBorderWidth.left }`,
+								'--callBorderRadius': `${ callActionBorderRadius.top } ${ callActionBorderRadius.right } ${ callActionBorderRadius.bottom } ${ callActionBorderRadius.left }`,
 							} }
 						>
 							<RichText

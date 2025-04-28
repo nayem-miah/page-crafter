@@ -42,6 +42,10 @@ export default function GroupButton( { active, setAttributes, from } ) {
 			setAttributes( {
 				activeCallActionBack: 'default',
 			} );
+		} else if ( from === 'infoCallActionBorderColor' ) {
+			setAttributes( {
+				ActiveCallActionborderColor: 'default',
+			} );
 		}
 	};
 
@@ -78,14 +82,17 @@ export default function GroupButton( { active, setAttributes, from } ) {
 			setAttributes( {
 				activeContentColor: 'hover',
 			} );
-		}
-		else if ( from === 'infoCallActionColor' ) {
+		} else if ( from === 'infoCallActionColor' ) {
 			setAttributes( {
 				activeCallActionColor: 'hover',
 			} );
 		} else if ( from === 'infoCallActionBackColor' ) {
 			setAttributes( {
 				activeCallActionBack: 'hover',
+			} );
+		} else if ( from === 'infoCallActionBorderColor' ) {
+			setAttributes( {
+				ActiveCallActionborderColor: 'hover',
 			} );
 		}
 	};

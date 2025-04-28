@@ -164,6 +164,40 @@ return array(
 					'bottom' => '0px',
 					'left' => '0px'
 				)
+			),
+			'callActionBorderType' => array(
+				'type' => 'string',
+				'default' => 'solid'
+			),
+			'callActionBorderWidth' => array(
+				'type' => 'object',
+				'default' => array(
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '0',
+					'left' => '0'
+				)
+			),
+			'callActionborderColor' => array(
+				'type' => 'string',
+				'default' => '#000000'
+			),
+			'callActionborderHoverColor' => array(
+				'type' => 'string',
+				'default' => '#000000'
+			),
+			'ActiveCallActionborderColor' => array(
+				'type' => 'string',
+				'default' => 'default'
+			),
+			'callActionBorderRadius' => array(
+				'type' => 'object',
+				'default' => array(
+					'top' => '2',
+					'right' => '2',
+					'bottom' => '2',
+					'left' => '2'
+				)
 			)
 		),
 		'textdomain' => 'infobox',

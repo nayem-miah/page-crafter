@@ -76,13 +76,17 @@
   padding-right: var(--callToActionPaddingRight);
   padding-bottom: var(--callToActionPaddingBottom);
   padding-left: var(--callToActionPaddingLeft);
-  border-radius: 4px;
   color: var(--readMoreColor);
+  border-style: var(--callBorderType);
+  border-color: var(--callBorderColor);
+  border-width: var(--callBorderWidth);
+  border-radius: var(--callBorderRadius);
 }
 .wp-block-create-block-infobox .info-box .info-box__read-more .info-box__read-more-content.hasButton:hover {
   background: var(--readMoreHoverBack);
   color: var(--readMoreHoverColor);
   transition: all 0.3s ease-in-out;
+  border-color: var(--callBorderHoverColor);
 }
 .wp-block-create-block-infobox .info-box .info-box__read-more .info-box__read-more-content p {
   margin: 0;

@@ -159,6 +159,40 @@
         "bottom": "0px",
         "left": "0px"
       }
+    },
+    "callActionBorderType": {
+      "type": "string",
+      "default": "solid"
+    },
+    "callActionBorderWidth": {
+      "type": "object",
+      "default": {
+        "top": "0",
+        "right": "0",
+        "bottom": "0",
+        "left": "0"
+      }
+    },
+    "callActionborderColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "callActionborderHoverColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "ActiveCallActionborderColor": {
+      "type": "string",
+      "default": "default"
+    },
+    "callActionBorderRadius": {
+      "type": "object",
+      "default": {
+        "top": "2",
+        "right": "2",
+        "bottom": "2",
+        "left": "2"
+      }
     }
   },
   "textdomain": "infobox",

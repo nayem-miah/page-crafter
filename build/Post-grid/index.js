@@ -1472,6 +1472,10 @@ function GroupButton({
       setAttributes({
         activeCallActionBack: 'default'
       });
+    } else if (from === 'infoCallActionBorderColor') {
+      setAttributes({
+        ActiveCallActionborderColor: 'default'
+      });
     }
   };
   const handleHover = () => {
@@ -1514,6 +1518,10 @@ function GroupButton({
     } else if (from === 'infoCallActionBackColor') {
       setAttributes({
         activeCallActionBack: 'hover'
+      });
+    } else if (from === 'infoCallActionBorderColor') {
+      setAttributes({
+        ActiveCallActionborderColor: 'hover'
       });
     }
   };

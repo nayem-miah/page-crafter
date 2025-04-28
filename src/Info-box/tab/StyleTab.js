@@ -1,8 +1,14 @@
-import { ColorPalette, PanelBody, BoxControl } from '@wordpress/components';
+import {
+	ColorPalette,
+	PanelBody,
+	BoxControl,
+	SelectControl,
+} from '@wordpress/components';
 import { useState } from '@wordpress/element';
 import GroupButton from '../../Post-grid/styleTabCom/GroupButton';
 
 import { __ } from '@wordpress/i18n';
+
 export default function StyleTab( { attributes, setAttributes } ) {
 	const {
 		titleMargin,
@@ -20,6 +26,12 @@ export default function StyleTab( { attributes, setAttributes } ) {
 		activeCallActionBack,
 		activeCallActionColor,
 		callActionPadding,
+		callActionBorderType,
+		callActionBorderRadius,
+		callActionborderColor,
+		callActionBorderWidth,
+		callActionborderHoverColor,
+		ActiveCallActionborderColor,
 	} = attributes;
 	const [ openPanel, setOpenPanel ] = useState( 'general' );
 	const togglePanel = ( panelKey ) => {
@@ -40,6 +52,11 @@ export default function StyleTab( { attributes, setAttributes } ) {
 		activeCallActionBack === 'default'
 			? callActionBack
 			: callActionHoverBack;
+
+	const currentCallActionBorderColor =
+		ActiveCallActionborderColor === 'default'
+			? callActionborderColor
+			: callActionborderHoverColor;
 
 	const handleTitleColorChange = ( color ) => {
 		if ( activeColor === 'default' ) {
@@ -71,6 +88,18 @@ export default function StyleTab( { attributes, setAttributes } ) {
 			setAttributes( { callActionHoverBack: color } );
 		}
 	};
+
+	const handeBorderTypeSelect = ( value ) => {
+		setAttributes( { callActionBorderType: value } );
+	};
+	const handleCallActionBorderColor = ( color ) => {
+		if ( ActiveCallActionborderColor === 'default' ) {
+			setAttributes( { callActionborderColor: color } );
+		} else {
+			setAttributes( { callActionborderHoverColor: color } );
+		}
+	};
+
 	return (
 		<div>
 			<PanelBody
@@ -239,6 +268,89 @@ export default function StyleTab( { attributes, setAttributes } ) {
 						setAttributes( { callActionPadding: newMargin } )
 					}
 				/>
+
+				<PanelBody title="Border" initialOpen={ false }>
+					<div style={ { marginTop: '16px', marginBottom: '16px' } }>
+						<strong>{ __( 'Border Type', 'postinfo' ) }</strong>
+
+						<SelectControl
+							value={ callActionBorderType }
+							options={ [
+								{ label: 'None', value: 'none' },
+								{ label: 'Solid', value: 'solid' },
+								{ label: 'Dotted', value: 'dotted' },
+								{ label: 'Dashed', value: 'dashed' },
+								{ label: 'Groove', value: 'groove' },
+								{ label: 'Inset', value: 'inset' },
+								{ label: 'Outset', value: 'outset' },
+								{ label: 'Ridge', value: 'ridge' },
+							] }
+							onChange={ handeBorderTypeSelect }
+							__next40pxDefaultSize
+							__nextHasNoMarginBottom
+						/>
+					</div>
+
+					<BoxControl
+						label={ __( 'Border Width', 'postgrid' ) }
+						units={ [
+							{ label: 'px', value: 'px' },
+							{ label: '%', value: '%' },
+							{ label: 'em', value: 'em' },
+							{ label: 'rem', value: 'rem' },
+							{ label: 'vw', value: 'vw' },
+							{ label: 'vh', value: 'vh' },
+						] }
+						values={ callActionBorderWidth }
+						onChange={ ( newMargin ) =>
+							setAttributes( {
+								callActionBorderWidth: newMargin,
+							} )
+						}
+					/>
+					<div style={ { marginTop: '16px', marginBottom: '16px' } }>
+						<strong>{ __( 'Border Color', 'postinfo' ) }</strong>
+						<div
+							style={ {
+								display: 'flex',
+								justifyContent: 'center',
+								marginTop: '8px',
+							} }
+						>
+							<GroupButton
+								active={ ActiveCallActionborderColor }
+								setAttributes={ setAttributes }
+								from="infoCallActionBorderColor"
+							/>
+						</div>
+					</div>
+
+					<div style={ { marginTop: '16px' } }>
+						<ColorPalette
+							value={ currentCallActionBorderColor }
+							onChange={ handleCallActionBorderColor }
+							disableCustomColors={ false }
+						/>
+					</div>
+
+					<BoxControl
+						label={ __( 'Border Radius', 'postgrid' ) }
+						units={ [
+							{ label: 'px', value: 'px' },
+							{ label: '%', value: '%' },
+							{ label: 'em', value: 'em' },
+							{ label: 'rem', value: 'rem' },
+							{ label: 'vw', value: 'vw' },
+							{ label: 'vh', value: 'vh' },
+						] }
+						values={ callActionBorderRadius }
+						onChange={ ( newBorderRadius ) =>
+							setAttributes( {
+								callActionBorderRadius: newBorderRadius,
+							} )
+						}
+					/>
+				</PanelBody>
 			</PanelBody>
 		</div>
 	);

@@ -26,6 +26,16 @@ export default function save( { attributes } ) {
 		callActionHoverColor,
 		callActionPadding,
 		additionalClass,
+
+		desktopHide,
+		MobileHide,
+		tabHide,
+
+		callActionBorderType,
+		callActionBorderRadius,
+		callActionborderColor,
+		callActionBorderWidth,
+		callActionborderHoverColor,
 	} = attributes;
 
 	return (
@@ -126,6 +136,13 @@ export default function save( { attributes } ) {
 									callActionPadding.left
 										? callActionPadding.left
 										: '0px',
+
+								'--callBorderType': callActionBorderType,
+								'--callBorderColor': callActionborderColor,
+								'--callBorderHoverColor':
+									callActionborderHoverColor,
+								'--callBorderWidth': `${ callActionBorderWidth.top } ${ callActionBorderWidth.right } ${ callActionBorderWidth.bottom } ${ callActionBorderWidth.left }`,
+								'--callBorderRadius': `${ callActionBorderRadius.top } ${ callActionBorderRadius.right } ${ callActionBorderRadius.bottom } ${ callActionBorderRadius.left }`,
 							} }
 						>
 							<RichText.Content tagName="p" value={ readMore } />
