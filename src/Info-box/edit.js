@@ -101,6 +101,8 @@ export default function Edit( { attributes, setAttributes } ) {
 						<RichText
 							className="text"
 							style={ {
+								'--titleColor': titleColor,
+								'--titleHoverColor': titleHoverColor,
 								'--titleMarginTop': titleMargin.top
 									? titleMargin.top + 'px'
 									: '0px',

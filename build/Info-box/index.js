@@ -280,6 +280,8 @@ function Edit({
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
           className: "text",
           style: {
+            '--titleColor': titleColor,
+            '--titleHoverColor': titleHoverColor,
             '--titleMarginTop': titleMargin.top ? titleMargin.top + 'px' : '0px',
             '--titleMarginRight': titleMargin.right ? titleMargin.right + 'px' : '0px',
             '--titleMarginBottom': titleMargin.bottom ? titleMargin.bottom + 'px' : '0px',
