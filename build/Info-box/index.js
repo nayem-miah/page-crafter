@@ -156,7 +156,7 @@ const tableOfContents = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODU
   \*********************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/infobox","version":"0.1.0","title":"infobox","category":"Page-Crafter","icon":"edit-page","description":"A simple info box block.","keywords":["info","box","pagecrafter"],"example":{},"supports":{"html":false},"attributes":{"icon":{"type":"string","default":"fas fa-info-circle"},"title":{"type":"string","default":"Title Here"},"content":{"type":"string","default":"Lorem ipsum dolor sit amet consectetur. Sem leo dictumst ac imperdiet arcu duis tempor non adipiscing."},"readMoreAlign":{"type":"string","default":"center"},"readMore":{"type":"string","default":"Read More"},"readMoreType":{"type":"string","default":"Button"},"readMoreLink":{"type":"string","default":"#"},"readMoreIcon":{"type":"string","default":"fas fa-arrow-right"},"readMoreIconShow":{"type":"boolean","default":true},"showContent":{"type":"boolean","default":true},"showTitle":{"type":"boolean","default":true},"contentAlign":{"type":"string","default":"center"},"titleTag":{"type":"string","default":"h3"},"titleColor":{"type":"string","default":"#000000"},"titleHoverColor":{"type":"string","default":"#000000"},"activeColor":{"type":"string","default":"default"},"titleMargin":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"ContentColor":{"type":"string","default":"#000000"},"ContentHoverColor":{"type":"string","default":"#000000"},"activeContentColor":{"type":"string","default":"default"},"ContentMargin":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"callActionColor":{"type":"string","default":"#FFFFFF"},"callActionHoverColor":{"type":"string","default":"#F0FDF4"},"activeCallActionColor":{"type":"string","default":"default"},"callActionBack":{"type":"string","default":"#10B981"},"callActionHoverBack":{"type":"string","default":"#059669"},"activeCallActionBack":{"type":"string","default":"default"},"callActionPadding":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}},"textdomain":"infobox","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/infobox","version":"0.1.0","title":"infobox","category":"Page-Crafter","icon":"edit-page","description":"A simple info box block.","keywords":["info","box","pagecrafter"],"example":{},"supports":{"html":false},"attributes":{"additionalClass":{"type":"string","default":""},"desktopHide":{"type":"boolean","default":false},"tabHide":{"type":"boolean","default":false},"MobileHide":{"type":"boolean","default":false},"icon":{"type":"string","default":"fas fa-info-circle"},"title":{"type":"string","default":"Title Here"},"content":{"type":"string","default":"Lorem ipsum dolor sit amet consectetur. Sem leo dictumst ac imperdiet arcu duis tempor non adipiscing."},"readMoreAlign":{"type":"string","default":"center"},"readMore":{"type":"string","default":"Read More"},"readMoreType":{"type":"string","default":"Button"},"readMoreLink":{"type":"string","default":"#"},"readMoreIcon":{"type":"string","default":"fas fa-arrow-right"},"readMoreIconShow":{"type":"boolean","default":true},"showContent":{"type":"boolean","default":true},"showTitle":{"type":"boolean","default":true},"contentAlign":{"type":"string","default":"center"},"titleTag":{"type":"string","default":"h3"},"titleColor":{"type":"string","default":"#000000"},"titleHoverColor":{"type":"string","default":"#000000"},"activeColor":{"type":"string","default":"default"},"titleMargin":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"ContentColor":{"type":"string","default":"#000000"},"ContentHoverColor":{"type":"string","default":"#000000"},"activeContentColor":{"type":"string","default":"default"},"ContentMargin":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"callActionColor":{"type":"string","default":"#FFFFFF"},"callActionHoverColor":{"type":"string","default":"#F0FDF4"},"activeCallActionColor":{"type":"string","default":"default"},"callActionBack":{"type":"string","default":"#10B981"},"callActionHoverBack":{"type":"string","default":"#059669"},"activeCallActionBack":{"type":"string","default":"default"},"callActionPadding":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}},"textdomain":"infobox","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ }),
 
@@ -222,10 +222,16 @@ function Edit({
     callActionColor,
     callActionHoverBack,
     callActionHoverColor,
-    callActionPadding
+    callActionPadding,
+    desktopHide,
+    MobileHide,
+    tabHide,
+    additionalClass
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)(),
+    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
+      className: additionalClass
+    }),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TabPanel, {
         className: "pagecrafter-tab-panel",
@@ -266,7 +272,11 @@ function Edit({
               });
             case 'advanced':
               return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_tab_AdvanceTab__WEBPACK_IMPORTED_MODULE_4__["default"], {
-                setAttributes: setAttributes
+                setAttributes: setAttributes,
+                MobileHide: MobileHide,
+                tabHide: tabHide,
+                desktopHide: desktopHide,
+                additionalClass: additionalClass
               });
             default:
               return null;
@@ -575,10 +585,13 @@ function save({
     callActionColor,
     callActionHoverBack,
     callActionHoverColor,
-    callActionPadding
+    callActionPadding,
+    additionalClass
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save(),
+    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
+      className: additionalClass
+    }),
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "info-box",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
@@ -676,21 +689,54 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
 
 
-function AdvanceTab() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+
+function AdvanceTab({
+  desktopHide,
+  tabHide,
+  MobileHide,
+  setAttributes,
+  additionalClass
+}) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
       title: "Visibility Option",
       initialOpen: false,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-        children: "General settings content here"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Hide on Desktop', 'postgrid'),
+        checked: !!desktopHide,
+        onChange: newVal => setAttributes({
+          desktopHide: newVal
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Hide on Tablet', 'postgrid'),
+        checked: !!tabHide,
+        onChange: newVal => setAttributes({
+          tabHide: newVal
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Hide on Mobile', 'postgrid'),
+        checked: !!MobileHide,
+        onChange: newVal => setAttributes({
+          MobileHide: newVal
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
       title: "Advanced",
-      initialOpen: false
+      initialOpen: false,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.TextControl, {
+        label: "Custom Class",
+        value: additionalClass,
+        onChange: value => setAttributes({
+          additionalClass: value
+        }),
+        placeholder: "My-custom-class"
+      })
     })]
   });
 }

@@ -90,6 +90,7 @@
 					&:hover {
 						background: var(--readMoreHoverBack);
 						color: var(--readMoreHoverColor);
+						transition: all 0.3s ease-in-out;
 
 					}
 				}
@@ -102,3 +103,5 @@
 		}
 	}
 }
+
+

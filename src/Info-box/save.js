@@ -25,10 +25,11 @@ export default function save( { attributes } ) {
 		callActionHoverBack,
 		callActionHoverColor,
 		callActionPadding,
+		additionalClass,
 	} = attributes;
 
 	return (
-		<div { ...useBlockProps.save() }>
+		<div { ...useBlockProps.save( { className: additionalClass } ) }>
 			<div className="info-box">
 				<div className="info-box__icon">
 					<span className={ icon }></span>

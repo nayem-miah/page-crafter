@@ -82,6 +82,7 @@
 .wp-block-create-block-infobox .info-box .info-box__read-more .info-box__read-more-content.hasButton:hover {
   background: var(--readMoreHoverBack);
   color: var(--readMoreHoverColor);
+  transition: all 0.3s ease-in-out;
 }
 .wp-block-create-block-infobox .info-box .info-box__read-more .info-box__read-more-content p {
   margin: 0;

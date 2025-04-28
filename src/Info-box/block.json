@@ -17,6 +17,22 @@
 		"html": false
 	},
 	"attributes": {
+		"additionalClass": {
+			"type": "string",
+			"default": ""
+		},
+		"desktopHide": {
+			"type": "boolean",
+			"default": false
+		},
+		"tabHide": {
+			"type": "boolean",
+			"default": false
+		},
+		"MobileHide": {
+			"type": "boolean",
+			"default": false
+		},
 		"icon": {
 			"type": "string",
 			"default": "fas fa-info-circle"

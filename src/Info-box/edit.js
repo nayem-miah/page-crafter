@@ -35,9 +35,13 @@ export default function Edit( { attributes, setAttributes } ) {
 		callActionHoverBack,
 		callActionHoverColor,
 		callActionPadding,
+		desktopHide,
+		MobileHide,
+		tabHide,
+		additionalClass,
 	} = attributes;
 	return (
-		<div { ...useBlockProps() }>
+		<div { ...useBlockProps( { className: additionalClass } ) }>
 			<InspectorControls>
 				<TabPanel
 					className="pagecrafter-tab-panel"
@@ -89,6 +93,10 @@ export default function Edit( { attributes, setAttributes } ) {
 								return (
 									<AdvanceTab
 										setAttributes={ setAttributes }
+										MobileHide={ MobileHide }
+										tabHide={ tabHide }
+										desktopHide={ desktopHide }
+										additionalClass={ additionalClass }
 									/>
 								);
 							default:
@@ -187,19 +195,19 @@ export default function Edit( { attributes, setAttributes } ) {
 
 								'--callToActionPaddingTop':
 									callActionPadding.top
-										? callActionPadding.top 
+										? callActionPadding.top
 										: '0px',
 								'--callToActionPaddingRight':
 									callActionPadding.right
-										? callActionPadding.right 
+										? callActionPadding.right
 										: '0px',
 								'--callToActionPaddingBottom':
 									callActionPadding.bottom
-										? callActionPadding.bottom 
+										? callActionPadding.bottom
 										: '0px',
 								'--callToActionPaddingLeft':
 									callActionPadding.left
-										? callActionPadding.left 
+										? callActionPadding.left
 										: '0px',
 							} }
 						>

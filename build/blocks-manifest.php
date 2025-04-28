@@ -22,6 +22,22 @@ return array(
 			'html' => false
 		),
 		'attributes' => array(
+			'additionalClass' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'desktopHide' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'tabHide' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'MobileHide' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
 			'icon' => array(
 				'type' => 'string',
 				'default' => 'fas fa-info-circle'
