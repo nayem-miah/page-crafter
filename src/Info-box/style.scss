@@ -17,9 +17,13 @@
 			.text {
 				font-size: 18px;
 				font-weight: 700;
-				margin: 0px;
+				margin-top: var(--titleMarginTop);
+				margin-right: var(--titleMarginRight);
+				margin-bottom: var(--titleMarginBottom);
+				margin-left: var(--titleMarginLeft);
 				padding: 0px;
 				color: var(--titleColor);
+
 				&:hover {
 					color: var(--titleHoverColor);
 				}

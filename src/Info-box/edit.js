@@ -26,6 +26,7 @@ export default function Edit( { attributes, setAttributes } ) {
 		readMoreIconShow,
 		titleHoverColor,
 		titleColor,
+		titleMargin,
 	} = attributes;
 	return (
 		<div { ...useBlockProps() }>
@@ -100,8 +101,18 @@ export default function Edit( { attributes, setAttributes } ) {
 						<RichText
 							className="text"
 							style={ {
-								'--titleColor': titleColor,
-								'--titleHoverColor': titleHoverColor,
+								'--titleMarginTop': titleMargin.top
+									? titleMargin.top + 'px'
+									: '0px',
+								'--titleMarginRight': titleMargin.right
+									? titleMargin.right + 'px'
+									: '0px',
+								'--titleMarginBottom': titleMargin.bottom
+									? titleMargin.bottom + 'px'
+									: '0px',
+								'--titleMarginLeft': titleMargin.left
+									? titleMargin.left + 'px'
+									: '0px',
 							} }
 							placeholder={ __( 'Title..', 'infobox' ) }
 							tagName={ titleTag }

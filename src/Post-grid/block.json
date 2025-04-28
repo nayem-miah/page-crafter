@@ -221,7 +221,6 @@
 			"type": "boolean",
 			"default": true
 		},
-
 		"pagination_number": {
 			"type": "integer",
 			"default": 3

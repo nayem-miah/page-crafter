@@ -1,4 +1,4 @@
-import { ColorPalette, PanelBody } from '@wordpress/components';
+import { ColorPalette, PanelBody, BoxControl } from '@wordpress/components';
 import { useState } from '@wordpress/element';
 import GroupButton from '../../Post-grid/styleTabCom/GroupButton';
 
@@ -52,6 +52,22 @@ export default function StyleTab( { attributes, setAttributes } ) {
 						disableCustomColors={ false }
 					/>
 				</div>
+
+				<BoxControl
+					label={ __( 'Title Margin', 'postgrid' ) }
+					units={ [
+						{ label: 'px', value: 'px' },
+						{ label: '%', value: '%' },
+						{ label: 'em', value: 'em' },
+						{ label: 'rem', value: 'rem' },
+						{ label: 'vw', value: 'vw' },
+						{ label: 'vh', value: 'vh' },
+					] }
+					values={ titleMargin }
+					onChange={ ( newMargin ) =>
+						setAttributes( { titleMargin: newMargin } )
+					}
+				/>
 			</PanelBody>
 		</div>
 	);
