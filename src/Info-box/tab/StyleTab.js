@@ -9,6 +9,7 @@ import { useState } from '@wordpress/element';
 import GroupButton from '../../Post-grid/styleTabCom/GroupButton';
 
 import { __ } from '@wordpress/i18n';
+import Responsive from '../../Post-grid/components/Responsive';
 
 export default function StyleTab( { attributes, setAttributes } ) {
 	const {
@@ -579,7 +580,9 @@ export default function StyleTab( { attributes, setAttributes } ) {
 					</>
 				) }
 			</PanelBody>
-			<PanelBody title="Spacing" initialOpen={ false }>
+			<PanelBody title="Spacing" initialOpen={false}>
+				
+				<Responsive/>
 				<BoxControl
 					label={ __( 'Padding', 'postinfo' ) }
 					values={ padding }
