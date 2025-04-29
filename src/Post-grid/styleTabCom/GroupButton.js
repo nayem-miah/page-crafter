@@ -1,5 +1,3 @@
-
-
 import { Button, ButtonGroup } from '@wordpress/components';
 
 export default function GroupButton( { active, setAttributes, from } ) {
@@ -17,10 +15,11 @@ export default function GroupButton( { active, setAttributes, from } ) {
 		infoCallActionBorderColor: 'ActiveCallActionborderColor',
 		infoBorderColor: 'ActiveBorderColor',
 		infoBackground: 'activeBackground',
+		infoBoxShadow: 'ActiveboxShadowColor',
 	};
 
 	const handleClick = ( mode ) => {
-		const attributeName = fromToAttributeMap[from];
+		const attributeName = fromToAttributeMap[ from ];
 		if ( attributeName ) {
 			setAttributes( {
 				[ attributeName ]: mode,
@@ -59,22 +58,6 @@ export default function GroupButton( { active, setAttributes, from } ) {
 		</ButtonGroup>
 	);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import { Button, ButtonGroup } from '@wordpress/components';
 

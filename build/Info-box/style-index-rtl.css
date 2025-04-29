@@ -12,14 +12,16 @@
   border-color: var(--borderColor);
   border-radius: var(--BorderRadius);
   border-style: var(--BorderType);
-  box-shadow: none;
-  padding: 20px 20px 20px 20px;
+  box-shadow: var(--boxShadow);
   margin: 0px 0px 0px 0px;
   background: var(--background);
+  margin: var(--margin);
+  padding: var(--padding);
 }
 .wp-block-create-block-infobox .info-box:hover {
   border-color: var(--borderHoverColor);
   background: var(--backgroundHover);
+  box-shadow: var(--boxShadowHover);
 }
 .wp-block-create-block-infobox .info-box .info-box__title {
   line-height: 1.2;

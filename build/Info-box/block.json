@@ -239,6 +239,49 @@
     "activeBackground": {
       "type": "string",
       "default": "default"
+    },
+    "boxShadowColor": {
+      "type": "string",
+      "default": "#FFFFFF"
+    },
+    "boxShadowHover": {
+      "type": "string",
+      "default": "#F0FDF4"
+    },
+    "ActiveboxShadowColor": {
+      "type": "string",
+      "default": "default"
+    },
+    "boxShadowControl": {
+      "type": "object",
+      "default": {
+        "top": "1px",
+        "right": "1px",
+        "bottom": "6px",
+        "left": "2px"
+      }
+    },
+    "isBoxShadow": {
+      "type": "boolean",
+      "default": false
+    },
+    "padding": {
+      "type": "object",
+      "default": {
+        "top": "20px",
+        "right": "20px",
+        "bottom": "20px",
+        "left": "20px"
+      }
+    },
+    "margin": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "right": "0px",
+        "bottom": "0px",
+        "left": "0px"
+      }
     }
   },
   "textdomain": "infobox",

@@ -156,7 +156,7 @@ const tableOfContents = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODU
   \*********************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/infobox","version":"0.1.0","title":"infobox","category":"Page-Crafter","icon":"edit-page","description":"A simple info box block.","keywords":["info","box","pagecrafter"],"example":{},"supports":{"html":false},"attributes":{"additionalClass":{"type":"string","default":""},"desktopHide":{"type":"boolean","default":false},"tabHide":{"type":"boolean","default":false},"MobileHide":{"type":"boolean","default":false},"icon":{"type":"string","default":"fas fa-info-circle"},"title":{"type":"string","default":"Title Here"},"content":{"type":"string","default":"Lorem ipsum dolor sit amet consectetur. Sem leo dictumst ac imperdiet arcu duis tempor non adipiscing."},"readMoreAlign":{"type":"string","default":"center"},"readMore":{"type":"string","default":"Read More"},"readMoreType":{"type":"string","default":"Button"},"readMoreLink":{"type":"string","default":"#"},"readMoreIcon":{"type":"string","default":"fas fa-arrow-right"},"readMoreIconShow":{"type":"boolean","default":true},"showContent":{"type":"boolean","default":true},"showTitle":{"type":"boolean","default":true},"contentAlign":{"type":"string","default":"center"},"titleTag":{"type":"string","default":"h3"},"titleColor":{"type":"string","default":"#000000"},"titleHoverColor":{"type":"string","default":"#000000"},"activeColor":{"type":"string","default":"default"},"titleMargin":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"ContentColor":{"type":"string","default":"#000000"},"ContentHoverColor":{"type":"string","default":"#000000"},"activeContentColor":{"type":"string","default":"default"},"ContentMargin":{"type":"object","default":{"top":"10px","right":"0px","bottom":"10px","left":"0px"}},"callActionColor":{"type":"string","default":"#FFFFFF"},"callActionHoverColor":{"type":"string","default":"#F0FDF4"},"activeCallActionColor":{"type":"string","default":"default"},"callActionBack":{"type":"string","default":"#10B981"},"callActionHoverBack":{"type":"string","default":"#059669"},"activeCallActionBack":{"type":"string","default":"default"},"callActionPadding":{"type":"object","default":{"top":"8px","right":"20px","bottom":"8px","left":"20px"}},"callActionBorderType":{"type":"string","default":"solid"},"callActionBorderWidth":{"type":"object","default":{"top":"0","right":"0","bottom":"0","left":"0"}},"callActionborderColor":{"type":"string","default":"#000000"},"callActionborderHoverColor":{"type":"string","default":"#000000"},"ActiveCallActionborderColor":{"type":"string","default":"default"},"callActionBorderRadius":{"type":"object","default":{"top":"2","right":"2","bottom":"2","left":"2"}},"BorderType":{"type":"string","default":"solid"},"BorderWidth":{"type":"object","default":{"top":"1px","right":"1px","bottom":"1px","left":"1px"}},"borderColor":{"type":"string","default":"#000000"},"borderHoverColor":{"type":"string","default":"#000000"},"ActiveBorderColor":{"type":"string","default":"default"},"BorderRadius":{"type":"object","default":{"top":"5px","right":"5px","bottom":"5px","left":"5px"}},"background":{"type":"string","default":"#FFFFFF"},"backgroundHover":{"type":"string","default":"#FFFFFF"},"activeBackground":{"type":"string","default":"default"}},"textdomain":"infobox","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/infobox","version":"0.1.0","title":"infobox","category":"Page-Crafter","icon":"edit-page","description":"A simple info box block.","keywords":["info","box","pagecrafter"],"example":{},"supports":{"html":false},"attributes":{"additionalClass":{"type":"string","default":""},"desktopHide":{"type":"boolean","default":false},"tabHide":{"type":"boolean","default":false},"MobileHide":{"type":"boolean","default":false},"icon":{"type":"string","default":"fas fa-info-circle"},"title":{"type":"string","default":"Title Here"},"content":{"type":"string","default":"Lorem ipsum dolor sit amet consectetur. Sem leo dictumst ac imperdiet arcu duis tempor non adipiscing."},"readMoreAlign":{"type":"string","default":"center"},"readMore":{"type":"string","default":"Read More"},"readMoreType":{"type":"string","default":"Button"},"readMoreLink":{"type":"string","default":"#"},"readMoreIcon":{"type":"string","default":"fas fa-arrow-right"},"readMoreIconShow":{"type":"boolean","default":true},"showContent":{"type":"boolean","default":true},"showTitle":{"type":"boolean","default":true},"contentAlign":{"type":"string","default":"center"},"titleTag":{"type":"string","default":"h3"},"titleColor":{"type":"string","default":"#000000"},"titleHoverColor":{"type":"string","default":"#000000"},"activeColor":{"type":"string","default":"default"},"titleMargin":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"ContentColor":{"type":"string","default":"#000000"},"ContentHoverColor":{"type":"string","default":"#000000"},"activeContentColor":{"type":"string","default":"default"},"ContentMargin":{"type":"object","default":{"top":"10px","right":"0px","bottom":"10px","left":"0px"}},"callActionColor":{"type":"string","default":"#FFFFFF"},"callActionHoverColor":{"type":"string","default":"#F0FDF4"},"activeCallActionColor":{"type":"string","default":"default"},"callActionBack":{"type":"string","default":"#10B981"},"callActionHoverBack":{"type":"string","default":"#059669"},"activeCallActionBack":{"type":"string","default":"default"},"callActionPadding":{"type":"object","default":{"top":"8px","right":"20px","bottom":"8px","left":"20px"}},"callActionBorderType":{"type":"string","default":"solid"},"callActionBorderWidth":{"type":"object","default":{"top":"0","right":"0","bottom":"0","left":"0"}},"callActionborderColor":{"type":"string","default":"#000000"},"callActionborderHoverColor":{"type":"string","default":"#000000"},"ActiveCallActionborderColor":{"type":"string","default":"default"},"callActionBorderRadius":{"type":"object","default":{"top":"2","right":"2","bottom":"2","left":"2"}},"BorderType":{"type":"string","default":"solid"},"BorderWidth":{"type":"object","default":{"top":"1px","right":"1px","bottom":"1px","left":"1px"}},"borderColor":{"type":"string","default":"#000000"},"borderHoverColor":{"type":"string","default":"#000000"},"ActiveBorderColor":{"type":"string","default":"default"},"BorderRadius":{"type":"object","default":{"top":"5px","right":"5px","bottom":"5px","left":"5px"}},"background":{"type":"string","default":"#FFFFFF"},"backgroundHover":{"type":"string","default":"#FFFFFF"},"activeBackground":{"type":"string","default":"default"},"boxShadowColor":{"type":"string","default":"#FFFFFF"},"boxShadowHover":{"type":"string","default":"#F0FDF4"},"ActiveboxShadowColor":{"type":"string","default":"default"},"boxShadowControl":{"type":"object","default":{"top":"1px","right":"1px","bottom":"6px","left":"2px"}},"isBoxShadow":{"type":"boolean","default":false},"padding":{"type":"object","default":{"top":"20px","right":"20px","bottom":"20px","left":"20px"}},"margin":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}},"textdomain":"infobox","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ }),
 
@@ -238,7 +238,13 @@ function Edit({
     BorderWidth,
     BorderType,
     backgroundHover,
-    background
+    background,
+    boxShadowColor,
+    boxShadowHover,
+    boxShadowControl,
+    isBoxShadow,
+    margin,
+    padding
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
@@ -304,7 +310,11 @@ function Edit({
         '--borderColor': borderColor,
         '--borderHoverColor': borderHoverColor,
         '--backgroundHover': backgroundHover,
-        '--background': background
+        '--background': background,
+        '--boxShadow': isBoxShadow ? `${boxShadowControl.top} ${boxShadowControl.right} ${boxShadowControl.bottom} ${boxShadowControl.left} ${boxShadowColor}` : 'none',
+        '--boxShadowHover': isBoxShadow ? `${boxShadowControl.top} ${boxShadowControl.right} ${boxShadowControl.bottom} ${boxShadowControl.left} ${boxShadowHover}` : 'none',
+        '--margin': `${margin.top} ${margin.right} ${margin.bottom} ${margin.left}`,
+        '--padding': `${padding.top} ${padding.right} ${padding.bottom} ${padding.left}`
       },
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "info-box__icon",
@@ -627,7 +637,11 @@ function save({
     BorderWidth,
     BorderType,
     background,
-    backgroundHover
+    backgroundHover,
+    boxShadowColor,
+    boxShadowHover,
+    boxShadowControl,
+    isBoxShadow
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
@@ -642,7 +656,9 @@ function save({
         '--borderColor': borderColor,
         '--borderHoverColor': borderHoverColor,
         '--backgroundHover': backgroundHover,
-        '--background': background
+        '--background': background,
+        '--boxShadow': isBoxShadow ? `${boxShadowControl.top} ${boxShadowControl.right} ${boxShadowControl.bottom} ${boxShadowControl.left} ${boxShadowColor}` : 'none',
+        '--boxShadowHover': isBoxShadow ? `${boxShadowControl.top} ${boxShadowControl.right} ${boxShadowControl.bottom} ${boxShadowControl.left} ${boxShadowHover}` : 'none'
       },
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
         className: "info-box__icon",
@@ -967,13 +983,21 @@ function StyleTab({
     borderColor,
     activeBackground,
     backgroundHover,
-    background
+    background,
+    isBoxShadow,
+    boxShadowColor,
+    boxShadowHover,
+    boxShadowControl,
+    ActiveboxShadowColor,
+    margin,
+    padding
   } = attributes;
   const [openPanel, setOpenPanel] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)('general');
   const togglePanel = panelKey => {
     setOpenPanel(openPanel === panelKey ? null : panelKey);
   };
   const currentTitleColor = activeColor === 'default' ? titleColor : titleHoverColor;
+  const currentBoxShadowColor = ActiveboxShadowColor === 'default' ? boxShadowColor : boxShadowHover;
   const currentContentColor = activeContentColor === 'default' ? ContentColor : ContentHoverColor;
   const currentCallActionColor = activeCallActionColor === 'default' ? callActionColor : callActionHoverColor;
   const currentCallActionBackColor = activeCallActionBack === 'default' ? callActionBack : callActionHoverBack;
@@ -1059,6 +1083,17 @@ function StyleTab({
     } else {
       setAttributes({
         backgroundHover: value
+      });
+    }
+  };
+  const handleBoxShadow = value => {
+    if (ActiveboxShadowColor === 'default') {
+      setAttributes({
+        boxShadowColor: value
+      });
+    } else {
+      setAttributes({
+        boxShadowHover: value
       });
     }
   };
@@ -1541,6 +1576,70 @@ function StyleTab({
           disableCustomColors: false
         })
       })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+      title: "Box-Shadow",
+      initialOpen: false,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Box-Shadow', 'infobox'),
+        checked: isBoxShadow,
+        onChange: value => {
+          setAttributes({
+            isBoxShadow: value
+          });
+        }
+      }), isBoxShadow && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.BoxControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Shadow', 'postInfo'),
+          values: boxShadowControl,
+          onChange: newMargin => setAttributes({
+            boxShadowControl: newMargin
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          style: {
+            marginTop: '16px',
+            marginBottom: '16px'
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("strong", {
+            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Shadow Color', 'postinfo')
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            style: {
+              display: 'flex',
+              justifyContent: 'center',
+              marginTop: '8px'
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Post_grid_styleTabCom_GroupButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+              active: ActiveboxShadowColor,
+              setAttributes: setAttributes,
+              from: "infoBoxShadow"
+            })
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          style: {
+            marginTop: '16px'
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
+            value: currentBoxShadowColor,
+            onChange: handleBoxShadow,
+            disableCustomColors: false
+          })
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+      title: "Spacing",
+      initialOpen: false,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.BoxControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Padding', 'postinfo'),
+        values: padding,
+        onChange: newMargin => setAttributes({
+          padding: newMargin
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.BoxControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Margin', 'postinfo'),
+        values: margin,
+        onChange: newMargin => setAttributes({
+          margin: newMargin
+        })
+      })]
     })]
   });
 }
@@ -1581,7 +1680,8 @@ function GroupButton({
     infoCallActionBackColor: 'activeCallActionBack',
     infoCallActionBorderColor: 'ActiveCallActionborderColor',
     infoBorderColor: 'ActiveBorderColor',
-    infoBackground: 'activeBackground'
+    infoBackground: 'activeBackground',
+    infoBoxShadow: 'ActiveboxShadowColor'
   };
   const handleClick = mode => {
     const attributeName = fromToAttributeMap[from];

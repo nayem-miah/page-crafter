@@ -41,6 +41,10 @@ export default function save( { attributes } ) {
 		BorderType,
 		background,
 		backgroundHover,
+		boxShadowColor,
+		boxShadowHover,
+		boxShadowControl,
+		isBoxShadow,
 	} = attributes;
 
 	return (
@@ -57,6 +61,13 @@ export default function save( { attributes } ) {
 					'--borderHoverColor': borderHoverColor,
 					'--backgroundHover': backgroundHover,
 					'--background': background,
+					'--boxShadow': isBoxShadow
+						? `${ boxShadowControl.top } ${ boxShadowControl.right } ${ boxShadowControl.bottom } ${ boxShadowControl.left } ${ boxShadowColor }`
+						: 'none',
+
+					'--boxShadowHover': isBoxShadow
+						? `${ boxShadowControl.top } ${ boxShadowControl.right } ${ boxShadowControl.bottom } ${ boxShadowControl.left } ${ boxShadowHover }`
+						: 'none',
 				} }
 			>
 				<div className="info-box__icon">

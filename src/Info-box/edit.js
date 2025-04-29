@@ -51,6 +51,12 @@ export default function Edit( { attributes, setAttributes } ) {
 		BorderType,
 		backgroundHover,
 		background,
+		boxShadowColor,
+		boxShadowHover,
+		boxShadowControl,
+		isBoxShadow,
+		margin,
+		padding,
 	} = attributes;
 
 	return (
@@ -130,6 +136,16 @@ export default function Edit( { attributes, setAttributes } ) {
 					'--borderHoverColor': borderHoverColor,
 					'--backgroundHover': backgroundHover,
 					'--background': background,
+					'--boxShadow': isBoxShadow
+						? `${ boxShadowControl.top } ${ boxShadowControl.right } ${ boxShadowControl.bottom } ${ boxShadowControl.left } ${ boxShadowColor }`
+						: 'none',
+
+					'--boxShadowHover': isBoxShadow
+						? `${ boxShadowControl.top } ${ boxShadowControl.right } ${ boxShadowControl.bottom } ${ boxShadowControl.left } ${ boxShadowHover }`
+						: 'none',
+
+					'--margin': `${ margin.top } ${ margin.right } ${ margin.bottom } ${ margin.left }`,
+					'--padding': `${ padding.top } ${ padding.right } ${ padding.bottom } ${ padding.left }`,
 				} }
 			>
 				<div className="info-box__icon">

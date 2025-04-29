@@ -3,6 +3,7 @@ import {
 	PanelBody,
 	BoxControl,
 	SelectControl,
+	ToggleControl,
 } from '@wordpress/components';
 import { useState } from '@wordpress/element';
 import GroupButton from '../../Post-grid/styleTabCom/GroupButton';
@@ -41,6 +42,13 @@ export default function StyleTab( { attributes, setAttributes } ) {
 		activeBackground,
 		backgroundHover,
 		background,
+		isBoxShadow,
+		boxShadowColor,
+		boxShadowHover,
+		boxShadowControl,
+		ActiveboxShadowColor,
+		margin,
+		padding,
 	} = attributes;
 	const [ openPanel, setOpenPanel ] = useState( 'general' );
 	const togglePanel = ( panelKey ) => {
@@ -49,6 +57,9 @@ export default function StyleTab( { attributes, setAttributes } ) {
 
 	const currentTitleColor =
 		activeColor === 'default' ? titleColor : titleHoverColor;
+
+	const currentBoxShadowColor =
+		ActiveboxShadowColor === 'default' ? boxShadowColor : boxShadowHover;
 	const currentContentColor =
 		activeContentColor === 'default' ? ContentColor : ContentHoverColor;
 
@@ -131,6 +142,18 @@ export default function StyleTab( { attributes, setAttributes } ) {
 		} else {
 			setAttributes( {
 				backgroundHover: value,
+			} );
+		}
+	};
+
+	const handleBoxShadow = ( value ) => {
+		if ( ActiveboxShadowColor === 'default' ) {
+			setAttributes( {
+				boxShadowColor: value,
+			} );
+		} else {
+			setAttributes( {
+				boxShadowHover: value,
 			} );
 		}
 	};
@@ -497,6 +520,85 @@ export default function StyleTab( { attributes, setAttributes } ) {
 						disableCustomColors={ false }
 					/>
 				</div>
+			</PanelBody>
+
+			<PanelBody title="Box-Shadow" initialOpen={ false }>
+				<ToggleControl
+					label={ __( 'Box-Shadow', 'infobox' ) }
+					checked={ isBoxShadow }
+					onChange={ ( value ) => {
+						setAttributes( {
+							isBoxShadow: value,
+						} );
+					} }
+				/>
+
+				{ isBoxShadow && (
+					<>
+						<BoxControl
+							label={ __( 'Shadow', 'postInfo' ) }
+							values={ boxShadowControl }
+							onChange={ ( newMargin ) =>
+								setAttributes( {
+									boxShadowControl: newMargin,
+								} )
+							}
+						/>
+
+						<div
+							style={ {
+								marginTop: '16px',
+								marginBottom: '16px',
+							} }
+						>
+							<strong>
+								{ __( 'Shadow Color', 'postinfo' ) }
+							</strong>
+							<div
+								style={ {
+									display: 'flex',
+									justifyContent: 'center',
+									marginTop: '8px',
+								} }
+							>
+								<GroupButton
+									active={ ActiveboxShadowColor }
+									setAttributes={ setAttributes }
+									from="infoBoxShadow"
+								/>
+							</div>
+						</div>
+
+						<div style={ { marginTop: '16px' } }>
+							<ColorPalette
+								value={ currentBoxShadowColor }
+								onChange={ handleBoxShadow }
+								disableCustomColors={ false }
+							/>
+						</div>
+					</>
+				) }
+			</PanelBody>
+			<PanelBody title="Spacing" initialOpen={ false }>
+				<BoxControl
+					label={ __( 'Padding', 'postinfo' ) }
+					values={ padding }
+					onChange={ ( newMargin ) =>
+						setAttributes( {
+							padding: newMargin,
+						} )
+					}
+				/>
+
+				<BoxControl
+					label={ __( 'Margin', 'postinfo' ) }
+					values={ margin }
+					onChange={ ( newMargin ) =>
+						setAttributes( {
+							margin: newMargin,
+						} )
+					}
+				/>
 			</PanelBody>
 		</div>
 	);

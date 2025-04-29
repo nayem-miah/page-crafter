@@ -1444,7 +1444,8 @@ function GroupButton({
     infoCallActionBackColor: 'activeCallActionBack',
     infoCallActionBorderColor: 'ActiveCallActionborderColor',
     infoBorderColor: 'ActiveBorderColor',
-    infoBackground: 'activeBackground'
+    infoBackground: 'activeBackground',
+    infoBoxShadow: 'ActiveboxShadowColor'
   };
   const handleClick = mode => {
     const attributeName = fromToAttributeMap[from];

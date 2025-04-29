@@ -244,6 +244,49 @@ return array(
 			'activeBackground' => array(
 				'type' => 'string',
 				'default' => 'default'
+			),
+			'boxShadowColor' => array(
+				'type' => 'string',
+				'default' => '#FFFFFF'
+			),
+			'boxShadowHover' => array(
+				'type' => 'string',
+				'default' => '#F0FDF4'
+			),
+			'ActiveboxShadowColor' => array(
+				'type' => 'string',
+				'default' => 'default'
+			),
+			'boxShadowControl' => array(
+				'type' => 'object',
+				'default' => array(
+					'top' => '1px',
+					'right' => '1px',
+					'bottom' => '6px',
+					'left' => '2px'
+				)
+			),
+			'isBoxShadow' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'padding' => array(
+				'type' => 'object',
+				'default' => array(
+					'top' => '20px',
+					'right' => '20px',
+					'bottom' => '20px',
+					'left' => '20px'
+				)
+			),
+			'margin' => array(
+				'type' => 'object',
+				'default' => array(
+					'top' => '0px',
+					'right' => '0px',
+					'bottom' => '0px',
+					'left' => '0px'
+				)
 			)
 		),
 		'textdomain' => 'infobox',
