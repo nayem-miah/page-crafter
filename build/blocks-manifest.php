@@ -232,6 +232,18 @@ return array(
 					'bottom' => '5px',
 					'left' => '5px'
 				)
+			),
+			'background' => array(
+				'type' => 'string',
+				'default' => '#FFFFFF'
+			),
+			'backgroundHover' => array(
+				'type' => 'string',
+				'default' => '#FFFFFF'
+			),
+			'activeBackground' => array(
+				'type' => 'string',
+				'default' => 'default'
 			)
 		),
 		'textdomain' => 'infobox',

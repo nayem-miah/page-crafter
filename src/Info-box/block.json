@@ -7,7 +7,11 @@
 	"category": "Page-Crafter",
 	"icon": "edit-page",
 	"description": "A simple info box block.",
-	"keywords": [ "info", "box", "pagecrafter" ],
+	"keywords": [
+		"info",
+		"box",
+		"pagecrafter"
+	],
 	"example": {},
 	"supports": {
 		"html": false
@@ -223,6 +227,18 @@
 				"bottom": "5px",
 				"left": "5px"
 			}
+		},
+		"background": {
+			"type": "string",
+			"default": "#FFFFFF"
+		},
+		"backgroundHover": {
+			"type": "string",
+			"default": "#FFFFFF"
+		},
+		"activeBackground": {
+			"type": "string",
+			"default": "default"
 		}
 	},
 	"textdomain": "infobox",

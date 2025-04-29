@@ -8,8 +8,11 @@
 		box-shadow: none;
 		padding: 20px 20px 20px 20px;
 		margin: 0px 0px 0px 0px;
+		background: var(--background);
+
 		&:hover {
 			border-color: var(--borderHoverColor);
+			background: var(--backgroundHover);
 		}
 
 		.info-box__title {
@@ -117,11 +120,12 @@
 
 
 	@media (max-width: 767px) {
-	
+
 		.desktopHide,
 		.tabHide {
-			display: block; 
+			display: block;
 		}
+
 		.MobileHide {
 			display: none;
 		}
@@ -134,6 +138,7 @@
 		.MobileHide {
 			display: block;
 		}
+
 		.tabHide {
 			display: none;
 		}
@@ -146,6 +151,7 @@
 		.tabHide {
 			display: block;
 		}
+
 		.desktopHide {
 			display: none;
 		}

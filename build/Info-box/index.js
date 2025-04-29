@@ -156,7 +156,7 @@ const tableOfContents = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODU
   \*********************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/infobox","version":"0.1.0","title":"infobox","category":"Page-Crafter","icon":"edit-page","description":"A simple info box block.","keywords":["info","box","pagecrafter"],"example":{},"supports":{"html":false},"attributes":{"additionalClass":{"type":"string","default":""},"desktopHide":{"type":"boolean","default":false},"tabHide":{"type":"boolean","default":false},"MobileHide":{"type":"boolean","default":false},"icon":{"type":"string","default":"fas fa-info-circle"},"title":{"type":"string","default":"Title Here"},"content":{"type":"string","default":"Lorem ipsum dolor sit amet consectetur. Sem leo dictumst ac imperdiet arcu duis tempor non adipiscing."},"readMoreAlign":{"type":"string","default":"center"},"readMore":{"type":"string","default":"Read More"},"readMoreType":{"type":"string","default":"Button"},"readMoreLink":{"type":"string","default":"#"},"readMoreIcon":{"type":"string","default":"fas fa-arrow-right"},"readMoreIconShow":{"type":"boolean","default":true},"showContent":{"type":"boolean","default":true},"showTitle":{"type":"boolean","default":true},"contentAlign":{"type":"string","default":"center"},"titleTag":{"type":"string","default":"h3"},"titleColor":{"type":"string","default":"#000000"},"titleHoverColor":{"type":"string","default":"#000000"},"activeColor":{"type":"string","default":"default"},"titleMargin":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"ContentColor":{"type":"string","default":"#000000"},"ContentHoverColor":{"type":"string","default":"#000000"},"activeContentColor":{"type":"string","default":"default"},"ContentMargin":{"type":"object","default":{"top":"10px","right":"0px","bottom":"10px","left":"0px"}},"callActionColor":{"type":"string","default":"#FFFFFF"},"callActionHoverColor":{"type":"string","default":"#F0FDF4"},"activeCallActionColor":{"type":"string","default":"default"},"callActionBack":{"type":"string","default":"#10B981"},"callActionHoverBack":{"type":"string","default":"#059669"},"activeCallActionBack":{"type":"string","default":"default"},"callActionPadding":{"type":"object","default":{"top":"8px","right":"20px","bottom":"8px","left":"20px"}},"callActionBorderType":{"type":"string","default":"solid"},"callActionBorderWidth":{"type":"object","default":{"top":"0","right":"0","bottom":"0","left":"0"}},"callActionborderColor":{"type":"string","default":"#000000"},"callActionborderHoverColor":{"type":"string","default":"#000000"},"ActiveCallActionborderColor":{"type":"string","default":"default"},"callActionBorderRadius":{"type":"object","default":{"top":"2","right":"2","bottom":"2","left":"2"}},"BorderType":{"type":"string","default":"solid"},"BorderWidth":{"type":"object","default":{"top":"1px","right":"1px","bottom":"1px","left":"1px"}},"borderColor":{"type":"string","default":"#000000"},"borderHoverColor":{"type":"string","default":"#000000"},"ActiveBorderColor":{"type":"string","default":"default"},"BorderRadius":{"type":"object","default":{"top":"5px","right":"5px","bottom":"5px","left":"5px"}}},"textdomain":"infobox","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/infobox","version":"0.1.0","title":"infobox","category":"Page-Crafter","icon":"edit-page","description":"A simple info box block.","keywords":["info","box","pagecrafter"],"example":{},"supports":{"html":false},"attributes":{"additionalClass":{"type":"string","default":""},"desktopHide":{"type":"boolean","default":false},"tabHide":{"type":"boolean","default":false},"MobileHide":{"type":"boolean","default":false},"icon":{"type":"string","default":"fas fa-info-circle"},"title":{"type":"string","default":"Title Here"},"content":{"type":"string","default":"Lorem ipsum dolor sit amet consectetur. Sem leo dictumst ac imperdiet arcu duis tempor non adipiscing."},"readMoreAlign":{"type":"string","default":"center"},"readMore":{"type":"string","default":"Read More"},"readMoreType":{"type":"string","default":"Button"},"readMoreLink":{"type":"string","default":"#"},"readMoreIcon":{"type":"string","default":"fas fa-arrow-right"},"readMoreIconShow":{"type":"boolean","default":true},"showContent":{"type":"boolean","default":true},"showTitle":{"type":"boolean","default":true},"contentAlign":{"type":"string","default":"center"},"titleTag":{"type":"string","default":"h3"},"titleColor":{"type":"string","default":"#000000"},"titleHoverColor":{"type":"string","default":"#000000"},"activeColor":{"type":"string","default":"default"},"titleMargin":{"type":"object","default":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"ContentColor":{"type":"string","default":"#000000"},"ContentHoverColor":{"type":"string","default":"#000000"},"activeContentColor":{"type":"string","default":"default"},"ContentMargin":{"type":"object","default":{"top":"10px","right":"0px","bottom":"10px","left":"0px"}},"callActionColor":{"type":"string","default":"#FFFFFF"},"callActionHoverColor":{"type":"string","default":"#F0FDF4"},"activeCallActionColor":{"type":"string","default":"default"},"callActionBack":{"type":"string","default":"#10B981"},"callActionHoverBack":{"type":"string","default":"#059669"},"activeCallActionBack":{"type":"string","default":"default"},"callActionPadding":{"type":"object","default":{"top":"8px","right":"20px","bottom":"8px","left":"20px"}},"callActionBorderType":{"type":"string","default":"solid"},"callActionBorderWidth":{"type":"object","default":{"top":"0","right":"0","bottom":"0","left":"0"}},"callActionborderColor":{"type":"string","default":"#000000"},"callActionborderHoverColor":{"type":"string","default":"#000000"},"ActiveCallActionborderColor":{"type":"string","default":"default"},"callActionBorderRadius":{"type":"object","default":{"top":"2","right":"2","bottom":"2","left":"2"}},"BorderType":{"type":"string","default":"solid"},"BorderWidth":{"type":"object","default":{"top":"1px","right":"1px","bottom":"1px","left":"1px"}},"borderColor":{"type":"string","default":"#000000"},"borderHoverColor":{"type":"string","default":"#000000"},"ActiveBorderColor":{"type":"string","default":"default"},"BorderRadius":{"type":"object","default":{"top":"5px","right":"5px","bottom":"5px","left":"5px"}},"background":{"type":"string","default":"#FFFFFF"},"backgroundHover":{"type":"string","default":"#FFFFFF"},"activeBackground":{"type":"string","default":"default"}},"textdomain":"infobox","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ }),
 
@@ -236,7 +236,9 @@ function Edit({
     borderHoverColor,
     borderColor,
     BorderWidth,
-    BorderType
+    BorderType,
+    backgroundHover,
+    background
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
@@ -300,7 +302,9 @@ function Edit({
         '--BorderRadius': `${BorderRadius.top} ${BorderRadius.right} ${BorderRadius.bottom} ${BorderRadius.left}`,
         '--BorderType': BorderType,
         '--borderColor': borderColor,
-        '--borderHoverColor': borderHoverColor
+        '--borderHoverColor': borderHoverColor,
+        '--backgroundHover': backgroundHover,
+        '--background': background
       },
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "info-box__icon",
@@ -621,7 +625,9 @@ function save({
     borderHoverColor,
     borderColor,
     BorderWidth,
-    BorderType
+    BorderType,
+    background,
+    backgroundHover
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
@@ -634,7 +640,9 @@ function save({
         '--BorderRadius': `${BorderRadius.top} ${BorderRadius.right} ${BorderRadius.bottom} ${BorderRadius.left}`,
         '--BorderType': BorderType,
         '--borderColor': borderColor,
-        '--borderHoverColor': borderHoverColor
+        '--borderHoverColor': borderHoverColor,
+        '--backgroundHover': backgroundHover,
+        '--background': background
       },
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
         className: "info-box__icon",
@@ -956,7 +964,10 @@ function StyleTab({
     borderHoverColor,
     BorderRadius,
     ActiveBorderColor,
-    borderColor
+    borderColor,
+    activeBackground,
+    backgroundHover,
+    background
   } = attributes;
   const [openPanel, setOpenPanel] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)('general');
   const togglePanel = panelKey => {
@@ -968,6 +979,7 @@ function StyleTab({
   const currentCallActionBackColor = activeCallActionBack === 'default' ? callActionBack : callActionHoverBack;
   const currentCallActionBorderColor = ActiveCallActionborderColor === 'default' ? callActionborderColor : callActionborderHoverColor;
   const currentBorderColor = ActiveBorderColor === 'default' ? borderColor : borderHoverColor;
+  const currentBackground = activeBackground === 'default' ? background : backgroundHover;
   const handleTitleColorChange = color => {
     if (activeColor === 'default') {
       setAttributes({
@@ -1036,6 +1048,17 @@ function StyleTab({
     } else {
       setAttributes({
         callActionborderHoverColor: color
+      });
+    }
+  };
+  const handleBackground = value => {
+    if (activeBackground === 'default') {
+      setAttributes({
+        background: value
+      });
+    } else {
+      setAttributes({
+        backgroundHover: value
       });
     }
   };
@@ -1486,6 +1509,38 @@ function StyleTab({
           BorderRadius: newBorderRadius
         })
       })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+      title: "Background",
+      initialOpen: false,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        style: {
+          marginTop: '16px',
+          marginBottom: '16px'
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("strong", {
+          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Background', 'postinfo')
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          style: {
+            display: 'flex',
+            justifyContent: 'center',
+            marginTop: '8px'
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Post_grid_styleTabCom_GroupButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            active: activeBackground,
+            setAttributes: setAttributes,
+            from: "infoBackground"
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        style: {
+          marginTop: '16px'
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
+          value: currentBackground,
+          onChange: handleBackground,
+          disableCustomColors: false
+        })
+      })]
     })]
   });
 }
@@ -1513,105 +1568,26 @@ function GroupButton({
   setAttributes,
   from
 }) {
-  const handleDefault = () => {
-    if (from === 'titleColor') {
-      setAttributes({
-        titleActiveColor: 'default'
-      });
-    } else if (from === 'contentBackground') {
-      setAttributes({
-        activeBackground: 'default'
-      });
-    } else if (from === 'metaColor') {
-      setAttributes({
-        metaActiveColor: 'default'
-      });
-    } else if (from === 'desColor') {
-      setAttributes({
-        desActiveColor: 'default'
-      });
-    } else if (from === 'readMoreBack') {
-      setAttributes({
-        readMoreBackgroundActive: 'default'
-      });
-    } else if (from === 'readMoreColor') {
-      setAttributes({
-        readMoreColorActive: 'default'
-      });
-    } else if (from === 'infoTitleColor') {
-      setAttributes({
-        activeColor: 'default'
-      });
-    } else if (from === 'infoContentColor') {
-      setAttributes({
-        activeContentColor: 'default'
-      });
-    } else if (from === 'infoCallActionColor') {
-      setAttributes({
-        activeCallActionColor: 'default'
-      });
-    } else if (from === 'infoCallActionBackColor') {
-      setAttributes({
-        activeCallActionBack: 'default'
-      });
-    } else if (from === 'infoCallActionBorderColor') {
-      setAttributes({
-        ActiveCallActionborderColor: 'default'
-      });
-    } else if (from === 'infoBorderColor') {
-      setAttributes({
-        ActiveBorderColor: 'default'
-      });
-    }
+  const fromToAttributeMap = {
+    titleColor: 'titleActiveColor',
+    contentBackground: 'activeBackground',
+    metaColor: 'metaActiveColor',
+    desColor: 'desActiveColor',
+    readMoreBack: 'readMoreBackgroundActive',
+    readMoreColor: 'readMoreColorActive',
+    infoTitleColor: 'activeColor',
+    infoContentColor: 'activeContentColor',
+    infoCallActionColor: 'activeCallActionColor',
+    infoCallActionBackColor: 'activeCallActionBack',
+    infoCallActionBorderColor: 'ActiveCallActionborderColor',
+    infoBorderColor: 'ActiveBorderColor',
+    infoBackground: 'activeBackground'
   };
-  const handleHover = () => {
-    if (from === 'titleColor') {
+  const handleClick = mode => {
+    const attributeName = fromToAttributeMap[from];
+    if (attributeName) {
       setAttributes({
-        titleActiveColor: 'hover'
-      });
-    } else if (from === 'contentBackground') {
-      setAttributes({
-        activeBackground: 'hover'
-      });
-    } else if (from === 'metaColor') {
-      setAttributes({
-        metaActiveColor: 'hover'
-      });
-    } else if (from === 'desColor') {
-      setAttributes({
-        desActiveColor: 'hover'
-      });
-    } else if (from === 'readMoreBack') {
-      setAttributes({
-        readMoreBackgroundActive: 'hover'
-      });
-    } else if (from === 'readMoreColor') {
-      setAttributes({
-        readMoreColorActive: 'hover'
-      });
-    } else if (from === 'infoTitleColor') {
-      setAttributes({
-        activeColor: 'hover'
-      });
-    } else if (from === 'infoContentColor') {
-      setAttributes({
-        activeContentColor: 'hover'
-      });
-    } else if (from === 'infoCallActionColor') {
-      setAttributes({
-        activeCallActionColor: 'hover'
-      });
-    } else if (from === 'infoCallActionBackColor') {
-      setAttributes({
-        activeCallActionBack: 'hover'
-      });
-    } else if (from === 'infoCallActionBorderColor') {
-      setAttributes({
-        ActiveCallActionborderColor: 'hover'
-      });
-    } else if (from === 'infoBorderColor') {
-      setAttributes({
-        ActiveBorderColor: 'hover'
+        [attributeName]: mode
       });
     }
   };
@@ -1625,7 +1601,7 @@ function GroupButton({
         backgroundColor: active === 'default' ? '#008db4' : '',
         color: active === 'default' ? '#fff' : ''
       },
-      onClick: handleDefault,
+      onClick: () => handleClick('default'),
       children: "Default"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
       isPressed: active === 'hover',
@@ -1636,11 +1612,158 @@ function GroupButton({
         backgroundColor: active === 'hover' ? '#008db4' : '',
         color: active === 'hover' ? '#fff' : ''
       },
-      onClick: handleHover,
+      onClick: () => handleClick('hover'),
       children: "Hover"
     })]
   });
 }
+
+// import { Button, ButtonGroup } from '@wordpress/components';
+
+// export default function GroupButton( { active, setAttributes, from } ) {
+// 	const handleDefault = () => {
+// 		if ( from === 'titleColor' ) {
+// 			setAttributes( {
+// 				titleActiveColor: 'default',
+// 			} );
+// 		} else if ( from === 'contentBackground' ) {
+// 			setAttributes( {
+// 				activeBackground: 'default',
+// 			} );
+// 		} else if ( from === 'metaColor' ) {
+// 			setAttributes( {
+// 				metaActiveColor: 'default',
+// 			} );
+// 		} else if ( from === 'desColor' ) {
+// 			setAttributes( {
+// 				desActiveColor: 'default',
+// 			} );
+// 		} else if ( from === 'readMoreBack' ) {
+// 			setAttributes( {
+// 				readMoreBackgroundActive: 'default',
+// 			} );
+// 		} else if ( from === 'readMoreColor' ) {
+// 			setAttributes( {
+// 				readMoreColorActive: 'default',
+// 			} );
+// 		} else if ( from === 'infoTitleColor' ) {
+// 			setAttributes( {
+// 				activeColor: 'default',
+// 			} );
+// 		} else if ( from === 'infoContentColor' ) {
+// 			setAttributes( {
+// 				activeContentColor: 'default',
+// 			} );
+// 		} else if ( from === 'infoCallActionColor' ) {
+// 			setAttributes( {
+// 				activeCallActionColor: 'default',
+// 			} );
+// 		} else if ( from === 'infoCallActionBackColor' ) {
+// 			setAttributes( {
+// 				activeCallActionBack: 'default',
+// 			} );
+// 		} else if ( from === 'infoCallActionBorderColor' ) {
+// 			setAttributes( {
+// 				ActiveCallActionborderColor: 'default',
+// 			} );
+// 		} else if ( from === 'infoBorderColor' ) {
+// 			setAttributes( {
+// 				ActiveBorderColor: 'default',
+// 			} );
+// 		} else if ( from === 'infoBackground' ) {
+// 			setAttributes( {
+// 				activeBackground: 'default',
+// 			} );
+// 		}
+// 	};
+
+// 	const handleHover = () => {
+// 		if ( from === 'titleColor' ) {
+// 			setAttributes( {
+// 				titleActiveColor: 'hover',
+// 			} );
+// 		} else if ( from === 'contentBackground' ) {
+// 			setAttributes( {
+// 				activeBackground: 'hover',
+// 			} );
+// 		} else if ( from === 'metaColor' ) {
+// 			setAttributes( {
+// 				metaActiveColor: 'hover',
+// 			} );
+// 		} else if ( from === 'desColor' ) {
+// 			setAttributes( {
+// 				desActiveColor: 'hover',
+// 			} );
+// 		} else if ( from === 'readMoreBack' ) {
+// 			setAttributes( {
+// 				readMoreBackgroundActive: 'hover',
+// 			} );
+// 		} else if ( from === 'readMoreColor' ) {
+// 			setAttributes( {
+// 				readMoreColorActive: 'hover',
+// 			} );
+// 		} else if ( from === 'infoTitleColor' ) {
+// 			setAttributes( {
+// 				activeColor: 'hover',
+// 			} );
+// 		} else if ( from === 'infoContentColor' ) {
+// 			setAttributes( {
+// 				activeContentColor: 'hover',
+// 			} );
+// 		} else if ( from === 'infoCallActionColor' ) {
+// 			setAttributes( {
+// 				activeCallActionColor: 'hover',
+// 			} );
+// 		} else if ( from === 'infoCallActionBackColor' ) {
+// 			setAttributes( {
+// 				activeCallActionBack: 'hover',
+// 			} );
+// 		} else if ( from === 'infoCallActionBorderColor' ) {
+// 			setAttributes( {
+// 				ActiveCallActionborderColor: 'hover',
+// 			} );
+// 		} else if ( from === 'infoBorderColor' ) {
+// 			setAttributes( {
+// 				ActiveBorderColor: 'hover',
+// 			} );
+// 		} else if ( from === 'infoBackground' ) {
+// 			setAttributes( {
+// 				activeBackground: 'hover',
+// 			} );
+// 		}
+// 	};
+
+// 	return (
+// 		<ButtonGroup>
+// 			<Button
+// 				isPressed={ active === 'default' }
+// 				variant="secondary"
+// 				style={ {
+// 					minWidth: '100px',
+// 					padding: '8px 12px',
+// 					backgroundColor: active === 'default' ? '#008db4' : '',
+// 					color: active === 'default' ? '#fff' : '',
+// 				} }
+// 				onClick={ handleDefault }
+// 			>
+// 				Default
+// 			</Button>
+// 			<Button
+// 				isPressed={ active === 'hover' }
+// 				variant="secondary"
+// 				style={ {
+// 					minWidth: '100px',
+// 					padding: '8px 12px',
+// 					backgroundColor: active === 'hover' ? '#008db4' : '',
+// 					color: active === 'hover' ? '#fff' : '',
+// 				} }
+// 				onClick={ handleHover }
+// 			>
+// 				Hover
+// 			</Button>
+// 		</ButtonGroup>
+// 	);
+// }
 
 /***/ }),
 

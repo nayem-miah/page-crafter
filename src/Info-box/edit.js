@@ -49,6 +49,8 @@ export default function Edit( { attributes, setAttributes } ) {
 		borderColor,
 		BorderWidth,
 		BorderType,
+		backgroundHover,
+		background,
 	} = attributes;
 
 	return (
@@ -126,6 +128,8 @@ export default function Edit( { attributes, setAttributes } ) {
 					'--BorderType': BorderType,
 					'--borderColor': borderColor,
 					'--borderHoverColor': borderHoverColor,
+					'--backgroundHover': backgroundHover,
+					'--background': background,
 				} }
 			>
 				<div className="info-box__icon">

@@ -26,11 +26,9 @@ export default function save( { attributes } ) {
 		callActionHoverColor,
 		callActionPadding,
 		additionalClass,
-
 		desktopHide,
 		MobileHide,
 		tabHide,
-
 		callActionBorderType,
 		callActionBorderRadius,
 		callActionborderColor,
@@ -41,6 +39,8 @@ export default function save( { attributes } ) {
 		borderColor,
 		BorderWidth,
 		BorderType,
+		background,
+		backgroundHover,
 	} = attributes;
 
 	return (
@@ -55,6 +55,8 @@ export default function save( { attributes } ) {
 					'--BorderType': BorderType,
 					'--borderColor': borderColor,
 					'--borderHoverColor': borderHoverColor,
+					'--backgroundHover': backgroundHover,
+					'--background': background,
 				} }
 			>
 				<div className="info-box__icon">

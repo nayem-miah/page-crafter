@@ -38,6 +38,9 @@ export default function StyleTab( { attributes, setAttributes } ) {
 		BorderRadius,
 		ActiveBorderColor,
 		borderColor,
+		activeBackground,
+		backgroundHover,
+		background,
 	} = attributes;
 	const [ openPanel, setOpenPanel ] = useState( 'general' );
 	const togglePanel = ( panelKey ) => {
@@ -66,6 +69,9 @@ export default function StyleTab( { attributes, setAttributes } ) {
 
 	const currentBorderColor =
 		ActiveBorderColor === 'default' ? borderColor : borderHoverColor;
+
+	const currentBackground =
+		activeBackground === 'default' ? background : backgroundHover;
 
 	const handleTitleColorChange = ( color ) => {
 		if ( activeColor === 'default' ) {
@@ -114,6 +120,18 @@ export default function StyleTab( { attributes, setAttributes } ) {
 			setAttributes( { callActionborderColor: color } );
 		} else {
 			setAttributes( { callActionborderHoverColor: color } );
+		}
+	};
+
+	const handleBackground = ( value ) => {
+		if ( activeBackground === 'default' ) {
+			setAttributes( {
+				background: value,
+			} );
+		} else {
+			setAttributes( {
+				backgroundHover: value,
+			} );
 		}
 	};
 
@@ -453,6 +471,32 @@ export default function StyleTab( { attributes, setAttributes } ) {
 						} )
 					}
 				/>
+			</PanelBody>
+			<PanelBody title="Background" initialOpen={ false }>
+				<div style={ { marginTop: '16px', marginBottom: '16px' } }>
+					<strong>{ __( 'Background', 'postinfo' ) }</strong>
+					<div
+						style={ {
+							display: 'flex',
+							justifyContent: 'center',
+							marginTop: '8px',
+						} }
+					>
+						<GroupButton
+							active={ activeBackground }
+							setAttributes={ setAttributes }
+							from="infoBackground"
+						/>
+					</div>
+				</div>
+
+				<div style={ { marginTop: '16px' } }>
+					<ColorPalette
+						value={ currentBackground }
+						onChange={ handleBackground }
+						disableCustomColors={ false }
+					/>
+				</div>
 			</PanelBody>
 		</div>
 	);

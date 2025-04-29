@@ -227,6 +227,18 @@
         "bottom": "5px",
         "left": "5px"
       }
+    },
+    "background": {
+      "type": "string",
+      "default": "#FFFFFF"
+    },
+    "backgroundHover": {
+      "type": "string",
+      "default": "#FFFFFF"
+    },
+    "activeBackground": {
+      "type": "string",
+      "default": "default"
     }
   },
   "textdomain": "infobox",
