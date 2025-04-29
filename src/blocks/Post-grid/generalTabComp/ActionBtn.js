@@ -1,8 +1,5 @@
+import { PanelBody, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import {
-	PanelBody,
-	ToggleControl,
-} from '@wordpress/components';
 import Alignmnet from './../../../components/Alignment';
 
 export default function ActionBtn( {
@@ -28,7 +25,8 @@ export default function ActionBtn( {
 				onChange={ handleReadMoreButton }
 			/>
 			<Alignmnet
-				alignProp={ readMoreAlignment }
+				value={ readMoreAlignment }
+				attributeKey={ 'readMoreAlignment' }
 				setAttributes={ setAttributes }
 			/>
 		</PanelBody>

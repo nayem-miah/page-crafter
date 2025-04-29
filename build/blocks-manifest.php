@@ -273,19 +273,47 @@ return array(
 			'padding' => array(
 				'type' => 'object',
 				'default' => array(
-					'top' => '20px',
-					'right' => '20px',
-					'bottom' => '20px',
-					'left' => '20px'
+					'Desktop' => array(
+						'top' => '42',
+						'right' => '',
+						'bottom' => '42',
+						'left' => ''
+					),
+					'Tablet' => array(
+						'top' => '20',
+						'right' => '',
+						'bottom' => '20',
+						'left' => ''
+					),
+					'Mobile' => array(
+						'top' => '42',
+						'right' => '',
+						'bottom' => '42',
+						'left' => ''
+					)
 				)
 			),
 			'margin' => array(
 				'type' => 'object',
 				'default' => array(
-					'top' => '0px',
-					'right' => '0px',
-					'bottom' => '0px',
-					'left' => '0px'
+					'Desktop' => array(
+						'top' => '',
+						'right' => '',
+						'bottom' => '',
+						'left' => ''
+					),
+					'Tablet' => array(
+						'top' => '',
+						'right' => '',
+						'bottom' => '',
+						'left' => ''
+					),
+					'Mobile' => array(
+						'top' => '',
+						'right' => '',
+						'bottom' => '',
+						'left' => ''
+					)
 				)
 			)
 		),

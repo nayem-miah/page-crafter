@@ -41,8 +41,8 @@ export default function Content( {
 		>
 			<Alignmnet
 				setAttributes={ setAttributes }
-				alignProp={ contentAlignment }
-				fromWhere="content"
+				value={ contentAlignment }
+				attributeKey="contentAlignment"
 			/>
 
 			<PanelBody title="Title" initialOpen={ false }>

@@ -2,14 +2,9 @@ import { Button } from '@wordpress/components';
 import { dispatch, select } from '@wordpress/data';
 import { useSelect } from '@wordpress/data';
 
-import {
-	DesktopIcon,
-	TabletIcon,
-	MobileIcon,
-} from '../blocks/Post-grid/components/svgIcon';
+import { DesktopIcon, TabletIcon, MobileIcon } from '../utils/svgIcon';
 
 const Responsive = () => {
-	// Get current preview device type from WordPress state
 	const deviceType = useSelect(
 		() =>
 			select( 'core/edit-post' ).__experimentalGetPreviewDeviceType?.() ||
@@ -34,32 +29,38 @@ const Responsive = () => {
 	};
 
 	return (
-		<div className="styble-responsive">
-			<div className="styble-units">
-				<span>Device</span>
-				<div className="styble-units-btn">
-					<Button
-						isPressed={ deviceType === 'Desktop' }
-						value="Desktop"
-						onClick={ Device }
-					>
-						<DesktopIcon />
-					</Button>
-					<Button
-						isPressed={ deviceType === 'Tablet' }
-						value="Tablet"
-						onClick={ Device }
-					>
-						<TabletIcon />
-					</Button>
-					<Button
-						isPressed={ deviceType === 'Mobile' }
-						value="Mobile"
-						onClick={ Device }
-					>
-						<MobileIcon />
-					</Button>
-				</div>
+		<div
+			style={ {
+				padding: '12px',
+				border: '1px solid #ddd',
+				borderRadius: '8px',
+				marginTop: '12px',
+				backgroundColor: '#f9f9f9',
+			} }
+		>
+
+			<div style={ { display: 'flex', gap: '8px' } }>
+				<Button
+					isPressed={ deviceType === 'Desktop' }
+					value="Desktop"
+					onClick={ Device }
+				>
+					<DesktopIcon />
+				</Button>
+				<Button
+					isPressed={ deviceType === 'Tablet' }
+					value="Tablet"
+					onClick={ Device }
+				>
+					<TabletIcon />
+				</Button>
+				<Button
+					isPressed={ deviceType === 'Mobile' }
+					value="Mobile"
+					onClick={ Device }
+				>
+					<MobileIcon />
+				</Button>
 			</div>
 		</div>
 	);

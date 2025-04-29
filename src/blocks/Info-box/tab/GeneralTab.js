@@ -1,7 +1,7 @@
 import { PanelBody, ToggleControl } from '@wordpress/components';
 import { useState } from '@wordpress/element';
 import Alignmnet from '../../../components/Alignment';
-import ButtonGroups from './../../../components/GroupButton';
+import SelectableButtonGroup from '../../../components/SelectableButtonGroup';
 export default function GeneralTab( { setAttributes, attributes } ) {
 	const {
 		showContent,
@@ -25,9 +25,9 @@ export default function GeneralTab( { setAttributes, attributes } ) {
 				onToggle={ () => togglePanel( 'pagination' ) }
 			>
 				<Alignmnet
-					fromWhere="content"
+					attributeKey="contentAlign"
 					setAttributes={ setAttributes }
-					alignProp={ contentAlign }
+					value={ contentAlign }
 				/>
 				<div style={ { marginTop: '16px', marginBottom: '16px' } }>
 					<ToggleControl
@@ -48,10 +48,12 @@ export default function GeneralTab( { setAttributes, attributes } ) {
 					/>
 				</div>
 
-				<ButtonGroups
+				<SelectableButtonGroup
+					label="Title Tag"
+					items={ [ 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p' ] }
+					currentItem={ attributes.titleTag }
+					attributeKey="titleTag"
 					setAttributes={ setAttributes }
-					currentItem={ titleTag }
-					fromWhere={ 'title' }
 				/>
 			</PanelBody>
 			<PanelBody
@@ -59,10 +61,12 @@ export default function GeneralTab( { setAttributes, attributes } ) {
 				opened={ openPanel === 'action' }
 				onToggle={ () => togglePanel( 'action' ) }
 			>
-				<ButtonGroups
+				<SelectableButtonGroup
 					setAttributes={ setAttributes }
-					fromWhere="readmore"
 					currentItem={ readMoreType }
+					attributeKey="readMoreType"
+					label="Type"
+					items={ [ 'None', 'Text', 'Button' ] }
 				/>
 				<div style={ { marginTop: '16px', marginBottom: '16px' } }>
 					<ToggleControl

@@ -1,52 +1,51 @@
-import { __ } from '@wordpress/i18n';
+
 import { Button, ButtonGroup } from '@wordpress/components';
-export default function Alignmnet( {
-	alignProp,
-	fromWhere = null,
-	setAttributes,
-} ) {
+import { __ } from '@wordpress/i18n';
+
+export default function Alignment( { value, attributeKey, setAttributes } ) {
 	const alignments = [ 'left', 'center', 'right' ];
 
+	const containerStyle = { marginTop: '16px', marginBottom: '16px' };
+	const buttonWrapperStyle = {
+		display: 'flex',
+		justifyContent: 'center',
+		marginTop: '8px',
+	};
+
+	const handleClick = ( align ) => {
+		setAttributes( { [ attributeKey ]: align } );
+	};
+
 	return (
-		<div style={ { marginTop: '16px', marginBottom: '16px' } }>
+		<div style={ containerStyle }>
 			<strong>{ __( 'Alignment', 'postgrid' ) }</strong>
-			<div
-				style={ {
-					display: 'flex',
-					justifyContent: 'center',
-					marginTop: '8px',
-				} }
-			>
+			<div style={ buttonWrapperStyle }>
 				<ButtonGroup>
-					{ alignments.map( ( align ) => (
-						<Button
-							key={ align }
-							isPressed={ alignProp === align }
-							variant="secondary"
-							style={ {
-								backgroundColor:
-									alignProp === align ? '#008db4' : '',
-								color: alignProp === align ? '#fff' : '',
-								padding: '2px 14px',
-								fontSize: '13px',
-								minWidth: '70px',
-							} }
-							onClick={ () =>
-								fromWhere === 'content'
-									? setAttributes( {
-											contentAlign: align,
-									  } )
-									: setAttributes( {
-											readMoreAlignment: align,
-									  } )
-							}
-						>
-							{ align.charAt( 0 ).toUpperCase() +
-								align.slice( 1 ) }
-						</Button>
-					) ) }
+					{ alignments.map( ( align ) => {
+						const isActive = value === align;
+						return (
+							<Button
+								key={ align }
+								isPressed={ isActive }
+								variant="secondary"
+								style={ {
+									backgroundColor: isActive ? '#008db4' : '',
+									color: isActive ? '#fff' : '',
+									padding: '2px 14px',
+									fontSize: '13px',
+									minWidth: '70px',
+								} }
+								onClick={ () => handleClick( align ) }
+							>
+								{ align.charAt( 0 ).toUpperCase() +
+									align.slice( 1 ) }
+							</Button>
+						);
+					} ) }
 				</ButtonGroup>
 			</div>
 		</div>
 	);
 }
+
+

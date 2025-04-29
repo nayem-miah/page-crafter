@@ -7,11 +7,7 @@
 	"category": "Page-Crafter",
 	"icon": "edit-page",
 	"description": "A simple info box block.",
-	"keywords": [
-		"info",
-		"box",
-		"pagecrafter"
-	],
+	"keywords": [ "info", "box", "pagecrafter" ],
 	"example": {},
 	"supports": {
 		"html": false
@@ -268,19 +264,18 @@
 		"padding": {
 			"type": "object",
 			"default": {
-				"top": "20px",
-				"right": "20px",
-				"bottom": "20px",
-				"left": "20px"
+				"Desktop": { "top": "42", "right": "", "bottom": "42", "left": "" },
+				"Tablet": { "top": "20", "right": "", "bottom": "20", "left": "" },
+				"Mobile": { "top": "42", "right": "", "bottom": "42", "left": "" }
 			}
 		},
+
 		"margin": {
 			"type": "object",
 			"default": {
-				"top": "0px",
-				"right": "0px",
-				"bottom": "0px",
-				"left": "0px"
+				"Desktop": { "top": "", "right": "", "bottom": "", "left": "" },
+				"Tablet": { "top": "", "right": "", "bottom": "", "left": "" },
+				"Mobile": { "top": "", "right": "", "bottom": "", "left": "" }
 			}
 		}
 	},

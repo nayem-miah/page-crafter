@@ -6,6 +6,7 @@ import {
 import { TabPanel } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { cog, Icon, styles, tableOfContents } from '@wordpress/icons';
+import { useDeviceType } from '../../utils/diviceType';
 import './editor.scss';
 import AdvanceTab from './tab/AdvanceTab';
 import GeneralTab from './tab/GeneralTab';
@@ -58,6 +59,10 @@ export default function Edit( { attributes, setAttributes } ) {
 		margin,
 		padding,
 	} = attributes;
+
+	const deviceType = useDeviceType();
+	const currentPadding = padding?.[ deviceType ] || {};
+	const currentMargin = margin?.[ deviceType ] || {};
 
 	return (
 		<div { ...useBlockProps( { className: additionalClass } ) }>
@@ -144,14 +149,23 @@ export default function Edit( { attributes, setAttributes } ) {
 						? `${ boxShadowControl.top } ${ boxShadowControl.right } ${ boxShadowControl.bottom } ${ boxShadowControl.left } ${ boxShadowHover }`
 						: 'none',
 
-					'--margin': `${ margin.top } ${ margin.right } ${ margin.bottom } ${ margin.left }`,
-					'--padding': `${ padding.top } ${ padding.right } ${ padding.bottom } ${ padding.left }`,
+					'--margin': `${ currentMargin.top || 0 }px ${
+						currentMargin.right || 0
+					}px ${ currentMargin.bottom || 0 }px ${
+						currentMargin.left || 0
+					}px`,
+
+					'--padding': `${ currentPadding.top || 0 }px ${
+						currentPadding.right || 0
+					}px ${ currentPadding.bottom || 0 }px ${
+						currentPadding.left || 0
+					}px`,
 				} }
 			>
 				<div className="info-box__icon">
 					<span className={ icon }></span>
 				</div>
-			
+
 				{ showTitle && (
 					<div
 						className="info-box__title"

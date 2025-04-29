@@ -1,7 +1,7 @@
 import {
+	BoxControl,
 	ColorPalette,
 	PanelBody,
-	BoxControl,
 	SelectControl,
 	ToggleControl,
 } from '@wordpress/components';
@@ -9,7 +9,7 @@ import { useState } from '@wordpress/element';
 import GroupButton from '../../../components/GroupButton';
 
 import { __ } from '@wordpress/i18n';
-import Responsive from '../../../components/Responsive';
+import Spacing from '../../../components/Spacing';
 
 export default function StyleTab( { attributes, setAttributes } ) {
 	const {
@@ -581,26 +581,22 @@ export default function StyleTab( { attributes, setAttributes } ) {
 				) }
 			</PanelBody>
 			<PanelBody title="Spacing" initialOpen={ false }>
-				<Responsive />
-				<BoxControl
-					label={ __( 'Padding', 'postinfo' ) }
-					values={ padding }
-					onChange={ ( newMargin ) =>
-						setAttributes( {
-							padding: newMargin,
-						} )
-					}
-				/>
-
-				<BoxControl
-					label={ __( 'Margin', 'postinfo' ) }
-					values={ margin }
-					onChange={ ( newMargin ) =>
-						setAttributes( {
-							margin: newMargin,
-						} )
-					}
-				/>
+				<PanelBody title="Padding" initialOpen={ false }>
+					<Spacing
+						label={ 'Padding' }
+						setAttributes={ setAttributes }
+						space={ padding }
+						attributesKey="padding"
+					/>
+				</PanelBody>
+				<PanelBody title="Margin" initialOpen={ false }>
+					<Spacing
+						label={ 'Margin' }
+						setAttributes={ setAttributes }
+						space={ margin }
+						attributesKey="margin"
+					/>
+				</PanelBody>
 			</PanelBody>
 		</div>
 	);

@@ -58,7 +58,7 @@ function pg_enqueue_assets()
 {
 	wp_enqueue_script(
 		'pg-pagination',
-		plugin_dir_url(__FILE__) . 'pagination.js',
+		plugin_dir_url(__FILE__) . './src/utils/pagination.js',
 		['jquery'],
 		'1.0',
 		true

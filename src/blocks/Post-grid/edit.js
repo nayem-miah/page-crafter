@@ -74,7 +74,7 @@ export default function Edit( { attributes, setAttributes } ) {
 				} );
 				if ( catIDs.length ) {
 					queryParams.append( 'categories', catIDs.join( ',' ) );
-				} 
+				}
 
 				const response = await apiFetch( {
 					path: `/wp/v2/posts?${ queryParams.toString() }`,
