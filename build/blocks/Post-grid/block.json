@@ -26,7 +26,7 @@
     },
     "numberOfPosts": {
       "type": "number",
-      "default": 6
+      "default": 3
     },
     "displayImage": {
       "type": "boolean",

@@ -346,7 +346,7 @@ return array(
 			),
 			'numberOfPosts' => array(
 				'type' => 'number',
-				'default' => 6
+				'default' => 3
 			),
 			'displayImage' => array(
 				'type' => 'boolean',
