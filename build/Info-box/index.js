@@ -641,7 +641,9 @@ function save({
     boxShadowColor,
     boxShadowHover,
     boxShadowControl,
-    isBoxShadow
+    isBoxShadow,
+    margin,
+    padding
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
@@ -658,7 +660,9 @@ function save({
         '--backgroundHover': backgroundHover,
         '--background': background,
         '--boxShadow': isBoxShadow ? `${boxShadowControl.top} ${boxShadowControl.right} ${boxShadowControl.bottom} ${boxShadowControl.left} ${boxShadowColor}` : 'none',
-        '--boxShadowHover': isBoxShadow ? `${boxShadowControl.top} ${boxShadowControl.right} ${boxShadowControl.bottom} ${boxShadowControl.left} ${boxShadowHover}` : 'none'
+        '--boxShadowHover': isBoxShadow ? `${boxShadowControl.top} ${boxShadowControl.right} ${boxShadowControl.bottom} ${boxShadowControl.left} ${boxShadowHover}` : 'none',
+        '--margin': `${margin.top} ${margin.right} ${margin.bottom} ${margin.left}`,
+        '--padding': `${padding.top} ${padding.right} ${padding.bottom} ${padding.left}`
       },
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
         className: "info-box__icon",

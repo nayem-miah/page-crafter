@@ -45,6 +45,8 @@ export default function save( { attributes } ) {
 		boxShadowHover,
 		boxShadowControl,
 		isBoxShadow,
+		margin,
+		padding,
 	} = attributes;
 
 	return (
@@ -68,6 +70,9 @@ export default function save( { attributes } ) {
 					'--boxShadowHover': isBoxShadow
 						? `${ boxShadowControl.top } ${ boxShadowControl.right } ${ boxShadowControl.bottom } ${ boxShadowControl.left } ${ boxShadowHover }`
 						: 'none',
+
+					'--margin': `${ margin.top } ${ margin.right } ${ margin.bottom } ${ margin.left }`,
+					'--padding': `${ padding.top } ${ padding.right } ${ padding.bottom } ${ padding.left }`,
 				} }
 			>
 				<div className="info-box__icon">
