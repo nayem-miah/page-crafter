@@ -296,20 +296,11 @@ export default function StyleTab( { attributes, setAttributes } ) {
 						/>
 					</div>
 
-					<BoxControl
-						label={ __( 'Padding', 'postInfo' ) }
-						units={ [
-							{ label: 'px', value: 'px' },
-							{ label: '%', value: '%' },
-							{ label: 'em', value: 'em' },
-							{ label: 'rem', value: 'rem' },
-							{ label: 'vw', value: 'vw' },
-							{ label: 'vh', value: 'vh' },
-						] }
-						values={ callActionPadding }
-						onChange={ ( newMargin ) =>
-							setAttributes( { callActionPadding: newMargin } )
-						}
+					<Spacing
+						setAttributes={ setAttributes }
+						space={ callActionPadding }
+						label="Padding"
+						attributesKey="callActionPadding"
 					/>
 
 					<PanelBody title="Border" initialOpen={ false }>
@@ -339,22 +330,11 @@ export default function StyleTab( { attributes, setAttributes } ) {
 							/>
 						</div>
 
-						<BoxControl
-							label={ __( 'Border Width', 'postgrid' ) }
-							units={ [
-								{ label: 'px', value: 'px' },
-								{ label: '%', value: '%' },
-								{ label: 'em', value: 'em' },
-								{ label: 'rem', value: 'rem' },
-								{ label: 'vw', value: 'vw' },
-								{ label: 'vh', value: 'vh' },
-							] }
-							values={ callActionBorderWidth }
-							onChange={ ( newMargin ) =>
-								setAttributes( {
-									callActionBorderWidth: newMargin,
-								} )
-							}
+						<Spacing
+							setAttributes={ setAttributes }
+							space={ callActionBorderWidth }
+							label="Border Width"
+							attributesKey="callActionBorderWidth"
 						/>
 						<div
 							style={ {
@@ -388,22 +368,11 @@ export default function StyleTab( { attributes, setAttributes } ) {
 							/>
 						</div>
 
-						<BoxControl
-							label={ __( 'Border Radius', 'postgrid' ) }
-							units={ [
-								{ label: 'px', value: 'px' },
-								{ label: '%', value: '%' },
-								{ label: 'em', value: 'em' },
-								{ label: 'rem', value: 'rem' },
-								{ label: 'vw', value: 'vw' },
-								{ label: 'vh', value: 'vh' },
-							] }
-							values={ callActionBorderRadius }
-							onChange={ ( newBorderRadius ) =>
-								setAttributes( {
-									callActionBorderRadius: newBorderRadius,
-								} )
-							}
+						<Spacing
+							setAttributes={ setAttributes }
+							space={ callActionBorderRadius }
+							label="Border Radius"
+							attributesKey="callActionBorderRadius"
 						/>
 					</PanelBody>
 				</PanelBody>

@@ -156,7 +156,7 @@ const tableOfContents = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODU
   \****************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/infobox","version":"0.1.0","title":"infobox","category":"Page-Crafter","icon":"edit-page","description":"A simple info box block.","keywords":["info","box","pagecrafter"],"example":{},"supports":{"html":false},"attributes":{"additionalClass":{"type":"string","default":""},"desktopHide":{"type":"boolean","default":false},"tabHide":{"type":"boolean","default":false},"MobileHide":{"type":"boolean","default":false},"icon":{"type":"string","default":"fas fa-info-circle"},"title":{"type":"string","default":"Title Here"},"content":{"type":"string","default":"Lorem ipsum dolor sit amet consectetur. Sem leo dictumst ac imperdiet arcu duis tempor non adipiscing."},"readMoreAlign":{"type":"string","default":"center"},"readMore":{"type":"string","default":"Read More"},"readMoreType":{"type":"string","default":"Button"},"readMoreLink":{"type":"string","default":"#"},"readMoreIcon":{"type":"string","default":"fas fa-arrow-right"},"readMoreIconShow":{"type":"boolean","default":true},"showContent":{"type":"boolean","default":true},"showTitle":{"type":"boolean","default":true},"contentAlign":{"type":"string","default":"center"},"titleTag":{"type":"string","default":"h3"},"titleColor":{"type":"string","default":"#000000"},"titleHoverColor":{"type":"string","default":"#000000"},"activeColor":{"type":"string","default":"default"},"titleMargin":{"type":"object","default":{"Desktop":{"top":"1","right":"1","bottom":"1","left":"1"},"Tablet":{"top":"1","right":"1","bottom":"1","left":"1"},"Mobile":{"top":"1","right":"1","bottom":"1","left":"1"}}},"ContentColor":{"type":"string","default":"#000000"},"ContentHoverColor":{"type":"string","default":"#000000"},"activeContentColor":{"type":"string","default":"default"},"ContentMargin":{"type":"object","default":{"Desktop":{"top":"1","right":"1","bottom":"12","left":"1"},"Tablet":{"top":"1","right":"1","bottom":"12","left":"1"},"Mobile":{"top":"1","right":"1","bottom":"12","left":"1"}}},"callActionColor":{"type":"string","default":"#FFFFFF"},"callActionHoverColor":{"type":"string","default":"#F0FDF4"},"activeCallActionColor":{"type":"string","default":"default"},"callActionBack":{"type":"string","default":"#10B981"},"callActionHoverBack":{"type":"string","default":"#059669"},"activeCallActionBack":{"type":"string","default":"default"},"callActionPadding":{"type":"object","default":{"top":"8px","right":"20px","bottom":"8px","left":"20px"}},"callActionBorderType":{"type":"string","default":"solid"},"callActionBorderWidth":{"type":"object","default":{"top":"0","right":"0","bottom":"0","left":"0"}},"callActionborderColor":{"type":"string","default":"#000000"},"callActionborderHoverColor":{"type":"string","default":"#000000"},"ActiveCallActionborderColor":{"type":"string","default":"default"},"callActionBorderRadius":{"type":"object","default":{"top":"2","right":"2","bottom":"2","left":"2"}},"BorderType":{"type":"string","default":"solid"},"BorderWidth":{"type":"object","default":{"Desktop":{"top":"1","right":"1","bottom":"1","left":"1"},"Tablet":{"top":"1","right":"1","bottom":"1","left":"1"},"Mobile":{"top":"1","right":"1","bottom":"1","left":"1"}}},"borderColor":{"type":"string","default":"#000000"},"borderHoverColor":{"type":"string","default":"#000000"},"ActiveBorderColor":{"type":"string","default":"default"},"BorderRadius":{"type":"object","default":{"Desktop":{"top":"1","right":"1","bottom":"1","left":"1"},"Tablet":{"top":"1","right":"1","bottom":"1","left":"1"},"Mobile":{"top":"1","right":"1","bottom":"1","left":"1"}}},"background":{"type":"string","default":"#FFFFFF"},"backgroundHover":{"type":"string","default":"#FFFFFF"},"activeBackground":{"type":"string","default":"default"},"boxShadowColor":{"type":"string","default":"#FFFFFF"},"boxShadowHover":{"type":"string","default":"#F0FDF4"},"ActiveboxShadowColor":{"type":"string","default":"default"},"boxShadowControl":{"type":"object","default":{"top":"1px","right":"1px","bottom":"6px","left":"2px"}},"isBoxShadow":{"type":"boolean","default":false},"padding":{"type":"object","default":{"Desktop":{"top":"42","right":"","bottom":"42","left":""},"Tablet":{"top":"20","right":"","bottom":"20","left":""},"Mobile":{"top":"42","right":"","bottom":"42","left":""}}},"margin":{"type":"object","default":{"Desktop":{"top":"","right":"","bottom":"","left":""},"Tablet":{"top":"","right":"","bottom":"","left":""},"Mobile":{"top":"","right":"","bottom":"","left":""}}}},"textdomain":"infobox","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/infobox","version":"0.1.0","title":"infobox","category":"Page-Crafter","icon":"edit-page","description":"A simple info box block.","keywords":["info","box","pagecrafter"],"example":{},"supports":{"html":false},"attributes":{"additionalClass":{"type":"string","default":""},"desktopHide":{"type":"boolean","default":false},"tabHide":{"type":"boolean","default":false},"MobileHide":{"type":"boolean","default":false},"icon":{"type":"string","default":"fas fa-info-circle"},"title":{"type":"string","default":"Title Here"},"content":{"type":"string","default":"Lorem ipsum dolor sit amet consectetur. Sem leo dictumst ac imperdiet arcu duis tempor non adipiscing."},"readMoreAlign":{"type":"string","default":"center"},"readMore":{"type":"string","default":"Read More"},"readMoreType":{"type":"string","default":"Button"},"readMoreLink":{"type":"string","default":"#"},"readMoreIcon":{"type":"string","default":"fas fa-arrow-right"},"readMoreIconShow":{"type":"boolean","default":true},"showContent":{"type":"boolean","default":true},"showTitle":{"type":"boolean","default":true},"contentAlign":{"type":"string","default":"center"},"titleTag":{"type":"string","default":"h3"},"titleColor":{"type":"string","default":"#000000"},"titleHoverColor":{"type":"string","default":"#000000"},"activeColor":{"type":"string","default":"default"},"titleMargin":{"type":"object","default":{"Desktop":{"top":"1","right":"1","bottom":"1","left":"1"},"Tablet":{"top":"1","right":"1","bottom":"1","left":"1"},"Mobile":{"top":"1","right":"1","bottom":"1","left":"1"}}},"ContentColor":{"type":"string","default":"#000000"},"ContentHoverColor":{"type":"string","default":"#000000"},"activeContentColor":{"type":"string","default":"default"},"ContentMargin":{"type":"object","default":{"Desktop":{"top":"1","right":"1","bottom":"12","left":"1"},"Tablet":{"top":"1","right":"1","bottom":"12","left":"1"},"Mobile":{"top":"1","right":"1","bottom":"12","left":"1"}}},"callActionColor":{"type":"string","default":"#FFFFFF"},"callActionHoverColor":{"type":"string","default":"#F0FDF4"},"activeCallActionColor":{"type":"string","default":"default"},"callActionBack":{"type":"string","default":"#10B981"},"callActionHoverBack":{"type":"string","default":"#059669"},"activeCallActionBack":{"type":"string","default":"default"},"callActionPadding":{"type":"object","default":{"Desktop":{"top":"8","right":"20","bottom":"8","left":"20"},"Tablet":{"top":"8","right":"20","bottom":"8","left":"20"},"Mobile":{"top":"8","right":"20","bottom":"8","left":"20"}}},"callActionBorderType":{"type":"string","default":"solid"},"callActionBorderWidth":{"type":"object","default":{"Desktop":{"top":"0","right":"0","bottom":"0","left":"0"},"Tablet":{"top":"0","right":"0","bottom":"0","left":"0"},"Mobile":{"top":"0","right":"0","bottom":"0","left":"0"}}},"callActionborderColor":{"type":"string","default":"#000000"},"callActionborderHoverColor":{"type":"string","default":"#000000"},"ActiveCallActionborderColor":{"type":"string","default":"default"},"callActionBorderRadius":{"type":"object","default":{"Desktop":{"top":"0","right":"0","bottom":"0","left":"0"},"Tablet":{"top":"0","right":"0","bottom":"0","left":"0"},"Mobile":{"top":"0","right":"0","bottom":"0","left":"0"}}},"BorderType":{"type":"string","default":"solid"},"BorderWidth":{"type":"object","default":{"Desktop":{"top":"1","right":"1","bottom":"1","left":"1"},"Tablet":{"top":"1","right":"1","bottom":"1","left":"1"},"Mobile":{"top":"1","right":"1","bottom":"1","left":"1"}}},"borderColor":{"type":"string","default":"#000000"},"borderHoverColor":{"type":"string","default":"#000000"},"ActiveBorderColor":{"type":"string","default":"default"},"BorderRadius":{"type":"object","default":{"Desktop":{"top":"1","right":"1","bottom":"1","left":"1"},"Tablet":{"top":"1","right":"1","bottom":"1","left":"1"},"Mobile":{"top":"1","right":"1","bottom":"1","left":"1"}}},"background":{"type":"string","default":"#FFFFFF"},"backgroundHover":{"type":"string","default":"#FFFFFF"},"activeBackground":{"type":"string","default":"default"},"boxShadowColor":{"type":"string","default":"#FFFFFF"},"boxShadowHover":{"type":"string","default":"#F0FDF4"},"ActiveboxShadowColor":{"type":"string","default":"default"},"boxShadowControl":{"type":"object","default":{"top":"1px","right":"1px","bottom":"6px","left":"2px"}},"isBoxShadow":{"type":"boolean","default":false},"padding":{"type":"object","default":{"Desktop":{"top":"42","right":"","bottom":"42","left":""},"Tablet":{"top":"20","right":"","bottom":"20","left":""},"Mobile":{"top":"42","right":"","bottom":"42","left":""}}},"margin":{"type":"object","default":{"Desktop":{"top":"","right":"","bottom":"","left":""},"Tablet":{"top":"","right":"","bottom":"","left":""},"Mobile":{"top":"","right":"","bottom":"","left":""}}}},"textdomain":"infobox","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ }),
 
@@ -385,14 +385,15 @@ function Edit({
             '--readMoreHoverColor': callActionHoverColor,
             '--readMoreBackground': callActionBack,
             '--readMoreHoverBack': callActionHoverBack,
-            '--callToActionPaddingTop': callActionPadding.top ? callActionPadding.top : '0px',
-            '--callToActionPaddingRight': callActionPadding.right ? callActionPadding.right : '0px',
-            '--callToActionPaddingBottom': callActionPadding.bottom ? callActionPadding.bottom : '0px',
-            '--callToActionPaddingLeft': callActionPadding.left ? callActionPadding.left : '0px',
+            '--callActionPadding-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(callActionPadding?.Desktop),
+            '--callActionPadding-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(callActionPadding?.Tablet),
+            '--callActionPadding-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(callActionPadding?.Mobile),
             '--callBorderType': callActionBorderType,
             '--callBorderColor': callActionborderColor,
             '--callBorderHoverColor': callActionborderHoverColor,
-            '--callBorderWidth': `${callActionBorderWidth.top} ${callActionBorderWidth.right} ${callActionBorderWidth.bottom} ${callActionBorderWidth.left}`,
+            '--callBorderWidth-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(callActionBorderWidth?.Desktop),
+            '--callBorderWidth-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(callActionBorderWidth?.Tablet),
+            '--callBorderWidth-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(callActionBorderWidth?.Mobile),
             '--callBorderRadius': `${callActionBorderRadius.top} ${callActionBorderRadius.right} ${callActionBorderRadius.bottom} ${callActionBorderRadius.left}`
           },
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
@@ -601,14 +602,15 @@ function save({
             '--readMoreHoverColor': callActionHoverColor,
             '--readMoreBackground': callActionBack,
             '--readMoreHoverBack': callActionHoverBack,
-            '--callToActionPaddingTop': callActionPadding.top ? callActionPadding.top : '0px',
-            '--callToActionPaddingRight': callActionPadding.right ? callActionPadding.right : '0px',
-            '--callToActionPaddingBottom': callActionPadding.bottom ? callActionPadding.bottom : '0px',
-            '--callToActionPaddingLeft': callActionPadding.left ? callActionPadding.left : '0px',
+            '--callActionPadding-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__["default"])(callActionPadding?.Desktop),
+            '--callActionPadding-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__["default"])(callActionPadding?.Tablet),
+            '--callActionPadding-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__["default"])(callActionPadding?.Mobile),
             '--callBorderType': callActionBorderType,
             '--callBorderColor': callActionborderColor,
             '--callBorderHoverColor': callActionborderHoverColor,
-            '--callBorderWidth': `${callActionBorderWidth.top} ${callActionBorderWidth.right} ${callActionBorderWidth.bottom} ${callActionBorderWidth.left}`,
+            '--callBorderWidth-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__["default"])(callActionBorderWidth?.Desktop),
+            '--callBorderWidth-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__["default"])(callActionBorderWidth?.Tablet),
+            '--callBorderWidth-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__["default"])(callActionBorderWidth?.Mobile),
             '--callBorderRadius': `${callActionBorderRadius.top} ${callActionBorderRadius.right} ${callActionBorderRadius.bottom} ${callActionBorderRadius.left}`
           },
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
@@ -1112,31 +1114,11 @@ function StyleTab({
           onChange: handleCallActionBack,
           disableCustomColors: false
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.BoxControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Padding', 'postInfo'),
-        units: [{
-          label: 'px',
-          value: 'px'
-        }, {
-          label: '%',
-          value: '%'
-        }, {
-          label: 'em',
-          value: 'em'
-        }, {
-          label: 'rem',
-          value: 'rem'
-        }, {
-          label: 'vw',
-          value: 'vw'
-        }, {
-          label: 'vh',
-          value: 'vh'
-        }],
-        values: callActionPadding,
-        onChange: newMargin => setAttributes({
-          callActionPadding: newMargin
-        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Spacing__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        setAttributes: setAttributes,
+        space: callActionPadding,
+        label: "Padding",
+        attributesKey: "callActionPadding"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
         title: "Border",
         initialOpen: false,
@@ -1178,31 +1160,11 @@ function StyleTab({
             __next40pxDefaultSize: true,
             __nextHasNoMarginBottom: true
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.BoxControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Border Width', 'postgrid'),
-          units: [{
-            label: 'px',
-            value: 'px'
-          }, {
-            label: '%',
-            value: '%'
-          }, {
-            label: 'em',
-            value: 'em'
-          }, {
-            label: 'rem',
-            value: 'rem'
-          }, {
-            label: 'vw',
-            value: 'vw'
-          }, {
-            label: 'vh',
-            value: 'vh'
-          }],
-          values: callActionBorderWidth,
-          onChange: newMargin => setAttributes({
-            callActionBorderWidth: newMargin
-          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Spacing__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          setAttributes: setAttributes,
+          space: callActionBorderWidth,
+          label: "Border Width",
+          attributesKey: "callActionBorderWidth"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           style: {
             marginTop: '16px',
@@ -1231,31 +1193,11 @@ function StyleTab({
             onChange: handleCallActionBorderColor,
             disableCustomColors: false
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.BoxControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Border Radius', 'postgrid'),
-          units: [{
-            label: 'px',
-            value: 'px'
-          }, {
-            label: '%',
-            value: '%'
-          }, {
-            label: 'em',
-            value: 'em'
-          }, {
-            label: 'rem',
-            value: 'rem'
-          }, {
-            label: 'vw',
-            value: 'vw'
-          }, {
-            label: 'vh',
-            value: 'vh'
-          }],
-          values: callActionBorderRadius,
-          onChange: newBorderRadius => setAttributes({
-            callActionBorderRadius: newBorderRadius
-          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Spacing__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          setAttributes: setAttributes,
+          space: callActionBorderRadius,
+          label: "Border Radius",
+          attributesKey: "callActionBorderRadius"
         })]
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {

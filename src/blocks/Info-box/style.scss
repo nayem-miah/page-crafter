@@ -87,15 +87,10 @@
 
 				&.hasButton {
 					background: var(--readMoreBackground);
-					padding-top: var(--callToActionPaddingTop);
-					padding-right: var(--callToActionPaddingRight);
-					padding-bottom: var(--callToActionPaddingBottom);
-					padding-left: var(--callToActionPaddingLeft);
 					color: var(--readMoreColor);
 
 					border-style: var(--callBorderType);
 					border-color: var(--callBorderColor);
-					border-width: var(--callBorderWidth);
 					border-radius: var(--callBorderRadius);
 
 					&:hover {
@@ -150,6 +145,15 @@
 					margin: var(--ContentMargin-mobile);
 				}
 			}
+
+			.info-box__read-more {
+				.info-box__read-more-content {
+					&.hasButton {
+						padding: var(--callActionPadding-mobile);
+						border-width: var(--callBorderWidth-mobile);
+					}
+				}
+			}
 		}
 
 
@@ -182,6 +186,16 @@
 			.info-box__content {
 				p {
 					margin: var(--ContentMargin-tablet);
+
+				}
+			}
+
+			.info-box__read-more {
+				.info-box__read-more-content {
+					&.hasButton {
+						padding: var(--callActionPadding-tablet);
+						border-width: var(--callBorderWidth-tablet);
+					}
 				}
 			}
 		}
@@ -216,6 +230,15 @@
 			.info-box__content {
 				p {
 					margin: var(--ContentMargin-desktop);
+				}
+			}
+
+			.info-box__read-more {
+				.info-box__read-more-content {
+					&.hasButton {
+						padding: var(--callActionPadding-desktop);
+						border-width: var(--callBorderWidth-desktop);
+					}
 				}
 			}
 		}

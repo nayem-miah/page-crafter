@@ -187,10 +187,24 @@ return array(
 			'callActionPadding' => array(
 				'type' => 'object',
 				'default' => array(
-					'top' => '8px',
-					'right' => '20px',
-					'bottom' => '8px',
-					'left' => '20px'
+					'Desktop' => array(
+						'top' => '8',
+						'right' => '20',
+						'bottom' => '8',
+						'left' => '20'
+					),
+					'Tablet' => array(
+						'top' => '8',
+						'right' => '20',
+						'bottom' => '8',
+						'left' => '20'
+					),
+					'Mobile' => array(
+						'top' => '8',
+						'right' => '20',
+						'bottom' => '8',
+						'left' => '20'
+					)
 				)
 			),
 			'callActionBorderType' => array(
@@ -200,10 +214,24 @@ return array(
 			'callActionBorderWidth' => array(
 				'type' => 'object',
 				'default' => array(
-					'top' => '0',
-					'right' => '0',
-					'bottom' => '0',
-					'left' => '0'
+					'Desktop' => array(
+						'top' => '0',
+						'right' => '0',
+						'bottom' => '0',
+						'left' => '0'
+					),
+					'Tablet' => array(
+						'top' => '0',
+						'right' => '0',
+						'bottom' => '0',
+						'left' => '0'
+					),
+					'Mobile' => array(
+						'top' => '0',
+						'right' => '0',
+						'bottom' => '0',
+						'left' => '0'
+					)
 				)
 			),
 			'callActionborderColor' => array(
@@ -221,10 +249,24 @@ return array(
 			'callActionBorderRadius' => array(
 				'type' => 'object',
 				'default' => array(
-					'top' => '2',
-					'right' => '2',
-					'bottom' => '2',
-					'left' => '2'
+					'Desktop' => array(
+						'top' => '0',
+						'right' => '0',
+						'bottom' => '0',
+						'left' => '0'
+					),
+					'Tablet' => array(
+						'top' => '0',
+						'right' => '0',
+						'bottom' => '0',
+						'left' => '0'
+					),
+					'Mobile' => array(
+						'top' => '0',
+						'right' => '0',
+						'bottom' => '0',
+						'left' => '0'
+					)
 				)
 			),
 			'BorderType' => array(

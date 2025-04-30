@@ -76,6 +76,7 @@ export default function save( { attributes } ) {
 			? `${ boxShadowControl.top } ${ boxShadowControl.right } ${ boxShadowControl.bottom } ${ boxShadowControl.left } ${ boxShadowHover }`
 			: 'none',
 	};
+
 	return (
 		<div { ...useBlockProps.save( { className: additionalClass } ) }>
 			<div
@@ -155,28 +156,30 @@ export default function save( { attributes } ) {
 								'--readMoreBackground': callActionBack,
 								'--readMoreHoverBack': callActionHoverBack,
 
-								'--callToActionPaddingTop':
-									callActionPadding.top
-										? callActionPadding.top
-										: '0px',
-								'--callToActionPaddingRight':
-									callActionPadding.right
-										? callActionPadding.right
-										: '0px',
-								'--callToActionPaddingBottom':
-									callActionPadding.bottom
-										? callActionPadding.bottom
-										: '0px',
-								'--callToActionPaddingLeft':
-									callActionPadding.left
-										? callActionPadding.left
-										: '0px',
+								'--callActionPadding-desktop': formatSpacing(
+									callActionPadding?.Desktop
+								),
+								'--callActionPadding-tablet': formatSpacing(
+									callActionPadding?.Tablet
+								),
+								'--callActionPadding-mobile': formatSpacing(
+									callActionPadding?.Mobile
+								),
 
 								'--callBorderType': callActionBorderType,
 								'--callBorderColor': callActionborderColor,
 								'--callBorderHoverColor':
 									callActionborderHoverColor,
-								'--callBorderWidth': `${ callActionBorderWidth.top } ${ callActionBorderWidth.right } ${ callActionBorderWidth.bottom } ${ callActionBorderWidth.left }`,
+
+								'--callBorderWidth-desktop': formatSpacing(
+									callActionBorderWidth?.Desktop
+								),
+								'--callBorderWidth-tablet': formatSpacing(
+									callActionBorderWidth?.Tablet
+								),
+								'--callBorderWidth-mobile': formatSpacing(
+									callActionBorderWidth?.Mobile
+								),
 								'--callBorderRadius': `${ callActionBorderRadius.top } ${ callActionBorderRadius.right } ${ callActionBorderRadius.bottom } ${ callActionBorderRadius.left }`,
 							} }
 						>
