@@ -180,11 +180,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/table-of-contents.js");
 /* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/styles.js");
 /* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/cog.js");
-/* harmony import */ var _utils_diviceType__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/diviceType */ "./src/utils/diviceType.js");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/Info-box/editor.scss");
-/* harmony import */ var _tab_AdvanceTab__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tab/AdvanceTab */ "./src/blocks/Info-box/tab/AdvanceTab.js");
-/* harmony import */ var _tab_GeneralTab__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./tab/GeneralTab */ "./src/blocks/Info-box/tab/GeneralTab.js");
-/* harmony import */ var _tab_StyleTab__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./tab/StyleTab */ "./src/blocks/Info-box/tab/StyleTab.js");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/Info-box/editor.scss");
+/* harmony import */ var _tab_AdvanceTab__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./tab/AdvanceTab */ "./src/blocks/Info-box/tab/AdvanceTab.js");
+/* harmony import */ var _tab_GeneralTab__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tab/GeneralTab */ "./src/blocks/Info-box/tab/GeneralTab.js");
+/* harmony import */ var _tab_StyleTab__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./tab/StyleTab */ "./src/blocks/Info-box/tab/StyleTab.js");
+/* harmony import */ var _utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../utils/spacingFormat */ "./src/utils/spacingFormat.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__);
 
@@ -248,9 +248,23 @@ function Edit({
     margin,
     padding
   } = attributes;
-  const deviceType = (0,_utils_diviceType__WEBPACK_IMPORTED_MODULE_3__.useDeviceType)();
-  const currentPadding = padding?.[deviceType] || {};
-  const currentMargin = margin?.[deviceType] || {};
+  const style = {
+    '--padding-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(padding?.Desktop),
+    '--padding-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(padding?.Tablet),
+    '--padding-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(padding?.Mobile),
+    '--margin-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(margin?.Desktop),
+    '--margin-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(margin?.Tablet),
+    '--margin-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(margin?.Mobile),
+    '--BorderWidth': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(BorderWidth),
+    '--BorderRadius': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(BorderRadius),
+    '--BorderType': BorderType || 'solid',
+    '--borderColor': borderColor || 'transparent',
+    '--borderHoverColor': borderHoverColor || 'transparent',
+    '--background': background || 'transparent',
+    '--backgroundHover': backgroundHover || 'transparent',
+    '--boxShadow': isBoxShadow ? `${boxShadowControl.top} ${boxShadowControl.right} ${boxShadowControl.bottom} ${boxShadowControl.left} ${boxShadowColor}` : 'none',
+    '--boxShadowHover': isBoxShadow ? `${boxShadowControl.top} ${boxShadowControl.right} ${boxShadowControl.bottom} ${boxShadowControl.left} ${boxShadowHover}` : 'none'
+  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
       className: additionalClass
@@ -284,17 +298,17 @@ function Edit({
         children: tab => {
           switch (tab.name) {
             case 'general':
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_tab_GeneralTab__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_tab_GeneralTab__WEBPACK_IMPORTED_MODULE_5__["default"], {
                 setAttributes: setAttributes,
                 attributes: attributes
               });
             case 'styles':
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_tab_StyleTab__WEBPACK_IMPORTED_MODULE_7__["default"], {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_tab_StyleTab__WEBPACK_IMPORTED_MODULE_6__["default"], {
                 attributes: attributes,
                 setAttributes: setAttributes
               });
             case 'advanced':
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_tab_AdvanceTab__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_tab_AdvanceTab__WEBPACK_IMPORTED_MODULE_4__["default"], {
                 setAttributes: setAttributes,
                 MobileHide: MobileHide,
                 tabHide: tabHide,
@@ -308,19 +322,7 @@ function Edit({
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
       className: `info-box ${desktopHide && 'desktopHide'}  ${tabHide && 'tabHide'} ${MobileHide && 'MobileHide'}`,
-      style: {
-        '--BorderWidth': `${BorderWidth.top} ${BorderWidth.right} ${BorderWidth.bottom} ${BorderWidth.left}`,
-        '--BorderRadius': `${BorderRadius.top} ${BorderRadius.right} ${BorderRadius.bottom} ${BorderRadius.left}`,
-        '--BorderType': BorderType,
-        '--borderColor': borderColor,
-        '--borderHoverColor': borderHoverColor,
-        '--backgroundHover': backgroundHover,
-        '--background': background,
-        '--boxShadow': isBoxShadow ? `${boxShadowControl.top} ${boxShadowControl.right} ${boxShadowControl.bottom} ${boxShadowControl.left} ${boxShadowColor}` : 'none',
-        '--boxShadowHover': isBoxShadow ? `${boxShadowControl.top} ${boxShadowControl.right} ${boxShadowControl.bottom} ${boxShadowControl.left} ${boxShadowHover}` : 'none',
-        '--margin': `${currentMargin.top || 0}px ${currentMargin.right || 0}px ${currentMargin.bottom || 0}px ${currentMargin.left || 0}px`,
-        '--padding': `${currentPadding.top || 0}px ${currentPadding.right || 0}px ${currentPadding.bottom || 0}px ${currentPadding.left || 0}px`
-      },
+      style: style,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
         className: "info-box__icon",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
@@ -463,8 +465,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/spacingFormat */ "./src/utils/spacingFormat.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 function save({
@@ -517,36 +521,41 @@ function save({
     margin,
     padding
   } = attributes;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+  const style = {
+    '--padding-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__["default"])(padding?.Desktop),
+    '--padding-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__["default"])(padding?.Tablet),
+    '--padding-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__["default"])(padding?.Mobile),
+    '--margin-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__["default"])(margin?.Desktop),
+    '--margin-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__["default"])(margin?.Tablet),
+    '--margin-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__["default"])(margin?.Mobile),
+    '--BorderWidth': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__["default"])(BorderWidth),
+    '--BorderRadius': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__["default"])(BorderRadius),
+    '--BorderType': BorderType || 'solid',
+    '--borderColor': borderColor || 'transparent',
+    '--borderHoverColor': borderHoverColor || 'transparent',
+    '--background': background || 'transparent',
+    '--backgroundHover': backgroundHover || 'transparent',
+    '--boxShadow': isBoxShadow ? `${boxShadowControl.top} ${boxShadowControl.right} ${boxShadowControl.bottom} ${boxShadowControl.left} ${boxShadowColor}` : 'none',
+    '--boxShadowHover': isBoxShadow ? `${boxShadowControl.top} ${boxShadowControl.right} ${boxShadowControl.bottom} ${boxShadowControl.left} ${boxShadowHover}` : 'none'
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
       className: additionalClass
     }),
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: `info-box ${desktopHide && 'desktopHide'}  ${tabHide && 'tabHide'} ${MobileHide && 'MobileHide'}`,
-      style: {
-        '--BorderWidth': `${BorderWidth.top} ${BorderWidth.right} ${BorderWidth.bottom} ${BorderWidth.left}`,
-        '--BorderRadius': `${BorderRadius.top} ${BorderRadius.right} ${BorderRadius.bottom} ${BorderRadius.left}`,
-        '--BorderType': BorderType,
-        '--borderColor': borderColor,
-        '--borderHoverColor': borderHoverColor,
-        '--backgroundHover': backgroundHover,
-        '--background': background,
-        '--boxShadow': isBoxShadow ? `${boxShadowControl.top} ${boxShadowControl.right} ${boxShadowControl.bottom} ${boxShadowControl.left} ${boxShadowColor}` : 'none',
-        '--boxShadowHover': isBoxShadow ? `${boxShadowControl.top} ${boxShadowControl.right} ${boxShadowControl.bottom} ${boxShadowControl.left} ${boxShadowHover}` : 'none',
-        '--margin': `${margin.top} ${margin.right} ${margin.bottom} ${margin.left}`,
-        '--padding': `${padding.top} ${padding.right} ${padding.bottom} ${padding.left}`
-      },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      style: style,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "info-box__icon",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
           className: icon
         })
-      }), showTitle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      }), showTitle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "info-box__title",
         style: {
           '--contentAlign': contentAlign
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
           className: "text",
           tagName: titleTag,
           value: title,
@@ -559,12 +568,12 @@ function save({
             '--titleMarginLeft': titleMargin.left ? titleMargin.left + 'px' : '0px'
           }
         })
-      }), showContent && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      }), showContent && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "info-box__content",
         style: {
           '--contentAlign': contentAlign
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
           tagName: "p",
           value: content,
           style: {
@@ -576,12 +585,12 @@ function save({
             '--ContentMarginLeft': ContentMargin.left ? ContentMargin.left : '0px'
           }
         })
-      }), readMoreType !== 'None' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      }), readMoreType !== 'None' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "info-box__read-more",
         style: {
           '--readMoreAlign': readMoreAlign
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: `info-box__read-more-content ${readMoreType === 'Button' ? 'hasButton' : ''}`,
           style: {
             '--readMoreColor': callActionColor,
@@ -598,10 +607,10 @@ function save({
             '--callBorderWidth': `${callActionBorderWidth.top} ${callActionBorderWidth.right} ${callActionBorderWidth.bottom} ${callActionBorderWidth.left}`,
             '--callBorderRadius': `${callActionBorderRadius.top} ${callActionBorderRadius.right} ${callActionBorderRadius.bottom} ${callActionBorderRadius.left}`
           },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
             tagName: "p",
             value: readMore
-          }), readMoreIconShow && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+          }), readMoreIconShow && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
             className: readMoreIcon
           })]
         })
@@ -1826,10 +1835,16 @@ function Spacing({
   attributesKey
 }) {
   const device = (0,_utils_diviceType__WEBPACK_IMPORTED_MODULE_2__.useDeviceType)();
+  const sanitizeBoxValues = (obj = {}) => ({
+    top: parseInt(obj.top) || 0,
+    right: parseInt(obj.right) || 0,
+    bottom: parseInt(obj.bottom) || 0,
+    left: parseInt(obj.left) || 0
+  });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Responsive__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.BoxControl, {
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)(label, 'postinfo'),
-      values: space?.[device],
+      values: sanitizeBoxValues(space?.[device]),
       onChange: newSpace => {
         const updateSpacing = {
           ...space,
@@ -1918,6 +1933,21 @@ const useDeviceType = () => {
   }, []);
   return deviceType;
 };
+
+/***/ }),
+
+/***/ "./src/utils/spacingFormat.js":
+/*!************************************!*\
+  !*** ./src/utils/spacingFormat.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const formatSpacing = (spacing = {}) => `${spacing.top || 0}px ${spacing.right || 0}px ${spacing.bottom || 0}px ${spacing.left || 0}px`;
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (formatSpacing);
 
 /***/ }),
 

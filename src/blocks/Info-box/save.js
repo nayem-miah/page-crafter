@@ -1,5 +1,5 @@
 import { RichText, useBlockProps } from '@wordpress/block-editor';
-
+import formatSpacing from '../../utils/spacingFormat';
 export default function save( { attributes } ) {
 	const {
 		title,
@@ -49,31 +49,37 @@ export default function save( { attributes } ) {
 		padding,
 	} = attributes;
 
+
+	const style = {
+		'--padding-desktop': formatSpacing( padding?.Desktop ),
+		'--padding-tablet': formatSpacing( padding?.Tablet ),
+		'--padding-mobile': formatSpacing( padding?.Mobile ),
+
+		'--margin-desktop': formatSpacing( margin?.Desktop ),
+		'--margin-tablet': formatSpacing( margin?.Tablet ),
+		'--margin-mobile': formatSpacing( margin?.Mobile ),
+
+		'--BorderWidth': formatSpacing( BorderWidth ),
+		'--BorderRadius': formatSpacing( BorderRadius ),
+		'--BorderType': BorderType || 'solid',
+		'--borderColor': borderColor || 'transparent',
+		'--borderHoverColor': borderHoverColor || 'transparent',
+		'--background': background || 'transparent',
+		'--backgroundHover': backgroundHover || 'transparent',
+		'--boxShadow': isBoxShadow
+			? `${ boxShadowControl.top } ${ boxShadowControl.right } ${ boxShadowControl.bottom } ${ boxShadowControl.left } ${ boxShadowColor }`
+			: 'none',
+		'--boxShadowHover': isBoxShadow
+			? `${ boxShadowControl.top } ${ boxShadowControl.right } ${ boxShadowControl.bottom } ${ boxShadowControl.left } ${ boxShadowHover }`
+			: 'none',
+	};
 	return (
 		<div { ...useBlockProps.save( { className: additionalClass } ) }>
 			<div
 				className={ `info-box ${ desktopHide && 'desktopHide' }  ${
 					tabHide && 'tabHide'
 				} ${ MobileHide && 'MobileHide' }` }
-				style={ {
-					'--BorderWidth': `${ BorderWidth.top } ${ BorderWidth.right } ${ BorderWidth.bottom } ${ BorderWidth.left }`,
-					'--BorderRadius': `${ BorderRadius.top } ${ BorderRadius.right } ${ BorderRadius.bottom } ${ BorderRadius.left }`,
-					'--BorderType': BorderType,
-					'--borderColor': borderColor,
-					'--borderHoverColor': borderHoverColor,
-					'--backgroundHover': backgroundHover,
-					'--background': background,
-					'--boxShadow': isBoxShadow
-						? `${ boxShadowControl.top } ${ boxShadowControl.right } ${ boxShadowControl.bottom } ${ boxShadowControl.left } ${ boxShadowColor }`
-						: 'none',
-
-					'--boxShadowHover': isBoxShadow
-						? `${ boxShadowControl.top } ${ boxShadowControl.right } ${ boxShadowControl.bottom } ${ boxShadowControl.left } ${ boxShadowHover }`
-						: 'none',
-
-					'--margin': `${ margin.top } ${ margin.right } ${ margin.bottom } ${ margin.left }`,
-					'--padding': `${ padding.top } ${ padding.right } ${ padding.bottom } ${ padding.left }`,
-				} }
+				style={ style }
 			>
 				<div className="info-box__icon">
 					<span className={ icon }></span>

@@ -9,12 +9,19 @@ export default function Spacing( {
 	attributesKey,
 } ) {
 	const device = useDeviceType();
+	const sanitizeBoxValues = ( obj = {} ) => ( {
+		top: parseInt( obj.top ) || 0,
+		right: parseInt( obj.right ) || 0,
+		bottom: parseInt( obj.bottom ) || 0,
+		left: parseInt( obj.left ) || 0,
+	} );
+
 	return (
 		<>
 			<Responsive />
 			<BoxControl
 				label={ __( label, 'postinfo' ) }
-				values={ space?.[ device ] }
+				values={ sanitizeBoxValues( space?.[ device ] ) }
 				onChange={ ( newSpace ) => {
 					const updateSpacing = {
 						...space,

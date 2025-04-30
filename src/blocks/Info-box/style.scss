@@ -132,6 +132,11 @@
 		.MobileHide {
 			display: none;
 		}
+
+		.info-box {
+			padding: var(--padding-mobile);
+			margin: var(--margin-mobile);
+		}
 	}
 
 	/* Tablet - 768px to 1024px */
@@ -145,6 +150,13 @@
 		.tabHide {
 			display: none;
 		}
+
+		.info-box {
+			padding: var(--padding-tablet);
+			margin: var(--margin-tablet);
+		}
+
+
 	}
 
 	/* Desktop - 1025px and up */
@@ -157,6 +169,11 @@
 
 		.desktopHide {
 			display: none;
+		}
+
+		.info-box {
+			padding: var(--padding-desktop);
+			margin: var(--margin-desktop);
 		}
 	}
 }

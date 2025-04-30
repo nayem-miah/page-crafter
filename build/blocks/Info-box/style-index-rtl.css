@@ -117,6 +117,10 @@
   .wp-block-create-block-infobox .MobileHide {
     display: none;
   }
+  .wp-block-create-block-infobox .info-box {
+    padding: var(--padding-mobile);
+    margin: var(--margin-mobile);
+  }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .wp-block-create-block-infobox .desktopHide,
@@ -126,6 +130,10 @@
   .wp-block-create-block-infobox .tabHide {
     display: none;
   }
+  .wp-block-create-block-infobox .info-box {
+    padding: var(--padding-tablet);
+    margin: var(--margin-tablet);
+  }
 }
 @media (min-width: 1025px) {
   .wp-block-create-block-infobox .MobileHide,
@@ -134,5 +142,9 @@
   }
   .wp-block-create-block-infobox .desktopHide {
     display: none;
+  }
+  .wp-block-create-block-infobox .info-box {
+    padding: var(--padding-desktop);
+    margin: var(--margin-desktop);
   }
 }
