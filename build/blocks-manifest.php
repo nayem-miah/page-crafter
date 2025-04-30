@@ -576,10 +576,24 @@ return array(
 			'contentMargin' => array(
 				'type' => 'object',
 				'default' => array(
-					'top' => '0px',
-					'right' => '0px',
-					'bottom' => '0px',
-					'left' => '0px'
+					'Desktop' => array(
+						'top' => '0',
+						'right' => '',
+						'bottom' => '',
+						'left' => ''
+					),
+					'Tablet' => array(
+						'top' => '0',
+						'right' => '',
+						'bottom' => '',
+						'left' => ''
+					),
+					'Mobile' => array(
+						'top' => '0',
+						'right' => '',
+						'bottom' => '',
+						'left' => ''
+					)
 				)
 			),
 			'titleColor' => array(
@@ -597,10 +611,24 @@ return array(
 			'titleMargin' => array(
 				'type' => 'object',
 				'default' => array(
-					'top' => '12px',
-					'right' => '0px',
-					'bottom' => '0px',
-					'left' => '0px'
+					'Desktop' => array(
+						'top' => '12',
+						'right' => '',
+						'bottom' => '',
+						'left' => ''
+					),
+					'Tablet' => array(
+						'top' => '12',
+						'right' => '',
+						'bottom' => '',
+						'left' => ''
+					),
+					'Mobile' => array(
+						'top' => '12',
+						'right' => '',
+						'bottom' => '',
+						'left' => ''
+					)
 				)
 			),
 			'metaColor' => array(
@@ -618,10 +646,24 @@ return array(
 			'metaMargin' => array(
 				'type' => 'object',
 				'default' => array(
-					'top' => '0px',
-					'right' => '0px',
-					'bottom' => '0px',
-					'left' => '0px'
+					'Desktop' => array(
+						'top' => '0px',
+						'right' => '0px',
+						'bottom' => '0px',
+						'left' => '0px'
+					),
+					'Tablet' => array(
+						'top' => '0px',
+						'right' => '0px',
+						'bottom' => '0px',
+						'left' => '0px'
+					),
+					'Mobile' => array(
+						'top' => '0px',
+						'right' => '0px',
+						'bottom' => '0px',
+						'left' => '0px'
+					)
 				)
 			),
 			'desColor' => array(
@@ -639,10 +681,24 @@ return array(
 			'desMargin' => array(
 				'type' => 'object',
 				'default' => array(
-					'top' => '0px',
-					'right' => '0px',
-					'bottom' => '0px',
-					'left' => '0px'
+					'Desktop' => array(
+						'top' => '',
+						'right' => '',
+						'bottom' => '',
+						'left' => ''
+					),
+					'Tablet' => array(
+						'top' => '',
+						'right' => '',
+						'bottom' => '',
+						'left' => ''
+					),
+					'Mobile' => array(
+						'top' => '',
+						'right' => '',
+						'bottom' => '',
+						'left' => ''
+					)
 				)
 			),
 			'readMoreBackground' => array(
@@ -672,19 +728,47 @@ return array(
 			'readMoreMargin' => array(
 				'type' => 'object',
 				'default' => array(
-					'top' => '20px',
-					'right' => '0px',
-					'bottom' => '0px',
-					'left' => '0px'
+					'Desktop' => array(
+						'top' => '20',
+						'right' => '',
+						'bottom' => '',
+						'left' => ''
+					),
+					'Tablet' => array(
+						'top' => '20',
+						'right' => '',
+						'bottom' => '',
+						'left' => ''
+					),
+					'Mobile' => array(
+						'top' => '20',
+						'right' => '',
+						'bottom' => '',
+						'left' => ''
+					)
 				)
 			),
 			'readMorePadding' => array(
 				'type' => 'object',
 				'default' => array(
-					'top' => '8px',
-					'right' => '16px',
-					'bottom' => '8px',
-					'left' => '16px'
+					'Desktop' => array(
+						'top' => '8',
+						'right' => '16',
+						'bottom' => '8',
+						'left' => '16'
+					),
+					'Tablet' => array(
+						'top' => '8',
+						'right' => '16',
+						'bottom' => '8',
+						'left' => '16'
+					),
+					'Mobile' => array(
+						'top' => '8',
+						'right' => '16',
+						'bottom' => '8',
+						'left' => '16'
+					)
 				)
 			),
 			'currentPage' => array(

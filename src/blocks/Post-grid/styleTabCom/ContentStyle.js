@@ -106,20 +106,11 @@ export default function ContentStyle( {
 				/>
 			</PanelBody>
 			<PanelBody title="Margin" initialOpen={ false }>
-				<BoxControl
-					label={ __( 'Content Margin', 'postgrid' ) }
-					units={ [
-						{ label: 'px', value: 'px' },
-						{ label: '%', value: '%' },
-						{ label: 'em', value: 'em' },
-						{ label: 'rem', value: 'rem' },
-						{ label: 'vw', value: 'vw' },
-						{ label: 'vh', value: 'vh' },
-					] }
-					values={ contentMargin }
-					onChange={ ( newMargin ) =>
-						setAttributes( { contentMargin: newMargin } )
-					}
+				<Spacing
+					setAttributes={ setAttributes }
+					space={ contentMargin }
+					label="Margin"
+					attributesKey="contentMargin"
 				/>
 			</PanelBody>
 			<PanelBody title="Title" initialOpen={ false }>
@@ -136,21 +127,11 @@ export default function ContentStyle( {
 						disableCustomColors={ false }
 					/>
 				</div>
-
-				<BoxControl
-					label={ __( 'Title Margin', 'postgrid' ) }
-					units={ [
-						{ label: 'px', value: 'px' },
-						{ label: '%', value: '%' },
-						{ label: 'em', value: 'em' },
-						{ label: 'rem', value: 'rem' },
-						{ label: 'vw', value: 'vw' },
-						{ label: 'vh', value: 'vh' },
-					] }
-					values={ titleMargin }
-					onChange={ ( newPadding ) =>
-						setAttributes( { titleMargin: newPadding } )
-					}
+				<Spacing
+					setAttributes={ setAttributes }
+					space={ titleMargin }
+					label="Title Margin"
+					attributesKey="titleMargin"
 				/>
 			</PanelBody>
 			<PanelBody title="Meta" initialOpen={ false }>
@@ -168,20 +149,11 @@ export default function ContentStyle( {
 					/>
 				</div>
 
-				<BoxControl
-					label={ __( 'Meta Margin', 'postgrid' ) }
-					units={ [
-						{ label: 'px', value: 'px' },
-						{ label: '%', value: '%' },
-						{ label: 'em', value: 'em' },
-						{ label: 'rem', value: 'rem' },
-						{ label: 'vw', value: 'vw' },
-						{ label: 'vh', value: 'vh' },
-					] }
-					values={ metaMargin }
-					onChange={ ( newPadding ) =>
-						setAttributes( { metaMargin: newPadding } )
-					}
+				<Spacing
+					setAttributes={ setAttributes }
+					space={ metaMargin }
+					label="Meta Margin"
+					attributesKey="metaMargin"
 				/>
 			</PanelBody>
 			<PanelBody title="Description" initialOpen={ false }>
@@ -199,20 +171,11 @@ export default function ContentStyle( {
 					/>
 				</div>
 
-				<BoxControl
-					label={ __( 'Meta Margin', 'postgrid' ) }
-					units={ [
-						{ label: 'px', value: 'px' },
-						{ label: '%', value: '%' },
-						{ label: 'em', value: 'em' },
-						{ label: 'rem', value: 'rem' },
-						{ label: 'vw', value: 'vw' },
-						{ label: 'vh', value: 'vh' },
-					] }
-					values={ desMargin }
-					onChange={ ( newPadding ) =>
-						setAttributes( { desMargin: newPadding } )
-					}
+				<Spacing
+					setAttributes={ setAttributes }
+					space={ desMargin }
+					label="Margin"
+					attributesKey="desMargin"
 				/>
 			</PanelBody>
 		</PanelBody>

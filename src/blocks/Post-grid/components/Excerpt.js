@@ -1,5 +1,6 @@
-import truncateExcerpt from "../../../utils/truncateWords";
 import { RawHTML } from '@wordpress/element';
+import formatSpacing from '../../../utils/spacingFormat';
+import truncateExcerpt from '../../../utils/truncateWords';
 export default function Excerpt( {
 	excerpt,
 	excerptMaxWords,
@@ -7,8 +8,7 @@ export default function Excerpt( {
 	contentAlignment,
 	desMargin,
 	desColor,
-	desHoverColor
-
+	desHoverColor,
 } ) {
 	return (
 		<>
@@ -19,10 +19,16 @@ export default function Excerpt( {
 						'--excerptTextAlign': contentAlignment,
 						'--excerptColor': desColor,
 						'--excerptHoverColor': desHoverColor,
-						'--excerptMarginTop': desMargin?.top,
-						'--excerptMarginRight': desMargin?.right,
-						'--excerptMarginBottom': desMargin?.bottom,
-						'--excerptMarginLeft': desMargin?.left,
+
+						'--desMargin-desktop': formatSpacing(
+							desMargin?.Desktop
+						),
+						'--desMargin-tablet': formatSpacing(
+							desMargin?.Tablet
+						),
+						'--desMargin-mobile': formatSpacing(
+							desMargin?.Mobile
+						),
 					} }
 				>
 					<p>

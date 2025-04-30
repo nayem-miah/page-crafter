@@ -28,10 +28,6 @@
 				.content-body {
 					.post-grid-title h5 {
 						text-align: center;
-						margin-top: var(--titleMarginTop);
-						margin-bottom: var(--titleMarginBottom);
-						margin-left: var(--titleMarginLeft);
-						margin-right: var(--titleMarginRight);
 
 						a {
 							font-size: 18px;
@@ -52,10 +48,6 @@
 						line-height: 20px;
 						color: var(--metaColor);
 						text-align: var(--metaTextAlign);
-						margin-top: var(--metaMarginTop);
-						margin-right: var(--metaMarginRight);
-						margin-bottom: var(--metaMarginBottom);
-						margin-left: var(--metaMarginLeft);
 					}
 
 					.post-grid-meta:hover {
@@ -68,10 +60,6 @@
 						line-height: 28px;
 						color: var(--excerptColor);
 						text-align: var(--excerptTextAlign);
-						margin-top: var(--excerptMarginTop);
-						margin-right: var(--excerptMarginRight);
-						margin-bottom: var(--excerptMarginBottom);
-						margin-left: var(--excerptMarginLeft);
 					}
 
 					.post-grid-excerpt:hover {
@@ -81,14 +69,6 @@
 					.post-grid-btn a {
 						font-size: 16px;
 
-						padding-top: var(--readMorePaddingTop);
-						padding-right: var(--readMorePaddingRight);
-						padding-bottom: var(--readMorePaddingBottom);
-						padding-left: var(--readMorePaddingLeft);
-						margin-top: var(--readMoreMarginTop);
-						margin-right: var(--readMoreMarginRight);
-						margin-bottom: var(--readMoreMarginBottom);
-						margin-left: var(--readMoreMarginLeft);
 						color: var(--readMoreColor);
 						background: var(--readMoreBackground);
 						border-radius: 4px;
@@ -121,14 +101,9 @@
 		}
 
 		.content-body {
-
 			background: var(--background);
 			.post-grid-title h5 {
 				text-align: center;
-				margin-top: var(--titleMarginTop);
-				margin-bottom: var(--titleMarginBottom);
-				margin-left: var(--titleMarginLeft);
-				margin-right: var(--titleMarginRight);
 
 				a {
 					font-size: 18px;
@@ -149,10 +124,6 @@
 				line-height: 20px;
 				color: var(--metaColor);
 				text-align: var(--metaTextAlign);
-				margin-top: var(--metaMarginTop);
-				margin-right: var(--metaMarginRight);
-				margin-bottom: var(--metaMarginBottom);
-				margin-left: var(--metaMarginLeft);
 			}
 
 			.post-grid-meta:hover {
@@ -165,10 +136,6 @@
 				line-height: 28px;
 				color: var(--excerptColor);
 				text-align: var(--excerptTextAlign);
-				margin-top: var(--excerptMarginTop);
-				margin-right: var(--excerptMarginRight);
-				margin-bottom: var(--excerptMarginBottom);
-				margin-left: var(--excerptMarginLeft);
 			}
 
 			.post-grid-excerpt:hover {
@@ -178,14 +145,6 @@
 			.post-grid-btn a {
 				font-size: 16px;
 
-				padding-top: var(--readMorePaddingTop);
-				padding-right: var(--readMorePaddingRight);
-				padding-bottom: var(--readMorePaddingBottom);
-				padding-left: var(--readMorePaddingLeft);
-				margin-top: var(--readMoreMarginTop);
-				margin-right: var(--readMoreMarginRight);
-				margin-bottom: var(--readMoreMarginBottom);
-				margin-left: var(--readMoreMarginLeft);
 				color: var(--readMoreColor);
 				background: var(--readMoreBackground);
 				border-radius: 4px;
@@ -235,7 +194,6 @@
 	}
 
 	@media (max-width: 575px) {
-
 		.post-grid {
 			.post-grid-wrapper {
 				grid-template-columns: repeat(1, 1fr);
@@ -253,7 +211,6 @@
 
 		.grid-card .content-body .post-grid-btn a {
 			font-size: 14px;
-			padding: 6px 12px;
 		}
 	}
 
@@ -287,7 +244,6 @@
 
 /* Mobile*/
 @media (max-width: 767px) {
-
 	.desktopHide,
 	.tabHide {
 		display: block;
@@ -299,12 +255,25 @@
 
 	.content-body {
 		padding: var(--contentPadding-mobile);
+		margin: var(--contentMargin-mobile);
+		.post-grid-title h5 {
+			margin: var(--titleMargin-mobile);
+		}
+		.post-grid-meta {
+			margin: var(--metaMargin-mobile);
+		}
+		.post-grid-excerpt {
+			margin: var(--desMargin-mobile);
+		}
+		.post-grid-btn a {
+			margin: var(--readMoreMargin-mobile);
+			padding: var(--readMorePadding-mobile);
+		}
 	}
 }
 
 /* Tablet - 768px to 1024px */
 @media (min-width: 768px) and (max-width: 1024px) {
-
 	.desktopHide,
 	.MobileHide {
 		display: block;
@@ -316,12 +285,25 @@
 
 	.content-body {
 		padding: var(--contentPadding-tablet);
+		margin: var(--contentMargin-tablet);
+		.post-grid-title h5 {
+			margin: var(--titleMargin-tablet);
+		}
+		.post-grid-meta {
+			margin: var(--metaMargin-tablet);
+		}
+		.post-grid-excerpt {
+			margin: var(--desMargin-tablet);
+		}
+		.post-grid-btn a {
+			margin: var(--readMoreMargin-tablet);
+			padding: var(--readMorePadding-tablet);
+		}
 	}
 }
 
 /* Desktop - 1025px and up */
 @media (min-width: 1025px) {
-
 	.MobileHide,
 	.tabHide {
 		display: block;
@@ -333,5 +315,19 @@
 
 	.content-body {
 		padding: var(--contentPadding-desktop);
+		margin: var(--contentMargin-desktop);
+		.post-grid-title h5 {
+			margin: var(--titleMargin-desktop);
+		}
+		.post-grid-meta {
+			margin: var(--metaMargin-desktop);
+		}
+		.post-grid-excerpt {
+			margin: var(--desMargin-desktop);
+		}
+		.post-grid-btn a {
+			margin: var(--readMoreMargin-desktop);
+			padding: var(--readMorePadding-desktop);
+		}
 	}
 }

@@ -1,4 +1,5 @@
 import { RawHTML } from '@wordpress/element';
+import formatSpacing from './../../../utils/spacingFormat.js';
 export default function Title( {
 	showTitle,
 	title,
@@ -15,10 +16,16 @@ export default function Title( {
 					<h5
 						style={ {
 							textAlign: contentAlignment,
-							'--titleMarginTop': titleMargin?.top,
-							'--titleMarginBottom': titleMargin.bottom,
-							'--titleMarginLeft': titleMargin?.left,
-							'--titleMarginRight': titleMargin?.right,
+
+							'--titleMargin-desktop': formatSpacing(
+								titleMargin?.Desktop
+							),
+							'--titleMargin-tablet': formatSpacing(
+								titleMargin?.Tablet
+							),
+							'--titleMargin-mobile': formatSpacing(
+								titleMargin?.Mobile
+							),
 						} }
 					>
 						<a

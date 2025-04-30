@@ -6,11 +6,11 @@ import {
 import { TabPanel } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { cog, Icon, styles, tableOfContents } from '@wordpress/icons';
+import formatSpacing from '../../utils/spacingFormat';
 import './editor.scss';
 import AdvanceTab from './tab/AdvanceTab';
 import GeneralTab from './tab/GeneralTab';
 import StyleTab from './tab/StyleTab';
-import formatSpacing from '../../utils/spacingFormat';
 export default function Edit( { attributes, setAttributes } ) {
 	const {
 		title,

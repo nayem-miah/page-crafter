@@ -112,10 +112,24 @@
     "contentMargin": {
       "type": "object",
       "default": {
-        "top": "0px",
-        "right": "0px",
-        "bottom": "0px",
-        "left": "0px"
+        "Desktop": {
+          "top": "0",
+          "right": "",
+          "bottom": "",
+          "left": ""
+        },
+        "Tablet": {
+          "top": "0",
+          "right": "",
+          "bottom": "",
+          "left": ""
+        },
+        "Mobile": {
+          "top": "0",
+          "right": "",
+          "bottom": "",
+          "left": ""
+        }
       }
     },
     "titleColor": {
@@ -133,10 +147,24 @@
     "titleMargin": {
       "type": "object",
       "default": {
-        "top": "12px",
-        "right": "0px",
-        "bottom": "0px",
-        "left": "0px"
+        "Desktop": {
+          "top": "12",
+          "right": "",
+          "bottom": "",
+          "left": ""
+        },
+        "Tablet": {
+          "top": "12",
+          "right": "",
+          "bottom": "",
+          "left": ""
+        },
+        "Mobile": {
+          "top": "12",
+          "right": "",
+          "bottom": "",
+          "left": ""
+        }
       }
     },
     "metaColor": {
@@ -154,10 +182,24 @@
     "metaMargin": {
       "type": "object",
       "default": {
-        "top": "0px",
-        "right": "0px",
-        "bottom": "0px",
-        "left": "0px"
+        "Desktop": {
+          "top": "0px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        },
+        "Tablet": {
+          "top": "0px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        },
+        "Mobile": {
+          "top": "0px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        }
       }
     },
     "desColor": {
@@ -175,10 +217,24 @@
     "desMargin": {
       "type": "object",
       "default": {
-        "top": "0px",
-        "right": "0px",
-        "bottom": "0px",
-        "left": "0px"
+        "Desktop": {
+          "top": "",
+          "right": "",
+          "bottom": "",
+          "left": ""
+        },
+        "Tablet": {
+          "top": "",
+          "right": "",
+          "bottom": "",
+          "left": ""
+        },
+        "Mobile": {
+          "top": "",
+          "right": "",
+          "bottom": "",
+          "left": ""
+        }
       }
     },
     "readMoreBackground": {
@@ -208,19 +264,47 @@
     "readMoreMargin": {
       "type": "object",
       "default": {
-        "top": "20px",
-        "right": "0px",
-        "bottom": "0px",
-        "left": "0px"
+        "Desktop": {
+          "top": "20",
+          "right": "",
+          "bottom": "",
+          "left": ""
+        },
+        "Tablet": {
+          "top": "20",
+          "right": "",
+          "bottom": "",
+          "left": ""
+        },
+        "Mobile": {
+          "top": "20",
+          "right": "",
+          "bottom": "",
+          "left": ""
+        }
       }
     },
     "readMorePadding": {
       "type": "object",
       "default": {
-        "top": "8px",
-        "right": "16px",
-        "bottom": "8px",
-        "left": "16px"
+        "Desktop": {
+          "top": "8",
+          "right": "16",
+          "bottom": "8",
+          "left": "16"
+        },
+        "Tablet": {
+          "top": "8",
+          "right": "16",
+          "bottom": "8",
+          "left": "16"
+        },
+        "Mobile": {
+          "top": "8",
+          "right": "16",
+          "bottom": "8",
+          "left": "16"
+        }
       }
     },
     "currentPage": {

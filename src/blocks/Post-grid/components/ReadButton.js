@@ -1,3 +1,5 @@
+import formatSpacing from '../../../utils/spacingFormat';
+
 export default function ReadButton( {
 	readMore,
 	readMoreAlignment,
@@ -23,14 +25,26 @@ export default function ReadButton( {
 								readMoreBackgroundHover,
 							'--readMoreColor': readMoreColor,
 							'--readMoreColorHover': readMoreColorHover,
-							'--readMorePaddingTop': readMorePadding?.top,
-							'--readMorePaddingRight': readMorePadding?.right,
-							'--readMorePaddingBottom': readMorePadding?.bottom,
-							'--readMorePaddingLeft': readMorePadding?.left,
-							'--readMoreMarginTop': readMoreMargin?.top,
-							'--readMoreMarginRight': readMoreMargin?.right,
-							'--readMoreMarginBottom': readMoreMargin?.bottom,
-							'--readMoreMarginLeft': readMoreMargin?.left,
+
+							'--readMorePadding-desktop': formatSpacing(
+								readMorePadding?.Desktop
+							),
+							'--readMorePadding-tablet': formatSpacing(
+								readMorePadding?.Tablet
+							),
+							'--readMorePadding-mobile': formatSpacing(
+								readMorePadding?.Mobile
+							),
+
+							'--readMoreMargin-desktop': formatSpacing(
+								readMoreMargin?.Desktop
+							),
+							'--readMoreMargin-tablet': formatSpacing(
+								readMoreMargin?.Tablet
+							),
+							'--readMoreMargin-mobile': formatSpacing(
+								readMoreMargin?.Mobile
+							),
 						} }
 						href={ link }
 					>

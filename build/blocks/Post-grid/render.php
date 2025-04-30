@@ -17,15 +17,16 @@ if (!function_exists('truncate_excerpt')) {
     }
 }
 
+if (!function_exists('get_padding_css')) {
+    function get_padding_css($values)
+    {
+        $top = isset($values['top']) ? $values['top'] : 0;
+        $right = isset($values['right']) ? $values['right'] : 0;
+        $bottom = isset($values['bottom']) ? $values['bottom'] : 0;
+        $left = isset($values['left']) ? $values['left'] : 0;
 
-function get_padding_css($spacingName, $values) {
-    // Ensure all 4 sides exist with default 0
-    $top = isset($values['top']) ? $values['top'] : 0;
-    $right = isset($values['right']) ? $values['right'] : 0;
-    $bottom = isset($values['bottom']) ? $values['bottom'] : 0;
-    $left = isset($values['left']) ? $values['left'] : 0;
-
-    return "{$spacingName}: {$top}px {$right}px {$bottom}px {$left}px;";
+        return "{$top}px {$right}px {$bottom}px {$left}px;";
+    }
 }
 
 
@@ -69,84 +70,102 @@ $encoded_attr = esc_attr(wp_json_encode($attributes));
 
             <?php foreach ($posts as $post):
                 setup_postdata($post); ?>
-            <div class="grid-card" style="
+                <div class="grid-card" style="
                 --card-bg: <?php echo esc_attr($attributes['contentBackground'] ?? '#fff'); ?>;
                 --card-bg-hover: <?php echo esc_attr($attributes['contentBackgroundHover'] ?? '#f5f5f5'); ?>;
             ">
-                <?php if (has_post_thumbnail($post) && !empty($attributes['displayImage'])): ?>
-                <div class="post-grid-thumnail">
-                    <?php echo get_the_post_thumbnail($post, 'large', array('alt' => get_the_title($post))); ?>
-                </div>
-                <?php endif; ?>
+                    <?php if (has_post_thumbnail($post) && !empty($attributes['displayImage'])): ?>
+                        <div class="post-grid-thumnail">
+                            <?php echo get_the_post_thumbnail($post, 'large', array('alt' => get_the_title($post))); ?>
+                        </div>
+                    <?php endif; ?>
 
-                <div class="content-body" style="
-             
-                        <?php echo get_padding_css('padding' ,$attributes['contentPadding']['Desktop']); ?>;
-                        --contentPadding-desktop: <?php echo get_padding_css('padding' ,$attributes['contentPadding']['Desktop']); ?>;
-                        
-                     
+                    <div class="content-body" style="
+
+                        --contentPadding-desktop: <?php echo get_padding_css($attributes['contentPadding']['Desktop']); ?>;
+                        --contentPadding-mobile: <?php echo get_padding_css($attributes['contentPadding']['Mobile']); ?>;
+                        --contentPadding-tablet: <?php echo get_padding_css($attributes['contentPadding']['Tablet']); ?>;    
+                
+                        --contentMargin-desktop: <?php echo get_padding_css($attributes['contentMargin']['Desktop']); ?>;
+                        --contentMargin-mobile: <?php echo get_padding_css($attributes['contentMargin']['Mobile']); ?>;
+                        --contentMargin-tablet: <?php echo get_padding_css($attributes['contentMargin']['Tablet']); ?>;    
                 ">
-                    <?php if (!empty($attributes['showTitle'])): ?>
-                    <div class=" post-grid-title">
-                        <h5 style="text-align: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;">
-                            <a href="<?php the_permalink($post); ?>" style="
+                        <?php if (!empty($attributes['showTitle'])): ?>
+                            <div class=" post-grid-title">
+                                <h5 style="text-align: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>; 
+
+                                --titleMargin-desktop: <?php echo get_padding_css($attributes['titleMargin']['Desktop']); ?>;
+                                --titleMargin-mobile: <?php echo get_padding_css($attributes['titleMargin']['Mobile']); ?>;
+                                --titleMargin-tablet: <?php echo get_padding_css($attributes['titleMargin']['Tablet']); ?>;    
+                                ">
+                                    <a href="<?php the_permalink($post); ?>" style="
                                     --titleColor: <?php echo esc_attr($attributes['titleColor'] ?? '#000'); ?>;
                                     --titleHoverColor: <?php echo esc_attr($attributes['titleHoverColor'] ?? '#555'); ?>;
                                 ">
-                                <?php echo esc_html(get_the_title($post)); ?>
-                            </a>
-                        </h5>
-                    </div>
-                    <?php endif; ?>
+                                        <?php echo esc_html(get_the_title($post)); ?>
+                                    </a>
+                                </h5>
+                            </div>
+                        <?php endif; ?>
 
-                    <?php if (!empty($attributes['showMeta'])): ?>
-                    <div class="post-grid-meta" style="
+                        <?php if (!empty($attributes['showMeta'])): ?>
+                            <div class="post-grid-meta" style="
                             --metaTextAlign: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;
                             --metaHoverColor: <?php echo esc_attr($attributes['metaHoverColor'] ?? '#999'); ?>;
                             --metaColor: <?php echo esc_attr($attributes['metaColor'] ?? '#777'); ?>;
-                            --metaMarginTop: <?php echo esc_attr($attributes['metaMargin']['top'] ?? '10px'); ?>;
-                            --metaMarginBottom: <?php echo esc_attr($attributes['metaMargin']['bottom'] ?? '10px'); ?>;
-                            --metaMarginLeft: <?php echo esc_attr($attributes['metaMargin']['left'] ?? '0'); ?>;
-                            --metaMarginRight: <?php echo esc_attr($attributes['metaMargin']['right'] ?? '0'); ?>;
+                
+
+                            
+                                --metaMargin-desktop: <?php echo get_padding_css($attributes['metaMargin']['Desktop']); ?>;
+                                --metaMargin-mobile: <?php echo get_padding_css($attributes['metaMargin']['Mobile']); ?>;
+                                --metaMargin-tablet: <?php echo get_padding_css($attributes['metaMargin']['Tablet']); ?>;  
                         ">
-                        <span>By <?php echo esc_html(get_the_author_meta('display_name', $post->post_author)); ?></span>
-                        <time datetime="<?php echo esc_attr(get_the_date('c', $post)); ?>">
-                            <?php echo esc_html(get_the_date('', $post)); ?>
-                        </time>
-                    </div>
-                    <?php endif; ?>
+                                <span>By <?php echo esc_html(get_the_author_meta('display_name', $post->post_author)); ?></span>
+                                <time datetime="<?php echo esc_attr(get_the_date('c', $post)); ?>">
+                                    <?php echo esc_html(get_the_date('', $post)); ?>
+                                </time>
+                            </div>
+                        <?php endif; ?>
 
-                    <?php if (!empty($attributes['showExcerpt'])): ?>
-                    <div class="post-grid-excerpt"
-                        style="text-align: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;">
-                        <p><?php echo esc_html(truncate_excerpt(get_the_excerpt($post), $attributes['excerptMaxWords'] ?? 30)); ?>
-                        </p>
-                    </div>
-                    <?php endif; ?>
+                        <?php if (!empty($attributes['showExcerpt'])): ?>
+                            <div class="post-grid-excerpt" style="text-align: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;
+                                
+                                  --desMargin-desktop: <?php echo get_padding_css($attributes['desMargin']['Desktop']); ?>;
+                                --desMargin-mobile: <?php echo get_padding_css($attributes['desMargin']['Mobile']); ?>;
+                                --desMargin-tablet: <?php echo get_padding_css($attributes['desMargin']['Tablet']); ?>;  
+                                
+                                
+                                ">
+                                <p><?php echo esc_html(truncate_excerpt(get_the_excerpt($post), $attributes['excerptMaxWords'] ?? 30)); ?>
+                                </p>
+                            </div>
+                        <?php endif; ?>
 
-                    <?php if (!empty($attributes['readMore'])): ?>
-                    <div class="post-grid-btn"
-                        style="text-align: <?php echo esc_attr($attributes['readMoreAlignment'] ?? 'left'); ?>;">
-                        <a href="<?php the_permalink($post); ?>" class="read-more-link" style="
+                        <?php if (!empty($attributes['readMore'])): ?>
+                            <div class="post-grid-btn"
+                                style="text-align: <?php echo esc_attr($attributes['readMoreAlignment'] ?? 'left'); ?>;">
+                                <a href="<?php the_permalink($post); ?>" class="read-more-link" style="
                                 --readMoreColor: <?php echo esc_attr($attributes['readMoreColor'] ?? '#fff'); ?>;
                                 --readMoreBackground: <?php echo esc_attr($attributes['readMoreBackground'] ?? '#0073aa'); ?>;
                                 --readMoreColorHover: <?php echo esc_attr($attributes['readMoreColorHover'] ?? '#fff'); ?>;
                                 --readMoreBackgroundHover: <?php echo esc_attr($attributes['readMoreBackgroundHover'] ?? '#005177'); ?>;
-                                --readMorePaddingTop: <?php echo esc_attr($attributes['readMorePadding']['top'] ?? '0px'); ?>;
-                                --readMorePaddingRight: <?php echo esc_attr($attributes['readMorePadding']['right'] ?? '0px'); ?>;
-                                --readMorePaddingBottom: <?php echo esc_attr($attributes['readMorePadding']['bottom'] ?? '0px'); ?>;
-                                --readMorePaddingLeft: <?php echo esc_attr($attributes['readMorePadding']['left'] ?? '0px'); ?>;
-                                --readMoreMarginTop: <?php echo esc_attr($attributes['readMoreMargin']['top'] ?? '0px'); ?>;
-                                --readMoreMarginRight: <?php echo esc_attr($attributes['readMoreMargin']['right'] ?? '0px'); ?>;
-                                --readMoreMarginBottom: <?php echo esc_attr($attributes['readMoreMargin']['bottom'] ?? '0px'); ?>;
-                                --readMoreMarginLeft: <?php echo esc_attr($attributes['readMoreMargin']['left'] ?? '0px'); ?>;
+
+                                --readMorePadding-desktop: <?php echo get_padding_css($attributes['readMorePadding']['Desktop']); ?>;
+                                --readMorePadding-mobile: <?php echo get_padding_css($attributes['readMorePadding']['Mobile']); ?>;
+                                --readMorePadding-tablet: <?php echo get_padding_css($attributes['readMorePadding']['Tablet']); ?>;  
+
+
+                                --readMoreMargin-desktop: <?php echo get_padding_css($attributes['readMoreMargin']['Desktop']); ?>;
+                                --readMoreMargin-mobile: <?php echo get_padding_css($attributes['readMoreMargin']['Mobile']); ?>;
+                                --readMoreMargin-tablet: <?php echo get_padding_css($attributes['readMoreMargin']['Tablet']); ?>;  
+                            
                             ">
-                            <span><?php esc_html_e('Read More', 'postgrid'); ?></span>
-                        </a>
-                    </div>
-                    <?php endif; ?>
-                </div> <!-- /.content-body -->
-            </div> <!-- /.grid-card -->
+                                    <span><?php esc_html_e('Read More', 'postgrid'); ?></span>
+                                </a>
+                            </div>
+                        <?php endif; ?>
+                    </div> <!-- /.content-body -->
+                </div> <!-- /.grid-card -->
             <?php endforeach;
             wp_reset_postdata(); ?>
 
@@ -155,27 +174,27 @@ $encoded_attr = esc_attr(wp_json_encode($attributes));
 
 
         <?php if ($pagination > $paged && !empty($attributes['useAjaxPagination'])): ?>
-        <div class="pagination ajax-pagination">
+            <div class="pagination ajax-pagination">
 
-            <!-- Prev Button -->
-            <button class="pg-prev" <?php echo $paged <= 1 ? 'disabled' : ''; ?>
-                data-page="<?php echo max(1, $paged - 1); ?>">
-                Prev
-            </button>
+                <!-- Prev Button -->
+                <button class="pg-prev" <?php echo $paged <= 1 ? 'disabled' : ''; ?>
+                    data-page="<?php echo max(1, $paged - 1); ?>">
+                    Prev
+                </button>
 
-            <?php for ($i = 1; $i <= $pagination; $i++): ?>
-            <button class="pg-page <?php echo $i === $paged ? 'active' : ''; ?>" data-page="<?php echo $i; ?>">
-                <?php echo $i; ?>
-            </button>
-            <?php endfor; ?>
+                <?php for ($i = 1; $i <= $pagination; $i++): ?>
+                    <button class="pg-page <?php echo $i === $paged ? 'active' : ''; ?>" data-page="<?php echo $i; ?>">
+                        <?php echo $i; ?>
+                    </button>
+                <?php endfor; ?>
 
-            <!-- Next Button -->
-            <button class="pg-next" <?php echo $paged >= $pagination ? 'disabled' : ''; ?>
-                data-page="<?php echo min($pagination, $paged + 1); ?>">
-                Next
-            </button>
+                <!-- Next Button -->
+                <button class="pg-next" <?php echo $paged >= $pagination ? 'disabled' : ''; ?>
+                    data-page="<?php echo min($pagination, $paged + 1); ?>">
+                    Next
+                </button>
 
-        </div>
+            </div>
         <?php endif; ?>
 
 

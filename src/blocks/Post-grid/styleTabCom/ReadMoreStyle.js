@@ -1,7 +1,7 @@
-import { BoxControl, ColorPalette, PanelBody } from '@wordpress/components';
+import { ColorPalette, PanelBody } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import GroupButton from './../../../components/GroupButton';
-
+import Spacing from './../../../components/Spacing';
 export default function ReadMoreStyle( {
 	readMoreBackgroundActive,
 	readMoreBackgroundHover,
@@ -93,35 +93,18 @@ export default function ReadMoreStyle( {
 			</div>
 
 			<PanelBody title="Spacing" initialOpen={ false }>
-				<BoxControl
-					label={ __( 'Padding', 'postgrid' ) }
-					units={ [
-						{ label: 'px', value: 'px' },
-						{ label: '%', value: '%' },
-						{ label: 'em', value: 'em' },
-						{ label: 'rem', value: 'rem' },
-						{ label: 'vw', value: 'vw' },
-						{ label: 'vh', value: 'vh' },
-					] }
-					values={ readMorePadding }
-					onChange={ ( newPadding ) =>
-						setAttributes( { readMorePadding: newPadding } )
-					}
+				<Spacing
+					setAttributes={ setAttributes }
+					space={ readMorePadding }
+					label="Padding"
+					attributesKey="readMorePadding"
 				/>
-				<BoxControl
-					label={ __( 'Margin', 'postgrid' ) }
-					units={ [
-						{ label: 'px', value: 'px' },
-						{ label: '%', value: '%' },
-						{ label: 'em', value: 'em' },
-						{ label: 'rem', value: 'rem' },
-						{ label: 'vw', value: 'vw' },
-						{ label: 'vh', value: 'vh' },
-					] }
-					values={ readMoreMargin }
-					onChange={ ( newPadding ) =>
-						setAttributes( { readMoreMargin: newPadding } )
-					}
+
+				<Spacing
+					setAttributes={ setAttributes }
+					space={ readMoreMargin }
+					label="Margin"
+					attributesKey="readMoreMargin"
 				/>
 			</PanelBody>
 		</PanelBody>

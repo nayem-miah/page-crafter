@@ -180,11 +180,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/table-of-contents.js");
 /* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/styles.js");
 /* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/cog.js");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/Info-box/editor.scss");
-/* harmony import */ var _tab_AdvanceTab__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./tab/AdvanceTab */ "./src/blocks/Info-box/tab/AdvanceTab.js");
-/* harmony import */ var _tab_GeneralTab__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tab/GeneralTab */ "./src/blocks/Info-box/tab/GeneralTab.js");
-/* harmony import */ var _tab_StyleTab__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./tab/StyleTab */ "./src/blocks/Info-box/tab/StyleTab.js");
-/* harmony import */ var _utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../utils/spacingFormat */ "./src/utils/spacingFormat.js");
+/* harmony import */ var _utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/spacingFormat */ "./src/utils/spacingFormat.js");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/Info-box/editor.scss");
+/* harmony import */ var _tab_AdvanceTab__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tab/AdvanceTab */ "./src/blocks/Info-box/tab/AdvanceTab.js");
+/* harmony import */ var _tab_GeneralTab__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./tab/GeneralTab */ "./src/blocks/Info-box/tab/GeneralTab.js");
+/* harmony import */ var _tab_StyleTab__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./tab/StyleTab */ "./src/blocks/Info-box/tab/StyleTab.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__);
 
@@ -250,18 +250,18 @@ function Edit({
     readMoreUrl
   } = attributes;
   const style = {
-    '--padding-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(padding?.Desktop),
-    '--padding-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(padding?.Tablet),
-    '--padding-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(padding?.Mobile),
-    '--margin-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(margin?.Desktop),
-    '--margin-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(margin?.Tablet),
-    '--margin-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(margin?.Mobile),
-    '--BorderWidth-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(BorderWidth?.Desktop),
-    '--BorderWidth-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(BorderWidth?.Tablet),
-    '--BorderWidth-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(BorderWidth?.Mobile),
-    '--BorderRadius-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(BorderRadius?.Desktop),
-    '--BorderRadius-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(BorderRadius?.Tablet),
-    '--BorderRadius-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(BorderRadius?.Mobile),
+    '--padding-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(padding?.Desktop),
+    '--padding-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(padding?.Tablet),
+    '--padding-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(padding?.Mobile),
+    '--margin-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(margin?.Desktop),
+    '--margin-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(margin?.Tablet),
+    '--margin-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(margin?.Mobile),
+    '--BorderWidth-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(BorderWidth?.Desktop),
+    '--BorderWidth-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(BorderWidth?.Tablet),
+    '--BorderWidth-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(BorderWidth?.Mobile),
+    '--BorderRadius-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(BorderRadius?.Desktop),
+    '--BorderRadius-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(BorderRadius?.Tablet),
+    '--BorderRadius-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(BorderRadius?.Mobile),
     '--BorderType': BorderType || 'solid',
     '--borderColor': borderColor || 'transparent',
     '--borderHoverColor': borderHoverColor || 'transparent',
@@ -269,9 +269,9 @@ function Edit({
     '--backgroundHover': backgroundHover || 'transparent',
     '--boxShadow': isBoxShadow && boxShadowColor,
     '--boxShadowHover': isBoxShadow && boxShadowHover,
-    '--boxShadowControl-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(boxShadowControl?.Desktop),
-    '--boxShadowControl-tablet': isBoxShadow && (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(boxShadowControl?.Tablet),
-    '--boxShadowControl-mobile': isBoxShadow && (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(boxShadowControl?.Mobile)
+    '--boxShadowControl-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(boxShadowControl?.Desktop),
+    '--boxShadowControl-tablet': isBoxShadow && (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(boxShadowControl?.Tablet),
+    '--boxShadowControl-mobile': isBoxShadow && (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(boxShadowControl?.Mobile)
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
@@ -306,17 +306,17 @@ function Edit({
         children: tab => {
           switch (tab.name) {
             case 'general':
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_tab_GeneralTab__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_tab_GeneralTab__WEBPACK_IMPORTED_MODULE_6__["default"], {
                 setAttributes: setAttributes,
                 attributes: attributes
               });
             case 'styles':
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_tab_StyleTab__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_tab_StyleTab__WEBPACK_IMPORTED_MODULE_7__["default"], {
                 attributes: attributes,
                 setAttributes: setAttributes
               });
             case 'advanced':
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_tab_AdvanceTab__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_tab_AdvanceTab__WEBPACK_IMPORTED_MODULE_5__["default"], {
                 setAttributes: setAttributes,
                 MobileHide: MobileHide,
                 tabHide: tabHide,
@@ -346,9 +346,9 @@ function Edit({
           style: {
             '--titleColor': titleColor,
             '--titleHoverColor': titleHoverColor,
-            '--TitleMargin-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(titleMargin?.Desktop),
-            '--TitleMargin-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(titleMargin?.Tablet),
-            '--TitleMargin-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(titleMargin?.Mobile)
+            '--TitleMargin-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(titleMargin?.Desktop),
+            '--TitleMargin-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(titleMargin?.Tablet),
+            '--TitleMargin-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(titleMargin?.Mobile)
           },
           placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Title..', 'infobox'),
           tagName: titleTag,
@@ -366,9 +366,9 @@ function Edit({
           style: {
             '--ContentColor': ContentColor,
             '--ContentHoverColor': ContentHoverColor,
-            '--ContentMargin-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(ContentMargin?.Desktop),
-            '--ContentMargin-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(ContentMargin?.Tablet),
-            '--ContentMargin-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(ContentMargin?.Mobile)
+            '--ContentMargin-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(ContentMargin?.Desktop),
+            '--ContentMargin-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(ContentMargin?.Tablet),
+            '--ContentMargin-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(ContentMargin?.Mobile)
           },
           placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Content..', 'infobox'),
           tagName: "p",
@@ -389,18 +389,18 @@ function Edit({
             '--readMoreHoverColor': callActionHoverColor,
             '--readMoreBackground': callActionBack,
             '--readMoreHoverBack': callActionHoverBack,
-            '--callActionPadding-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(callActionPadding?.Desktop),
-            '--callActionPadding-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(callActionPadding?.Tablet),
-            '--callActionPadding-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(callActionPadding?.Mobile),
+            '--callActionPadding-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(callActionPadding?.Desktop),
+            '--callActionPadding-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(callActionPadding?.Tablet),
+            '--callActionPadding-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(callActionPadding?.Mobile),
             '--callBorderType': callActionBorderType,
             '--callBorderColor': callActionborderColor,
             '--callBorderHoverColor': callActionborderHoverColor,
-            '--callBorderWidth-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(callActionBorderWidth?.Desktop),
-            '--callBorderWidth-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(callActionBorderWidth?.Tablet),
-            '--callBorderWidth-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(callActionBorderWidth?.Mobile),
-            '--callBorderRadius-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(callActionBorderRadius?.Desktop),
-            '--callBorderRadius-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(callActionBorderRadius?.Tablet),
-            '--callBorderRadius-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(callActionBorderRadius?.Mobile)
+            '--callBorderWidth-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(callActionBorderWidth?.Desktop),
+            '--callBorderWidth-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(callActionBorderWidth?.Tablet),
+            '--callBorderWidth-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(callActionBorderWidth?.Mobile),
+            '--callBorderRadius-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(callActionBorderRadius?.Desktop),
+            '--callBorderRadius-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(callActionBorderRadius?.Tablet),
+            '--callBorderRadius-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_3__["default"])(callActionBorderRadius?.Mobile)
           },
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("a", {
             href: readMoreUrl,

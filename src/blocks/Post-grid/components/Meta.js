@@ -1,4 +1,5 @@
 import { dateI18n, format, getSettings } from '@wordpress/date';
+import formatSpacing from '../../../utils/spacingFormat';
 export default function Meta( {
 	showMeta,
 	author,
@@ -15,10 +16,18 @@ export default function Meta( {
 					className="post-grid-meta"
 					style={ {
 						'--metaTextAlign': contentAlignment,
-						'--metaMarginTop': metaMargin?.top,
-						'--metaMarginRight': metaMargin?.right,
-						'--metaMarginBottom': metaMargin?.bottom,
-						'--metaMarginLeft': metaMargin?.left,
+				
+
+						'--metaMargin-desktop': formatSpacing(
+							metaMargin?.Desktop
+						),
+						'--metaMargin-tablet': formatSpacing(
+							metaMargin?.Tablet
+						),
+						'--metaMargin-mobile': formatSpacing(
+							metaMargin?.Mobile
+						),
+						
 						'--metaColor': metaColor,
 						'--metaHoverColor': metaHoverColor,
 					} }
