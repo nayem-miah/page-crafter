@@ -58,6 +58,7 @@ export default function Edit( { attributes, setAttributes } ) {
 		isBoxShadow,
 		margin,
 		padding,
+		readMoreUrl,
 	} = attributes;
 
 	const style = {
@@ -82,12 +83,17 @@ export default function Edit( { attributes, setAttributes } ) {
 		'--borderHoverColor': borderHoverColor || 'transparent',
 		'--background': background || 'transparent',
 		'--backgroundHover': backgroundHover || 'transparent',
-		'--boxShadow': isBoxShadow
-			? `${ boxShadowControl.top } ${ boxShadowControl.right } ${ boxShadowControl.bottom } ${ boxShadowControl.left } ${ boxShadowColor }`
-			: 'none',
-		'--boxShadowHover': isBoxShadow
-			? `${ boxShadowControl.top } ${ boxShadowControl.right } ${ boxShadowControl.bottom } ${ boxShadowControl.left } ${ boxShadowHover }`
-			: 'none',
+		'--boxShadow': isBoxShadow && boxShadowColor,
+
+		'--boxShadowHover': isBoxShadow && boxShadowHover,
+
+		'--boxShadowControl-desktop': formatSpacing(
+			boxShadowControl?.Desktop
+		),
+		'--boxShadowControl-tablet':
+			isBoxShadow && formatSpacing( boxShadowControl?.Tablet ),
+		'--boxShadowControl-mobile':
+			isBoxShadow && formatSpacing( boxShadowControl?.Mobile ),
 	};
 	return (
 		<div { ...useBlockProps( { className: additionalClass } ) }>
@@ -266,7 +272,6 @@ export default function Edit( { attributes, setAttributes } ) {
 									callActionBorderWidth?.Mobile
 								),
 
-
 								'--callBorderRadius-desktop': formatSpacing(
 									callActionBorderRadius?.Desktop
 								),
@@ -278,17 +283,22 @@ export default function Edit( { attributes, setAttributes } ) {
 								),
 							} }
 						>
-							<RichText
-								placeholder={ __( 'Read More..', 'infobox' ) }
-								tagName="p"
-								onChange={ ( texts ) =>
-									setAttributes( { readMore: texts } )
-								}
-								value={ readMore }
-							/>
-							{ readMoreIconShow && (
-								<span className={ readMoreIcon }></span>
-							) }
+							<a href={ readMoreUrl }>
+								<RichText
+									placeholder={ __(
+										'Read More..',
+										'infobox'
+									) }
+									tagName="p"
+									onChange={ ( texts ) =>
+										setAttributes( { readMore: texts } )
+									}
+									value={ readMore }
+								/>
+								{ readMoreIconShow && (
+									<span className={ readMoreIcon }></span>
+								) }
+							</a>
 						</div>
 					</div>
 				) }

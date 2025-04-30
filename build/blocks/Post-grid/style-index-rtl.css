@@ -237,6 +237,7 @@
   display: none;
 }
 
+/* Mobile*/
 @media (max-width: 767px) {
   .desktopHide,
   .tabHide {
@@ -244,6 +245,9 @@
   }
   .MobileHide {
     display: none;
+  }
+  .content-body {
+    padding: var(--contentPadding-mobile);
   }
 }
 /* Tablet - 768px to 1024px */
@@ -255,6 +259,9 @@
   .tabHide {
     display: none;
   }
+  .content-body {
+    padding: var(--contentPadding-tablet);
+  }
 }
 /* Desktop - 1025px and up */
 @media (min-width: 1025px) {
@@ -264,5 +271,8 @@
   }
   .desktopHide {
     display: none;
+  }
+  .content-body {
+    padding: var(--contentPadding-desktop);
   }
 }

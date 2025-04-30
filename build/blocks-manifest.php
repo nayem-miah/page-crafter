@@ -74,6 +74,10 @@ return array(
 				'type' => 'boolean',
 				'default' => true
 			),
+			'readMoreUrl' => array(
+				'type' => 'string',
+				'default' => '#'
+			),
 			'showContent' => array(
 				'type' => 'boolean',
 				'default' => true
@@ -358,10 +362,24 @@ return array(
 			'boxShadowControl' => array(
 				'type' => 'object',
 				'default' => array(
-					'top' => '1px',
-					'right' => '1px',
-					'bottom' => '6px',
-					'left' => '2px'
+					'Desktop' => array(
+						'top' => '1px',
+						'right' => '1px',
+						'bottom' => '6px',
+						'left' => '2px'
+					),
+					'Tablet' => array(
+						'top' => '1px',
+						'right' => '1px',
+						'bottom' => '6px',
+						'left' => '2px'
+					),
+					'Mobile' => array(
+						'top' => '1px',
+						'right' => '1px',
+						'bottom' => '6px',
+						'left' => '2px'
+					)
 				)
 			),
 			'isBoxShadow' => array(
@@ -535,10 +553,24 @@ return array(
 			'contentPadding' => array(
 				'type' => 'object',
 				'default' => array(
-					'top' => '0px',
-					'right' => '12px',
-					'bottom' => '24px',
-					'left' => '12px'
+					'Desktop' => array(
+						'top' => '0',
+						'right' => '12',
+						'bottom' => '24',
+						'left' => '12'
+					),
+					'Tablet' => array(
+						'top' => '0',
+						'right' => '12',
+						'bottom' => '24',
+						'left' => '12'
+					),
+					'Mobile' => array(
+						'top' => '0',
+						'right' => '12',
+						'bottom' => '24',
+						'left' => '12'
+					)
 				)
 			),
 			'contentMargin' => array(

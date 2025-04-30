@@ -14,6 +14,7 @@ import ReadButton from './components/ReadButton';
 import Thumnail from './components/Thumnail';
 import Title from './components/Title';
 import './editor.scss';
+import formatSpacing from '../../utils/spacingFormat';
 
 export default function Edit( { attributes, setAttributes } ) {
 	const {
@@ -221,16 +222,21 @@ export default function Edit( { attributes, setAttributes } ) {
 							<div
 								className="content-body"
 								style={ {
-									padding: `${
-										contentPadding?.top || '0px'
-									} ${ contentPadding?.right || '0px' } ${
-										contentPadding?.bottom || '0px'
-									} ${ contentPadding?.left || '0px' }`,
 									margin: `${ contentMargin?.top || '0px' } ${
 										contentMargin?.right || '0px'
 									} ${ contentMargin?.bottom || '0px' } ${
 										contentMargin?.left || '0px'
 									}`,
+
+									'--contentPadding-desktop': formatSpacing(
+										contentPadding?.Desktop
+									),
+									'--contentPadding-tablet': formatSpacing(
+										contentPadding?.Tablet
+									),
+									'--contentPadding-mobile': formatSpacing(
+										contentPadding?.Mobile
+									),
 								} }
 							>
 								<Title

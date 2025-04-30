@@ -8,6 +8,7 @@
 			display: grid;
 			gap: var(--column-gap);
 			grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+
 			.grid-card {
 				background: var(--card-bg);
 				border-color: #dcdcde;
@@ -282,39 +283,53 @@
 	display: none;
 }
 
+/* Mobile*/
+@media (max-width: 767px) {
 
-
-	@media (max-width: 767px) {
-	
-		.desktopHide,
-		.tabHide {
-			display: block; 
-		}
-		.MobileHide {
-			display: none;
-		}
+	.desktopHide,
+	.tabHide {
+		display: block;
 	}
 
-	/* Tablet - 768px to 1024px */
-	@media (min-width: 768px) and (max-width: 1024px) {
-
-		.desktopHide,
-		.MobileHide {
-			display: block;
-		}
-		.tabHide {
-			display: none;
-		}
+	.MobileHide {
+		display: none;
 	}
 
-	/* Desktop - 1025px and up */
-	@media (min-width: 1025px) {
-
-		.MobileHide,
-		.tabHide {
-			display: block;
-		}
-		.desktopHide {
-			display: none;
-		}
+	.content-body {
+		padding: var(--contentPadding-mobile);
 	}
+}
+
+/* Tablet - 768px to 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+	.desktopHide,
+	.MobileHide {
+		display: block;
+	}
+
+	.tabHide {
+		display: none;
+	}
+
+	.content-body {
+		padding: var(--contentPadding-tablet);
+	}
+}
+
+/* Desktop - 1025px and up */
+@media (min-width: 1025px) {
+
+	.MobileHide,
+	.tabHide {
+		display: block;
+	}
+
+	.desktopHide {
+		display: none;
+	}
+
+	.content-body {
+		padding: var(--contentPadding-desktop);
+	}
+}

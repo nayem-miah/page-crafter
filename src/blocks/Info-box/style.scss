@@ -1,20 +1,19 @@
 .wp-block-create-block-infobox {
 	.info-box {
-		background: #ffffff;
-		border-width: var(--BorderWidth);
 		border-color: var(--borderColor);
-		border-radius: var(--BorderRadius);
 		border-style: var(--BorderType);
-		box-shadow: var(--boxShadow);
 		margin: 0px 0px 0px 0px;
 		background: var(--background);
 		margin: var(--margin);
 		padding: var(--padding);
+		transition: 0.4s ease-in-out;
+
 
 		&:hover {
 			border-color: var(--borderHoverColor);
 			background: var(--backgroundHover);
 			box-shadow: var(--boxShadowHover);
+
 
 		}
 
@@ -92,6 +91,7 @@
 					border-style: var(--callBorderType);
 					border-color: var(--callBorderColor);
 					border-radius: var(--callBorderRadius);
+					border-color: var(--callBorderColor);
 
 					&:hover {
 						background: var(--readMoreHoverBack);
@@ -101,10 +101,34 @@
 					}
 				}
 
-				p {
-					margin: 0;
-					font-size: 15px;
+				a {
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+					text-decoration: none;
+					color: var(--readMoreColor);
+
+					font-size: 16px;
+					cursor: pointer;
+
+					&:hover {
+						color: var(--readMoreHoverColor);
+					}
+
+					p {
+						margin: 0;
+						font-size: 15px;
+
+
+					}
+
+					span {
+						margin-left: 5px;
+
+					}
 				}
+
+
 			}
 		}
 	}
@@ -133,6 +157,11 @@
 			margin: var(--margin-mobile);
 			border-width: var(--BorderWidth-mobile);
 			border-radius: var(--BorderRadius-mobile);
+			box-shadow: var(--boxShadowControl-mobile) var(--boxShadow);
+
+			&:hover {
+				box-shadow: var(--boxShadowControl-mobile) var(--boxShadowHover)
+			}
 
 			.info-box__title {
 				.text {
@@ -177,6 +206,11 @@
 			margin: var(--margin-tablet);
 			border-width: var(--BorderWidth-tablet);
 			border-radius: var(--BorderRadius-tablet);
+			box-shadow: var(--boxShadowControl-tablet) var(--boxShadow);
+
+			&:hover {
+				box-shadow: var(--boxShadowControl-tablet) var(--boxShadowHover)
+			}
 
 			.info-box__title {
 				.text {
@@ -222,6 +256,11 @@
 			margin: var(--margin-desktop);
 			border-width: var(--BorderWidth-desktop);
 			border-radius: var(--BorderRadius-desktop);
+			box-shadow: var(--boxShadowControl-desktop) var(--boxShadow);
+
+			&:hover {
+				box-shadow: var(--boxShadowControl-desktop) var(--boxShadowHover)
+			}
 
 			.info-box__title {
 				.text {

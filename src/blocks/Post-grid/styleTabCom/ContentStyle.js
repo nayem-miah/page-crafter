@@ -1,6 +1,7 @@
 import { BoxControl, ColorPalette, PanelBody } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import GroupButton from './../../../components/GroupButton';
+import Spacing from './../../../components/Spacing';
 export default function ContentStyle( {
 	setAttributes,
 	activeBackground,
@@ -97,20 +98,11 @@ export default function ContentStyle( {
 				/>
 			</div>
 			<PanelBody title="Padding" initialOpen={ false }>
-				<BoxControl
-					label={ __( 'Content Padding', 'postgrid' ) }
-					units={ [
-						{ label: 'px', value: 'px' },
-						{ label: '%', value: '%' },
-						{ label: 'em', value: 'em' },
-						{ label: 'rem', value: 'rem' },
-						{ label: 'vw', value: 'vw' },
-						{ label: 'vh', value: 'vh' },
-					] }
-					values={ contentPadding }
-					onChange={ ( newPadding ) =>
-						setAttributes( { contentPadding: newPadding } )
-					}
+				<Spacing
+					setAttributes={ setAttributes }
+					space={ contentPadding }
+					label="Padding"
+					attributesKey="contentPadding"
 				/>
 			</PanelBody>
 			<PanelBody title="Margin" initialOpen={ false }>

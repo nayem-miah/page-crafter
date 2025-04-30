@@ -1,4 +1,4 @@
-import { PanelBody, ToggleControl } from '@wordpress/components';
+import { PanelBody, ToggleControl, TextControl } from '@wordpress/components';
 import { useState } from '@wordpress/element';
 import Alignmnet from '../../../components/Alignment';
 import SelectableButtonGroup from '../../../components/SelectableButtonGroup';
@@ -7,9 +7,9 @@ export default function GeneralTab( { setAttributes, attributes } ) {
 		showContent,
 		showTitle,
 		contentAlign,
-		titleTag,
 		readMoreType,
 		readMoreIconShow,
+		readMoreUrl,
 	} = attributes;
 	const [ openPanel, setOpenPanel ] = useState( 'general' ); // default open panel
 
@@ -77,6 +77,15 @@ export default function GeneralTab( { setAttributes, attributes } ) {
 						} }
 					/>
 				</div>
+
+				<TextControl
+					label="Read More URL"
+					value={ readMoreUrl }
+					onChange={ ( value ) =>
+						setAttributes( { readMoreUrl: value } )
+					}
+					placeholder="My-custom-class"
+				/>
 			</PanelBody>
 		</div>
 	);

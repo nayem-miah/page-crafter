@@ -47,6 +47,7 @@ export default function save( { attributes } ) {
 		isBoxShadow,
 		margin,
 		padding,
+		readMoreUrl,
 	} = attributes;
 
 	const style = {
@@ -68,13 +69,18 @@ export default function save( { attributes } ) {
 		'--borderColor': borderColor || 'transparent',
 		'--borderHoverColor': borderHoverColor || 'transparent',
 		'--background': background || 'transparent',
-		'--backgroundHover': backgroundHover || 'transparent',
-		'--boxShadow': isBoxShadow
-			? `${ boxShadowControl.top } ${ boxShadowControl.right } ${ boxShadowControl.bottom } ${ boxShadowControl.left } ${ boxShadowColor }`
-			: 'none',
-		'--boxShadowHover': isBoxShadow
-			? `${ boxShadowControl.top } ${ boxShadowControl.right } ${ boxShadowControl.bottom } ${ boxShadowControl.left } ${ boxShadowHover }`
-			: 'none',
+		'--backgroundHover': backgroundHover,
+		'--boxShadow': isBoxShadow && boxShadowColor,
+
+		'--boxShadowHover': isBoxShadow && boxShadowHover,
+
+		'--boxShadowControl-desktop': formatSpacing(
+			boxShadowControl?.Desktop
+		),
+		'--boxShadowControl-tablet':
+			isBoxShadow && formatSpacing( boxShadowControl?.Tablet ),
+		'--boxShadowControl-mobile':
+			isBoxShadow && formatSpacing( boxShadowControl?.Mobile ),
 	};
 
 	return (
@@ -192,10 +198,15 @@ export default function save( { attributes } ) {
 								),
 							} }
 						>
-							<RichText.Content tagName="p" value={ readMore } />
-							{ readMoreIconShow && (
-								<span className={ readMoreIcon }></span>
-							) }
+							<a href={ readMoreUrl }>
+								<RichText.Content
+									tagName="p"
+									value={ readMore }
+								/>
+								{ readMoreIconShow && (
+									<span className={ readMoreIcon }></span>
+								) }
+							</a>
 						</div>
 					</div>
 				) }

@@ -156,7 +156,7 @@ const tableOfContents = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODU
   \****************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/infobox","version":"0.1.0","title":"infobox","category":"Page-Crafter","icon":"edit-page","description":"A simple info box block.","keywords":["info","box","pagecrafter"],"example":{},"supports":{"html":false},"attributes":{"additionalClass":{"type":"string","default":""},"desktopHide":{"type":"boolean","default":false},"tabHide":{"type":"boolean","default":false},"MobileHide":{"type":"boolean","default":false},"icon":{"type":"string","default":"fas fa-info-circle"},"title":{"type":"string","default":"Title Here"},"content":{"type":"string","default":"Lorem ipsum dolor sit amet consectetur. Sem leo dictumst ac imperdiet arcu duis tempor non adipiscing."},"readMoreAlign":{"type":"string","default":"center"},"readMore":{"type":"string","default":"Read More"},"readMoreType":{"type":"string","default":"Button"},"readMoreLink":{"type":"string","default":"#"},"readMoreIcon":{"type":"string","default":"fas fa-arrow-right"},"readMoreIconShow":{"type":"boolean","default":true},"showContent":{"type":"boolean","default":true},"showTitle":{"type":"boolean","default":true},"contentAlign":{"type":"string","default":"center"},"titleTag":{"type":"string","default":"h3"},"titleColor":{"type":"string","default":"#000000"},"titleHoverColor":{"type":"string","default":"#000000"},"activeColor":{"type":"string","default":"default"},"titleMargin":{"type":"object","default":{"Desktop":{"top":"1","right":"1","bottom":"1","left":"1"},"Tablet":{"top":"1","right":"1","bottom":"1","left":"1"},"Mobile":{"top":"1","right":"1","bottom":"1","left":"1"}}},"ContentColor":{"type":"string","default":"#000000"},"ContentHoverColor":{"type":"string","default":"#000000"},"activeContentColor":{"type":"string","default":"default"},"ContentMargin":{"type":"object","default":{"Desktop":{"top":"1","right":"1","bottom":"12","left":"1"},"Tablet":{"top":"1","right":"1","bottom":"12","left":"1"},"Mobile":{"top":"1","right":"1","bottom":"12","left":"1"}}},"callActionColor":{"type":"string","default":"#FFFFFF"},"callActionHoverColor":{"type":"string","default":"#F0FDF4"},"activeCallActionColor":{"type":"string","default":"default"},"callActionBack":{"type":"string","default":"#10B981"},"callActionHoverBack":{"type":"string","default":"#059669"},"activeCallActionBack":{"type":"string","default":"default"},"callActionPadding":{"type":"object","default":{"Desktop":{"top":"8","right":"20","bottom":"8","left":"20"},"Tablet":{"top":"8","right":"20","bottom":"8","left":"20"},"Mobile":{"top":"8","right":"20","bottom":"8","left":"20"}}},"callActionBorderType":{"type":"string","default":"solid"},"callActionBorderWidth":{"type":"object","default":{"Desktop":{"top":"0","right":"0","bottom":"0","left":"0"},"Tablet":{"top":"0","right":"0","bottom":"0","left":"0"},"Mobile":{"top":"0","right":"0","bottom":"0","left":"0"}}},"callActionborderColor":{"type":"string","default":"#000000"},"callActionborderHoverColor":{"type":"string","default":"#000000"},"ActiveCallActionborderColor":{"type":"string","default":"default"},"callActionBorderRadius":{"type":"object","default":{"Desktop":{"top":"0","right":"0","bottom":"0","left":"0"},"Tablet":{"top":"0","right":"0","bottom":"0","left":"0"},"Mobile":{"top":"0","right":"0","bottom":"0","left":"0"}}},"BorderType":{"type":"string","default":"solid"},"BorderWidth":{"type":"object","default":{"Desktop":{"top":"1","right":"1","bottom":"1","left":"1"},"Tablet":{"top":"1","right":"1","bottom":"1","left":"1"},"Mobile":{"top":"1","right":"1","bottom":"1","left":"1"}}},"borderColor":{"type":"string","default":"#000000"},"borderHoverColor":{"type":"string","default":"#000000"},"ActiveBorderColor":{"type":"string","default":"default"},"BorderRadius":{"type":"object","default":{"Desktop":{"top":"1","right":"1","bottom":"1","left":"1"},"Tablet":{"top":"1","right":"1","bottom":"1","left":"1"},"Mobile":{"top":"1","right":"1","bottom":"1","left":"1"}}},"background":{"type":"string","default":"#FFFFFF"},"backgroundHover":{"type":"string","default":"#FFFFFF"},"activeBackground":{"type":"string","default":"default"},"boxShadowColor":{"type":"string","default":"#FFFFFF"},"boxShadowHover":{"type":"string","default":"#F0FDF4"},"ActiveboxShadowColor":{"type":"string","default":"default"},"boxShadowControl":{"type":"object","default":{"top":"1px","right":"1px","bottom":"6px","left":"2px"}},"isBoxShadow":{"type":"boolean","default":false},"padding":{"type":"object","default":{"Desktop":{"top":"42","right":"","bottom":"42","left":""},"Tablet":{"top":"20","right":"","bottom":"20","left":""},"Mobile":{"top":"42","right":"","bottom":"42","left":""}}},"margin":{"type":"object","default":{"Desktop":{"top":"","right":"","bottom":"","left":""},"Tablet":{"top":"","right":"","bottom":"","left":""},"Mobile":{"top":"","right":"","bottom":"","left":""}}}},"textdomain":"infobox","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/infobox","version":"0.1.0","title":"infobox","category":"Page-Crafter","icon":"edit-page","description":"A simple info box block.","keywords":["info","box","pagecrafter"],"example":{},"supports":{"html":false},"attributes":{"additionalClass":{"type":"string","default":""},"desktopHide":{"type":"boolean","default":false},"tabHide":{"type":"boolean","default":false},"MobileHide":{"type":"boolean","default":false},"icon":{"type":"string","default":"fas fa-info-circle"},"title":{"type":"string","default":"Title Here"},"content":{"type":"string","default":"Lorem ipsum dolor sit amet consectetur. Sem leo dictumst ac imperdiet arcu duis tempor non adipiscing."},"readMoreAlign":{"type":"string","default":"center"},"readMore":{"type":"string","default":"Read More"},"readMoreType":{"type":"string","default":"Button"},"readMoreLink":{"type":"string","default":"#"},"readMoreIcon":{"type":"string","default":"fas fa-arrow-right"},"readMoreIconShow":{"type":"boolean","default":true},"readMoreUrl":{"type":"string","default":"#"},"showContent":{"type":"boolean","default":true},"showTitle":{"type":"boolean","default":true},"contentAlign":{"type":"string","default":"center"},"titleTag":{"type":"string","default":"h3"},"titleColor":{"type":"string","default":"#000000"},"titleHoverColor":{"type":"string","default":"#000000"},"activeColor":{"type":"string","default":"default"},"titleMargin":{"type":"object","default":{"Desktop":{"top":"1","right":"1","bottom":"1","left":"1"},"Tablet":{"top":"1","right":"1","bottom":"1","left":"1"},"Mobile":{"top":"1","right":"1","bottom":"1","left":"1"}}},"ContentColor":{"type":"string","default":"#000000"},"ContentHoverColor":{"type":"string","default":"#000000"},"activeContentColor":{"type":"string","default":"default"},"ContentMargin":{"type":"object","default":{"Desktop":{"top":"1","right":"1","bottom":"12","left":"1"},"Tablet":{"top":"1","right":"1","bottom":"12","left":"1"},"Mobile":{"top":"1","right":"1","bottom":"12","left":"1"}}},"callActionColor":{"type":"string","default":"#FFFFFF"},"callActionHoverColor":{"type":"string","default":"#F0FDF4"},"activeCallActionColor":{"type":"string","default":"default"},"callActionBack":{"type":"string","default":"#10B981"},"callActionHoverBack":{"type":"string","default":"#059669"},"activeCallActionBack":{"type":"string","default":"default"},"callActionPadding":{"type":"object","default":{"Desktop":{"top":"8","right":"20","bottom":"8","left":"20"},"Tablet":{"top":"8","right":"20","bottom":"8","left":"20"},"Mobile":{"top":"8","right":"20","bottom":"8","left":"20"}}},"callActionBorderType":{"type":"string","default":"solid"},"callActionBorderWidth":{"type":"object","default":{"Desktop":{"top":"0","right":"0","bottom":"0","left":"0"},"Tablet":{"top":"0","right":"0","bottom":"0","left":"0"},"Mobile":{"top":"0","right":"0","bottom":"0","left":"0"}}},"callActionborderColor":{"type":"string","default":"#000000"},"callActionborderHoverColor":{"type":"string","default":"#000000"},"ActiveCallActionborderColor":{"type":"string","default":"default"},"callActionBorderRadius":{"type":"object","default":{"Desktop":{"top":"0","right":"0","bottom":"0","left":"0"},"Tablet":{"top":"0","right":"0","bottom":"0","left":"0"},"Mobile":{"top":"0","right":"0","bottom":"0","left":"0"}}},"BorderType":{"type":"string","default":"solid"},"BorderWidth":{"type":"object","default":{"Desktop":{"top":"1","right":"1","bottom":"1","left":"1"},"Tablet":{"top":"1","right":"1","bottom":"1","left":"1"},"Mobile":{"top":"1","right":"1","bottom":"1","left":"1"}}},"borderColor":{"type":"string","default":"#000000"},"borderHoverColor":{"type":"string","default":"#000000"},"ActiveBorderColor":{"type":"string","default":"default"},"BorderRadius":{"type":"object","default":{"Desktop":{"top":"1","right":"1","bottom":"1","left":"1"},"Tablet":{"top":"1","right":"1","bottom":"1","left":"1"},"Mobile":{"top":"1","right":"1","bottom":"1","left":"1"}}},"background":{"type":"string","default":"#FFFFFF"},"backgroundHover":{"type":"string","default":"#FFFFFF"},"activeBackground":{"type":"string","default":"default"},"boxShadowColor":{"type":"string","default":"#FFFFFF"},"boxShadowHover":{"type":"string","default":"#F0FDF4"},"ActiveboxShadowColor":{"type":"string","default":"default"},"boxShadowControl":{"type":"object","default":{"Desktop":{"top":"1px","right":"1px","bottom":"6px","left":"2px"},"Tablet":{"top":"1px","right":"1px","bottom":"6px","left":"2px"},"Mobile":{"top":"1px","right":"1px","bottom":"6px","left":"2px"}}},"isBoxShadow":{"type":"boolean","default":false},"padding":{"type":"object","default":{"Desktop":{"top":"42","right":"","bottom":"42","left":""},"Tablet":{"top":"20","right":"","bottom":"20","left":""},"Mobile":{"top":"42","right":"","bottom":"42","left":""}}},"margin":{"type":"object","default":{"Desktop":{"top":"","right":"","bottom":"","left":""},"Tablet":{"top":"","right":"","bottom":"","left":""},"Mobile":{"top":"","right":"","bottom":"","left":""}}}},"textdomain":"infobox","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ }),
 
@@ -246,7 +246,8 @@ function Edit({
     boxShadowControl,
     isBoxShadow,
     margin,
-    padding
+    padding,
+    readMoreUrl
   } = attributes;
   const style = {
     '--padding-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(padding?.Desktop),
@@ -266,8 +267,11 @@ function Edit({
     '--borderHoverColor': borderHoverColor || 'transparent',
     '--background': background || 'transparent',
     '--backgroundHover': backgroundHover || 'transparent',
-    '--boxShadow': isBoxShadow ? `${boxShadowControl.top} ${boxShadowControl.right} ${boxShadowControl.bottom} ${boxShadowControl.left} ${boxShadowColor}` : 'none',
-    '--boxShadowHover': isBoxShadow ? `${boxShadowControl.top} ${boxShadowControl.right} ${boxShadowControl.bottom} ${boxShadowControl.left} ${boxShadowHover}` : 'none'
+    '--boxShadow': isBoxShadow && boxShadowColor,
+    '--boxShadowHover': isBoxShadow && boxShadowHover,
+    '--boxShadowControl-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(boxShadowControl?.Desktop),
+    '--boxShadowControl-tablet': isBoxShadow && (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(boxShadowControl?.Tablet),
+    '--boxShadowControl-mobile': isBoxShadow && (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(boxShadowControl?.Mobile)
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
@@ -378,7 +382,7 @@ function Edit({
         style: {
           '--readMoreAlign': readMoreAlign
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
           className: `info-box__read-more-content ${readMoreType === 'Button' ? 'hasButton' : ''}`,
           style: {
             '--readMoreColor': callActionColor,
@@ -398,16 +402,19 @@ function Edit({
             '--callBorderRadius-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(callActionBorderRadius?.Tablet),
             '--callBorderRadius-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(callActionBorderRadius?.Mobile)
           },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
-            placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Read More..', 'infobox'),
-            tagName: "p",
-            onChange: texts => setAttributes({
-              readMore: texts
-            }),
-            value: readMore
-          }), readMoreIconShow && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-            className: readMoreIcon
-          })]
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("a", {
+            href: readMoreUrl,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Read More..', 'infobox'),
+              tagName: "p",
+              onChange: texts => setAttributes({
+                readMore: texts
+              }),
+              value: readMore
+            }), readMoreIconShow && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+              className: readMoreIcon
+            })]
+          })
         })
       })]
     })]
@@ -524,7 +531,8 @@ function save({
     boxShadowControl,
     isBoxShadow,
     margin,
-    padding
+    padding,
+    readMoreUrl
   } = attributes;
   const style = {
     '--padding-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__["default"])(padding?.Desktop),
@@ -543,9 +551,12 @@ function save({
     '--borderColor': borderColor || 'transparent',
     '--borderHoverColor': borderHoverColor || 'transparent',
     '--background': background || 'transparent',
-    '--backgroundHover': backgroundHover || 'transparent',
-    '--boxShadow': isBoxShadow ? `${boxShadowControl.top} ${boxShadowControl.right} ${boxShadowControl.bottom} ${boxShadowControl.left} ${boxShadowColor}` : 'none',
-    '--boxShadowHover': isBoxShadow ? `${boxShadowControl.top} ${boxShadowControl.right} ${boxShadowControl.bottom} ${boxShadowControl.left} ${boxShadowHover}` : 'none'
+    '--backgroundHover': backgroundHover,
+    '--boxShadow': isBoxShadow && boxShadowColor,
+    '--boxShadowHover': isBoxShadow && boxShadowHover,
+    '--boxShadowControl-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__["default"])(boxShadowControl?.Desktop),
+    '--boxShadowControl-tablet': isBoxShadow && (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__["default"])(boxShadowControl?.Tablet),
+    '--boxShadowControl-mobile': isBoxShadow && (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__["default"])(boxShadowControl?.Mobile)
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
@@ -597,7 +608,7 @@ function save({
         style: {
           '--readMoreAlign': readMoreAlign
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: `info-box__read-more-content ${readMoreType === 'Button' ? 'hasButton' : ''}`,
           style: {
             '--readMoreColor': callActionColor,
@@ -617,12 +628,15 @@ function save({
             '--callBorderRadius-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__["default"])(callActionBorderRadius?.Tablet),
             '--callBorderRadius-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__["default"])(callActionBorderRadius?.Mobile)
           },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
-            tagName: "p",
-            value: readMore
-          }), readMoreIconShow && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-            className: readMoreIcon
-          })]
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
+            href: readMoreUrl,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
+              tagName: "p",
+              value: readMore
+            }), readMoreIconShow && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: readMoreIcon
+            })]
+          })
         })
       })]
     })
@@ -722,9 +736,9 @@ function GeneralTab({
     showContent,
     showTitle,
     contentAlign,
-    titleTag,
     readMoreType,
-    readMoreIconShow
+    readMoreIconShow,
+    readMoreUrl
   } = attributes;
   const [openPanel, setOpenPanel] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)('general'); // default open panel
 
@@ -799,6 +813,13 @@ function GeneralTab({
             });
           }
         })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.TextControl, {
+        label: "Read More URL",
+        value: readMoreUrl,
+        onChange: value => setAttributes({
+          readMoreUrl: value
+        }),
+        placeholder: "My-custom-class"
       })]
     })]
   });
@@ -820,10 +841,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_GroupButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/GroupButton */ "./src/components/GroupButton.js");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_Spacing__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/Spacing */ "./src/components/Spacing.js");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_Spacing__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/Spacing */ "./src/components/Spacing.js");
+/* harmony import */ var _components_ColorPickerGroup__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/ColorPickerGroup */ "./src/components/ColorPickerGroup.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
 
@@ -877,145 +898,29 @@ function StyleTab({
     readMoreType
   } = attributes;
   const [openPanel, setOpenPanel] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)('general');
-  const togglePanel = panelKey => {
-    setOpenPanel(openPanel === panelKey ? null : panelKey);
-  };
-  const currentTitleColor = activeColor === 'default' ? titleColor : titleHoverColor;
-  const currentBoxShadowColor = ActiveboxShadowColor === 'default' ? boxShadowColor : boxShadowHover;
-  const currentContentColor = activeContentColor === 'default' ? ContentColor : ContentHoverColor;
-  const currentCallActionColor = activeCallActionColor === 'default' ? callActionColor : callActionHoverColor;
-  const currentCallActionBackColor = activeCallActionBack === 'default' ? callActionBack : callActionHoverBack;
-  const currentCallActionBorderColor = ActiveCallActionborderColor === 'default' ? callActionborderColor : callActionborderHoverColor;
-  const currentBorderColor = ActiveBorderColor === 'default' ? borderColor : borderHoverColor;
-  const currentBackground = activeBackground === 'default' ? background : backgroundHover;
-  const handleTitleColorChange = color => {
-    if (activeColor === 'default') {
-      setAttributes({
-        titleColor: color
-      });
-    } else {
-      setAttributes({
-        titleHoverColor: color
-      });
-    }
-  };
-  const handleContnetColorChange = color => {
-    if (activeContentColor === 'default') {
-      setAttributes({
-        ContentColor: color
-      });
-    } else {
-      setAttributes({
-        ContentHoverColor: color
-      });
-    }
-  };
-  const handleCallActionColorChange = color => {
-    if (activeCallActionColor === 'default') {
-      setAttributes({
-        callActionColor: color
-      });
-    } else {
-      setAttributes({
-        callActionHoverColor: color
-      });
-    }
-  };
-  const handleBorderColor = color => {
-    if (ActiveBorderColor === 'default') {
-      setAttributes({
-        borderColor: color
-      });
-    } else {
-      setAttributes({
-        borderHoverColor: color
-      });
-    }
-  };
-  const handleCallActionBack = color => {
-    if (activeCallActionBack === 'default') {
-      setAttributes({
-        callActionBack: color
-      });
-    } else {
-      setAttributes({
-        callActionHoverBack: color
-      });
-    }
-  };
-  const handeBorderTypeSelect = value => {
+  const togglePanel = panelKey => setOpenPanel(openPanel === panelKey ? null : panelKey);
+
+  // Utility for conditional color selection
+  const getActiveColor = (defaultColor, hoverColor, activeKey) => activeKey === 'default' ? defaultColor : hoverColor;
+  const handleColorChange = (color, defaultKey, hoverKey, activeKey) => {
     setAttributes({
-      callActionBorderType: value
+      [activeKey === 'default' ? defaultKey : hoverKey]: color
     });
-  };
-  const handleCallActionBorderColor = color => {
-    if (ActiveCallActionborderColor === 'default') {
-      setAttributes({
-        callActionborderColor: color
-      });
-    } else {
-      setAttributes({
-        callActionborderHoverColor: color
-      });
-    }
-  };
-  const handleBackground = value => {
-    if (activeBackground === 'default') {
-      setAttributes({
-        background: value
-      });
-    } else {
-      setAttributes({
-        backgroundHover: value
-      });
-    }
-  };
-  const handleBoxShadow = value => {
-    if (ActiveboxShadowColor === 'default') {
-      setAttributes({
-        boxShadowColor: value
-      });
-    } else {
-      setAttributes({
-        boxShadowHover: value
-      });
-    }
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
       title: "Title",
       opened: openPanel === 'title',
       onToggle: () => togglePanel('title'),
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        style: {
-          marginTop: '16px',
-          marginBottom: '16px'
-        },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("strong", {
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Color', 'postinfo')
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          style: {
-            display: 'flex',
-            justifyContent: 'center',
-            marginTop: '8px'
-          },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_GroupButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            active: activeColor,
-            setAttributes: setAttributes,
-            from: "infoTitleColor"
-          })
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        style: {
-          marginTop: '16px'
-        },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
-          value: currentTitleColor,
-          onChange: handleTitleColorChange,
-          disableCustomColors: false
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Spacing__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        label: 'Title Margin',
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_ColorPickerGroup__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        label: "Color",
+        value: getActiveColor(titleColor, titleHoverColor, activeColor),
+        onChange: color => handleColorChange(color, 'titleColor', 'titleHoverColor', activeColor),
+        activeKey: activeColor,
+        from: "infoTitleColor",
+        setAttributes: setAttributes
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Spacing__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        label: "Title Margin",
         setAttributes: setAttributes,
         space: titleMargin,
         attributesKey: "titleMargin"
@@ -1024,36 +929,15 @@ function StyleTab({
       title: "Content",
       opened: openPanel === 'content',
       onToggle: () => togglePanel('content'),
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        style: {
-          marginTop: '16px',
-          marginBottom: '16px'
-        },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("strong", {
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Color', 'postinfo')
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          style: {
-            display: 'flex',
-            justifyContent: 'center',
-            marginTop: '8px'
-          },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_GroupButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            active: activeContentColor,
-            setAttributes: setAttributes,
-            from: "infoContentColor"
-          })
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        style: {
-          marginTop: '16px'
-        },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
-          value: currentContentColor,
-          onChange: handleContnetColorChange,
-          disableCustomColors: false
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Spacing__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        label: 'Content Margin',
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_ColorPickerGroup__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        label: "Color",
+        value: getActiveColor(ContentColor, ContentHoverColor, activeContentColor),
+        onChange: color => handleColorChange(color, 'ContentColor', 'ContentHoverColor', activeContentColor),
+        activeKey: activeContentColor,
+        from: "infoContentColor",
+        setAttributes: setAttributes
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Spacing__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        label: "Content Margin",
         setAttributes: setAttributes,
         space: ContentMargin,
         attributesKey: "ContentMargin"
@@ -1062,63 +946,21 @@ function StyleTab({
       title: "Call To Action",
       opened: openPanel === 'callAction',
       onToggle: () => togglePanel('callAction'),
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        style: {
-          marginTop: '16px',
-          marginBottom: '16px'
-        },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("strong", {
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Color', 'postinfo')
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          style: {
-            display: 'flex',
-            justifyContent: 'center',
-            marginTop: '8px'
-          },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_GroupButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            active: activeCallActionColor,
-            setAttributes: setAttributes,
-            from: "infoCallActionColor"
-          })
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        style: {
-          marginTop: '16px'
-        },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
-          value: currentCallActionColor,
-          onChange: handleCallActionColorChange,
-          disableCustomColors: false
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        style: {
-          marginTop: '16px',
-          marginBottom: '16px'
-        },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("strong", {
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Background', 'postinfo')
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          style: {
-            display: 'flex',
-            justifyContent: 'center',
-            marginTop: '8px'
-          },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_GroupButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            active: activeCallActionBack,
-            setAttributes: setAttributes,
-            from: "infoCallActionBackColor"
-          })
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        style: {
-          marginTop: '16px'
-        },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
-          value: currentCallActionBackColor,
-          onChange: handleCallActionBack,
-          disableCustomColors: false
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Spacing__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_ColorPickerGroup__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        label: "Color",
+        value: getActiveColor(callActionColor, callActionHoverColor, activeCallActionColor),
+        onChange: color => handleColorChange(color, 'callActionColor', 'callActionHoverColor', activeCallActionColor),
+        activeKey: activeCallActionColor,
+        from: "infoCallActionColor",
+        setAttributes: setAttributes
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_ColorPickerGroup__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        label: "Background",
+        value: getActiveColor(callActionBack, callActionHoverBack, activeCallActionBack),
+        onChange: color => handleColorChange(color, 'callActionBack', 'callActionHoverBack', activeCallActionBack),
+        activeKey: activeCallActionBack,
+        from: "infoCallActionBackColor",
+        setAttributes: setAttributes
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Spacing__WEBPACK_IMPORTED_MODULE_3__["default"], {
         setAttributes: setAttributes,
         space: callActionPadding,
         label: "Padding",
@@ -1126,96 +968,9 @@ function StyleTab({
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
         title: "Border",
         initialOpen: false,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-          style: {
-            marginTop: '16px',
-            marginBottom: '16px'
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("strong", {
-            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Border Type', 'postinfo')
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
-            value: callActionBorderType,
-            options: [{
-              label: 'None',
-              value: 'none'
-            }, {
-              label: 'Solid',
-              value: 'solid'
-            }, {
-              label: 'Dotted',
-              value: 'dotted'
-            }, {
-              label: 'Dashed',
-              value: 'dashed'
-            }, {
-              label: 'Groove',
-              value: 'groove'
-            }, {
-              label: 'Inset',
-              value: 'inset'
-            }, {
-              label: 'Outset',
-              value: 'outset'
-            }, {
-              label: 'Ridge',
-              value: 'ridge'
-            }],
-            onChange: handeBorderTypeSelect,
-            __next40pxDefaultSize: true,
-            __nextHasNoMarginBottom: true
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Spacing__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          setAttributes: setAttributes,
-          space: callActionBorderWidth,
-          label: "Border Width",
-          attributesKey: "callActionBorderWidth"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-          style: {
-            marginTop: '16px',
-            marginBottom: '16px'
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("strong", {
-            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Border Color', 'postinfo')
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-            style: {
-              display: 'flex',
-              justifyContent: 'center',
-              marginTop: '8px'
-            },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_GroupButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
-              active: ActiveCallActionborderColor,
-              setAttributes: setAttributes,
-              from: "infoCallActionBorderColor"
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          style: {
-            marginTop: '16px'
-          },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
-            value: currentCallActionBorderColor,
-            onChange: handleCallActionBorderColor,
-            disableCustomColors: false
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Spacing__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          setAttributes: setAttributes,
-          space: callActionBorderRadius,
-          label: "Border Radius",
-          attributesKey: "callActionBorderRadius"
-        })]
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
-      title: "Border",
-      initialOpen: false,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        style: {
-          marginTop: '16px',
-          marginBottom: '16px'
-        },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("strong", {
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Border Type', 'postinfo')
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
-          value: BorderType,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Border Type', 'postinfo'),
+          value: callActionBorderType,
           options: [{
             label: 'None',
             value: 'none'
@@ -1241,131 +996,113 @@ function StyleTab({
             label: 'Ridge',
             value: 'ridge'
           }],
-          onChange: value => {
-            setAttributes({
-              BorderType: value
-            });
-          },
-          __next40pxDefaultSize: true,
-          __nextHasNoMarginBottom: true
+          onChange: val => setAttributes({
+            callActionBorderType: val
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Spacing__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          setAttributes: setAttributes,
+          space: callActionBorderWidth,
+          label: "Border Width",
+          attributesKey: "callActionBorderWidth"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_ColorPickerGroup__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          label: "Border Color",
+          value: getActiveColor(callActionborderColor, callActionborderHoverColor, ActiveCallActionborderColor),
+          onChange: color => handleColorChange(color, 'callActionborderColor', 'callActionborderHoverColor', ActiveCallActionborderColor),
+          activeKey: ActiveCallActionborderColor,
+          from: "infoCallActionBorderColor",
+          setAttributes: setAttributes
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Spacing__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          setAttributes: setAttributes,
+          space: callActionBorderRadius,
+          label: "Border Radius",
+          attributesKey: "callActionBorderRadius"
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Spacing__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+      title: "Border",
+      initialOpen: false,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Border Type', 'postinfo'),
+        value: BorderType,
+        options: [{
+          label: 'None',
+          value: 'none'
+        }, {
+          label: 'Solid',
+          value: 'solid'
+        }, {
+          label: 'Dotted',
+          value: 'dotted'
+        }, {
+          label: 'Dashed',
+          value: 'dashed'
+        }, {
+          label: 'Groove',
+          value: 'groove'
+        }, {
+          label: 'Inset',
+          value: 'inset'
+        }, {
+          label: 'Outset',
+          value: 'outset'
+        }, {
+          label: 'Ridge',
+          value: 'ridge'
+        }],
+        onChange: val => setAttributes({
+          BorderType: val
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Spacing__WEBPACK_IMPORTED_MODULE_3__["default"], {
         setAttributes: setAttributes,
         space: BorderWidth,
         label: "Border Width",
         attributesKey: "BorderWidth"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        style: {
-          marginTop: '16px',
-          marginBottom: '16px'
-        },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("strong", {
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Border Color', 'postinfo')
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          style: {
-            display: 'flex',
-            justifyContent: 'center',
-            marginTop: '8px'
-          },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_GroupButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            active: ActiveBorderColor,
-            setAttributes: setAttributes,
-            from: "infoBorderColor"
-          })
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        style: {
-          marginTop: '16px'
-        },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
-          value: currentBorderColor,
-          onChange: handleBorderColor,
-          disableCustomColors: false
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Spacing__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_ColorPickerGroup__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        label: "Border Color",
+        value: getActiveColor(borderColor, borderHoverColor, ActiveBorderColor),
+        onChange: color => handleColorChange(color, 'borderColor', 'borderHoverColor', ActiveBorderColor),
+        activeKey: ActiveBorderColor,
+        from: "infoBorderColor",
+        setAttributes: setAttributes
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Spacing__WEBPACK_IMPORTED_MODULE_3__["default"], {
         setAttributes: setAttributes,
         space: BorderRadius,
         label: "Border Radius",
         attributesKey: "BorderRadius"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
       title: "Background",
       initialOpen: false,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        style: {
-          marginTop: '16px',
-          marginBottom: '16px'
-        },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("strong", {
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Background', 'postinfo')
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          style: {
-            display: 'flex',
-            justifyContent: 'center',
-            marginTop: '8px'
-          },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_GroupButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            active: activeBackground,
-            setAttributes: setAttributes,
-            from: "infoBackground"
-          })
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        style: {
-          marginTop: '16px'
-        },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
-          value: currentBackground,
-          onChange: handleBackground,
-          disableCustomColors: false
-        })
-      })]
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_ColorPickerGroup__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        label: "Background",
+        value: getActiveColor(background, backgroundHover, activeBackground),
+        onChange: color => handleColorChange(color, 'background', 'backgroundHover', activeBackground),
+        activeKey: activeBackground,
+        from: "infoBackground",
+        setAttributes: setAttributes
+      })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
       title: "Box-Shadow",
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Box-Shadow', 'infobox'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Box-Shadow', 'infobox'),
         checked: isBoxShadow,
-        onChange: value => {
-          setAttributes({
-            isBoxShadow: value
-          });
-        }
+        onChange: val => setAttributes({
+          isBoxShadow: val
+        })
       }), isBoxShadow && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.BoxControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Shadow', 'postInfo'),
-          values: boxShadowControl,
-          onChange: newMargin => setAttributes({
-            boxShadowControl: newMargin
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-          style: {
-            marginTop: '16px',
-            marginBottom: '16px'
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("strong", {
-            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Shadow Color', 'postinfo')
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-            style: {
-              display: 'flex',
-              justifyContent: 'center',
-              marginTop: '8px'
-            },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_GroupButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
-              active: ActiveboxShadowColor,
-              setAttributes: setAttributes,
-              from: "infoBoxShadow"
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          style: {
-            marginTop: '16px'
-          },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
-            value: currentBoxShadowColor,
-            onChange: handleBoxShadow,
-            disableCustomColors: false
-          })
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Spacing__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          setAttributes: setAttributes,
+          space: boxShadowControl,
+          label: "Shadow",
+          attributesKey: "boxShadowControl"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_ColorPickerGroup__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          label: "Shadow Color",
+          value: getActiveColor(boxShadowColor, boxShadowHover, ActiveboxShadowColor),
+          onChange: color => handleColorChange(color, 'boxShadowColor', 'boxShadowHover', ActiveboxShadowColor),
+          activeKey: ActiveboxShadowColor,
+          from: "infoBoxShadow",
+          setAttributes: setAttributes
         })]
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
@@ -1374,7 +1111,7 @@ function StyleTab({
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
         title: "Padding",
         initialOpen: false,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Spacing__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Spacing__WEBPACK_IMPORTED_MODULE_3__["default"], {
           label: 'Padding',
           setAttributes: setAttributes,
           space: padding,
@@ -1383,7 +1120,7 @@ function StyleTab({
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
         title: "Margin",
         initialOpen: false,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Spacing__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Spacing__WEBPACK_IMPORTED_MODULE_3__["default"], {
           label: 'Margin',
           setAttributes: setAttributes,
           space: margin,
@@ -1462,6 +1199,71 @@ function Alignment({
     })]
   });
 }
+
+/***/ }),
+
+/***/ "./src/components/ColorPickerGroup.js":
+/*!********************************************!*\
+  !*** ./src/components/ColorPickerGroup.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _GroupButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GroupButton */ "./src/components/GroupButton.js");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+const ColorPickerGroup = ({
+  label,
+  value,
+  onChange,
+  activeKey,
+  from,
+  setAttributes = {
+    setAttributes
+  }
+}) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    style: {
+      marginTop: '16px',
+      marginBottom: '16px'
+    },
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("strong", {
+      children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(label, 'postinfo')
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      style: {
+        display: 'flex',
+        justifyContent: 'center',
+        marginTop: '8px'
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_GroupButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        active: activeKey,
+        setAttributes: setAttributes,
+        from: from
+      })
+    })]
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    style: {
+      marginTop: '16px'
+    },
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPalette, {
+      value: value,
+      onChange: onChange,
+      disableCustomColors: false
+    })
+  })]
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ColorPickerGroup);
 
 /***/ }),
 

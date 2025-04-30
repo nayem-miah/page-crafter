@@ -1,15 +1,13 @@
 import {
 	BoxControl,
-	ColorPalette,
 	PanelBody,
 	SelectControl,
 	ToggleControl,
 } from '@wordpress/components';
 import { useState } from '@wordpress/element';
-import GroupButton from '../../../components/GroupButton';
-
 import { __ } from '@wordpress/i18n';
 import Spacing from '../../../components/Spacing';
+import ColorPickerGroup from '../../../components/ColorPickerGroup';
 
 export default function StyleTab( { attributes, setAttributes } ) {
 	const {
@@ -52,112 +50,19 @@ export default function StyleTab( { attributes, setAttributes } ) {
 		padding,
 		readMoreType,
 	} = attributes;
+
 	const [ openPanel, setOpenPanel ] = useState( 'general' );
-	const togglePanel = ( panelKey ) => {
+	const togglePanel = ( panelKey ) =>
 		setOpenPanel( openPanel === panelKey ? null : panelKey );
-	};
 
-	const currentTitleColor =
-		activeColor === 'default' ? titleColor : titleHoverColor;
+	// Utility for conditional color selection
+	const getActiveColor = ( defaultColor, hoverColor, activeKey ) =>
+		activeKey === 'default' ? defaultColor : hoverColor;
 
-	const currentBoxShadowColor =
-		ActiveboxShadowColor === 'default' ? boxShadowColor : boxShadowHover;
-	const currentContentColor =
-		activeContentColor === 'default' ? ContentColor : ContentHoverColor;
-
-	const currentCallActionColor =
-		activeCallActionColor === 'default'
-			? callActionColor
-			: callActionHoverColor;
-
-	const currentCallActionBackColor =
-		activeCallActionBack === 'default'
-			? callActionBack
-			: callActionHoverBack;
-
-	const currentCallActionBorderColor =
-		ActiveCallActionborderColor === 'default'
-			? callActionborderColor
-			: callActionborderHoverColor;
-
-	const currentBorderColor =
-		ActiveBorderColor === 'default' ? borderColor : borderHoverColor;
-
-	const currentBackground =
-		activeBackground === 'default' ? background : backgroundHover;
-
-	const handleTitleColorChange = ( color ) => {
-		if ( activeColor === 'default' ) {
-			setAttributes( { titleColor: color } );
-		} else {
-			setAttributes( { titleHoverColor: color } );
-		}
-	};
-
-	const handleContnetColorChange = ( color ) => {
-		if ( activeContentColor === 'default' ) {
-			setAttributes( { ContentColor: color } );
-		} else {
-			setAttributes( { ContentHoverColor: color } );
-		}
-	};
-	const handleCallActionColorChange = ( color ) => {
-		if ( activeCallActionColor === 'default' ) {
-			setAttributes( { callActionColor: color } );
-		} else {
-			setAttributes( { callActionHoverColor: color } );
-		}
-	};
-
-	const handleBorderColor = ( color ) => {
-		if ( ActiveBorderColor === 'default' ) {
-			setAttributes( { borderColor: color } );
-		} else {
-			setAttributes( { borderHoverColor: color } );
-		}
-	};
-
-	const handleCallActionBack = ( color ) => {
-		if ( activeCallActionBack === 'default' ) {
-			setAttributes( { callActionBack: color } );
-		} else {
-			setAttributes( { callActionHoverBack: color } );
-		}
-	};
-
-	const handeBorderTypeSelect = ( value ) => {
-		setAttributes( { callActionBorderType: value } );
-	};
-	const handleCallActionBorderColor = ( color ) => {
-		if ( ActiveCallActionborderColor === 'default' ) {
-			setAttributes( { callActionborderColor: color } );
-		} else {
-			setAttributes( { callActionborderHoverColor: color } );
-		}
-	};
-
-	const handleBackground = ( value ) => {
-		if ( activeBackground === 'default' ) {
-			setAttributes( {
-				background: value,
-			} );
-		} else {
-			setAttributes( {
-				backgroundHover: value,
-			} );
-		}
-	};
-
-	const handleBoxShadow = ( value ) => {
-		if ( ActiveboxShadowColor === 'default' ) {
-			setAttributes( {
-				boxShadowColor: value,
-			} );
-		} else {
-			setAttributes( {
-				boxShadowHover: value,
-			} );
-		}
+	const handleColorChange = ( color, defaultKey, hoverKey, activeKey ) => {
+		setAttributes( {
+			[ activeKey === 'default' ? defaultKey : hoverKey ]: color,
+		} );
 	};
 
 	return (
@@ -167,33 +72,28 @@ export default function StyleTab( { attributes, setAttributes } ) {
 				opened={ openPanel === 'title' }
 				onToggle={ () => togglePanel( 'title' ) }
 			>
-				<div style={ { marginTop: '16px', marginBottom: '16px' } }>
-					<strong>{ __( 'Color', 'postinfo' ) }</strong>
-					<div
-						style={ {
-							display: 'flex',
-							justifyContent: 'center',
-							marginTop: '8px',
-						} }
-					>
-						<GroupButton
-							active={ activeColor }
-							setAttributes={ setAttributes }
-							from="infoTitleColor"
-						/>
-					</div>
-				</div>
-
-				<div style={ { marginTop: '16px' } }>
-					<ColorPalette
-						value={ currentTitleColor }
-						onChange={ handleTitleColorChange }
-						disableCustomColors={ false }
-					/>
-				</div>
+				<ColorPickerGroup
+					label="Color"
+					value={ getActiveColor(
+						titleColor,
+						titleHoverColor,
+						activeColor
+					) }
+					onChange={ ( color ) =>
+						handleColorChange(
+							color,
+							'titleColor',
+							'titleHoverColor',
+							activeColor
+						)
+					}
+					activeKey={ activeColor }
+					from="infoTitleColor"
+					setAttributes={ setAttributes }
+				/>
 
 				<Spacing
-					label={ 'Title Margin' }
+					label="Title Margin"
 					setAttributes={ setAttributes }
 					space={ titleMargin }
 					attributesKey="titleMargin"
@@ -205,33 +105,28 @@ export default function StyleTab( { attributes, setAttributes } ) {
 				opened={ openPanel === 'content' }
 				onToggle={ () => togglePanel( 'content' ) }
 			>
-				<div style={ { marginTop: '16px', marginBottom: '16px' } }>
-					<strong>{ __( 'Color', 'postinfo' ) }</strong>
-					<div
-						style={ {
-							display: 'flex',
-							justifyContent: 'center',
-							marginTop: '8px',
-						} }
-					>
-						<GroupButton
-							active={ activeContentColor }
-							setAttributes={ setAttributes }
-							from="infoContentColor"
-						/>
-					</div>
-				</div>
-
-				<div style={ { marginTop: '16px' } }>
-					<ColorPalette
-						value={ currentContentColor }
-						onChange={ handleContnetColorChange }
-						disableCustomColors={ false }
-					/>
-				</div>
+				<ColorPickerGroup
+					label="Color"
+					value={ getActiveColor(
+						ContentColor,
+						ContentHoverColor,
+						activeContentColor
+					) }
+					onChange={ ( color ) =>
+						handleColorChange(
+							color,
+							'ContentColor',
+							'ContentHoverColor',
+							activeContentColor
+						)
+					}
+					activeKey={ activeContentColor }
+					from="infoContentColor"
+					setAttributes={ setAttributes }
+				/>
 
 				<Spacing
-					label={ 'Content Margin' }
+					label="Content Margin"
 					setAttributes={ setAttributes }
 					space={ ContentMargin }
 					attributesKey="ContentMargin"
@@ -244,57 +139,45 @@ export default function StyleTab( { attributes, setAttributes } ) {
 					opened={ openPanel === 'callAction' }
 					onToggle={ () => togglePanel( 'callAction' ) }
 				>
-					<div style={ { marginTop: '16px', marginBottom: '16px' } }>
-						<strong>{ __( 'Color', 'postinfo' ) }</strong>
-						<div
-							style={ {
-								display: 'flex',
-								justifyContent: 'center',
-								marginTop: '8px',
-							} }
-						>
-							<GroupButton
-								active={ activeCallActionColor }
-								setAttributes={ setAttributes }
-								from="infoCallActionColor"
-							/>
-						</div>
-					</div>
+					<ColorPickerGroup
+						label="Color"
+						value={ getActiveColor(
+							callActionColor,
+							callActionHoverColor,
+							activeCallActionColor
+						) }
+						onChange={ ( color ) =>
+							handleColorChange(
+								color,
+								'callActionColor',
+								'callActionHoverColor',
+								activeCallActionColor
+							)
+						}
+						activeKey={ activeCallActionColor }
+						from="infoCallActionColor"
+						setAttributes={ setAttributes }
+					/>
 
-					<div style={ { marginTop: '16px' } }>
-						<ColorPalette
-							value={ currentCallActionColor }
-							onChange={ handleCallActionColorChange }
-							disableCustomColors={ false }
-						/>
-					</div>
-
-					{ /* backgroundColor */ }
-
-					<div style={ { marginTop: '16px', marginBottom: '16px' } }>
-						<strong>{ __( 'Background', 'postinfo' ) }</strong>
-						<div
-							style={ {
-								display: 'flex',
-								justifyContent: 'center',
-								marginTop: '8px',
-							} }
-						>
-							<GroupButton
-								active={ activeCallActionBack }
-								setAttributes={ setAttributes }
-								from="infoCallActionBackColor"
-							/>
-						</div>
-					</div>
-
-					<div style={ { marginTop: '16px' } }>
-						<ColorPalette
-							value={ currentCallActionBackColor }
-							onChange={ handleCallActionBack }
-							disableCustomColors={ false }
-						/>
-					</div>
+					<ColorPickerGroup
+						label="Background"
+						value={ getActiveColor(
+							callActionBack,
+							callActionHoverBack,
+							activeCallActionBack
+						) }
+						onChange={ ( color ) =>
+							handleColorChange(
+								color,
+								'callActionBack',
+								'callActionHoverBack',
+								activeCallActionBack
+							)
+						}
+						activeKey={ activeCallActionBack }
+						from="infoCallActionBackColor"
+						setAttributes={ setAttributes }
+					/>
 
 					<Spacing
 						setAttributes={ setAttributes }
@@ -304,31 +187,23 @@ export default function StyleTab( { attributes, setAttributes } ) {
 					/>
 
 					<PanelBody title="Border" initialOpen={ false }>
-						<div
-							style={ {
-								marginTop: '16px',
-								marginBottom: '16px',
-							} }
-						>
-							<strong>{ __( 'Border Type', 'postinfo' ) }</strong>
-
-							<SelectControl
-								value={ callActionBorderType }
-								options={ [
-									{ label: 'None', value: 'none' },
-									{ label: 'Solid', value: 'solid' },
-									{ label: 'Dotted', value: 'dotted' },
-									{ label: 'Dashed', value: 'dashed' },
-									{ label: 'Groove', value: 'groove' },
-									{ label: 'Inset', value: 'inset' },
-									{ label: 'Outset', value: 'outset' },
-									{ label: 'Ridge', value: 'ridge' },
-								] }
-								onChange={ handeBorderTypeSelect }
-								__next40pxDefaultSize
-								__nextHasNoMarginBottom
-							/>
-						</div>
+						<SelectControl
+							label={ __( 'Border Type', 'postinfo' ) }
+							value={ callActionBorderType }
+							options={ [
+								{ label: 'None', value: 'none' },
+								{ label: 'Solid', value: 'solid' },
+								{ label: 'Dotted', value: 'dotted' },
+								{ label: 'Dashed', value: 'dashed' },
+								{ label: 'Groove', value: 'groove' },
+								{ label: 'Inset', value: 'inset' },
+								{ label: 'Outset', value: 'outset' },
+								{ label: 'Ridge', value: 'ridge' },
+							] }
+							onChange={ ( val ) =>
+								setAttributes( { callActionBorderType: val } )
+							}
+						/>
 
 						<Spacing
 							setAttributes={ setAttributes }
@@ -336,37 +211,26 @@ export default function StyleTab( { attributes, setAttributes } ) {
 							label="Border Width"
 							attributesKey="callActionBorderWidth"
 						/>
-						<div
-							style={ {
-								marginTop: '16px',
-								marginBottom: '16px',
-							} }
-						>
-							<strong>
-								{ __( 'Border Color', 'postinfo' ) }
-							</strong>
-							<div
-								style={ {
-									display: 'flex',
-									justifyContent: 'center',
-									marginTop: '8px',
-								} }
-							>
-								<GroupButton
-									active={ ActiveCallActionborderColor }
-									setAttributes={ setAttributes }
-									from="infoCallActionBorderColor"
-								/>
-							</div>
-						</div>
 
-						<div style={ { marginTop: '16px' } }>
-							<ColorPalette
-								value={ currentCallActionBorderColor }
-								onChange={ handleCallActionBorderColor }
-								disableCustomColors={ false }
-							/>
-						</div>
+						<ColorPickerGroup
+							label="Border Color"
+							value={ getActiveColor(
+								callActionborderColor,
+								callActionborderHoverColor,
+								ActiveCallActionborderColor
+							) }
+							onChange={ ( color ) =>
+								handleColorChange(
+									color,
+									'callActionborderColor',
+									'callActionborderHoverColor',
+									ActiveCallActionborderColor
+								)
+							}
+							activeKey={ ActiveCallActionborderColor }
+							from="infoCallActionBorderColor"
+							setAttributes={ setAttributes }
+						/>
 
 						<Spacing
 							setAttributes={ setAttributes }
@@ -378,29 +242,23 @@ export default function StyleTab( { attributes, setAttributes } ) {
 				</PanelBody>
 			) }
 
+			{ /* Global Border */ }
 			<PanelBody title="Border" initialOpen={ false }>
-				<div style={ { marginTop: '16px', marginBottom: '16px' } }>
-					<strong>{ __( 'Border Type', 'postinfo' ) }</strong>
-
-					<SelectControl
-						value={ BorderType }
-						options={ [
-							{ label: 'None', value: 'none' },
-							{ label: 'Solid', value: 'solid' },
-							{ label: 'Dotted', value: 'dotted' },
-							{ label: 'Dashed', value: 'dashed' },
-							{ label: 'Groove', value: 'groove' },
-							{ label: 'Inset', value: 'inset' },
-							{ label: 'Outset', value: 'outset' },
-							{ label: 'Ridge', value: 'ridge' },
-						] }
-						onChange={ ( value ) => {
-							setAttributes( { BorderType: value } );
-						} }
-						__next40pxDefaultSize
-						__nextHasNoMarginBottom
-					/>
-				</div>
+				<SelectControl
+					label={ __( 'Border Type', 'postinfo' ) }
+					value={ BorderType }
+					options={ [
+						{ label: 'None', value: 'none' },
+						{ label: 'Solid', value: 'solid' },
+						{ label: 'Dotted', value: 'dotted' },
+						{ label: 'Dashed', value: 'dashed' },
+						{ label: 'Groove', value: 'groove' },
+						{ label: 'Inset', value: 'inset' },
+						{ label: 'Outset', value: 'outset' },
+						{ label: 'Ridge', value: 'ridge' },
+					] }
+					onChange={ ( val ) => setAttributes( { BorderType: val } ) }
+				/>
 
 				<Spacing
 					setAttributes={ setAttributes }
@@ -409,30 +267,25 @@ export default function StyleTab( { attributes, setAttributes } ) {
 					attributesKey="BorderWidth"
 				/>
 
-				<div style={ { marginTop: '16px', marginBottom: '16px' } }>
-					<strong>{ __( 'Border Color', 'postinfo' ) }</strong>
-					<div
-						style={ {
-							display: 'flex',
-							justifyContent: 'center',
-							marginTop: '8px',
-						} }
-					>
-						<GroupButton
-							active={ ActiveBorderColor }
-							setAttributes={ setAttributes }
-							from="infoBorderColor"
-						/>
-					</div>
-				</div>
-
-				<div style={ { marginTop: '16px' } }>
-					<ColorPalette
-						value={ currentBorderColor }
-						onChange={ handleBorderColor }
-						disableCustomColors={ false }
-					/>
-				</div>
+				<ColorPickerGroup
+					label="Border Color"
+					value={ getActiveColor(
+						borderColor,
+						borderHoverColor,
+						ActiveBorderColor
+					) }
+					onChange={ ( color ) =>
+						handleColorChange(
+							color,
+							'borderColor',
+							'borderHoverColor',
+							ActiveBorderColor
+						)
+					}
+					activeKey={ ActiveBorderColor }
+					from="infoBorderColor"
+					setAttributes={ setAttributes }
+				/>
 
 				<Spacing
 					setAttributes={ setAttributes }
@@ -441,90 +294,73 @@ export default function StyleTab( { attributes, setAttributes } ) {
 					attributesKey="BorderRadius"
 				/>
 			</PanelBody>
-			<PanelBody title="Background" initialOpen={ false }>
-				<div style={ { marginTop: '16px', marginBottom: '16px' } }>
-					<strong>{ __( 'Background', 'postinfo' ) }</strong>
-					<div
-						style={ {
-							display: 'flex',
-							justifyContent: 'center',
-							marginTop: '8px',
-						} }
-					>
-						<GroupButton
-							active={ activeBackground }
-							setAttributes={ setAttributes }
-							from="infoBackground"
-						/>
-					</div>
-				</div>
 
-				<div style={ { marginTop: '16px' } }>
-					<ColorPalette
-						value={ currentBackground }
-						onChange={ handleBackground }
-						disableCustomColors={ false }
-					/>
-				</div>
+			{ /* Background */ }
+			<PanelBody title="Background" initialOpen={ false }>
+				<ColorPickerGroup
+					label="Background"
+					value={ getActiveColor(
+						background,
+						backgroundHover,
+						activeBackground
+					) }
+					onChange={ ( color ) =>
+						handleColorChange(
+							color,
+							'background',
+							'backgroundHover',
+							activeBackground
+						)
+					}
+					activeKey={ activeBackground }
+					from="infoBackground"
+					setAttributes={ setAttributes }
+				/>
 			</PanelBody>
 
+			{ /* Box Shadow */ }
 			<PanelBody title="Box-Shadow" initialOpen={ false }>
 				<ToggleControl
 					label={ __( 'Box-Shadow', 'infobox' ) }
 					checked={ isBoxShadow }
-					onChange={ ( value ) => {
-						setAttributes( {
-							isBoxShadow: value,
-						} );
-					} }
+					onChange={ ( val ) =>
+						setAttributes( { isBoxShadow: val } )
+					}
 				/>
 
 				{ isBoxShadow && (
 					<>
-						<BoxControl
-							label={ __( 'Shadow', 'postInfo' ) }
-							values={ boxShadowControl }
-							onChange={ ( newMargin ) =>
-								setAttributes( {
-									boxShadowControl: newMargin,
-								} )
-							}
+						<Spacing
+							setAttributes={ setAttributes }
+							space={ boxShadowControl }
+							label="Shadow"
+							attributesKey="boxShadowControl"
 						/>
 
-						<div
-							style={ {
-								marginTop: '16px',
-								marginBottom: '16px',
-							} }
-						>
-							<strong>
-								{ __( 'Shadow Color', 'postinfo' ) }
-							</strong>
-							<div
-								style={ {
-									display: 'flex',
-									justifyContent: 'center',
-									marginTop: '8px',
-								} }
-							>
-								<GroupButton
-									active={ ActiveboxShadowColor }
-									setAttributes={ setAttributes }
-									from="infoBoxShadow"
-								/>
-							</div>
-						</div>
-
-						<div style={ { marginTop: '16px' } }>
-							<ColorPalette
-								value={ currentBoxShadowColor }
-								onChange={ handleBoxShadow }
-								disableCustomColors={ false }
-							/>
-						</div>
+						<ColorPickerGroup
+							label="Shadow Color"
+							value={ getActiveColor(
+								boxShadowColor,
+								boxShadowHover,
+								ActiveboxShadowColor
+							) }
+							onChange={ ( color ) =>
+								handleColorChange(
+									color,
+									'boxShadowColor',
+									'boxShadowHover',
+									ActiveboxShadowColor
+								)
+							}
+							activeKey={ ActiveboxShadowColor }
+							from="infoBoxShadow"
+							setAttributes={ setAttributes }
+						/>
 					</>
 				) }
 			</PanelBody>
+
+			{ /* spacing */ }
 			<PanelBody title="Spacing" initialOpen={ false }>
 				<PanelBody title="Padding" initialOpen={ false }>
 					<Spacing

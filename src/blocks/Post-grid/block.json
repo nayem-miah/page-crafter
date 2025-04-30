@@ -89,10 +89,24 @@
 		"contentPadding": {
 			"type": "object",
 			"default": {
-				"top": "0px",
-				"right": "12px",
-				"bottom": "24px",
-				"left": "12px"
+				"Desktop": {
+					"top": "0",
+					"right": "12",
+					"bottom": "24",
+					"left": "12"
+				},
+				"Tablet": {
+					"top": "0",
+					"right": "12",
+					"bottom": "24",
+					"left": "12"
+				},
+				"Mobile": {
+					"top": "0",
+					"right": "12",
+					"bottom": "24",
+					"left": "12"
+				}
 			}
 		},
 		"contentMargin": {

@@ -69,6 +69,10 @@
 			"type": "boolean",
 			"default": true
 		},
+		"readMoreUrl":{
+			"type":"string",
+			"default": "#"
+		},
 		"showContent": {
 			"type": "boolean",
 			"default": true
@@ -353,10 +357,24 @@
 		"boxShadowControl": {
 			"type": "object",
 			"default": {
-				"top": "1px",
-				"right": "1px",
-				"bottom": "6px",
-				"left": "2px"
+				"Desktop": {
+					"top": "1px",
+					"right": "1px",
+					"bottom": "6px",
+					"left": "2px"
+				},
+				"Tablet": {
+					"top": "1px",
+					"right": "1px",
+					"bottom": "6px",
+					"left": "2px"
+				},
+				"Mobile": {
+					"top": "1px",
+					"right": "1px",
+					"bottom": "6px",
+					"left": "2px"
+				}
 			}
 		},
 		"isBoxShadow": {
