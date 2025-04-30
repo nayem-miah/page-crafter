@@ -108,6 +108,9 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
+.wp-block-create-block-postgrid .grid-card .content-body {
+  background: var(--background);
+}
 .wp-block-create-block-postgrid .grid-card .content-body .post-grid-title h5 {
   text-align: center;
   margin-top: var(--titleMarginTop);
