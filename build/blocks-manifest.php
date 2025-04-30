@@ -105,10 +105,24 @@ return array(
 			'titleMargin' => array(
 				'type' => 'object',
 				'default' => array(
-					'top' => '0px',
-					'right' => '0px',
-					'bottom' => '0px',
-					'left' => '0px'
+					'Desktop' => array(
+						'top' => '1',
+						'right' => '1',
+						'bottom' => '1',
+						'left' => '1'
+					),
+					'Tablet' => array(
+						'top' => '1',
+						'right' => '1',
+						'bottom' => '1',
+						'left' => '1'
+					),
+					'Mobile' => array(
+						'top' => '1',
+						'right' => '1',
+						'bottom' => '1',
+						'left' => '1'
+					)
 				)
 			),
 			'ContentColor' => array(
@@ -126,10 +140,24 @@ return array(
 			'ContentMargin' => array(
 				'type' => 'object',
 				'default' => array(
-					'top' => '10px',
-					'right' => '0px',
-					'bottom' => '10px',
-					'left' => '0px'
+					'Desktop' => array(
+						'top' => '1',
+						'right' => '1',
+						'bottom' => '12',
+						'left' => '1'
+					),
+					'Tablet' => array(
+						'top' => '1',
+						'right' => '1',
+						'bottom' => '12',
+						'left' => '1'
+					),
+					'Mobile' => array(
+						'top' => '1',
+						'right' => '1',
+						'bottom' => '12',
+						'left' => '1'
+					)
 				)
 			),
 			'callActionColor' => array(
@@ -206,10 +234,24 @@ return array(
 			'BorderWidth' => array(
 				'type' => 'object',
 				'default' => array(
-					'top' => '1px',
-					'right' => '1px',
-					'bottom' => '1px',
-					'left' => '1px'
+					'Desktop' => array(
+						'top' => '1',
+						'right' => '1',
+						'bottom' => '1',
+						'left' => '1'
+					),
+					'Tablet' => array(
+						'top' => '1',
+						'right' => '1',
+						'bottom' => '1',
+						'left' => '1'
+					),
+					'Mobile' => array(
+						'top' => '1',
+						'right' => '1',
+						'bottom' => '1',
+						'left' => '1'
+					)
 				)
 			),
 			'borderColor' => array(
@@ -227,10 +269,24 @@ return array(
 			'BorderRadius' => array(
 				'type' => 'object',
 				'default' => array(
-					'top' => '5px',
-					'right' => '5px',
-					'bottom' => '5px',
-					'left' => '5px'
+					'Desktop' => array(
+						'top' => '1',
+						'right' => '1',
+						'bottom' => '1',
+						'left' => '1'
+					),
+					'Tablet' => array(
+						'top' => '1',
+						'right' => '1',
+						'bottom' => '1',
+						'left' => '1'
+					),
+					'Mobile' => array(
+						'top' => '1',
+						'right' => '1',
+						'bottom' => '1',
+						'left' => '1'
+					)
 				)
 			),
 			'background' => array(

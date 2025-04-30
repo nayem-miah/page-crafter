@@ -49,7 +49,6 @@ export default function save( { attributes } ) {
 		padding,
 	} = attributes;
 
-
 	const style = {
 		'--padding-desktop': formatSpacing( padding?.Desktop ),
 		'--padding-tablet': formatSpacing( padding?.Tablet ),
@@ -59,8 +58,12 @@ export default function save( { attributes } ) {
 		'--margin-tablet': formatSpacing( margin?.Tablet ),
 		'--margin-mobile': formatSpacing( margin?.Mobile ),
 
-		'--BorderWidth': formatSpacing( BorderWidth ),
-		'--BorderRadius': formatSpacing( BorderRadius ),
+		'--BorderWidth-desktop': formatSpacing( BorderWidth?.Desktop ),
+		'--BorderWidth-tablet': formatSpacing( BorderWidth?.Tablet ),
+		'--BorderWidth-mobile': formatSpacing( BorderWidth?.Mobile ),
+		'--BorderRadius-desktop': formatSpacing( BorderRadius?.Desktop ),
+		'--BorderRadius-tablet': formatSpacing( BorderRadius?.Tablet ),
+		'--BorderRadius-mobile': formatSpacing( BorderRadius?.Mobile ),
 		'--BorderType': BorderType || 'solid',
 		'--borderColor': borderColor || 'transparent',
 		'--borderHoverColor': borderHoverColor || 'transparent',
@@ -96,18 +99,15 @@ export default function save( { attributes } ) {
 							style={ {
 								'--titleColor': titleColor,
 								'--titleHoverColor': titleHoverColor,
-								'--titleMarginTop': titleMargin.top
-									? titleMargin.top + 'px'
-									: '0px',
-								'--titleMarginRight': titleMargin.right
-									? titleMargin.right + 'px'
-									: '0px',
-								'--titleMarginBottom': titleMargin.bottom
-									? titleMargin.bottom + 'px'
-									: '0px',
-								'--titleMarginLeft': titleMargin.left
-									? titleMargin.left + 'px'
-									: '0px',
+								'--TitleMargin-desktop': formatSpacing(
+									titleMargin?.Desktop
+								),
+								'--TitleMargin-tablet': formatSpacing(
+									titleMargin?.Tablet
+								),
+								'--TitleMargin-mobile': formatSpacing(
+									titleMargin?.Mobile
+								),
 							} }
 						/>
 					</div>
@@ -124,20 +124,15 @@ export default function save( { attributes } ) {
 							style={ {
 								'--ContentColor': ContentColor,
 								'--ContentHoverColor': ContentHoverColor,
-								'--ContentMarginTop': ContentMargin.top
-									? ContentMargin.top
-									: '0px',
-								'--ContentMarginRight': ContentMargin.right
-									? ContentMargin.right
-									: '0px',
-
-								'--ContentMarginBottom': ContentMargin.bottom
-									? ContentMargin.bottom
-									: '0px',
-
-								'--ContentMarginLeft': ContentMargin.left
-									? ContentMargin.left
-									: '0px',
+								'--ContentMargin-desktop': formatSpacing(
+									ContentMargin?.Desktop
+								),
+								'--ContentMargin-tablet': formatSpacing(
+									ContentMargin?.Tablet
+								),
+								'--ContentMargin-mobile': formatSpacing(
+									ContentMargin?.Mobile
+								),
 							} }
 						/>
 					</div>

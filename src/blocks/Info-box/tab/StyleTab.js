@@ -50,6 +50,7 @@ export default function StyleTab( { attributes, setAttributes } ) {
 		ActiveboxShadowColor,
 		margin,
 		padding,
+		readMoreType,
 	} = attributes;
 	const [ openPanel, setOpenPanel ] = useState( 'general' );
 	const togglePanel = ( panelKey ) => {
@@ -191,20 +192,11 @@ export default function StyleTab( { attributes, setAttributes } ) {
 					/>
 				</div>
 
-				<BoxControl
-					label={ __( 'Title Margin', 'postgrid' ) }
-					units={ [
-						{ label: 'px', value: 'px' },
-						{ label: '%', value: '%' },
-						{ label: 'em', value: 'em' },
-						{ label: 'rem', value: 'rem' },
-						{ label: 'vw', value: 'vw' },
-						{ label: 'vh', value: 'vh' },
-					] }
-					values={ titleMargin }
-					onChange={ ( newMargin ) =>
-						setAttributes( { titleMargin: newMargin } )
-					}
+				<Spacing
+					label={ 'Title Margin' }
+					setAttributes={ setAttributes }
+					space={ titleMargin }
+					attributesKey="titleMargin"
 				/>
 			</PanelBody>
 
@@ -238,137 +230,22 @@ export default function StyleTab( { attributes, setAttributes } ) {
 					/>
 				</div>
 
-				<BoxControl
-					label={ __( 'Contnet Margin', 'postgrid' ) }
-					units={ [
-						{ label: 'px', value: 'px' },
-						{ label: '%', value: '%' },
-						{ label: 'em', value: 'em' },
-						{ label: 'rem', value: 'rem' },
-						{ label: 'vw', value: 'vw' },
-						{ label: 'vh', value: 'vh' },
-					] }
-					values={ ContentMargin }
-					onChange={ ( newMargin ) =>
-						setAttributes( { ContentMargin: newMargin } )
-					}
+				<Spacing
+					label={ 'Content Margin' }
+					setAttributes={ setAttributes }
+					space={ ContentMargin }
+					attributesKey="ContentMargin"
 				/>
 			</PanelBody>
 
-			<PanelBody
-				title="Call To Action"
-				opened={ openPanel === 'callAction' }
-				onToggle={ () => togglePanel( 'callAction' ) }
-			>
-				<div style={ { marginTop: '16px', marginBottom: '16px' } }>
-					<strong>{ __( 'Color', 'postinfo' ) }</strong>
-					<div
-						style={ {
-							display: 'flex',
-							justifyContent: 'center',
-							marginTop: '8px',
-						} }
-					>
-						<GroupButton
-							active={ activeCallActionColor }
-							setAttributes={ setAttributes }
-							from="infoCallActionColor"
-						/>
-					</div>
-				</div>
-
-				<div style={ { marginTop: '16px' } }>
-					<ColorPalette
-						value={ currentCallActionColor }
-						onChange={ handleCallActionColorChange }
-						disableCustomColors={ false }
-					/>
-				</div>
-
-				{ /* backgroundColor */ }
-
-				<div style={ { marginTop: '16px', marginBottom: '16px' } }>
-					<strong>{ __( 'Background', 'postinfo' ) }</strong>
-					<div
-						style={ {
-							display: 'flex',
-							justifyContent: 'center',
-							marginTop: '8px',
-						} }
-					>
-						<GroupButton
-							active={ activeCallActionBack }
-							setAttributes={ setAttributes }
-							from="infoCallActionBackColor"
-						/>
-					</div>
-				</div>
-
-				<div style={ { marginTop: '16px' } }>
-					<ColorPalette
-						value={ currentCallActionBackColor }
-						onChange={ handleCallActionBack }
-						disableCustomColors={ false }
-					/>
-				</div>
-
-				<BoxControl
-					label={ __( 'Padding', 'postInfo' ) }
-					units={ [
-						{ label: 'px', value: 'px' },
-						{ label: '%', value: '%' },
-						{ label: 'em', value: 'em' },
-						{ label: 'rem', value: 'rem' },
-						{ label: 'vw', value: 'vw' },
-						{ label: 'vh', value: 'vh' },
-					] }
-					values={ callActionPadding }
-					onChange={ ( newMargin ) =>
-						setAttributes( { callActionPadding: newMargin } )
-					}
-				/>
-
-				<PanelBody title="Border" initialOpen={ false }>
+			{ readMoreType === 'Button' && (
+				<PanelBody
+					title="Call To Action"
+					opened={ openPanel === 'callAction' }
+					onToggle={ () => togglePanel( 'callAction' ) }
+				>
 					<div style={ { marginTop: '16px', marginBottom: '16px' } }>
-						<strong>{ __( 'Border Type', 'postinfo' ) }</strong>
-
-						<SelectControl
-							value={ callActionBorderType }
-							options={ [
-								{ label: 'None', value: 'none' },
-								{ label: 'Solid', value: 'solid' },
-								{ label: 'Dotted', value: 'dotted' },
-								{ label: 'Dashed', value: 'dashed' },
-								{ label: 'Groove', value: 'groove' },
-								{ label: 'Inset', value: 'inset' },
-								{ label: 'Outset', value: 'outset' },
-								{ label: 'Ridge', value: 'ridge' },
-							] }
-							onChange={ handeBorderTypeSelect }
-							__next40pxDefaultSize
-							__nextHasNoMarginBottom
-						/>
-					</div>
-
-					<BoxControl
-						label={ __( 'Border Width', 'postgrid' ) }
-						units={ [
-							{ label: 'px', value: 'px' },
-							{ label: '%', value: '%' },
-							{ label: 'em', value: 'em' },
-							{ label: 'rem', value: 'rem' },
-							{ label: 'vw', value: 'vw' },
-							{ label: 'vh', value: 'vh' },
-						] }
-						values={ callActionBorderWidth }
-						onChange={ ( newMargin ) =>
-							setAttributes( {
-								callActionBorderWidth: newMargin,
-							} )
-						}
-					/>
-					<div style={ { marginTop: '16px', marginBottom: '16px' } }>
-						<strong>{ __( 'Border Color', 'postinfo' ) }</strong>
+						<strong>{ __( 'Color', 'postinfo' ) }</strong>
 						<div
 							style={ {
 								display: 'flex',
@@ -377,23 +254,50 @@ export default function StyleTab( { attributes, setAttributes } ) {
 							} }
 						>
 							<GroupButton
-								active={ ActiveCallActionborderColor }
+								active={ activeCallActionColor }
 								setAttributes={ setAttributes }
-								from="infoCallActionBorderColor"
+								from="infoCallActionColor"
 							/>
 						</div>
 					</div>
 
 					<div style={ { marginTop: '16px' } }>
 						<ColorPalette
-							value={ currentCallActionBorderColor }
-							onChange={ handleCallActionBorderColor }
+							value={ currentCallActionColor }
+							onChange={ handleCallActionColorChange }
+							disableCustomColors={ false }
+						/>
+					</div>
+
+					{ /* backgroundColor */ }
+
+					<div style={ { marginTop: '16px', marginBottom: '16px' } }>
+						<strong>{ __( 'Background', 'postinfo' ) }</strong>
+						<div
+							style={ {
+								display: 'flex',
+								justifyContent: 'center',
+								marginTop: '8px',
+							} }
+						>
+							<GroupButton
+								active={ activeCallActionBack }
+								setAttributes={ setAttributes }
+								from="infoCallActionBackColor"
+							/>
+						</div>
+					</div>
+
+					<div style={ { marginTop: '16px' } }>
+						<ColorPalette
+							value={ currentCallActionBackColor }
+							onChange={ handleCallActionBack }
 							disableCustomColors={ false }
 						/>
 					</div>
 
 					<BoxControl
-						label={ __( 'Border Radius', 'postgrid' ) }
+						label={ __( 'Padding', 'postInfo' ) }
 						units={ [
 							{ label: 'px', value: 'px' },
 							{ label: '%', value: '%' },
@@ -402,15 +306,108 @@ export default function StyleTab( { attributes, setAttributes } ) {
 							{ label: 'vw', value: 'vw' },
 							{ label: 'vh', value: 'vh' },
 						] }
-						values={ callActionBorderRadius }
-						onChange={ ( newBorderRadius ) =>
-							setAttributes( {
-								callActionBorderRadius: newBorderRadius,
-							} )
+						values={ callActionPadding }
+						onChange={ ( newMargin ) =>
+							setAttributes( { callActionPadding: newMargin } )
 						}
 					/>
+
+					<PanelBody title="Border" initialOpen={ false }>
+						<div
+							style={ {
+								marginTop: '16px',
+								marginBottom: '16px',
+							} }
+						>
+							<strong>{ __( 'Border Type', 'postinfo' ) }</strong>
+
+							<SelectControl
+								value={ callActionBorderType }
+								options={ [
+									{ label: 'None', value: 'none' },
+									{ label: 'Solid', value: 'solid' },
+									{ label: 'Dotted', value: 'dotted' },
+									{ label: 'Dashed', value: 'dashed' },
+									{ label: 'Groove', value: 'groove' },
+									{ label: 'Inset', value: 'inset' },
+									{ label: 'Outset', value: 'outset' },
+									{ label: 'Ridge', value: 'ridge' },
+								] }
+								onChange={ handeBorderTypeSelect }
+								__next40pxDefaultSize
+								__nextHasNoMarginBottom
+							/>
+						</div>
+
+						<BoxControl
+							label={ __( 'Border Width', 'postgrid' ) }
+							units={ [
+								{ label: 'px', value: 'px' },
+								{ label: '%', value: '%' },
+								{ label: 'em', value: 'em' },
+								{ label: 'rem', value: 'rem' },
+								{ label: 'vw', value: 'vw' },
+								{ label: 'vh', value: 'vh' },
+							] }
+							values={ callActionBorderWidth }
+							onChange={ ( newMargin ) =>
+								setAttributes( {
+									callActionBorderWidth: newMargin,
+								} )
+							}
+						/>
+						<div
+							style={ {
+								marginTop: '16px',
+								marginBottom: '16px',
+							} }
+						>
+							<strong>
+								{ __( 'Border Color', 'postinfo' ) }
+							</strong>
+							<div
+								style={ {
+									display: 'flex',
+									justifyContent: 'center',
+									marginTop: '8px',
+								} }
+							>
+								<GroupButton
+									active={ ActiveCallActionborderColor }
+									setAttributes={ setAttributes }
+									from="infoCallActionBorderColor"
+								/>
+							</div>
+						</div>
+
+						<div style={ { marginTop: '16px' } }>
+							<ColorPalette
+								value={ currentCallActionBorderColor }
+								onChange={ handleCallActionBorderColor }
+								disableCustomColors={ false }
+							/>
+						</div>
+
+						<BoxControl
+							label={ __( 'Border Radius', 'postgrid' ) }
+							units={ [
+								{ label: 'px', value: 'px' },
+								{ label: '%', value: '%' },
+								{ label: 'em', value: 'em' },
+								{ label: 'rem', value: 'rem' },
+								{ label: 'vw', value: 'vw' },
+								{ label: 'vh', value: 'vh' },
+							] }
+							values={ callActionBorderRadius }
+							onChange={ ( newBorderRadius ) =>
+								setAttributes( {
+									callActionBorderRadius: newBorderRadius,
+								} )
+							}
+						/>
+					</PanelBody>
 				</PanelBody>
-			</PanelBody>
+			) }
 
 			<PanelBody title="Border" initialOpen={ false }>
 				<div style={ { marginTop: '16px', marginBottom: '16px' } }>
@@ -436,23 +433,13 @@ export default function StyleTab( { attributes, setAttributes } ) {
 					/>
 				</div>
 
-				<BoxControl
-					label={ __( 'Border Width', 'postgrid' ) }
-					units={ [
-						{ label: 'px', value: 'px' },
-						{ label: '%', value: '%' },
-						{ label: 'em', value: 'em' },
-						{ label: 'rem', value: 'rem' },
-						{ label: 'vw', value: 'vw' },
-						{ label: 'vh', value: 'vh' },
-					] }
-					values={ BorderWidth }
-					onChange={ ( newMargin ) =>
-						setAttributes( {
-							BorderWidth: newMargin,
-						} )
-					}
+				<Spacing
+					setAttributes={ setAttributes }
+					space={ BorderWidth }
+					label="Border Width"
+					attributesKey="BorderWidth"
 				/>
+
 				<div style={ { marginTop: '16px', marginBottom: '16px' } }>
 					<strong>{ __( 'Border Color', 'postinfo' ) }</strong>
 					<div
@@ -478,22 +465,11 @@ export default function StyleTab( { attributes, setAttributes } ) {
 					/>
 				</div>
 
-				<BoxControl
-					label={ __( 'Border Radius', 'postgrid' ) }
-					units={ [
-						{ label: 'px', value: 'px' },
-						{ label: '%', value: '%' },
-						{ label: 'em', value: 'em' },
-						{ label: 'rem', value: 'rem' },
-						{ label: 'vw', value: 'vw' },
-						{ label: 'vh', value: 'vh' },
-					] }
-					values={ BorderRadius }
-					onChange={ ( newBorderRadius ) =>
-						setAttributes( {
-							BorderRadius: newBorderRadius,
-						} )
-					}
+				<Spacing
+					setAttributes={ setAttributes }
+					space={ BorderRadius }
+					label="Border Radius"
+					attributesKey="BorderRadius"
 				/>
 			</PanelBody>
 			<PanelBody title="Background" initialOpen={ false }>

@@ -100,10 +100,24 @@
     "titleMargin": {
       "type": "object",
       "default": {
-        "top": "0px",
-        "right": "0px",
-        "bottom": "0px",
-        "left": "0px"
+        "Desktop": {
+          "top": "1",
+          "right": "1",
+          "bottom": "1",
+          "left": "1"
+        },
+        "Tablet": {
+          "top": "1",
+          "right": "1",
+          "bottom": "1",
+          "left": "1"
+        },
+        "Mobile": {
+          "top": "1",
+          "right": "1",
+          "bottom": "1",
+          "left": "1"
+        }
       }
     },
     "ContentColor": {
@@ -121,10 +135,24 @@
     "ContentMargin": {
       "type": "object",
       "default": {
-        "top": "10px",
-        "right": "0px",
-        "bottom": "10px",
-        "left": "0px"
+        "Desktop": {
+          "top": "1",
+          "right": "1",
+          "bottom": "12",
+          "left": "1"
+        },
+        "Tablet": {
+          "top": "1",
+          "right": "1",
+          "bottom": "12",
+          "left": "1"
+        },
+        "Mobile": {
+          "top": "1",
+          "right": "1",
+          "bottom": "12",
+          "left": "1"
+        }
       }
     },
     "callActionColor": {
@@ -201,10 +229,24 @@
     "BorderWidth": {
       "type": "object",
       "default": {
-        "top": "1px",
-        "right": "1px",
-        "bottom": "1px",
-        "left": "1px"
+        "Desktop": {
+          "top": "1",
+          "right": "1",
+          "bottom": "1",
+          "left": "1"
+        },
+        "Tablet": {
+          "top": "1",
+          "right": "1",
+          "bottom": "1",
+          "left": "1"
+        },
+        "Mobile": {
+          "top": "1",
+          "right": "1",
+          "bottom": "1",
+          "left": "1"
+        }
       }
     },
     "borderColor": {
@@ -222,10 +264,24 @@
     "BorderRadius": {
       "type": "object",
       "default": {
-        "top": "5px",
-        "right": "5px",
-        "bottom": "5px",
-        "left": "5px"
+        "Desktop": {
+          "top": "1",
+          "right": "1",
+          "bottom": "1",
+          "left": "1"
+        },
+        "Tablet": {
+          "top": "1",
+          "right": "1",
+          "bottom": "1",
+          "left": "1"
+        },
+        "Mobile": {
+          "top": "1",
+          "right": "1",
+          "bottom": "1",
+          "left": "1"
+        }
       }
     },
     "background": {

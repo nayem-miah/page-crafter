@@ -2,6 +2,7 @@ import { BoxControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { useDeviceType } from '../utils/diviceType';
 import Responsive from './Responsive';
+
 export default function Spacing( {
 	setAttributes,
 	space,
@@ -9,6 +10,7 @@ export default function Spacing( {
 	attributesKey,
 } ) {
 	const device = useDeviceType();
+
 	const sanitizeBoxValues = ( obj = {} ) => ( {
 		top: parseInt( obj.top ) || 0,
 		right: parseInt( obj.right ) || 0,
@@ -25,7 +27,7 @@ export default function Spacing( {
 				onChange={ ( newSpace ) => {
 					const updateSpacing = {
 						...space,
-						[ device ]: newSpace,
+						[ device ]: sanitizeBoxValues( newSpace ), 
 					};
 					setAttributes( {
 						[ attributesKey ]: updateSpacing,
