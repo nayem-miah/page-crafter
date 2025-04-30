@@ -266,7 +266,16 @@ export default function Edit( { attributes, setAttributes } ) {
 									callActionBorderWidth?.Mobile
 								),
 
-								'--callBorderRadius': `${ callActionBorderRadius.top } ${ callActionBorderRadius.right } ${ callActionBorderRadius.bottom } ${ callActionBorderRadius.left }`,
+
+								'--callBorderRadius-desktop': formatSpacing(
+									callActionBorderRadius?.Desktop
+								),
+								'--callBorderRadius-tablet': formatSpacing(
+									callActionBorderRadius?.Tablet
+								),
+								'--callBorderRadius-mobile': formatSpacing(
+									callActionBorderRadius?.Mobile
+								),
 							} }
 						>
 							<RichText

@@ -394,7 +394,9 @@ function Edit({
             '--callBorderWidth-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(callActionBorderWidth?.Desktop),
             '--callBorderWidth-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(callActionBorderWidth?.Tablet),
             '--callBorderWidth-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(callActionBorderWidth?.Mobile),
-            '--callBorderRadius': `${callActionBorderRadius.top} ${callActionBorderRadius.right} ${callActionBorderRadius.bottom} ${callActionBorderRadius.left}`
+            '--callBorderRadius-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(callActionBorderRadius?.Desktop),
+            '--callBorderRadius-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(callActionBorderRadius?.Tablet),
+            '--callBorderRadius-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_7__["default"])(callActionBorderRadius?.Mobile)
           },
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
             placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Read More..', 'infobox'),
@@ -611,7 +613,9 @@ function save({
             '--callBorderWidth-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__["default"])(callActionBorderWidth?.Desktop),
             '--callBorderWidth-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__["default"])(callActionBorderWidth?.Tablet),
             '--callBorderWidth-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__["default"])(callActionBorderWidth?.Mobile),
-            '--callBorderRadius': `${callActionBorderRadius.top} ${callActionBorderRadius.right} ${callActionBorderRadius.bottom} ${callActionBorderRadius.left}`
+            '--callBorderRadius-desktop': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__["default"])(callActionBorderRadius?.Desktop),
+            '--callBorderRadius-tablet': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__["default"])(callActionBorderRadius?.Tablet),
+            '--callBorderRadius-mobile': (0,_utils_spacingFormat__WEBPACK_IMPORTED_MODULE_1__["default"])(callActionBorderRadius?.Mobile)
           },
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
             tagName: "p",

@@ -151,6 +151,7 @@
 					&.hasButton {
 						padding: var(--callActionPadding-mobile);
 						border-width: var(--callBorderWidth-mobile);
+						border-radius: var(--callBorderRadius-mobile);
 					}
 				}
 			}
@@ -195,6 +196,7 @@
 					&.hasButton {
 						padding: var(--callActionPadding-tablet);
 						border-width: var(--callBorderWidth-tablet);
+						border-radius: var(--callBorderRadius-tablet);
 					}
 				}
 			}
@@ -238,6 +240,7 @@
 					&.hasButton {
 						padding: var(--callActionPadding-desktop);
 						border-width: var(--callBorderWidth-desktop);
+						border-radius: var(--callBorderRadius-desktop);
 					}
 				}
 			}

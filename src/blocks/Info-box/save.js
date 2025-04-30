@@ -180,7 +180,16 @@ export default function save( { attributes } ) {
 								'--callBorderWidth-mobile': formatSpacing(
 									callActionBorderWidth?.Mobile
 								),
-								'--callBorderRadius': `${ callActionBorderRadius.top } ${ callActionBorderRadius.right } ${ callActionBorderRadius.bottom } ${ callActionBorderRadius.left }`,
+
+								'--callBorderRadius-desktop': formatSpacing(
+									callActionBorderRadius?.Desktop
+								),
+								'--callBorderRadius-tablet': formatSpacing(
+									callActionBorderRadius?.Tablet
+								),
+								'--callBorderRadius-mobile': formatSpacing(
+									callActionBorderRadius?.Mobile
+								),
 							} }
 						>
 							<RichText.Content tagName="p" value={ readMore } />

@@ -127,6 +127,7 @@
   .wp-block-create-block-infobox .info-box .info-box__read-more .info-box__read-more-content.hasButton {
     padding: var(--callActionPadding-mobile);
     border-width: var(--callBorderWidth-mobile);
+    border-radius: var(--callBorderRadius-mobile);
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -152,6 +153,7 @@
   .wp-block-create-block-infobox .info-box .info-box__read-more .info-box__read-more-content.hasButton {
     padding: var(--callActionPadding-tablet);
     border-width: var(--callBorderWidth-tablet);
+    border-radius: var(--callBorderRadius-tablet);
   }
 }
 @media (min-width: 1025px) {
@@ -177,5 +179,6 @@
   .wp-block-create-block-infobox .info-box .info-box__read-more .info-box__read-more-content.hasButton {
     padding: var(--callActionPadding-desktop);
     border-width: var(--callBorderWidth-desktop);
+    border-radius: var(--callBorderRadius-desktop);
   }
 }
