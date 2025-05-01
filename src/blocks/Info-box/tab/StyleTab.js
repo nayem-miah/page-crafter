@@ -1,9 +1,4 @@
-import {
-	BoxControl,
-	PanelBody,
-	SelectControl,
-	ToggleControl,
-} from '@wordpress/components';
+import { PanelBody, SelectControl, ToggleControl } from '@wordpress/components';
 import { useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import Spacing from '../../../components/Spacing';
@@ -327,7 +322,6 @@ export default function StyleTab( { attributes, setAttributes } ) {
 						setAttributes( { isBoxShadow: val } )
 					}
 				/>
-
 				{ isBoxShadow && (
 					<>
 						<Spacing
