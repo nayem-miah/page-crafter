@@ -1,5 +1,19 @@
 <?php
 
+/**
+ * Plugin Name:       PageCrafter
+ * Plugin URI:  https://nayemmiah.com/
+ * Version:           0.1.0
+ * Requires at least: 6.7
+ * Requires PHP:      7.4
+ * Author:            Nayem Miah
+ * License:           GPL-2.0-or-later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:       pagecrafter
+ *
+ * @package CreateBlock
+ */
+
 
 $paged = isset($_POST['paged']) ? intval($_POST['paged']) : 1;
 $posts_per_page = !empty($attributes['numberOfPosts']) ? intval($attributes['numberOfPosts']) : 5;
@@ -44,7 +58,7 @@ $encoded_attr = esc_attr(wp_json_encode($attributes));
                 --card-bg: <?php echo esc_attr($attributes['contentBackground'] ?? '#fff'); ?>;
                 --card-bg-hover: <?php echo esc_attr($attributes['contentBackgroundHover'] ?? '#f5f5f5'); ?>;
             ">
-                    <?php if (has_post_thumbnail($post) && !empty($attributes['displayImage'])): ?>
+                    <?php if (has_post_thumbnail($post) && !empty($attributes['displayImage'])) : ?>
                         <div class="post-grid-thumnail">
                             <?php echo get_the_post_thumbnail($post, 'large', array('alt' => get_the_title($post))); ?>
                         </div>
@@ -59,7 +73,7 @@ $encoded_attr = esc_attr(wp_json_encode($attributes));
                             --contentMargin-mobile: <?php echo get_padding_css($attributes['contentMargin']['Mobile']); ?>;
                             --contentMargin-tablet: <?php echo get_padding_css($attributes['contentMargin']['Tablet']); ?>;    
                                 ">
-                        <?php if (!empty($attributes['showTitle'])): ?>
+                        <?php if (!empty($attributes['showTitle'])) : ?>
                             <div class=" post-grid-title">
                                 <h5 style="text-align: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>; 
 
@@ -77,7 +91,7 @@ $encoded_attr = esc_attr(wp_json_encode($attributes));
                             </div>
                         <?php endif; ?>
 
-                        <?php if (!empty($attributes['showMeta'])): ?>
+                        <?php if (!empty($attributes['showMeta'])) : ?>
                             <div class="post-grid-meta" style="
                             --metaTextAlign: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;
                             --metaHoverColor: <?php echo esc_attr($attributes['metaHoverColor'] ?? '#999'); ?>;
@@ -96,7 +110,7 @@ $encoded_attr = esc_attr(wp_json_encode($attributes));
                             </div>
                         <?php endif; ?>
 
-                        <?php if (!empty($attributes['showExcerpt'])): ?>
+                        <?php if (!empty($attributes['showExcerpt'])) : ?>
                             <div class="post-grid-excerpt" style="text-align: <?php echo esc_attr($attributes['contentAlignment'] ?? 'left'); ?>;
                                 
                                   --desMargin-desktop: <?php echo get_padding_css($attributes['desMargin']['Desktop']); ?>;
@@ -110,7 +124,7 @@ $encoded_attr = esc_attr(wp_json_encode($attributes));
                             </div>
                         <?php endif; ?>
 
-                        <?php if (!empty($attributes['readMore'])): ?>
+                        <?php if (!empty($attributes['readMore'])) : ?>
                             <div class="post-grid-btn"
                                 style="text-align: <?php echo esc_attr($attributes['readMoreAlignment'] ?? 'left'); ?>;">
                                 <a href="<?php the_permalink($post); ?>" class="read-more-link" style="
@@ -142,7 +156,7 @@ $encoded_attr = esc_attr(wp_json_encode($attributes));
 
 
 
-        <?php if ($pagination > $paged && !empty($attributes['useAjaxPagination'])): ?>
+        <?php if ($pagination > $paged && !empty($attributes['useAjaxPagination'])) : ?>
             <div class="pagination ajax-pagination">
 
                 <!-- Prev Button -->
@@ -168,12 +182,6 @@ $encoded_attr = esc_attr(wp_json_encode($attributes));
 
 
     </div>
-
-
-
-
-
-
 
 
 </div> <!-- /.wp-block -->
