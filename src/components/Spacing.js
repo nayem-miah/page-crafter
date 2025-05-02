@@ -19,23 +19,21 @@ export default function Spacing( {
 	} );
 
 	return (
-		< >
-			< Responsive / >
-			< BoxControl
-				label                   = { __( label, 'postinfo' ) }
-				values                  = { sanitizeBoxValues( space ? .[ device ] ) }
-				onChange                = { ( newSpace ) => {
+		<>
+			<Responsive />
+			<BoxControl
+				label={ __( label, 'postinfo' ) }
+				values={ sanitizeBoxValues( space?.[ device ] ) }
+				onChange={ ( newSpace ) => {
 					const updateSpacing = {
 						...space,
 						[ device ]: sanitizeBoxValues( newSpace ),
 					};
-					setAttributes(
-						{
-								[ attributesKey ]: updateSpacing,
-						}
-					);
-					} }
-			/ >
-		< / >
+					setAttributes( {
+						[ attributesKey ]: updateSpacing,
+					} );
+				} }
+			/>
+		</>
 	);
 }

@@ -1238,8 +1238,8 @@ const ColorPickerGroup = ({
       marginTop: '16px',
       marginBottom: '16px'
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("strong", {
-      children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(label, 'postinfo')
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("strong", {
+      children: [" ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)(label, 'postinfo'), " "]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       style: {
         display: 'flex',
