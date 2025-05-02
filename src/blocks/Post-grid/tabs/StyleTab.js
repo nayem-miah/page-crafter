@@ -31,48 +31,48 @@ export default function StyleTab( { attributes, setAttributes } ) {
 		readMorePadding,
 	} = attributes;
 
-	const [ openPanel, setOpenPanel ] = useState( 'general' );
-	const togglePanel = ( panelKey ) => {
+	const [ openPanel, setOpenPanel ]  = useState( 'general' );
+	const togglePanel                  = ( panelKey ) => {
 		setOpenPanel( openPanel === panelKey ? null : panelKey );
 	};
 	return (
-		<div>
-			<ContentStyle
-				setAttributes={ setAttributes }
-				activeBackground={ activeBackground }
-				contentBackground={ contentBackground }
-				contentBackgroundHover={ contentBackgroundHover }
-				contentPadding={ contentPadding }
-				contentMargin={ contentMargin }
-				titleColor={ titleColor }
-				titleHoverColor={ titleHoverColor }
-				titleActiveColor={ titleActiveColor }
-				titleMargin={ titleMargin }
-				metaColor={ metaColor }
-				metaHoverColor={ metaHoverColor }
-				metaActiveColor={ metaActiveColor }
-				metaMargin={ metaMargin }
-				desMargin={ desMargin }
-				desColor={ desColor }
-				desHoverColor={ desHoverColor }
-				desActiveColor={ desActiveColor }
-				openPanel={ openPanel }
-				togglePanel={ togglePanel }
-			/>
+		< div >
+			< ContentStyle
+				setAttributes          = { setAttributes }
+				activeBackground       = { activeBackground }
+				contentBackground      = { contentBackground }
+				contentBackgroundHover = { contentBackgroundHover }
+				contentPadding         = { contentPadding }
+				contentMargin          = { contentMargin }
+				titleColor             = { titleColor }
+				titleHoverColor        = { titleHoverColor }
+				titleActiveColor       = { titleActiveColor }
+				titleMargin            = { titleMargin }
+				metaColor              = { metaColor }
+				metaHoverColor         = { metaHoverColor }
+				metaActiveColor        = { metaActiveColor }
+				metaMargin             = { metaMargin }
+				desMargin              = { desMargin }
+				desColor               = { desColor }
+				desHoverColor          = { desHoverColor }
+				desActiveColor         = { desActiveColor }
+				openPanel              = { openPanel }
+				togglePanel            = { togglePanel }
+			/ >
 
-			<ReadMoreStyle
-				readMoreBackground={ readMoreBackground }
-				readMoreBackgroundHover={ readMoreBackgroundHover }
-				readMoreBackgroundActive={ readMoreBackgroundActive }
-				setAttributes={ setAttributes }
-				readMoreMargin={ readMoreMargin }
-				readMorePadding={ readMorePadding }
-				readMoreColor={ readMoreColor }
-				readMoreColorActive={ readMoreColorActive }
-				readMoreColorHover={ readMoreColorHover }
-				openPanel={ openPanel }
-				togglePanel={ togglePanel }
-			/>
-		</div>
+			< ReadMoreStyle
+				readMoreBackground       = { readMoreBackground }
+				readMoreBackgroundHover  = { readMoreBackgroundHover }
+				readMoreBackgroundActive = { readMoreBackgroundActive }
+				setAttributes            = { setAttributes }
+				readMoreMargin           = { readMoreMargin }
+				readMorePadding          = { readMorePadding }
+				readMoreColor            = { readMoreColor }
+				readMoreColorActive      = { readMoreColorActive }
+				readMoreColorHover       = { readMoreColorHover }
+				openPanel                = { openPanel }
+				togglePanel              = { togglePanel }
+			/ >
+		< / div >
 	);
 }

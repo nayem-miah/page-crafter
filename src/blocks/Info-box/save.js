@@ -51,20 +51,20 @@ export default function save( { attributes } ) {
 	} = attributes;
 
 	const style = {
-		'--padding-desktop': formatSpacing( padding?.Desktop ),
-		'--padding-tablet': formatSpacing( padding?.Tablet ),
-		'--padding-mobile': formatSpacing( padding?.Mobile ),
+		'--padding-desktop': formatSpacing( padding ? .Desktop ),
+		'--padding-tablet': formatSpacing( padding ? .Tablet ),
+		'--padding-mobile': formatSpacing( padding ? .Mobile ),
 
-		'--margin-desktop': formatSpacing( margin?.Desktop ),
-		'--margin-tablet': formatSpacing( margin?.Tablet ),
-		'--margin-mobile': formatSpacing( margin?.Mobile ),
+		'--margin-desktop': formatSpacing( margin ? .Desktop ),
+		'--margin-tablet': formatSpacing( margin ? .Tablet ),
+		'--margin-mobile': formatSpacing( margin ? .Mobile ),
 
-		'--BorderWidth-desktop': formatSpacing( BorderWidth?.Desktop ),
-		'--BorderWidth-tablet': formatSpacing( BorderWidth?.Tablet ),
-		'--BorderWidth-mobile': formatSpacing( BorderWidth?.Mobile ),
-		'--BorderRadius-desktop': formatSpacing( BorderRadius?.Desktop ),
-		'--BorderRadius-tablet': formatSpacing( BorderRadius?.Tablet ),
-		'--BorderRadius-mobile': formatSpacing( BorderRadius?.Mobile ),
+		'--BorderWidth-desktop': formatSpacing( BorderWidth ? .Desktop ),
+		'--BorderWidth-tablet': formatSpacing( BorderWidth ? .Tablet ),
+		'--BorderWidth-mobile': formatSpacing( BorderWidth ? .Mobile ),
+		'--BorderRadius-desktop': formatSpacing( BorderRadius ? .Desktop ),
+		'--BorderRadius-tablet': formatSpacing( BorderRadius ? .Tablet ),
+		'--BorderRadius-mobile': formatSpacing( BorderRadius ? .Mobile ),
 		'--BorderType': BorderType || 'solid',
 		'--borderColor': borderColor || 'transparent',
 		'--borderHoverColor': borderHoverColor || 'transparent',
@@ -75,142 +75,142 @@ export default function save( { attributes } ) {
 		'--boxShadowHover': isBoxShadow && boxShadowHover,
 
 		'--boxShadowControl-desktop': formatSpacing(
-			boxShadowControl?.Desktop
+			boxShadowControl ? .Desktop
 		),
-		'--boxShadowControl-tablet':
-			isBoxShadow && formatSpacing( boxShadowControl?.Tablet ),
-		'--boxShadowControl-mobile':
-			isBoxShadow && formatSpacing( boxShadowControl?.Mobile ),
+	'--boxShadowControl-tablet':
+			isBoxShadow && formatSpacing( boxShadowControl ? .Tablet ),
+	'--boxShadowControl-mobile':
+			isBoxShadow && formatSpacing( boxShadowControl ? .Mobile ),
 	};
 
 	return (
-		<div { ...useBlockProps.save( { className: additionalClass } ) }>
-			<div
-				className={ `info-box ${ desktopHide && 'desktopHide' }  ${
+		< div { ...useBlockProps.save( { className: additionalClass } ) } >
+			< div
+				className             = { `info - box ${ desktopHide && 'desktopHide' }  ${
 					tabHide && 'tabHide'
-				} ${ MobileHide && 'MobileHide' }` }
-				style={ style }
+					} ${ MobileHide && 'MobileHide' }` }
+				style                 = { style }
 			>
-				<div className="info-box__icon">
-					<span className={ icon }></span>
-				</div>
+				< div className       = "info-box__icon" >
+					< span className  = { icon } > < / span >
+				< / div >
 				{ showTitle && (
-					<div
-						className="info-box__title"
-						style={ { '--contentAlign': contentAlign } }
+					< div
+						className     = "info-box__title"
+						style         = { { '--contentAlign': contentAlign } }
 					>
-						<RichText.Content
-							className="text"
-							tagName={ titleTag }
-							value={ title }
-							style={ {
+						< RichText.Content
+							className = "text"
+							tagName   = { titleTag }
+							value     = { title }
+							style     = { {
 								'--titleColor': titleColor,
 								'--titleHoverColor': titleHoverColor,
 								'--TitleMargin-desktop': formatSpacing(
-									titleMargin?.Desktop
+									titleMargin ? .Desktop
 								),
-								'--TitleMargin-tablet': formatSpacing(
-									titleMargin?.Tablet
-								),
-								'--TitleMargin-mobile': formatSpacing(
-									titleMargin?.Mobile
-								),
-							} }
-						/>
-					</div>
+					'--TitleMargin-tablet': formatSpacing(
+						titleMargin ? .Tablet
+                    ),
+					'--TitleMargin-mobile': formatSpacing(
+						titleMargin ? .Mobile
+                    ),
+								} }
+						/ >
+					< / div >
 				) }
 
 				{ showContent && (
-					<div
-						className="info-box__content"
-						style={ { '--contentAlign': contentAlign } }
+					< div
+						className   = "info-box__content"
+						style       = { { '--contentAlign': contentAlign } }
 					>
-						<RichText.Content
-							tagName="p"
-							value={ content }
-							style={ {
+						< RichText.Content
+							tagName = "p"
+							value   = { content }
+							style   = { {
 								'--ContentColor': ContentColor,
 								'--ContentHoverColor': ContentHoverColor,
 								'--ContentMargin-desktop': formatSpacing(
-									ContentMargin?.Desktop
+									ContentMargin ? .Desktop
 								),
-								'--ContentMargin-tablet': formatSpacing(
-									ContentMargin?.Tablet
-								),
-								'--ContentMargin-mobile': formatSpacing(
-									ContentMargin?.Mobile
-								),
-							} }
-						/>
-					</div>
+					'--ContentMargin-tablet': formatSpacing(
+						ContentMargin ? .Tablet
+                    ),
+					'--ContentMargin-mobile': formatSpacing(
+						ContentMargin ? .Mobile
+                    ),
+								} }
+						/ >
+					< / div >
 				) }
 
 				{ readMoreType !== 'None' && (
-					<div
-						className="info-box__read-more"
-						style={ {
+					< div
+						className     = "info-box__read-more"
+						style         = { {
 							'--readMoreAlign': readMoreAlign,
-						} }
+							} }
 					>
-						<div
-							className={ `info-box__read-more-content ${
+						< div
+							className = { `info - box__read - more - content ${
 								readMoreType === 'Button' ? 'hasButton' : ''
-							}` }
-							style={ {
+								}` }
+							style     = { {
 								'--readMoreColor': callActionColor,
 								'--readMoreHoverColor': callActionHoverColor,
 								'--readMoreBackground': callActionBack,
 								'--readMoreHoverBack': callActionHoverBack,
 
 								'--callActionPadding-desktop': formatSpacing(
-									callActionPadding?.Desktop
+									callActionPadding ? .Desktop
 								),
-								'--callActionPadding-tablet': formatSpacing(
-									callActionPadding?.Tablet
-								),
-								'--callActionPadding-mobile': formatSpacing(
-									callActionPadding?.Mobile
-								),
+					'--callActionPadding-tablet': formatSpacing(
+						callActionPadding ? .Tablet
+                    ),
+					'--callActionPadding-mobile': formatSpacing(
+						callActionPadding ? .Mobile
+                    ),
 
-								'--callBorderType': callActionBorderType,
-								'--callBorderColor': callActionborderColor,
-								'--callBorderHoverColor':
+					'--callBorderType': callActionBorderType,
+					'--callBorderColor': callActionborderColor,
+					'--callBorderHoverColor':
 									callActionborderHoverColor,
 
-								'--callBorderWidth-desktop': formatSpacing(
-									callActionBorderWidth?.Desktop
-								),
-								'--callBorderWidth-tablet': formatSpacing(
-									callActionBorderWidth?.Tablet
-								),
-								'--callBorderWidth-mobile': formatSpacing(
-									callActionBorderWidth?.Mobile
-								),
+					'--callBorderWidth-desktop': formatSpacing(
+						callActionBorderWidth ? .Desktop
+                    ),
+					'--callBorderWidth-tablet': formatSpacing(
+						callActionBorderWidth ? .Tablet
+                    ),
+					'--callBorderWidth-mobile': formatSpacing(
+						callActionBorderWidth ? .Mobile
+                    ),
 
-								'--callBorderRadius-desktop': formatSpacing(
-									callActionBorderRadius?.Desktop
-								),
-								'--callBorderRadius-tablet': formatSpacing(
-									callActionBorderRadius?.Tablet
-								),
-								'--callBorderRadius-mobile': formatSpacing(
-									callActionBorderRadius?.Mobile
-								),
-							} }
+					'--callBorderRadius-desktop': formatSpacing(
+						callActionBorderRadius ? .Desktop
+                    ),
+					'--callBorderRadius-tablet': formatSpacing(
+						callActionBorderRadius ? .Tablet
+                    ),
+					'--callBorderRadius-mobile': formatSpacing(
+						callActionBorderRadius ? .Mobile
+                    ),
+								} }
 						>
-							<a href={ readMoreUrl }>
-								<RichText.Content
-									tagName="p"
-									value={ readMore }
-								/>
+							< a href                 = { readMoreUrl } >
+								< RichText.Content
+									tagName          = "p"
+									value            = { readMore }
+								/ >
 								{ readMoreIconShow && (
-									<span className={ readMoreIcon }></span>
+									< span className = { readMoreIcon } > < / span >
 								) }
-							</a>
-						</div>
-					</div>
+							< / a >
+						< / div >
+					< / div >
 				) }
-			</div>
-		</div>
+			< / div >
+		< / div >
 	);
 }

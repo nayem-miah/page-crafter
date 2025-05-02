@@ -19,7 +19,7 @@ export default function ReadMoreStyle( {
 		readMoreBackgroundActive === 'default'
 			? readMoreBackground
 			: readMoreBackgroundHover;
-	const currentReadMoreColor =
+	const currentReadMoreColor           =
 		readMoreColorActive === 'default' ? readMoreColor : readMoreColorHover;
 
 	const handleReadMoreBackgroundColorChange = ( color ) => {
@@ -39,74 +39,74 @@ export default function ReadMoreStyle( {
 	};
 
 	return (
-		<PanelBody
-			title="Read More"
-			opened={ openPanel === 'readMore' }
-			onToggle={ () => togglePanel( 'readMore' ) }
+		< PanelBody
+			title                       = "Read More"
+			opened                      = { openPanel === 'readMore' }
+			onToggle                    = { () => togglePanel( 'readMore' ) }
 		>
-			<div style={ { marginTop: '16px', marginBottom: '16px' } }>
-				<strong>{ __( 'Background', 'postgrid' ) }</strong>
-				<div
-					style={ {
+			< div style                 = { { marginTop: '16px', marginBottom: '16px' } } >
+				< strong > { __( 'Background', 'postgrid' ) } < / strong >
+				< div
+					style               = { {
 						display: 'flex',
 						justifyContent: 'center',
 						marginTop: '8px',
-					} }
+						} }
 				>
-					<GroupButton
-						active={ readMoreBackgroundActive }
-						setAttributes={ setAttributes }
-						from={ 'readMoreBack' }
-					/>
-				</div>
-			</div>
-			<div style={ { marginTop: '16px' } }>
-				<ColorPalette
-					value={ currentReadMoreBackgroundColor }
-					onChange={ handleReadMoreBackgroundColorChange }
-					disableCustomColors={ false }
-				/>
-			</div>
+					< GroupButton
+						active          = { readMoreBackgroundActive }
+						setAttributes   = { setAttributes }
+						from            = { 'readMoreBack' }
+					/ >
+				< / div >
+			< / div >
+			< div style                 = { { marginTop: '16px' } } >
+				< ColorPalette
+					value               = { currentReadMoreBackgroundColor }
+					onChange            = { handleReadMoreBackgroundColorChange }
+					disableCustomColors = { false }
+				/ >
+			< / div >
 
-			<div style={ { marginTop: '16px', marginBottom: '16px' } }>
-				<strong>{ __( 'Color', 'postgrid' ) }</strong>
-				<div
-					style={ {
+			< div style                 = { { marginTop: '16px', marginBottom: '16px' } } >
+				< strong > { __( 'Color', 'postgrid' ) } < / strong >
+				< div
+					style               = { {
 						display: 'flex',
 						justifyContent: 'center',
 						marginTop: '8px',
-					} }
+						} }
 				>
-					<GroupButton
-						active={ readMoreColorActive }
-						setAttributes={ setAttributes }
-						from={ 'readMoreColor' }
-					/>
-				</div>
-			</div>
-			<div style={ { marginTop: '16px' } }>
-				<ColorPalette
-					value={ currentReadMoreColor }
-					onChange={ handleReadMoreColorChange }
-					disableCustomColors={ false }
-				/>
-			</div>
+					< GroupButton
+						active          = { readMoreColorActive }
+						setAttributes   = { setAttributes }
+						from            = { 'readMoreColor' }
+					/ >
+				< / div >
+			< / div >
+			< div style                 = { { marginTop: '16px' } } >
+				< ColorPalette
+					value               = { currentReadMoreColor }
+					onChange            = { handleReadMoreColorChange }
+					disableCustomColors = { false }
+				/ >
+			< / div >
 
-			<PanelBody title="Spacing" initialOpen={ false }>
-				<Spacing
-					setAttributes={ setAttributes }
-					space={ readMorePadding }
-					label="Padding"
-					attributesKey="readMorePadding"
-				/>
+			< PanelBody title     = "Spacing" initialOpen = { false } >
+				< Spacing
+					setAttributes = { setAttributes }
+					space         = { readMorePadding }
+					label         = "Padding"
+					attributesKey = "readMorePadding"
+				/ >
 
-				<Spacing
-					setAttributes={ setAttributes }
-					space={ readMoreMargin }
-					label="Margin"
-					attributesKey="readMoreMargin"
-				/>
-			</PanelBody>
-		</PanelBody>
+				< Spacing
+					setAttributes = { setAttributes }
+					space         = { readMoreMargin }
+					label         = "Margin"
+					attributesKey = "readMoreMargin"
+				/ >
+			< / PanelBody >
+		< / PanelBody >
 	);
 }

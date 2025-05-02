@@ -10,31 +10,31 @@ export default function AdvanceTab( {
 	MobileHide,
 } ) {
 	return (
-		<div>
-			<VisibilityOptions
-				setAttributes={ setAttributes }
-				desktopHide={ desktopHide }
-				tabHide={ tabHide }
-				MobileHide={ MobileHide }
-			/>
+		< div >
+			< VisibilityOptions
+				setAttributes = { setAttributes }
+				desktopHide   = { desktopHide }
+				tabHide       = { tabHide }
+				MobileHide    = { MobileHide }
+			/ >
 
-			<PanelBody title="Advanced" initialOpen={ false }>
-				<TextControl
-					label="Custom Class"
-					value={ additionalClass || '' }
-					onChange={ ( value ) =>
+			< PanelBody title   = "Advanced" initialOpen = { false } >
+				< TextControl
+					label       = "Custom Class"
+					value       = { additionalClass || '' }
+					onChange    = { ( value ) =>
 						setAttributes( { additionalClass: value } )
 					}
-					placeholder="e.g. my-custom-class"
-				/>
-				<ToggleControl
-					label={ __( 'Enable AJAX Pagination', 'postgrid' ) }
-					checked={ !! useAjaxPagination }
-					onChange={ ( newVal ) =>
+					placeholder = "e.g. my-custom-class"
+				/ >
+				< ToggleControl
+					label       = { __( 'Enable AJAX Pagination', 'postgrid' ) }
+					checked     = { ! ! useAjaxPagination }
+					onChange    = { ( newVal ) =>
 						setAttributes( { useAjaxPagination: newVal } )
 					}
-				/>
-			</PanelBody>
-		</div>
+				/ >
+			< / PanelBody >
+		< / div >
 	);
 }

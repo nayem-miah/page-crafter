@@ -14,21 +14,21 @@ export default function ActionBtn( {
 	};
 
 	return (
-		<PanelBody
-			title="Action Button"
-			opened={ openPanel === 'actionBtn' }
-			onToggle={ () => togglePanel( 'actionBtn' ) }
+		< PanelBody
+			title             = "Action Button"
+			opened            = { openPanel === 'actionBtn' }
+			onToggle          = { () => togglePanel( 'actionBtn' ) }
 		>
-			<ToggleControl
-				label={ __( 'Read More', 'postgrid' ) }
-				checked={ readMore }
-				onChange={ handleReadMoreButton }
-			/>
-			<Alignmnet
-				value={ readMoreAlignment }
-				attributeKey={ 'readMoreAlignment' }
-				setAttributes={ setAttributes }
-			/>
-		</PanelBody>
+			< ToggleControl
+				label         = { __( 'Read More', 'postgrid' ) }
+				checked       = { readMore }
+				onChange      = { handleReadMoreButton }
+			/ >
+			< Alignmnet
+				value         = { readMoreAlignment }
+				attributeKey  = { 'readMoreAlignment' }
+				setAttributes = { setAttributes }
+			/ >
+		< / PanelBody >
 	);
 }

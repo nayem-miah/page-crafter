@@ -8,23 +8,23 @@ export default function AdvanceTab( {
 	additionalClass,
 } ) {
 	return (
-		<div>
-			<VisibilityOptions
-				setAttributes={ setAttributes }
-				tabHide={ tabHide }
-				desktopHide={ desktopHide }
-				MobileHide={ MobileHide }
-			/>
-			<PanelBody title="Advanced" initialOpen={ false }>
-				<TextControl
-					label="Custom Class"
-					value={ additionalClass }
-					onChange={ ( value ) =>
+		< div >
+			< VisibilityOptions
+				setAttributes   = { setAttributes }
+				tabHide         = { tabHide }
+				desktopHide     = { desktopHide }
+				MobileHide      = { MobileHide }
+			/ >
+			< PanelBody title   = "Advanced" initialOpen = { false } >
+				< TextControl
+					label       = "Custom Class"
+					value       = { additionalClass }
+					onChange    = { ( value ) =>
 						setAttributes( { additionalClass: value } )
 					}
-					placeholder="My-custom-class"
-				/>
-			</PanelBody>
-		</div>
+					placeholder = "My-custom-class"
+				/ >
+			< / PanelBody >
+		< / div >
 	);
 }

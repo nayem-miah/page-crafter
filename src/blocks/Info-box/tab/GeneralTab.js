@@ -10,7 +10,7 @@ export default function GeneralTab( { setAttributes, attributes } ) {
 		readMoreType,
 		readMoreIconShow,
 		readMoreUrl,
-	} = attributes;
+	}                                 = attributes;
 	const [ openPanel, setOpenPanel ] = useState( 'general' ); // default open panel
 
 	const togglePanel = ( panelKey ) => {
@@ -18,75 +18,75 @@ export default function GeneralTab( { setAttributes, attributes } ) {
 	};
 
 	return (
-		<div>
-			<PanelBody
-				title="Content"
-				opened={ openPanel === 'pagination' }
-				onToggle={ () => togglePanel( 'pagination' ) }
+		< div >
+			< PanelBody
+				title             = "Content"
+				opened            = { openPanel === 'pagination' }
+				onToggle          = { () => togglePanel( 'pagination' ) }
 			>
-				<Alignmnet
-					attributeKey="contentAlign"
-					setAttributes={ setAttributes }
-					value={ contentAlign }
-				/>
-				<div style={ { marginTop: '16px', marginBottom: '16px' } }>
-					<ToggleControl
-						label="Show Title"
-						checked={ showTitle }
-						onChange={ ( value ) => {
+				< Alignmnet
+					attributeKey  = "contentAlign"
+					setAttributes = { setAttributes }
+					value         = { contentAlign }
+				/ >
+				< div style       = { { marginTop: '16px', marginBottom: '16px' } } >
+					< ToggleControl
+						label     = "Show Title"
+						checked   = { showTitle }
+						onChange  = { ( value ) => {
 							setAttributes( { showTitle: value } );
-						} }
-					/>
-				</div>
-				<div style={ { marginTop: '16px', marginBottom: '16px' } }>
-					<ToggleControl
-						label="Show Content"
-						checked={ showContent }
-						onChange={ ( value ) => {
+							} }
+					/ >
+				< / div >
+				< div style       = { { marginTop: '16px', marginBottom: '16px' } } >
+					< ToggleControl
+						label     = "Show Content"
+						checked   = { showContent }
+						onChange  = { ( value ) => {
 							setAttributes( { showContent: value } );
-						} }
-					/>
-				</div>
+							} }
+					/ >
+				< / div >
 
-				<SelectableButtonGroup
-					label="Title Tag"
-					items={ [ 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p' ] }
-					currentItem={ attributes.titleTag }
-					attributeKey="titleTag"
-					setAttributes={ setAttributes }
-				/>
-			</PanelBody>
-			<PanelBody
-				title="Call to Action"
-				opened={ openPanel === 'action' }
-				onToggle={ () => togglePanel( 'action' ) }
+				< SelectableButtonGroup
+					label         = "Title Tag"
+					items         = { [ 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p' ] }
+					currentItem   = { attributes.titleTag }
+					attributeKey  = "titleTag"
+					setAttributes = { setAttributes }
+				/ >
+			< / PanelBody >
+			< PanelBody
+				title             = "Call to Action"
+				opened            = { openPanel === 'action' }
+				onToggle          = { () => togglePanel( 'action' ) }
 			>
-				<SelectableButtonGroup
-					setAttributes={ setAttributes }
-					currentItem={ readMoreType }
-					attributeKey="readMoreType"
-					label="Type"
-					items={ [ 'None', 'Text', 'Button' ] }
-				/>
-				<div style={ { marginTop: '16px', marginBottom: '16px' } }>
-					<ToggleControl
-						label="Show Icon"
-						checked={ readMoreIconShow }
-						onChange={ ( value ) => {
+				< SelectableButtonGroup
+					setAttributes = { setAttributes }
+					currentItem   = { readMoreType }
+					attributeKey  = "readMoreType"
+					label         = "Type"
+					items         = { [ 'None', 'Text', 'Button' ] }
+				/ >
+				< div style       = { { marginTop: '16px', marginBottom: '16px' } } >
+					< ToggleControl
+						label     = "Show Icon"
+						checked   = { readMoreIconShow }
+						onChange  = { ( value ) => {
 							setAttributes( { readMoreIconShow: value } );
-						} }
-					/>
-				</div>
+							} }
+					/ >
+				< / div >
 
-				<TextControl
-					label="Read More URL"
-					value={ readMoreUrl }
-					onChange={ ( value ) =>
+				< TextControl
+					label       = "Read More URL"
+					value       = { readMoreUrl }
+					onChange    = { ( value ) =>
 						setAttributes( { readMoreUrl: value } )
 					}
-					placeholder="My-custom-class"
-				/>
-			</PanelBody>
-		</div>
+					placeholder = "My-custom-class"
+				/ >
+			< / PanelBody >
+		< / div >
 	);
 }

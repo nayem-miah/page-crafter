@@ -3,4 +3,4 @@ const formatSpacing = ( spacing = {} ) =>
 		spacing.bottom || 0
 	}px ${ spacing.left || 0 }px`;
 
-export default formatSpacing;
+	export default formatSpacing;

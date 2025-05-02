@@ -7,26 +7,26 @@ export default function VisibilityOptions( {
 	MobileHide,
 } ) {
 	return (
-		<PanelBody title="Visibility Option" initialOpen={ false }>
-			<ToggleControl
-				label={ __( 'Hide on Desktop', 'postgrid' ) }
-				checked={ !! desktopHide }
-				onChange={ ( newVal ) =>
+		< PanelBody title = "Visibility Option" initialOpen = { false } >
+			< ToggleControl
+				label     = { __( 'Hide on Desktop', 'postgrid' ) }
+				checked   = { ! ! desktopHide }
+				onChange  = { ( newVal ) =>
 					setAttributes( { desktopHide: newVal } )
 				}
-			/>
-			<ToggleControl
-				label={ __( 'Hide on Tablet', 'postgrid' ) }
-				checked={ !! tabHide }
-				onChange={ ( newVal ) => setAttributes( { tabHide: newVal } ) }
-			/>
-			<ToggleControl
-				label={ __( 'Hide on Mobile', 'postgrid' ) }
-				checked={ !! MobileHide }
-				onChange={ ( newVal ) =>
+			/ >
+			< ToggleControl
+				label     = { __( 'Hide on Tablet', 'postgrid' ) }
+				checked   = { ! ! tabHide }
+				onChange  = { ( newVal ) => setAttributes( { tabHide: newVal } ) }
+			/ >
+			< ToggleControl
+				label     = { __( 'Hide on Mobile', 'postgrid' ) }
+				checked   = { ! ! MobileHide }
+				onChange  = { ( newVal ) =>
 					setAttributes( { MobileHide: newVal } )
 				}
-			/>
-		</PanelBody>
+			/ >
+		< / PanelBody >
 	);
 }

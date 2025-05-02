@@ -28,9 +28,9 @@ if ( ! empty( $attributes['categories'] ) ) {
 	$args['category__in'] = array_column( $attributes['categories'], 'id' );
 }
 
-$fetched_posts        = get_posts( $args );
-$total_posts = wp_count_posts()->publish;
-$pagination  = $posts_per_page > 0 ? ceil( $total_posts / $posts_per_page ) : 1;
+$fetched_posts = get_posts( $args );
+$total_posts   = wp_count_posts()->publish;
+$pagination    = $posts_per_page > 0 ? ceil( $total_posts / $posts_per_page ) : 1;
 
 // Encode data for frontend AJAX calls.
 $encoded_query = esc_attr( wp_json_encode( $args ) );

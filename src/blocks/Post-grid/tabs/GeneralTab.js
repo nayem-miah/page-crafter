@@ -25,39 +25,39 @@ export default function GeneralTab( { attributes, setAttributes } ) {
 	};
 
 	return (
-		<div>
-			<General
-				order={ attributes?.order }
-				setAttributes={ setAttributes }
-				columnGap={ columnGap }
-				columns={ columns }
-				numberOfPosts={ numberOfPosts }
-				togglePanel={ togglePanel }
-				openPanel={ openPanel }
-			/>
-			<Image
-				setAttributes={ setAttributes }
-				displayImage={ displayImage }
-				togglePanel={ togglePanel }
-				openPanel={ openPanel }
-			/>
-			<Content
-				setAttributes={ setAttributes }
-				showExcerpt={ showExcerpt }
-				showTitle={ showTitle }
-				showMeta={ showMeta }
-				excerptMaxWords={ excerptMaxWords }
-				contentAlignment={ contentAlignment }
-				togglePanel={ togglePanel }
-				openPanel={ openPanel }
-			/>
-			<ActionBtn
-				setAttributes={ setAttributes }
-				readMore={ readMore }
-				readMoreAlignment={ readMoreAlignment }
-				togglePanel={ togglePanel }
-				openPanel={ openPanel }
-			/>
-		</div>
+		< div >
+			< General
+				order             = { attributes ? .order }
+				setAttributes     = { setAttributes }
+				columnGap         = { columnGap }
+				columns           = { columns }
+				numberOfPosts     = { numberOfPosts }
+				togglePanel       = { togglePanel }
+				openPanel         = { openPanel }
+			/ >
+			< Image
+				setAttributes     = { setAttributes }
+				displayImage      = { displayImage }
+				togglePanel       = { togglePanel }
+				openPanel         = { openPanel }
+			/ >
+			< Content
+				setAttributes     = { setAttributes }
+				showExcerpt       = { showExcerpt }
+				showTitle         = { showTitle }
+				showMeta          = { showMeta }
+				excerptMaxWords   = { excerptMaxWords }
+				contentAlignment  = { contentAlignment }
+				togglePanel       = { togglePanel }
+				openPanel         = { openPanel }
+			/ >
+			< ActionBtn
+				setAttributes     = { setAttributes }
+				readMore          = { readMore }
+				readMoreAlignment = { readMoreAlignment }
+				togglePanel       = { togglePanel }
+				openPanel         = { openPanel }
+			/ >
+		< / div >
 	);
 }

@@ -1,5 +1,7 @@
 export default function truncateExcerpt( excerpt, wordLimit ) {
-	if ( ! excerpt ) return ''; // Handle empty or undefined excerpts
+	if ( ! excerpt ) {
+		return ''; // Handle empty or undefined excerpts
+	}
 
 	const words = excerpt.replace( /<[^>]+>/g, '' ).split( ' ' ); // Remove HTML tags and split into words
 	if ( words.length <= wordLimit ) {

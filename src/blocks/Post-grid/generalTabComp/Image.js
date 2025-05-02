@@ -7,21 +7,23 @@ export default function Image( {
 	openPanel,
 } ) {
 	const HandleDisplayFeatureImage = ( value ) => {
-		setAttributes( {
-			displayImage: value,
-		} );
+		setAttributes(
+			{
+				displayImage: value,
+			}
+		);
 	};
 	return (
-		<PanelBody
-			title="Image"
-			opened={ openPanel === 'image' }
-			onToggle={ () => togglePanel( 'image' ) }
+		< PanelBody
+			title                   = "Image"
+			opened                  = { openPanel === 'image' }
+			onToggle                = { () => togglePanel( 'image' ) }
 		>
-			<ToggleControl
-				label={ __( 'Display Featured Image', 'postgrid' ) }
-				checked={ displayImage }
-				onChange={ HandleDisplayFeatureImage }
-			/>
-		</PanelBody>
+			< ToggleControl
+				label               = { __( 'Display Featured Image', 'postgrid' ) }
+				checked             = { displayImage }
+				onChange            = { HandleDisplayFeatureImage }
+			/ >
+		< / PanelBody >
 	);
 }

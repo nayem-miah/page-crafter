@@ -10,36 +10,36 @@ export default function Title( {
 	titleMargin,
 } ) {
 	return (
-		<>
+		< >
 			{ showTitle && (
-				<div className="post-grid-title">
-					<h5
-						style={ {
+				< div className = "post-grid-title" >
+					< h5
+						style   = { {
 							textAlign: contentAlignment,
 
 							'--titleMargin-desktop': formatSpacing(
-								titleMargin?.Desktop
+								titleMargin ? .Desktop
 							),
-							'--titleMargin-tablet': formatSpacing(
-								titleMargin?.Tablet
-							),
-							'--titleMargin-mobile': formatSpacing(
-								titleMargin?.Mobile
-							),
-						} }
+				'--titleMargin-tablet': formatSpacing(
+					titleMargin ? .Tablet
+                ),
+				'--titleMargin-mobile': formatSpacing(
+					titleMargin ? .Mobile
+                ),
+							} }
 					>
-						<a
-							style={ {
+						< a
+							style = { {
 								'--titleColor': titleColor,
 								'--titleHoverColor': titleHoverColor,
-							} }
-							href={ link }
+								} }
+							href  = { link }
 						>
-							<RawHTML>{ title }</RawHTML>
-						</a>
-					</h5>
-				</div>
+							< RawHTML > { title } < / RawHTML >
+						< / a >
+					< / h5 >
+				< / div >
 			) }
-		</>
+		< / >
 	);
 }
