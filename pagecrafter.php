@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name:       PageCrafter
  * Plugin URI:  https://nayemmiah.com/
@@ -20,7 +19,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
-function pagecrafter_block_categories( $categories, $post ) {
+/**
+ * Adds a custom block category for Page Crafter blocks.
+ *
+ * @param array   $categories Existing block categories.
+ * @param WP_Post $_post      Current post object (unused).
+ *
+ * @return array Modified block categories.
+ */
+function pagecrafter_block_categories( $categories, $_post ) {
 	return array_merge(
 		$categories,
 		array(
@@ -32,9 +39,14 @@ function pagecrafter_block_categories( $categories, $post ) {
 	);
 }
 add_filter( 'block_categories_all', 'pagecrafter_block_categories', 10, 2 );
-// this code is to set category Page_Crafter
 
 
+/**
+ * Registers custom Gutenberg blocks for the Page Crafter plugin.
+ * block using the build directory structure.
+ *
+ * @return void
+ */
 function pagecrafter_register_blocks() {
 	$blocks = array( 'Info-box', 'Post-grid', 'pagecrafter' );
 
@@ -45,8 +57,13 @@ function pagecrafter_register_blocks() {
 add_action( 'init', 'pagecrafter_register_blocks' );
 
 
-// **-----------------------------enqueue script for pagination---------------
 
+
+
+/**
+ * This is for AJAX Pagination
+ * return void
+ */
 function pg_enqueue_assets() {
 	wp_enqueue_script(
 		'pg-pagination',
@@ -61,19 +78,28 @@ function pg_enqueue_assets() {
 		'pg_ajax_object',
 		array(
 			'ajax_url' => admin_url( 'admin-ajax.php' ),
-			'nonce'    => wp_create_nonce( 'pg_nonce' ), // Nonce for security
+			'nonce'    => wp_create_nonce( 'pg_nonce' ), // Nonce for security.
 		)
 	);
 
-	// Also pass attributes for AJAX reuse
-	wp_add_inline_script( 'pg-pagination-js', 'window.pgBlockAttributes = {};' ); // Replace with actual block attributes if needed
+	// Also pass attributes for AJAX reuse.
+	wp_add_inline_script( 'pg-pagination-js', 'window.pgBlockAttributes = {};' ); // Replace with actual block attributes if needed.
 }
 add_action( 'wp_enqueue_scripts', 'pg_enqueue_assets' );
 
 
+/**
+ * Truncates a given content excerpt to a specified word limit.
+ *
+ * This function strips all HTML tags from the excerpt, splits the content into words,
+ * ("...") at the end if the content exceeds the word limit.
+ *
+ * @param string $excerpt     The content to be truncated.
+ * @param int    $word_limit The number of words to limit the content to. Defaults to 30.
+ *
+ * @return string The truncated content.
+ */
 
-
-// -------------------------------------------- trancate content function 30 words----------------------------------`
 if ( ! function_exists( 'truncate_excerpt' ) ) {
 	function truncate_excerpt( $excerpt, $word_limit = 30 ) {
 		if ( empty( $excerpt ) ) {
@@ -90,7 +116,17 @@ if ( ! function_exists( 'truncate_excerpt' ) ) {
 	}
 }
 
-// -------------------------------------------to add px after value----------------------------------
+/**
+ * Generates a CSS string for padding with pixel values.
+ *
+ * This function accepts an array of padding values for top, right, bottom, and left.
+ * string with the respective padding values, adding "px" to each.
+ *
+ * @param array $values An associative array with keys 'top', 'right', 'bottom', 'left'.
+ *                      If a value is missing, it defaults to `0`.
+ *
+ * @return string A CSS string with the padding values in pixels.
+ */
 if ( ! function_exists( 'get_padding_css' ) ) {
 	function get_padding_css( $values ) {
 		$top    = isset( $values['top'] ) ? $values['top'] : 0;
@@ -103,21 +139,25 @@ if ( ! function_exists( 'get_padding_css' ) ) {
 }
 
 
-
 // -------------------------------------------pagination handler this function will run when paginate----------------------------------
 
 add_action( 'wp_ajax_pagination', 'handle_pagination' );
-add_action( 'wp_ajax_nopriv_pagination', 'handle_pagination' ); // For non-logged-in users
-
+add_action( 'wp_ajax_nopriv_pagination', 'handle_pagination' ); // For non-logged-in users.
+/**
+ * Handles AJAX pagination for the post grid.
+ * This function is triggered when the user clicks on pagination buttons. It retrieves the appropriate posts based on the requested page and query parameters, then returns the updated HTML for the post grid along with pagination controls.
+ *
+ * @return void Outputs the HTML content of the post grid and pagination.
+ */
 function handle_pagination() {
-	// Optional: verify nonce
+	// Optional: verify nonce.
 	if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], 'pg_nonce' ) ) {
 		wp_send_json_error( 'Invalid nonce' );
 	}
 
-	$paged = intval( $_POST['paged'] ) ?: 1;
-	$query = $_POST['data_query'] ?? array();
-	$attrs = $_POST['data_attr'] ?? array();
+	$paged = isset( $_POST['paged'] ) ? intval( $_POST['paged'] ) : 1;
+	$query = isset( $_POST['data_query'] ) ? $_POST['data_query'] : array();
+	$attrs = isset( $_POST['data_attr'] ) ? $_POST['data_attr'] : array();
 
 	$query_args = array_merge( $query, array( 'paged' => $paged ) );
 
@@ -143,29 +183,31 @@ function handle_pagination() {
 								--card-bg: <?php echo esc_attr( $attributes['contentBackground'] ?? '#fff' ); ?>;
 								--card-bg-hover: <?php echo esc_attr( $attributes['contentBackgroundHover'] ?? '#f5f5f5' ); ?>;
 							">
-				<?php if ( has_post_thumbnail( $post ) && $attributes['displayImage'] !== false && $attributes['displayImage'] !== 'false' ) : ?>
+				<?php if ( has_post_thumbnail( $post ) && false !== $attributes['displayImage'] && 'false' !== $attributes['displayImage'] ) : ?>
 					<div class="post-grid-thumnail">
 						<?php echo get_the_post_thumbnail( $post, 'medium' ); ?>
 					</div>
 				<?php endif; ?>
 
 				<div class="content-body" style="
-						--contentPadding-desktop: <?php echo get_padding_css( $attributes['contentPadding']['Desktop'] ); ?>;
-						--contentPadding-mobile: <?php echo get_padding_css( $attributes['contentPadding']['Mobile'] ); ?>;
-						--contentPadding-tablet: <?php echo get_padding_css( $attributes['contentPadding']['Tablet'] ); ?>;    
-				
-						--contentMargin-desktop: <?php echo get_padding_css( $attributes['contentMargin']['Desktop'] ); ?>;
-						--contentMargin-mobile: <?php echo get_padding_css( $attributes['contentMargin']['Mobile'] ); ?>;
-						--contentMargin-tablet: <?php echo get_padding_css( $attributes['contentMargin']['Tablet'] ); ?>;    
+
+						--contentPadding-desktop: <?php echo esc_attr( get_padding_css( $attributes['contentPadding']['Desktop'] ) ); ?>;
+						--contentPadding-mobile: <?php echo esc_attr( get_padding_css( $attributes['contentPadding']['Mobile'] ) ); ?>;
+						--contentPadding-tablet: <?php echo esc_attr( get_padding_css( $attributes['contentPadding']['Tablet'] ) ); ?>;
+
+						--contentMargin-desktop: <?php echo esc_attr( get_padding_css( $attributes['contentMargin']['Desktop'] ) ); ?>;
+						--contentMargin-mobile: <?php echo esc_attr( get_padding_css( $attributes['contentMargin']['Mobile'] ) ); ?>;
+						--contentMargin-tablet: <?php echo esc_attr( get_padding_css( $attributes['contentMargin']['Tablet'] ) ); ?>;	 
+
 								">
 
-					<?php if ( $attributes['showTitle'] !== false && $attributes['showTitle'] !== 'false' ) : ?>
+					<?php if ( false !== $attributes['showTitle'] && 'false' !== $attributes['showTitle'] ) : ?>
 						<div class="post-grid-title">
 							<h5 style="text-align: <?php echo esc_attr( $attributes['contentAlignment'] ?? 'left' ); ?>;
 				
-								--titleMargin-desktop: <?php echo get_padding_css( $attributes['titleMargin']['Desktop'] ); ?>;
-								--titleMargin-mobile: <?php echo get_padding_css( $attributes['titleMargin']['Mobile'] ); ?>;
-								--titleMargin-tablet: <?php echo get_padding_css( $attributes['titleMargin']['Tablet'] ); ?>;  
+								--titleMargin-desktop: <?php echo esc_attr( get_padding_css( $attributes['titleMargin']['Desktop'] ) ); ?>;
+								--titleMargin-mobile: <?php echo esc_attr( get_padding_css( $attributes['titleMargin']['Mobile'] ) ); ?>;
+								--titleMargin-tablet: <?php echo esc_attr( get_padding_css( $attributes['titleMargin']['Tablet'] ) ); ?>;  
 								
 								">
 								<a href="<?php the_permalink( $post ); ?>" style="
@@ -178,15 +220,15 @@ function handle_pagination() {
 						</div>
 					<?php endif; ?>
 
-					<?php if ( $attributes['showMeta'] !== false && $attributes['showMeta'] !== 'false' ) : ?>
+					<?php if ( false !== $attributes['showMeta'] && 'false' !== $attributes['showMeta'] ) : ?>
 						<div class="post-grid-meta" style="
 								--metaTextAlign: <?php echo esc_attr( $attributes['contentAlignment'] ?? 'left' ); ?>;
 								--metaHoverColor: <?php echo esc_attr( $attributes['metaHoverColor'] ?? '#999' ); ?>;
 								--metaColor: <?php echo esc_attr( $attributes['metaColor'] ?? '#777' ); ?>;
 												
-								--metaMargin-desktop: <?php echo get_padding_css( $attributes['metaMargin']['Desktop'] ); ?>;
-								--metaMargin-mobile: <?php echo get_padding_css( $attributes['metaMargin']['Mobile'] ); ?>;
-								--metaMargin-tablet: <?php echo get_padding_css( $attributes['metaMargin']['Tablet'] ); ?>;  
+								--metaMargin-desktop: <?php echo esc_attr( get_padding_css( $attributes['metaMargin']['Desktop'] ) ); ?>;
+								--metaMargin-mobile: <?php echo esc_attr( get_padding_css( $attributes['metaMargin']['Mobile'] ) ); ?>;
+								--metaMargin-tablet: <?php echo esc_attr( get_padding_css( $attributes['metaMargin']['Tablet'] ) ); ?>;  
 										">
 							<span>By <?php echo esc_html( get_the_author_meta( 'display_name', $post->post_author ) ); ?></span>
 							<time datetime="<?php echo esc_attr( get_the_date( 'c', $post ) ); ?>">
@@ -195,13 +237,12 @@ function handle_pagination() {
 						</div>
 					<?php endif; ?>
 
-					<?php if ( $attributes['showExcerpt'] !== false && $attributes['showExcerpt'] !== 'false' ) : ?>
+					<?php if ( false !== $attributes['showExcerpt'] && 'false' !== $attributes['showExcerpt'] ) : ?>
 						<div class="post-grid-excerpt" style="text-align: <?php echo esc_attr( $attributes['contentAlignment'] ?? 'left' ); ?>;
 							
-										 
-									--desMargin-desktop: <?php echo get_padding_css( $attributes['desMargin']['Desktop'] ); ?>;
-								--desMargin-mobile: <?php echo get_padding_css( $attributes['desMargin']['Mobile'] ); ?>;
-								--desMargin-tablet: <?php echo get_padding_css( $attributes['desMargin']['Tablet'] ); ?>;  
+								--desMargin-desktop: <?php echo esc_attr( get_padding_css( $attributes['desMargin']['Desktop'] ) ); ?>;
+								--desMargin-mobile: <?php echo esc_attr( get_padding_css( $attributes['desMargin']['Mobile'] ) ); ?>;
+								--desMargin-tablet: <?php echo esc_attr( get_padding_css( $attributes['desMargin']['Tablet'] ) ); ?>;  
 							
 							">
 							<p><?php echo esc_html( truncate_excerpt( get_the_excerpt( $post ), $attributes['excerptMaxWords'] ?? 30 ) ); ?>
@@ -209,7 +250,7 @@ function handle_pagination() {
 						</div>
 					<?php endif; ?>
 
-					<?php if ( $attributes['readMore'] !== false && $attributes['readMore'] !== 'false' ) : ?>
+					<?php if ( false !== $attributes['readMore'] && 'false' !== $attributes['readMore'] ) : ?>
 						<div class="post-grid-btn"
 							style="text-align: <?php echo esc_attr( $attributes['readMoreAlignment'] ?? 'left' ); ?>;">
 							<a href="<?php the_permalink( $post ); ?>" class="read-more-link" style="
@@ -217,14 +258,13 @@ function handle_pagination() {
 												--readMoreBackground: <?php echo esc_attr( $attributes['readMoreBackground'] ?? '#0073aa' ); ?>;
 												--readMoreColorHover: <?php echo esc_attr( $attributes['readMoreColorHover'] ?? '#fff' ); ?>;
 												--readMoreBackgroundHover: <?php echo esc_attr( $attributes['readMoreBackgroundHover'] ?? '#005177' ); ?>;
+												--readMorePadding-desktop: <?php echo esc_attr( get_padding_css( $attributes['readMorePadding']['Desktop'] ) ); ?>;
+												--readMorePadding-mobile: <?php echo esc_attr( get_padding_css( $attributes['readMorePadding']['Mobile'] ) ); ?>;
+												--readMorePadding-tablet: <?php echo esc_attr( get_padding_css( $attributes['readMorePadding']['Tablet'] ) ); ?>;  
 
-												--readMorePadding-desktop: <?php echo get_padding_css( $attributes['readMorePadding']['Desktop'] ); ?>;
-												--readMorePadding-mobile: <?php echo get_padding_css( $attributes['readMorePadding']['Mobile'] ); ?>;
-												--readMorePadding-tablet: <?php echo get_padding_css( $attributes['readMorePadding']['Tablet'] ); ?>;  
-
-												--readMoreMargin-desktop: <?php echo get_padding_css( $attributes['readMoreMargin']['Desktop'] ); ?>;
-												--readMoreMargin-mobile: <?php echo get_padding_css( $attributes['readMoreMargin']['Mobile'] ); ?>;
-												--readMoreMargin-tablet: <?php echo get_padding_css( $attributes['readMoreMargin']['Tablet'] ); ?>;  
+												--readMoreMargin-desktop: <?php echo esc_attr( get_padding_css( $attributes['readMoreMargin']['Desktop'] ) ); ?>;
+												--readMoreMargin-mobile: <?php echo esc_attr( get_padding_css( $attributes['readMoreMargin']['Mobile'] ) ); ?>;
+												--readMoreMargin-tablet: <?php echo esc_attr( get_padding_css( $attributes['readMoreMargin']['Tablet'] ) ); ?>;  
 							
 											">
 								<span><?php esc_html_e( 'Read More', 'postgrid' ); ?></span>
@@ -244,19 +284,19 @@ function handle_pagination() {
 		<div class="pagination ajax-pagination">
 
 			<!-- Prev Button -->
-			<button class="pg-prev" <?php echo $paged <= 1 ? 'disabled' : ''; ?> data-page="<?php echo max( 1, $paged - 1 ); ?>">
+			<button class="pg-prev" <?php echo $paged <= 1 ? 'disabled' : ''; ?> data-page="<?php echo esc_attr( max( 1, $paged - 1 ) ); ?>">
 				Prev
 			</button>
 
 			<?php for ( $i = 1; $i <= $pagination; $i++ ) : ?>
-				<button class="pg-page <?php echo $i === $paged ? 'active' : ''; ?>" data-page="<?php echo $i; ?>">
-					<?php echo $i; ?>
+				<button class="pg-page <?php echo $i === $paged ? 'active' : ''; ?>" data-page="<?php echo esc_attr( $i ); ?>">
+					<?php echo esc_attr( $i ); ?>
 				</button>
 			<?php endfor; ?>
 
 			<!-- Next Button -->
 			<button class="pg-next" <?php echo $paged >= $pagination ? 'disabled' : ''; ?>
-				data-page="<?php echo min( $pagination, $paged + 1 ); ?>">
+				data-page="<?php echo esc_attr( min( $pagination, $paged + 1 ) ); ?>">
 				Next
 			</button>
 
