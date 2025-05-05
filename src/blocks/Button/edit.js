@@ -7,6 +7,7 @@ import StyleTab from './tab/StyleTab';
 import AdvanceTab from './tab/AdvanceTab';
 
 export default function Edit( { attributes, setAttributes } ) {
+	const { btnAlign } = attributes;
 	return (
 		<div { ...useBlockProps() }>
 			<InspectorControls>
@@ -68,7 +69,7 @@ export default function Edit( { attributes, setAttributes } ) {
 					} }
 				</TabPanel>
 			</InspectorControls>
-			<div>
+			<div style={ { '--btnAlign': btnAlign } }>
 				<a href="#" className="pagecrafter-btn">
 					Click Me
 				</a>

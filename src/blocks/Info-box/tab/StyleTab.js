@@ -47,7 +47,7 @@ export default function StyleTab( { attributes, setAttributes } ) {
 	} = attributes;
 
 	const [ openPanel, setOpenPanel ] = useState( 'general' );
-	const togglePanel                 = ( panelKey ) =>
+	const togglePanel = ( panelKey ) =>
 		setOpenPanel( openPanel === panelKey ? null : panelKey );
 
 	// Utility for conditional color selection
@@ -55,28 +55,26 @@ export default function StyleTab( { attributes, setAttributes } ) {
 		activeKey === 'default' ? defaultColor : hoverColor;
 
 	const handleColorChange = ( color, defaultKey, hoverKey, activeKey ) => {
-		setAttributes(
-			{
-					[ activeKey === 'default' ? defaultKey : hoverKey ] : color,
-			}
-		);
+		setAttributes( {
+			[ activeKey === 'default' ? defaultKey : hoverKey ]: color,
+		} );
 	};
 
 	return (
-		< div >
-			< PanelBody
-				title             = "Title"
-				opened            = { openPanel === 'title' }
-				onToggle          = { () => togglePanel( 'title' ) }
+		<div>
+			<PanelBody
+				title="Title"
+				opened={ openPanel === 'title' }
+				onToggle={ () => togglePanel( 'title' ) }
 			>
-				< ColorPickerGroup
-					label         = "Color"
-					value         = { getActiveColor(
+				<ColorPickerGroup
+					label="Color"
+					value={ getActiveColor(
 						titleColor,
 						titleHoverColor,
 						activeColor
 					) }
-					onChange      = { ( color ) =>
+					onChange={ ( color ) =>
 						handleColorChange(
 							color,
 							'titleColor',
@@ -84,32 +82,32 @@ export default function StyleTab( { attributes, setAttributes } ) {
 							activeColor
 						)
 					}
-					activeKey     = { activeColor }
-					from          = "infoTitleColor"
-					setAttributes = { setAttributes }
-				/ >
+					activeKey={ activeColor }
+					from="infoTitleColor"
+					setAttributes={ setAttributes }
+				/>
 
-				< Spacing
-					label         = "Title Margin"
-					setAttributes = { setAttributes }
-					space         = { titleMargin }
-					attributesKey = "titleMargin"
-				/ >
-			< / PanelBody >
+				<Spacing
+					label="Title Margin"
+					setAttributes={ setAttributes }
+					space={ titleMargin }
+					attributesKey="titleMargin"
+				/>
+			</PanelBody>
 
-			< PanelBody
-				title             = "Content"
-				opened            = { openPanel === 'content' }
-				onToggle          = { () => togglePanel( 'content' ) }
+			<PanelBody
+				title="Content"
+				opened={ openPanel === 'content' }
+				onToggle={ () => togglePanel( 'content' ) }
 			>
-				< ColorPickerGroup
-					label         = "Color"
-					value         = { getActiveColor(
+				<ColorPickerGroup
+					label="Color"
+					value={ getActiveColor(
 						ContentColor,
 						ContentHoverColor,
 						activeContentColor
 					) }
-					onChange      = { ( color ) =>
+					onChange={ ( color ) =>
 						handleColorChange(
 							color,
 							'ContentColor',
@@ -117,33 +115,33 @@ export default function StyleTab( { attributes, setAttributes } ) {
 							activeContentColor
 						)
 					}
-					activeKey     = { activeContentColor }
-					from          = "infoContentColor"
-					setAttributes = { setAttributes }
-				/ >
+					activeKey={ activeContentColor }
+					from="infoContentColor"
+					setAttributes={ setAttributes }
+				/>
 
-				< Spacing
-					label         = "Content Margin"
-					setAttributes = { setAttributes }
-					space         = { ContentMargin }
-					attributesKey = "ContentMargin"
-				/ >
-			< / PanelBody >
+				<Spacing
+					label="Content Margin"
+					setAttributes={ setAttributes }
+					space={ ContentMargin }
+					attributesKey="ContentMargin"
+				/>
+			</PanelBody>
 
 			{ readMoreType === 'Button' && (
-				< PanelBody
-					title             = "Call To Action"
-					opened            = { openPanel === 'callAction' }
-					onToggle          = { () => togglePanel( 'callAction' ) }
+				<PanelBody
+					title="Call To Action"
+					opened={ openPanel === 'callAction' }
+					onToggle={ () => togglePanel( 'callAction' ) }
 				>
-					< ColorPickerGroup
-						label         = "Color"
-						value         = { getActiveColor(
+					<ColorPickerGroup
+						label="Color"
+						value={ getActiveColor(
 							callActionColor,
 							callActionHoverColor,
 							activeCallActionColor
 						) }
-						onChange      = { ( color ) =>
+						onChange={ ( color ) =>
 							handleColorChange(
 								color,
 								'callActionColor',
@@ -151,19 +149,19 @@ export default function StyleTab( { attributes, setAttributes } ) {
 								activeCallActionColor
 							)
 						}
-						activeKey     = { activeCallActionColor }
-						from          = "infoCallActionColor"
-						setAttributes = { setAttributes }
-					/ >
+						activeKey={ activeCallActionColor }
+						from="infoCallActionColor"
+						setAttributes={ setAttributes }
+					/>
 
-					< ColorPickerGroup
-						label         = "Background"
-						value         = { getActiveColor(
+					<ColorPickerGroup
+						label="Background"
+						value={ getActiveColor(
 							callActionBack,
 							callActionHoverBack,
 							activeCallActionBack
 						) }
-						onChange      = { ( color ) =>
+						onChange={ ( color ) =>
 							handleColorChange(
 								color,
 								'callActionBack',
@@ -171,23 +169,23 @@ export default function StyleTab( { attributes, setAttributes } ) {
 								activeCallActionBack
 							)
 						}
-						activeKey     = { activeCallActionBack }
-						from          = "infoCallActionBackColor"
-						setAttributes = { setAttributes }
-					/ >
+						activeKey={ activeCallActionBack }
+						from="infoCallActionBackColor"
+						setAttributes={ setAttributes }
+					/>
 
-					< Spacing
-						setAttributes = { setAttributes }
-						space         = { callActionPadding }
-						label         = "Padding"
-						attributesKey = "callActionPadding"
-					/ >
+					<Spacing
+						setAttributes={ setAttributes }
+						space={ callActionPadding }
+						label="Padding"
+						attributesKey="callActionPadding"
+					/>
 
-					< PanelBody title = "Border" initialOpen = { false } >
-						< SelectControl
-							label     = { __( 'Border Type', 'postinfo' ) }
-							value     = { callActionBorderType }
-							options   = { [
+					<PanelBody title="Border" initialOpen={ false }>
+						<SelectControl
+							label={ __( 'Border Type', 'postinfo' ) }
+							value={ callActionBorderType }
+							options={ [
 								{ label: 'None', value: 'none' },
 								{ label: 'Solid', value: 'solid' },
 								{ label: 'Dotted', value: 'dotted' },
@@ -196,27 +194,27 @@ export default function StyleTab( { attributes, setAttributes } ) {
 								{ label: 'Inset', value: 'inset' },
 								{ label: 'Outset', value: 'outset' },
 								{ label: 'Ridge', value: 'ridge' },
-								] }
-							onChange  = { ( val ) =>
+							] }
+							onChange={ ( val ) =>
 								setAttributes( { callActionBorderType: val } )
 							}
-						/ >
+						/>
 
-						< Spacing
-							setAttributes = { setAttributes }
-							space         = { callActionBorderWidth }
-							label         = "Border Width"
-							attributesKey = "callActionBorderWidth"
-						/ >
+						<Spacing
+							setAttributes={ setAttributes }
+							space={ callActionBorderWidth }
+							label="Border Width"
+							attributesKey="callActionBorderWidth"
+						/>
 
-						< ColorPickerGroup
-							label         = "Border Color"
-							value         = { getActiveColor(
+						<ColorPickerGroup
+							label="Border Color"
+							value={ getActiveColor(
 								callActionborderColor,
 								callActionborderHoverColor,
 								ActiveCallActionborderColor
 							) }
-							onChange      = { ( color ) =>
+							onChange={ ( color ) =>
 								handleColorChange(
 									color,
 									'callActionborderColor',
@@ -224,27 +222,27 @@ export default function StyleTab( { attributes, setAttributes } ) {
 									ActiveCallActionborderColor
 								)
 							}
-							activeKey     = { ActiveCallActionborderColor }
-							from          = "infoCallActionBorderColor"
-							setAttributes = { setAttributes }
-						/ >
+							activeKey={ ActiveCallActionborderColor }
+							from="infoCallActionBorderColor"
+							setAttributes={ setAttributes }
+						/>
 
-						< Spacing
-							setAttributes = { setAttributes }
-							space         = { callActionBorderRadius }
-							label         = "Border Radius"
-							attributesKey = "callActionBorderRadius"
-						/ >
-					< / PanelBody >
-				< / PanelBody >
+						<Spacing
+							setAttributes={ setAttributes }
+							space={ callActionBorderRadius }
+							label="Border Radius"
+							attributesKey="callActionBorderRadius"
+						/>
+					</PanelBody>
+				</PanelBody>
 			) }
 
 			{ /* Global Border */ }
-			< PanelBody title = "Border" initialOpen = { false } >
-				< SelectControl
-					label     = { __( 'Border Type', 'postinfo' ) }
-					value     = { BorderType }
-					options   = { [
+			<PanelBody title="Border" initialOpen={ false }>
+				<SelectControl
+					label={ __( 'Border Type', 'postinfo' ) }
+					value={ BorderType }
+					options={ [
 						{ label: 'None', value: 'none' },
 						{ label: 'Solid', value: 'solid' },
 						{ label: 'Dotted', value: 'dotted' },
@@ -253,25 +251,25 @@ export default function StyleTab( { attributes, setAttributes } ) {
 						{ label: 'Inset', value: 'inset' },
 						{ label: 'Outset', value: 'outset' },
 						{ label: 'Ridge', value: 'ridge' },
-						] }
-					onChange  = { ( val ) => setAttributes( { BorderType: val } ) }
-				/ >
+					] }
+					onChange={ ( val ) => setAttributes( { BorderType: val } ) }
+				/>
 
-				< Spacing
-					setAttributes = { setAttributes }
-					space         = { BorderWidth }
-					label         = "Border Width"
-					attributesKey = "BorderWidth"
-				/ >
+				<Spacing
+					setAttributes={ setAttributes }
+					space={ BorderWidth }
+					label="Border Width"
+					attributesKey="BorderWidth"
+				/>
 
-				< ColorPickerGroup
-					label         = "Border Color"
-					value         = { getActiveColor(
+				<ColorPickerGroup
+					label="Border Color"
+					value={ getActiveColor(
 						borderColor,
 						borderHoverColor,
 						ActiveBorderColor
 					) }
-					onChange      = { ( color ) =>
+					onChange={ ( color ) =>
 						handleColorChange(
 							color,
 							'borderColor',
@@ -279,29 +277,29 @@ export default function StyleTab( { attributes, setAttributes } ) {
 							ActiveBorderColor
 						)
 					}
-					activeKey     = { ActiveBorderColor }
-					from          = "infoBorderColor"
-					setAttributes = { setAttributes }
-				/ >
+					activeKey={ ActiveBorderColor }
+					from="infoBorderColor"
+					setAttributes={ setAttributes }
+				/>
 
-				< Spacing
-					setAttributes = { setAttributes }
-					space         = { BorderRadius }
-					label         = "Border Radius"
-					attributesKey = "BorderRadius"
-				/ >
-			< / PanelBody >
+				<Spacing
+					setAttributes={ setAttributes }
+					space={ BorderRadius }
+					label="Border Radius"
+					attributesKey="BorderRadius"
+				/>
+			</PanelBody>
 
 			{ /* Background */ }
-			< PanelBody title     = "Background" initialOpen = { false } >
-				< ColorPickerGroup
-					label         = "Background"
-					value         = { getActiveColor(
+			<PanelBody title="Background" initialOpen={ false }>
+				<ColorPickerGroup
+					label="Background"
+					value={ getActiveColor(
 						background,
 						backgroundHover,
 						activeBackground
 					) }
-					onChange      = { ( color ) =>
+					onChange={ ( color ) =>
 						handleColorChange(
 							color,
 							'background',
@@ -309,38 +307,38 @@ export default function StyleTab( { attributes, setAttributes } ) {
 							activeBackground
 						)
 					}
-					activeKey     = { activeBackground }
-					from          = "infoBackground"
-					setAttributes = { setAttributes }
-				/ >
-			< / PanelBody >
+					activeKey={ activeBackground }
+					from="infoBackground"
+					setAttributes={ setAttributes }
+				/>
+			</PanelBody>
 
 			{ /* Box Shadow */ }
-			< PanelBody title             = "Box-Shadow" initialOpen = { false } >
-				< ToggleControl
-					label                 = { __( 'Box-Shadow', 'infobox' ) }
-					checked               = { isBoxShadow }
-					onChange              = { ( val ) =>
+			<PanelBody title="Box-Shadow" initialOpen={ false }>
+				<ToggleControl
+					label={ __( 'Box-Shadow', 'infobox' ) }
+					checked={ isBoxShadow }
+					onChange={ ( val ) =>
 						setAttributes( { isBoxShadow: val } )
 					}
-				/ >
+				/>
 				{ isBoxShadow && (
-					< >
-						< Spacing
-							setAttributes = { setAttributes }
-							space         = { boxShadowControl }
-							label         = "Shadow"
-							attributesKey = "boxShadowControl"
-						/ >
+					<PanelBody>
+						<Spacing
+							setAttributes={ setAttributes }
+							space={ boxShadowControl }
+							label="Shadow"
+							attributesKey="boxShadowControl"
+						/>
 
-						< ColorPickerGroup
-							label         = "Shadow Color"
-							value         = { getActiveColor(
+						<ColorPickerGroup
+							label="Shadow Color"
+							value={ getActiveColor(
 								boxShadowColor,
 								boxShadowHover,
 								ActiveboxShadowColor
 							) }
-							onChange      = { ( color ) =>
+							onChange={ ( color ) =>
 								handleColorChange(
 									color,
 									'boxShadowColor',
@@ -348,33 +346,33 @@ export default function StyleTab( { attributes, setAttributes } ) {
 									ActiveboxShadowColor
 								)
 							}
-							activeKey     = { ActiveboxShadowColor }
-							from          = "infoBoxShadow"
-							setAttributes = { setAttributes }
-						/ >
-					< / >
+							activeKey={ ActiveboxShadowColor }
+							from="infoBoxShadow"
+							setAttributes={ setAttributes }
+						/>
+					</PanelBody>
 				) }
-			< / PanelBody >
+			</PanelBody>
 
 			{ /* spacing */ }
-			< PanelBody title         = "Spacing" initialOpen = { false } >
-				< PanelBody title     = "Padding" initialOpen = { false } >
-					< Spacing
-						label         = { 'Padding' }
-						setAttributes = { setAttributes }
-						space         = { padding }
-						attributesKey = "padding"
-					/ >
-				< / PanelBody >
-				< PanelBody title     = "Margin" initialOpen = { false } >
-					< Spacing
-						label         = { 'Margin' }
-						setAttributes = { setAttributes }
-						space         = { margin }
-						attributesKey = "margin"
-					/ >
-				< / PanelBody >
-			< / PanelBody >
-		< / div >
+			<PanelBody title="Spacing" initialOpen={ false }>
+				<PanelBody title="Padding" initialOpen={ false }>
+					<Spacing
+						label={ 'Padding' }
+						setAttributes={ setAttributes }
+						space={ padding }
+						attributesKey="padding"
+					/>
+				</PanelBody>
+				<PanelBody title="Margin" initialOpen={ false }>
+					<Spacing
+						label={ 'Margin' }
+						setAttributes={ setAttributes }
+						space={ margin }
+						attributesKey="margin"
+					/>
+				</PanelBody>
+			</PanelBody>
+		</div>
 	);
 }

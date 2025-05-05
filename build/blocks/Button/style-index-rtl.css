@@ -11,7 +11,10 @@
   color: #fff;
   padding: 2px;
 }
-.wp-block-create-block-button .pagecrafter-btn {
+.wp-block-create-block-button div {
+  text-align: var(--btnAlign);
+}
+.wp-block-create-block-button div .pagecrafter-btn {
   display: inline-block;
   padding: 10px 36px;
   background-color: #10b981;
@@ -22,5 +25,4 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-size: 15px;
-  text-align: center;
 }
