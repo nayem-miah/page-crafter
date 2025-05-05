@@ -1,13 +1,13 @@
 <?php
 
-$someVar= "Hello World";
+$someVar = 'Hello World';
 
-function testFunction( $arg1 ,$arg2){
-echo "<div>".$arg1. " " .$arg2."</div>";
+function testFunction( $arg1, $arg2 ) {
+	echo '<div>' . $arg1 . ' ' . $arg2 . '</div>';
 }
 
-testFunction( $someVar , "<script>alert('xss');</script>" );
+testFunction( $someVar, "<script>alert('xss');</script>" );
 
-if ( true ){
-echo 'This should be indented.';
+if ( true ) {
+	echo 'This should be indented.';
 }
