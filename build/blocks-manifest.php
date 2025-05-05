@@ -49,27 +49,6 @@ return array(
 			)
 		)
 	),
-	'Button copy' => array(
-		'$schema' => 'https://schemas.wp.org/trunk/block.json',
-		'apiVersion' => 3,
-		'name' => 'create-block/button',
-		'version' => '0.1.0',
-		'title' => 'Button',
-		'category' => 'Page-Crafter',
-		'icon' => 'edit-page',
-		'description' => 'Example block scaffolded with Create Block tool.',
-		'example' => array(
-			
-		),
-		'supports' => array(
-			'html' => false
-		),
-		'textdomain' => 'pagecrafter',
-		'editorScript' => 'file:./index.js',
-		'editorStyle' => 'file:./index.css',
-		'style' => 'file:./style-index.css',
-		'viewScript' => 'file:./view.js'
-	),
 	'Info-box' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
@@ -503,27 +482,6 @@ return array(
 			)
 		),
 		'textdomain' => 'infobox',
-		'editorScript' => 'file:./index.js',
-		'editorStyle' => 'file:./index.css',
-		'style' => 'file:./style-index.css',
-		'viewScript' => 'file:./view.js'
-	),
-	'pagecrafter' => array(
-		'$schema' => 'https://schemas.wp.org/trunk/block.json',
-		'apiVersion' => 3,
-		'name' => 'create-block/pagecrafter',
-		'version' => '0.1.0',
-		'title' => 'PageCrafter',
-		'category' => 'Page-Crafter',
-		'icon' => 'edit-page',
-		'description' => 'Example block scaffolded with Create Block tool.',
-		'example' => array(
-			
-		),
-		'supports' => array(
-			'html' => false
-		),
-		'textdomain' => 'pagecrafter',
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css',
