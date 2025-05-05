@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "create-block/pagecrafter",
+	"name": "create-block/button",
 	"version": "0.1.0",
-	"title": "PageCrafter",
+	"title": "Button",
 	"category": "Page-Crafter",
 	"icon": "edit-page",
 	"description": "Example block scaffolded with Create Block tool.",

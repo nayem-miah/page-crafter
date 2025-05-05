@@ -6,8 +6,8 @@ import './editor.scss';
 
 export default function Edit() {
 	return (
-		< p { ...useBlockProps() } >
+		<p { ...useBlockProps() }>
 			{ __( 'PageCrafter – hello from the editor!', 'pagecrafter' ) }
-		< / p >
+		</p>
 	);
 }

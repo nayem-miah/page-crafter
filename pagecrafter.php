@@ -48,15 +48,13 @@ add_filter( 'block_categories_all', 'pagecrafter_block_categories', 10, 2 );
  * @return void
  */
 function pagecrafter_register_blocks() {
-	$blocks = array( 'Info-box', 'Post-grid', 'pagecrafter' );
+	$blocks = array( 'Info-box', 'Post-grid', 'Button' ); // the array are blocks name.
 
 	foreach ( $blocks as $block ) {
 		register_block_type( __DIR__ . "/build/blocks/{$block}" );
 	}
 }
 add_action( 'init', 'pagecrafter_register_blocks' );
-
-
 
 
 

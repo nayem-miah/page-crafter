@@ -5,15 +5,12 @@ import Edit from './edit';
 import save from './save';
 import metadata from './block.json';
 
-registerBlockType(
-	metadata.name,
-	{
-		icon: {
-			src: 'edit-page',
-			background: '#FFFFFF',
-			foreground: '#10B981',
-		},
-		edit: Edit,
-		save,
-	}
-);
+registerBlockType( metadata.name, {
+	icon: {
+		src: 'button',
+		background: '#FFFFFF',
+		foreground: '#10B981',
+	},
+	edit: Edit,
+	save,
+} );
